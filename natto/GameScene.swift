@@ -24,6 +24,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
     let ohashiCategory: UInt32 = 0x1 << 0
     let nattoCategory: UInt32 = 0x1 << 1
     
+    // test
     override func didMove(to view: SKView) {
         //衝突判定のデリゲートをselfにする
         self.physicsWorld.contactDelegate = self
