@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CF3223E6930007105D8 /* ResultPresenter.swift */; };
+		0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CF7223E6D98007105D8 /* ResultModel.swift */; };
 		4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA320537F20002CA3BC /* natto_bgm_game.wav */; };
 		4343CEA62053804C002CA3BC /* voice_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA52053804C002CA3BC /* voice_5.wav */; };
 		4343CEA9205381DE002CA3BC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4343CEA8205381DE002CA3BC /* Social.framework */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0DF70CF3223E6930007105D8 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
+		0DF70CF7223E6D98007105D8 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		4343CEA320537F20002CA3BC /* natto_bgm_game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = natto_bgm_game.wav; sourceTree = "<group>"; };
 		4343CEA52053804C002CA3BC /* voice_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_5.wav; sourceTree = "<group>"; };
 		4343CEA8205381DE002CA3BC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -80,6 +82,7 @@
 			children = (
 				439948A3205315480028E85F /* ResultScene.swift */,
 				0DF70CF3223E6930007105D8 /* ResultPresenter.swift */,
+				0DF70CF7223E6D98007105D8 /* ResultModel.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -112,10 +115,10 @@
 		43D95F1E2052723B00FE1117 /* natto */ = {
 			isa = PBXGroup;
 			children = (
-				0DF70CF1223E64BA007105D8 /* sound */,
-				43D95F1F2052723B00FE1117 /* AppDelegate.swift */,
 				43D95F212052723B00FE1117 /* GameScene.sks */,
 				43D95F232052723B00FE1117 /* Actions.sks */,
+				0DF70CF1223E64BA007105D8 /* sound */,
+				43D95F1F2052723B00FE1117 /* AppDelegate.swift */,
 				43D95F272052723B00FE1117 /* GameViewController.swift */,
 				43D95F252052723B00FE1117 /* GameScene.swift */,
 				43704C902052E1D900F87562 /* PullNattoScene.swift */,
@@ -213,6 +216,7 @@
 				43D95F282052723B00FE1117 /* GameViewController.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,
 				43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */,
+				0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */,
 				0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

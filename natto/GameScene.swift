@@ -204,8 +204,6 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
             path.closeSubpath()
             count+=1
             if count < 500{
-            //音楽の再生
-           // playBGM()
             count = 0
             }
             let curve = SKShapeNode(path: path)

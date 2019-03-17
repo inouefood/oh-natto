@@ -111,19 +111,17 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
     }
     
     @objc func timerCounter(){
-        //BGM2!.stop()
-        //BGM2!.currentTime = 0
         self.timer?.invalidate()
-        let scene = ResultScene(size: self.size)
-        scene.scaleMode = SKSceneScaleMode.aspectFill
+        
         for i in 0..<nattoSprite.count {
             if (self.frame.size.height < nattoSprite[i].position.y) {
                 resultScore += 1
             }
         }
-        print(resultScore)
-        let ud = UserDefaults.standard
-        ud.set(resultScore, forKey: "rs")
+        let scene = ResultScene(size: self.size, score: resultScore)
+        scene.scaleMode = SKSceneScaleMode.aspectFill
+//        let ud = UserDefaults.standard
+//        ud.set(resultScore, forKey: "rs")
         self.view!.presentScene(scene)
     }
     

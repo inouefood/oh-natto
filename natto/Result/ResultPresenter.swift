@@ -8,6 +8,22 @@
 
 import Foundation
 
-class ResultPresenter {
+protocol ResultPresenter {
+    func  loadAudio(resourceName: String, resourceType: String)
+    func playAudio()
+}
+class ResultPresenterImpl: ResultPresenter {
     
+    private var model: ResultModelInput
+    
+    init() {
+        model = ResultModel()
+    }
+    func loadAudio(resourceName: String, resourceType: String) {
+        model.loadAudio(resourceName: resourceName, resourceType: resourceType)
+    }
+    
+    func playAudio() {
+        model.playAudio()
+    }
 }

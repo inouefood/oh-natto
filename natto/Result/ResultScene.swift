@@ -7,17 +7,56 @@
 //
 import SpriteKit
 import Social
-import AVFoundation
-class ResultScene: SKScene, AVAudioPlayerDelegate {
-    var resultScore:Int = Int()
-    var mamekun = SKSpriteNode(imageNamed: "mame01")
-    let scoreLabel = SKLabelNode(fontNamed: "Verdana-bold")
+class ResultScene: SKScene{
+    let resultScore:Int
     let replayLabel = SKLabelNode(fontNamed: "Verdana-bold")
-    var sprite = SKSpriteNode()
-    var BGM:AVAudioPlayer?
     var twitterButton = SKSpriteNode(imageNamed: "twitter_img")
     var facebookButton = SKSpriteNode(imageNamed: "facebook")
+    
+    var presenter: ResultPresenter?
+    
+    init(size:CGSize, score: Int) {
+        self.resultScore = score
+        presenter = ResultPresenterImpl()
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didMove(to view: SKView) {
+        
+        presenter?.loadAudio(resourceName: "natto_bgm_score", resourceType: "wav")
+        presenter?.playAudio()
+        
+        addImage()
+        addLabel()
+        addButton()
+    }
+    func addImage() {
+        let mamekun = SKSpriteNode(imageNamed: "mame01")
+        //animation
+        mamekun.position = CGPoint(x:self.frame.size.width/2,y: self.frame.size.height/2)
+        mamekun.size = CGSize(width: mamekun.size.width / 2, height: mamekun.size.height / 2 )
+        
+        let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"), SKTexture(imageNamed: "mame02"), SKTexture(imageNamed: "mame03")], timePerFrame: 0.2)
+        mamekun.run(SKAction.repeatForever(animation))
+        self.addChild(mamekun)
+    }
+    func addLabel() {
+        let scoreLabel = SKLabelNode(fontNamed: "Verdana-bold")
+        
+        scoreLabel.text = "SCORE " + String(resultScore)
+        scoreLabel.fontSize = 50
+        scoreLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.80)
+        self.addChild(scoreLabel)
+        replayLabel.text = "REPLAY"
+        replayLabel.fontSize = 50
+        replayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20)
+        self.addChild(replayLabel)
+    }
+    func addButton() {
         twitterButton.position = CGPoint(x: self.frame.maxX * 0.4, y: self.frame.maxY * 0.1)
         twitterButton.zPosition = 1.5
         twitterButton.size = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
@@ -27,26 +66,6 @@ class ResultScene: SKScene, AVAudioPlayerDelegate {
         facebookButton.zPosition = 1.5
         facebookButton.size = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
         self.addChild(facebookButton)
-        
-        resultScore = UserDefaults.standard.integer(forKey: "rs")
-        playBGM()
-        //animation
-        mamekun.position = CGPoint(x:self.frame.size.width/2,y: self.frame.size.height/2)
-        mamekun.size = CGSize(width: mamekun.size.width / 2, height: mamekun.size.height / 2 )
-
-        let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"), SKTexture(imageNamed: "mame02"), SKTexture(imageNamed: "mame03")], timePerFrame: 0.2)
-        mamekun.run(SKAction.repeatForever(animation))
-        self.addChild(mamekun)
-        
-        scoreLabel.text = "SCORE " + String(resultScore)
-        scoreLabel.fontSize = 50
-        scoreLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.80)
-        self.addChild(scoreLabel)
-        replayLabel.text = "REPLAY"
-        replayLabel.fontSize = 50
-        
-        replayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20)
-        self.addChild(replayLabel)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touches:AnyObject in touches{
@@ -69,43 +88,12 @@ class ResultScene: SKScene, AVAudioPlayerDelegate {
             }
             if (touchNode == facebookButton) {
                 
-                let twitterCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-                
-                twitterCmp.setInitialText("納豆食べてパーフェクトボディ！")
+                let facebookCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                 
                 let currentViewController : UIViewController? = UIApplication.shared.keyWindow?.rootViewController!
                 
-                currentViewController?.present(twitterCmp, animated: true, completion: nil)
+                currentViewController?.present(facebookCmp, animated: true, completion: nil)
             }
         }
-    }
-    
-    func playBGM(){
-        let BGMpath = Bundle.main.path(forResource: "natto_bgm_score", ofType:"wav")!
-        let BGMUrl = URL(fileURLWithPath: BGMpath)
-        do {
-            try BGM = AVAudioPlayer(contentsOf:BGMUrl)
-            
-            //音楽をバッファに読み込んでおく
-            BGM!.prepareToPlay()
-        } catch {
-            print(error)
-        }
-        // auido を再生するプレイヤーを作成する
-        var audioError:NSError?
-        do {
-            BGM = try AVAudioPlayer(contentsOf: BGMUrl)
-        } catch let error as NSError {
-            audioError = error
-            BGM = nil
-        }
-        if let error = audioError {
-            print("Error \(error.localizedDescription)")
-        }
-        BGM!.delegate = self
-        BGM!.play()
-    }
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        player.currentTime = 0
     }
 }
