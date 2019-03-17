@@ -116,9 +116,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
         BGM2?.stop()
         BGM?.stop()
         self.timer?.invalidate()
-        let ud = UserDefaults.standard
-        ud.set(stickyLevel, forKey: "stickyLevel")
-        let scene = PullNattoScene(size: self.size)
+        let scene = PullNattoScene(size: self.size, sticky: stickyLevel)
         scene.scaleMode = SKSceneScaleMode.resizeFill
         self.view!.presentScene(scene)
 
@@ -204,8 +202,6 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
             path.closeSubpath()
             count+=1
             if count < 500{
-            //音楽の再生
-           // playBGM()
             count = 0
             }
             let curve = SKShapeNode(path: path)
@@ -218,7 +214,6 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
             self.addChild(curve)
             stickyLevel += 1
         }
-
     }
 }
 
