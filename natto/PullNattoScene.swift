@@ -18,8 +18,8 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
     var nattoSprite:[SKSpriteNode] = []
     var stickyLevel:Float = 0.0
     var nettoCount = 200
-    let ohashi = SKSpriteNode(imageNamed: "pullOhashi.png")
-    let mouth = SKSpriteNode(imageNamed: "pakupaku.png")
+    let ohashi = SKSpriteNode(imageNamed: "pullOhashi")
+    let mouth = SKSpriteNode(imageNamed: "pakupaku")
     var BGM:AVAudioPlayer?
     var BGM2:AVAudioPlayer?
     var mameflag = false
@@ -59,7 +59,7 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
         
         //納豆の初期設定
         for _ in 0..<nettoCount{
-            let natto = SKSpriteNode(imageNamed:"mame.png")
+            let natto = SKSpriteNode(imageNamed:"mame")
             let X = Int(arc4random_uniform(UInt32(self.frame.size.width)))
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height / 4.0)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * .pi)))

@@ -15,7 +15,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
 
     var nattoSprite:[SKSpriteNode] = []
     var nettoCount = 400
-    let ohashi = SKSpriteNode(imageNamed: "ohashi.png")
+    let ohashi = SKSpriteNode(imageNamed: "ohashi")
     var stickyLevel:Int = 0
     var cells = [Int](repeating: 0, count: 108)
     var BGM:AVAudioPlayer?
@@ -48,7 +48,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
         self.addChild(ohashi)
         
         for i in 0..<nettoCount{
-            let natto = SKSpriteNode(imageNamed:"mame.png")
+            let natto = SKSpriteNode(imageNamed:"mame")
             let X = Int(arc4random_uniform(UInt32(self.frame.size.width)))
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * M_PI)))

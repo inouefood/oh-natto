@@ -10,13 +10,13 @@ import Social
 import AVFoundation
 class ResultScene: SKScene, AVAudioPlayerDelegate {
     var resultScore:Int = Int()
-    var mamekun = SKSpriteNode(imageNamed: "mame01.png")
+    var mamekun = SKSpriteNode(imageNamed: "mame01")
     let scoreLabel = SKLabelNode(fontNamed: "Verdana-bold")
     let replayLabel = SKLabelNode(fontNamed: "Verdana-bold")
     var sprite = SKSpriteNode()
     var BGM:AVAudioPlayer?
-    var twitterButton = SKSpriteNode(imageNamed: "twitter_img.png")
-    var facebookButton = SKSpriteNode(imageNamed: "facebook.png")
+    var twitterButton = SKSpriteNode(imageNamed: "twitter_img")
+    var facebookButton = SKSpriteNode(imageNamed: "facebook")
     override func didMove(to view: SKView) {
         twitterButton.position = CGPoint(x: self.frame.maxX * 0.4, y: self.frame.maxY * 0.1)
         twitterButton.zPosition = 1.5
@@ -33,9 +33,9 @@ class ResultScene: SKScene, AVAudioPlayerDelegate {
         //animation
         mamekun.position = CGPoint(x:self.frame.size.width/2,y: self.frame.size.height/2)
         mamekun.size = CGSize(width: mamekun.size.width / 2, height: mamekun.size.height / 2 )
-        let action = SKTexture(imageNamed: "mame01.png")
-        let action2 = SKTexture(imageNamed: "mame02.png")
-        let action3 = SKTexture(imageNamed: "mame03.png")
+        let action = SKTexture(imageNamed: "mame01")
+        let action2 = SKTexture(imageNamed: "mame02")
+        let action3 = SKTexture(imageNamed: "mame03")
         let animation = SKAction.animate(with:[action, action2, action3], timePerFrame: 0.2)
         mamekun.run(SKAction.repeatForever(animation))
         self.addChild(mamekun)
