@@ -33,10 +33,8 @@ class ResultScene: SKScene, AVAudioPlayerDelegate {
         //animation
         mamekun.position = CGPoint(x:self.frame.size.width/2,y: self.frame.size.height/2)
         mamekun.size = CGSize(width: mamekun.size.width / 2, height: mamekun.size.height / 2 )
-        let action = SKTexture(imageNamed: "mame01")
-        let action2 = SKTexture(imageNamed: "mame02")
-        let action3 = SKTexture(imageNamed: "mame03")
-        let animation = SKAction.animate(with:[action, action2, action3], timePerFrame: 0.2)
+
+        let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"), SKTexture(imageNamed: "mame02"), SKTexture(imageNamed: "mame03")], timePerFrame: 0.2)
         mamekun.run(SKAction.repeatForever(animation))
         self.addChild(mamekun)
         
@@ -65,8 +63,7 @@ class ResultScene: SKScene, AVAudioPlayerDelegate {
                 let twitterCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
                     
                 twitterCmp.setInitialText("納豆食べてパーフェクトボディ！")
-                print("-------------------------------------------------------------")
-                let currentViewController : UIViewController? = UIApplication.shared.keyWindow?.rootViewController!
+                 let currentViewController : UIViewController? = UIApplication.shared.keyWindow?.rootViewController!
                     
                 currentViewController?.present(twitterCmp, animated: true, completion: nil)
             }
@@ -75,16 +72,14 @@ class ResultScene: SKScene, AVAudioPlayerDelegate {
                 let twitterCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                 
                 twitterCmp.setInitialText("納豆食べてパーフェクトボディ！")
-                print("-------------------------------------------------------------")
+                
                 let currentViewController : UIViewController? = UIApplication.shared.keyWindow?.rootViewController!
                 
                 currentViewController?.present(twitterCmp, animated: true, completion: nil)
             }
         }
     }
-    override func update(_ currentTime: TimeInterval) {
-
-    }
+    
     func playBGM(){
         let BGMpath = Bundle.main.path(forResource: "natto_bgm_score", ofType:"wav")!
         let BGMUrl = URL(fileURLWithPath: BGMpath)
