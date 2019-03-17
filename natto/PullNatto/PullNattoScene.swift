@@ -24,18 +24,31 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
     var BGM2:AVAudioPlayer?
     var mameflag = false
     var count = 0
+    
+    var presenter: PullNattoPresenter
+    
+    override init(size: CGSize) {
+        presenter = PullNattoPresenterImpl()
+        presenter.loadBgmAudio(resourceName:"natto_bgm_game", resourceType: "wav")
+        presenter.loadEffectAudio(resourceName: "paku", resourceType: "wav")
+
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didMove(to view: SKView) {
         score = UserDefaults.standard.integer(forKey: "stickyLevel")
         //音楽の再生
-        playBGM()
+        presenter.playBgm()
         //タイマー
         self.timer = Timer.scheduledTimer(timeInterval: 25, target: self, selector: #selector(GameScene.timerCounter), userInfo: nil, repeats: true)
         //原点の変更
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.backgroundColor = SKColor.gray
         
-        
-        print(score)
         stickyLevel = Float(score) * 0.0001
         
         //ワールドの設定
@@ -55,7 +68,6 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
         ohashi.size = CGSize(width: ohashi.size.width * ohashiScale / 2, height: ohashi.size.height * ohashiScale/2 )
         ohashi.zPosition = 1.25
         self.addChild(ohashi)
-        
         
         //納豆の初期設定
         for _ in 0..<nettoCount{
@@ -90,7 +102,8 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
                     if(count > 1){
                         continue
                     }else{
-                        playPaku()
+                        
+                        presenter.playEffect()
                     }
                         count+=1
                 }
@@ -120,66 +133,6 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
         }
         let scene = ResultScene(size: self.size, score: resultScore)
         scene.scaleMode = SKSceneScaleMode.aspectFill
-//        let ud = UserDefaults.standard
-//        ud.set(resultScore, forKey: "rs")
         self.view!.presentScene(scene)
     }
-    
-    func playPaku(){
-        let BGMpath = Bundle.main.path(forResource: "paku", ofType:"wav")!
-        let BGMUrl = URL(fileURLWithPath: BGMpath)
-        do {
-            try BGM2 = AVAudioPlayer(contentsOf:BGMUrl)
-            
-            //音楽をバッファに読み込んでおく
-            BGM2!.prepareToPlay()
-        } catch {
-            print(error)
-        }
-        // auido を再生するプレイヤーを作成する
-        var audioError:NSError?
-        do {
-            BGM2 = try AVAudioPlayer(contentsOf: BGMUrl)
-        } catch let error as NSError {
-            audioError = error
-            BGM2 = nil
-        }
-        if let error = audioError {
-            print("Error \(error.localizedDescription)")
-        }
-        BGM2!.delegate = self
-        BGM2!.play()
-        BGM2!.numberOfLoops = -1
-    }
-    
-    func playBGM(){
-        let BGMpath = Bundle.main.path(forResource: "natto_bgm_game", ofType:"wav")!
-        let BGMUrl = URL(fileURLWithPath: BGMpath)
-        do {
-            try BGM = AVAudioPlayer(contentsOf:BGMUrl)
-            
-            //音楽をバッファに読み込んでおく
-            BGM!.prepareToPlay()
-        } catch {
-            print(error)
-        }
-        // auido を再生するプレイヤーを作成する
-        var audioError:NSError?
-        do {
-            BGM = try AVAudioPlayer(contentsOf: BGMUrl)
-        } catch let error as NSError {
-            audioError = error
-            BGM = nil
-        }
-        if let error = audioError {
-            print("Error \(error.localizedDescription)")
-        }
-        BGM!.delegate = self
-        BGM!.play()
-        BGM!.numberOfLoops = -1
-    }
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        player.currentTime = 0
-    }
-    
 }

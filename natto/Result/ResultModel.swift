@@ -15,6 +15,7 @@ protocol ResultModelInput {
 }
 class ResultModel: ResultModelInput{
     private var audio: AVAudioPlayer?
+    
     func loadAudio(resourceName: String, resourceType: String) {
         let path = Bundle.main.path(forResource: resourceName, ofType: resourceType)
         let url = URL(fileURLWithPath: path!)
@@ -26,6 +27,4 @@ class ResultModel: ResultModelInput{
     func playAudio() {
         audio?.play()
     }
-    
-
 }

@@ -216,7 +216,6 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
             self.addChild(curve)
             stickyLevel += 1
         }
-
     }
 }
 

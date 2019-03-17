@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ResultPresenter {
-    func  loadAudio(resourceName: String, resourceType: String)
+    func loadAudio(resourceName: String, resourceType: String)
     func playAudio()
 }
 class ResultPresenterImpl: ResultPresenter {

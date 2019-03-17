@@ -34,6 +34,7 @@ class ResultScene: SKScene{
         addLabel()
         addButton()
     }
+    
     func addImage() {
         let mamekun = SKSpriteNode(imageNamed: "mame01")
         //animation
@@ -61,7 +62,7 @@ class ResultScene: SKScene{
         twitterButton.zPosition = 1.5
         twitterButton.size = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
         self.addChild(twitterButton)
-        
+
         facebookButton.position = CGPoint(x: self.frame.maxX * 0.6, y: self.frame.maxY * 0.1)
         facebookButton.zPosition = 1.5
         facebookButton.size = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
