@@ -8,39 +8,33 @@
 //
 import SpriteKit
 import GameplayKit
-import AVFoundation
 
-class PullNattoScene: SKScene, AVAudioPlayerDelegate{
+class PullNattoScene: SKScene{
     
     var timer:Timer?
-    var score:Int = Int()
-    var resultScore:Int = 0
-    var nattoSprite:[SKSpriteNode] = []
-    var stickyLevel:Float = 0.0
-    var nettoCount = 200
-    let ohashi = SKSpriteNode(imageNamed: "pullOhashi")
-    let mouth = SKSpriteNode(imageNamed: "pakupaku")
-    var BGM:AVAudioPlayer?
-    var BGM2:AVAudioPlayer?
-    var mameflag = false
+    var score:Int = 0
     var count = 0
-    
+    var stickyLevel:Float
+    var nettoCount = 200
+    var nattoSprite:[SKSpriteNode] = []
+    let ohashi = SKSpriteNode(imageNamed: "pullOhashi")
+    var mameflag = false
     var presenter: PullNattoPresenter
     
-    override init(size: CGSize) {
+    init(size: CGSize, sticky: Int) {
+        stickyLevel = Float(sticky) * 0.0001
+        
         presenter = PullNattoPresenterImpl()
         presenter.loadBgmAudio(resourceName:"natto_bgm_game", resourceType: "wav")
         presenter.loadEffectAudio(resourceName: "paku", resourceType: "wav")
 
         super.init(size: size)
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func didMove(to view: SKView) {
-        score = UserDefaults.standard.integer(forKey: "stickyLevel")
         //音楽の再生
         presenter.playBgm()
         //タイマー
@@ -49,18 +43,11 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.backgroundColor = SKColor.gray
         
-        stickyLevel = Float(score) * 0.0001
-        
         //ワールドの設定
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: 0.0)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
-        let scale = (self.view?.bounds.width)! / mouth.size.width
-        //お口
-        mouth.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - (mouth.size.height * scale * 2.0) / 2.0)
-        mouth.size = CGSize(width: self.frame.size.width, height: mouth.size.height * scale * 2.0)
-        mouth.zPosition = 1.0
-        self.addChild(mouth)
+        addMouthImage()
         
         let ohashiScale = (self.view?.bounds.width)! / ohashi.size.width
         //お箸の初期ポジション
@@ -83,6 +70,15 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
             nattoSprite.append(natto)
         }
     }
+    func addMouthImage() {
+        let mouth = SKSpriteNode(imageNamed: "pakupaku")
+        let scale = (self.view?.bounds.width)! / mouth.size.width
+        //お口
+        mouth.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - (mouth.size.height * scale * 2.0) / 2.0)
+        mouth.size = CGSize(width: self.frame.size.width, height: mouth.size.height * scale * 2.0)
+        mouth.zPosition = 1.0
+        self.addChild(mouth)
+    }
     
     func touchMoved(toPoint pos : CGPoint) {
         ohashi.position = CGPoint(x: pos.x, y: pos.y)
@@ -90,7 +86,6 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -128,10 +123,10 @@ class PullNattoScene: SKScene, AVAudioPlayerDelegate{
         
         for i in 0..<nattoSprite.count {
             if (self.frame.size.height < nattoSprite[i].position.y) {
-                resultScore += 1
+                score += 1
             }
         }
-        let scene = ResultScene(size: self.size, score: resultScore)
+        let scene = ResultScene(size: self.size, score: score)
         scene.scaleMode = SKSceneScaleMode.aspectFill
         self.view!.presentScene(scene)
     }
