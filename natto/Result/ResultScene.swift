@@ -39,7 +39,7 @@ class ResultScene: SKScene{
         let mamekun = SKSpriteNode(imageNamed: "mame01")
         //animation
         mamekun.position = CGPoint(x:self.frame.size.width/2,y: self.frame.size.height/2)
-        mamekun.size = CGSize(width: mamekun.size.width / 2, height: mamekun.size.height / 2 )
+        mamekun.size = CGSize(width: mamekun.size.width, height: mamekun.size.height)
         
         let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"), SKTexture(imageNamed: "mame02"), SKTexture(imageNamed: "mame03")], timePerFrame: 0.2)
         mamekun.run(SKAction.repeatForever(animation))
@@ -48,12 +48,12 @@ class ResultScene: SKScene{
     func addLabel() {
         let scoreLabel = SKLabelNode(fontNamed: "Verdana-bold")
         
-        scoreLabel.text = "SCORE " + String(resultScore)
-        scoreLabel.fontSize = 50
+        scoreLabel.text = "SCORE: " + String(resultScore)
+        scoreLabel.fontSize = 100
         scoreLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.80)
         self.addChild(scoreLabel)
         replayLabel.text = "REPLAY"
-        replayLabel.fontSize = 50
+        replayLabel.fontSize = 100
         replayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20)
         self.addChild(replayLabel)
     }
@@ -74,9 +74,9 @@ class ResultScene: SKScene{
             let touchNode = self.atPoint(location)
             if touchNode == replayLabel{
                 let scene = GameScene(size: self.size)
-                let skView = self.view as SKView!
-                scene.scaleMode = SKSceneScaleMode.aspectFill
-                skView!.presentScene(scene)
+                let skView = self.view as! SKView
+                //scene.scaleMode = SKSceneScaleMode.aspectFill
+                skView.presentScene(scene)
             }
             if (touchNode == twitterButton) {
                     

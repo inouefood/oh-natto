@@ -21,6 +21,7 @@ class ResultModel: ResultModelInput{
         let url = URL(fileURLWithPath: path!)
         do { try  audio = AVAudioPlayer(contentsOf: url) }
         catch{ fatalError() }
+        audio?.numberOfLoops = -1
         audio?.prepareToPlay()
     }
     

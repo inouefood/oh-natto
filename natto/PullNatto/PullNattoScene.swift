@@ -15,14 +15,14 @@ class PullNattoScene: SKScene{
     var score:Int = 0
     var count = 0
     var stickyLevel:Float
-    var nettoCount = 200
+    var nattoCount = 300
     var nattoSprite:[SKSpriteNode] = []
     let ohashi = SKSpriteNode(imageNamed: "pullOhashi")
     var mameflag = false
     var presenter: PullNattoPresenter
     
     init(size: CGSize, sticky: Int) {
-        stickyLevel = Float(sticky) * 0.0001
+        stickyLevel = Float(sticky) * 0.0002
         
         presenter = PullNattoPresenterImpl()
         presenter.loadBgmAudio(resourceName:"natto_bgm_game", resourceType: "wav")
@@ -44,7 +44,7 @@ class PullNattoScene: SKScene{
         self.backgroundColor = SKColor.gray
         
         //ワールドの設定
-        self.physicsWorld.gravity = CGVector(dx: 0.0, dy: 0.0)
+        self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -0.5)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
         addMouthImage()
@@ -57,14 +57,13 @@ class PullNattoScene: SKScene{
         self.addChild(ohashi)
         
         //納豆の初期設定
-        for _ in 0..<nettoCount{
+        for _ in 0..<nattoCount{
             let natto = SKSpriteNode(imageNamed:"mame")
             let X = Int(arc4random_uniform(UInt32(self.frame.size.width)))
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height / 4.0)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * .pi)))
             natto.position = CGPoint(x: X, y: Y)
             natto.physicsBody = SKPhysicsBody(circleOfRadius: 20)
-            natto.physicsBody!.affectedByGravity = false
             natto.zRotation = r
             self.addChild(natto)
             nattoSprite.append(natto)
@@ -89,15 +88,14 @@ class PullNattoScene: SKScene{
     }
     
     override func update(_ currentTime: TimeInterval) {
-        for i in 0..<nettoCount{
-            if (self.frame.size.height * 0.70 < nattoSprite[i].position.y) {
+        for i in 0..<nattoCount{
+            if (self.frame.size.height * 0.80 < nattoSprite[i].position.y) {
                 nattoSprite[i].position.y = self.frame.size.height + 100
                 mameflag = true
                 if(mameflag){
                     if(count > 1){
                         continue
                     }else{
-                        
                         presenter.playEffect()
                     }
                         count+=1
@@ -127,7 +125,6 @@ class PullNattoScene: SKScene{
             }
         }
         let scene = ResultScene(size: self.size, score: score)
-        scene.scaleMode = SKSceneScaleMode.aspectFill
         self.view!.presentScene(scene)
     }
 }
