@@ -15,7 +15,7 @@ class PullNattoScene: SKScene{
     var score:Int = 0
     var count = 0
     var stickyLevel:Float
-    var nettoCount = 200
+    var nattoCount = 300
     var nattoSprite:[SKSpriteNode] = []
     let ohashi = SKSpriteNode(imageNamed: "pullOhashi")
     var mameflag = false
@@ -57,7 +57,7 @@ class PullNattoScene: SKScene{
         self.addChild(ohashi)
         
         //納豆の初期設定
-        for _ in 0..<nettoCount{
+        for _ in 0..<nattoCount{
             let natto = SKSpriteNode(imageNamed:"mame")
             let X = Int(arc4random_uniform(UInt32(self.frame.size.width)))
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height / 4.0)))
@@ -89,15 +89,14 @@ class PullNattoScene: SKScene{
     }
     
     override func update(_ currentTime: TimeInterval) {
-        for i in 0..<nettoCount{
-            if (self.frame.size.height * 0.70 < nattoSprite[i].position.y) {
+        for i in 0..<nattoCount{
+            if (self.frame.size.height * 0.80 < nattoSprite[i].position.y) {
                 nattoSprite[i].position.y = self.frame.size.height + 100
                 mameflag = true
                 if(mameflag){
                     if(count > 1){
                         continue
                     }else{
-                        
                         presenter.playEffect()
                     }
                         count+=1
