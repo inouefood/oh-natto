@@ -118,7 +118,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
         BGM?.stop()
         self.timer?.invalidate()
         let scene = PullNattoScene(size: self.size, sticky: stickyLevel)
-        scene.scaleMode = SKSceneScaleMode.resizeFill
+        //scene.scaleMode = SKSceneScaleMode.resizeFill
         self.view!.presentScene(scene)
 
     }

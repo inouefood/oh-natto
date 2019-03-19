@@ -127,7 +127,7 @@ class PullNattoScene: SKScene{
             }
         }
         let scene = ResultScene(size: self.size, score: score)
-        scene.scaleMode = SKSceneScaleMode.aspectFill
+        //scene.scaleMode = SKSceneScaleMode.aspectFill
         self.view!.presentScene(scene)
     }
 }
