@@ -7,25 +7,24 @@
 //
 import SpriteKit
 import GameplayKit
-import AVFoundation
 
-class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     var timer:Timer?
-    var Stimer:Timer?
 
     var nattoSprite:[SKSpriteNode] = []
-    var nettoCount = 400
+    var nattoCount = 400
     let ohashi = SKSpriteNode(imageNamed: "ohashi")
     var stickyLevel:Int = 0
     var cells = [Int](repeating: 0, count: 108)
-    var BGM:AVAudioPlayer?
-    var BGM2:AVAudioPlayer?
     var count = 0
     let ohashiCategory: UInt32 = 0x1 << 0
     let nattoCategory: UInt32 = 0x1 << 1
+    var presenter: GamePresenter = GamePresenterImpl()
     
-    // test desu
     override func didMove(to view: SKView) {
+        // init
+        presenter.loadEffectAudio1(resourceName: "voice_5", resourceType: "wav")
+        presenter.loadEffectAudio2(resourceName: "voice_5_pitchup", resourceType: "wav")
         //衝突判定のデリゲートをselfにする
         self.physicsWorld.contactDelegate = self
         
@@ -38,7 +37,6 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.backgroundColor = SKColor.gray
         
-        
         //お箸
         ohashi.physicsBody = SKPhysicsBody(circleOfRadius: 50)
         //お箸の初期ポジションを画面外設定
@@ -48,11 +46,11 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
         ohashi.physicsBody?.contactTestBitMask = nattoCategory
         self.addChild(ohashi)
         
-        for i in 0..<nettoCount{
+        for _ in 0..<nattoCount{
             let natto = SKSpriteNode(imageNamed:"mame")
             let X = Int(arc4random_uniform(UInt32(self.frame.size.width)))
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height)))
-            let r = CGFloat(arc4random_uniform(UInt32(2.0 * M_PI)))
+            let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
             natto.position = CGPoint(x: X, y: Y)
             natto.physicsBody = SKPhysicsBody(circleOfRadius: 20)
             natto.physicsBody!.affectedByGravity = false
@@ -66,8 +64,8 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
     }
     
     func touchDown(atPoint pos : CGPoint) {
-        playBGM()
-        playWar()
+        presenter.playEffect1()
+        presenter.playEffect2()
     }
     
     func touchMoved(toPoint pos : CGPoint) {
@@ -78,8 +76,6 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        BGM!.stop()
-        BGM!.currentTime = 0
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -99,7 +95,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        for i in 0..<nettoCount{
+        for i in 0..<nattoCount{
             if(nattoSprite[i].position.x > self.frame.size.width || nattoSprite[i].position.x < 0){
                 let X = self.frame.size.width/2
                 let Y = self.frame.size.height/2
@@ -114,74 +110,13 @@ class GameScene: SKScene, AVAudioPlayerDelegate, SKPhysicsContactDelegate {
     }
     
     @objc func timerCounter(){
-        BGM2?.stop()
-        BGM?.stop()
+        presenter.stopEffect1()
+        presenter.stopEffect2()
+        
         self.timer?.invalidate()
         let scene = PullNattoScene(size: self.size, sticky: stickyLevel)
         //scene.scaleMode = SKSceneScaleMode.resizeFill
         self.view!.presentScene(scene)
-
-    }
-    
-    @objc func timerSound(){
-        playWar()
-    }
-    func playWar(){
-        let BGMpath = Bundle.main.path(forResource: "voice_5_pitchup", ofType:"wav")!
-        let BGMUrl = URL(fileURLWithPath: BGMpath)
-        do {
-            try BGM2 = AVAudioPlayer(contentsOf:BGMUrl)
-            
-            //音楽をバッファに読み込んでおく
-            BGM2!.prepareToPlay()
-        } catch {
-            print(error)
-        }
-        // auido を再生するプレイヤーを作成する
-        var audioError:NSError?
-        do {
-            BGM2 = try AVAudioPlayer(contentsOf: BGMUrl)
-        } catch let error as NSError {
-            audioError = error
-            BGM2 = nil
-        }
-        if let error = audioError {
-            print("Error \(error.localizedDescription)")
-        }
-        BGM2!.delegate = self
-        BGM2!.play()
-        BGM2!.numberOfLoops = -1
-    }
-    
-    func playBGM(){
-        let BGMpath = Bundle.main.path(forResource: "voice_5", ofType:"wav")!
-        let BGMUrl = URL(fileURLWithPath: BGMpath)
-        do {
-            try BGM = AVAudioPlayer(contentsOf:BGMUrl)
-            
-            //音楽をバッファに読み込んでおく
-            BGM!.prepareToPlay()
-        } catch {
-            print(error)
-        }
-        // auido を再生するプレイヤーを作成する
-        var audioError:NSError?
-        do {
-            BGM = try AVAudioPlayer(contentsOf: BGMUrl)
-        } catch let error as NSError {
-            audioError = error
-            BGM = nil
-        }
-        if let error = audioError {
-            print("Error \(error.localizedDescription)")
-        }
-        BGM!.delegate = self
-        BGM!.play()
-        BGM!.numberOfLoops = -1
-    }
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        player.currentTime = 0
     }
     
     //衝突した時に呼ばれる関数
