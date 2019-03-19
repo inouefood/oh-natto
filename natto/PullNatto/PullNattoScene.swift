@@ -64,7 +64,6 @@ class PullNattoScene: SKScene{
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * .pi)))
             natto.position = CGPoint(x: X, y: Y)
             natto.physicsBody = SKPhysicsBody(circleOfRadius: 20)
-//            natto.physicsBody!.affectedByGravity = true
             natto.zRotation = r
             self.addChild(natto)
             nattoSprite.append(natto)
@@ -126,7 +125,6 @@ class PullNattoScene: SKScene{
             }
         }
         let scene = ResultScene(size: self.size, score: score)
-        //scene.scaleMode = SKSceneScaleMode.aspectFill
         self.view!.presentScene(scene)
     }
 }
