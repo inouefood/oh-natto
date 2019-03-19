@@ -22,7 +22,7 @@ class PullNattoScene: SKScene{
     var presenter: PullNattoPresenter
     
     init(size: CGSize, sticky: Int) {
-        stickyLevel = Float(sticky) * 0.0001
+        stickyLevel = Float(sticky) * 0.0002
         
         presenter = PullNattoPresenterImpl()
         presenter.loadBgmAudio(resourceName:"natto_bgm_game", resourceType: "wav")
@@ -44,7 +44,7 @@ class PullNattoScene: SKScene{
         self.backgroundColor = SKColor.gray
         
         //ワールドの設定
-        self.physicsWorld.gravity = CGVector(dx: 0.0, dy: 0.0)
+        self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -0.5)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
         addMouthImage()
@@ -64,7 +64,7 @@ class PullNattoScene: SKScene{
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * .pi)))
             natto.position = CGPoint(x: X, y: Y)
             natto.physicsBody = SKPhysicsBody(circleOfRadius: 20)
-            natto.physicsBody!.affectedByGravity = false
+//            natto.physicsBody!.affectedByGravity = true
             natto.zRotation = r
             self.addChild(natto)
             nattoSprite.append(natto)
