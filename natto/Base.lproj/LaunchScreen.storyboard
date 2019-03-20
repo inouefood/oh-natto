@@ -19,15 +19,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mame-icon" translatesAutoresizingMaskIntoConstraints="NO" id="MHE-gk-g8r">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Lh0-bj-crV"/>
+                                    <constraint firstAttribute="height" constant="200" id="zRZ-7A-TKn"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="井上食品" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9K-bC-jTy">
+                                <rect key="frame" x="16" y="441.5" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MHE-gk-g8r" secondAttribute="trailing" id="8iw-0r-Brs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MHE-gk-g8r" secondAttribute="bottom" id="Ncs-Wg-RTU"/>
-                            <constraint firstItem="MHE-gk-g8r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bCA-Qk-6F0"/>
-                            <constraint firstItem="MHE-gk-g8r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kVB-It-vNh"/>
+                            <constraint firstItem="i9K-bC-jTy" firstAttribute="top" secondItem="MHE-gk-g8r" secondAttribute="bottom" constant="8" id="I83-AZ-63E"/>
+                            <constraint firstItem="MHE-gk-g8r" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="PXG-TK-6Vg"/>
+                            <constraint firstItem="i9K-bC-jTy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="W4m-gg-lol"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i9K-bC-jTy" secondAttribute="trailing" constant="16" id="Wob-1a-cGs"/>
+                            <constraint firstItem="MHE-gk-g8r" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Y1P-kw-zBe"/>
+                            <constraint firstItem="i9K-bC-jTy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cgm-mp-DeF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

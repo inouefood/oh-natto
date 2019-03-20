@@ -16,7 +16,7 @@ class GameScene: SKScene {
             
 
             
-            mame.position = CGPoint(x:CGFloat(Int.random(in: 50...Int(self.frame.width))-50),
+            mame.position = CGPoint(x:CGFloat(Int.random(in: 100...Int(self.frame.width))-100),
                                     y: CGFloat(Int.random(in: Int(self.frame.height)...Int(self.frame.height+100 ))))
             mame.physicsBody = SKPhysicsBody(rectangleOf: mame.size)
             mame.physicsBody?.categoryBitMask = 0x1 << 1
