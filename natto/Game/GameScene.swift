@@ -16,7 +16,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let ohashi = SKSpriteNode(imageNamed: "ohashi")
     var stickyLevel:Int = 0
     var cells = [Int](repeating: 0, count: 108)
-    var count = 0
     let ohashiCategory: UInt32 = 0x1 << 0
     let nattoCategory: UInt32 = 0x1 << 1
     var presenter: GamePresenter = GamePresenterImpl()
@@ -127,19 +126,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyA
             secondBody = contact.bodyB
         } else {
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
         }
         //衝突時の処理
         if firstBody.categoryBitMask & ohashiCategory != 0 && secondBody.categoryBitMask & nattoCategory != 0 {
+            guard (secondBody.node?.position.x != 0.0 && secondBody.node?.position.y != 0.0) else { return }
             let path = CGMutablePath()
             path.move(to: ohashi.position)
             path.addLine(to:(secondBody.node?.position)!)
             path.closeSubpath()
-            count+=1
-            if count < 500{
-            count = 0
-            }
             let curve = SKShapeNode(path: path)
             curve.strokeColor = .white
             curve.lineWidth = 4
