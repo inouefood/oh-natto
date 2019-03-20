@@ -1,16 +1,18 @@
 //
-//  GameScene.swift
+//  MixScene.swift
 //  natto
 //
-//  Created by 佐川　晴海 on 2018/03/09.
-//  Copyright © 2018年 佐川　晴海. All rights reserved.
+//  Created by 佐川晴海 on 2019/03/20.
+//  Copyright © 2019 佐川　晴海. All rights reserved.
 //
+
+import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class MixScene: SKScene, SKPhysicsContactDelegate {
     var timer:Timer?
-
+    
     var nattoSprite:[SKSpriteNode] = []
     var nattoCount = 400
     let ohashi = SKSpriteNode(imageNamed: "ohashi")
@@ -18,7 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var cells = [Int](repeating: 0, count: 108)
     let ohashiCategory: UInt32 = 0x1 << 0
     let nattoCategory: UInt32 = 0x1 << 1
-    var presenter: GamePresenter = GamePresenterImpl()
+    var presenter: MixPresenter = MixPresenterImpl()
     
     override func didMove(to view: SKView) {
         // init
@@ -29,9 +31,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-
+        
         //タイマー
-        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(GameScene.timerCounter), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(MixScene.timerCounter), userInfo: nil, repeats: true)
         //原点の変更
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.backgroundColor = SKColor.gray

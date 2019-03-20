@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GamePresenter {
+protocol MixPresenter {
     func loadEffectAudio1(resourceName: String, resourceType: String)
     func loadEffectAudio2(resourceName: String, resourceType: String)
     func playEffect1()
@@ -17,10 +17,10 @@ protocol GamePresenter {
     func stopEffect2()
 }
 
-class GamePresenterImpl: GamePresenter {
-    private var model: GameModelInput
+class MixPresenterImpl: MixPresenter {
+    private var model: MixModelInput
     init() {
-        model = GameModel()
+        model = MixModel()
     }
     
     func loadEffectAudio1(resourceName: String, resourceType: String) {
