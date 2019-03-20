@@ -14,18 +14,27 @@ class MixScene: SKScene, SKPhysicsContactDelegate {
     var timer:Timer?
     
     var nattoSprite:[SKSpriteNode] = []
-    var nattoCount = 400
+    var nattoCount = 500
     let ohashi = SKSpriteNode(imageNamed: "ohashi")
     var stickyLevel:Int = 0
     var cells = [Int](repeating: 0, count: 108)
     let ohashiCategory: UInt32 = 0x1 << 0
     let nattoCategory: UInt32 = 0x1 << 1
-    var presenter: MixPresenter = MixPresenterImpl()
+    var presenter: MixPresenter
     
-    override func didMove(to view: SKView) {
-        // init
+    override init(size: CGSize) {
+        presenter = MixPresenterImpl()
         presenter.loadEffectAudio1(resourceName: "voice_5", resourceType: "wav")
         presenter.loadEffectAudio2(resourceName: "voice_5_pitchup", resourceType: "wav")
+        
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func didMove(to view: SKView) {
         //衝突判定のデリゲートをselfにする
         self.physicsWorld.contactDelegate = self
         
