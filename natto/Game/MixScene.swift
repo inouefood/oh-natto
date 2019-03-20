@@ -1,37 +1,48 @@
 //
-//  GameScene.swift
+//  MixScene.swift
 //  natto
 //
-//  Created by 佐川　晴海 on 2018/03/09.
-//  Copyright © 2018年 佐川　晴海. All rights reserved.
+//  Created by 佐川晴海 on 2019/03/20.
+//  Copyright © 2019 佐川　晴海. All rights reserved.
 //
+
+import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class MixScene: SKScene, SKPhysicsContactDelegate {
     var timer:Timer?
-
+    
     var nattoSprite:[SKSpriteNode] = []
-    var nattoCount = 400
+    var nattoCount = 500
     let ohashi = SKSpriteNode(imageNamed: "ohashi")
     var stickyLevel:Int = 0
     var cells = [Int](repeating: 0, count: 108)
     let ohashiCategory: UInt32 = 0x1 << 0
     let nattoCategory: UInt32 = 0x1 << 1
-    var presenter: GamePresenter = GamePresenterImpl()
+    var presenter: MixPresenter
     
-    override func didMove(to view: SKView) {
-        // init
+    override init(size: CGSize) {
+        presenter = MixPresenterImpl()
         presenter.loadEffectAudio1(resourceName: "voice_5", resourceType: "wav")
         presenter.loadEffectAudio2(resourceName: "voice_5_pitchup", resourceType: "wav")
+        
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func didMove(to view: SKView) {
         //衝突判定のデリゲートをselfにする
         self.physicsWorld.contactDelegate = self
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-
+        
         //タイマー
-        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(GameScene.timerCounter), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(MixScene.timerCounter), userInfo: nil, repeats: true)
         //原点の変更
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.backgroundColor = SKColor.gray

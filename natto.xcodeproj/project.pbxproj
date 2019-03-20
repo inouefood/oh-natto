@@ -11,6 +11,7 @@
 		0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CF7223E6D98007105D8 /* ResultModel.swift */; };
 		0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */; };
 		0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CFE223E7708007105D8 /* PullNattoModel.swift */; };
+		0DF70D3C22426268007105D8 /* MixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70D3B22426268007105D8 /* MixScene.swift */; };
 		4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA320537F20002CA3BC /* natto_bgm_game.wav */; };
 		4343CEA62053804C002CA3BC /* voice_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA52053804C002CA3BC /* voice_5.wav */; };
 		4343CEA9205381DE002CA3BC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4343CEA8205381DE002CA3BC /* Social.framework */; };
@@ -27,7 +28,7 @@
 		43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F292052723B00FE1117 /* Main.storyboard */; };
 		43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2C2052723B00FE1117 /* Assets.xcassets */; };
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
-		F31970AF223FF9C50045A391 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* GamePresenter.swift */; };
+		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* GameModel.swift */; };
 		F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3C462D7205399CC005725C3 /* voice_5_pitchup.wav */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		0DF70CF7223E6D98007105D8 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoPresenter.swift; sourceTree = "<group>"; };
 		0DF70CFE223E7708007105D8 /* PullNattoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoModel.swift; sourceTree = "<group>"; };
+		0DF70D3B22426268007105D8 /* MixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixScene.swift; sourceTree = "<group>"; };
 		4343CEA320537F20002CA3BC /* natto_bgm_game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = natto_bgm_game.wav; sourceTree = "<group>"; };
 		4343CEA52053804C002CA3BC /* voice_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_5.wav; sourceTree = "<group>"; };
 		4343CEA8205381DE002CA3BC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -55,7 +57,7 @@
 		43D95F2C2052723B00FE1117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D95F2F2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43D95F312052723B00FE1117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F31970AE223FF9C50045A391 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
+		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		F3C462D7205399CC005725C3 /* voice_5_pitchup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_5_pitchup.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 				0DF70CF1223E64BA007105D8 /* sound */,
 				43D95F1F2052723B00FE1117 /* AppDelegate.swift */,
 				43D95F272052723B00FE1117 /* GameViewController.swift */,
+				43D95F252052723B00FE1117 /* GameScene.swift */,
 				F31970AD223FF9100045A391 /* Game */,
 				0DF70CFD223E76AF007105D8 /* PullNatto */,
 				0DF70CF2223E68AD007105D8 /* Result */,
@@ -152,8 +155,8 @@
 		F31970AD223FF9100045A391 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				43D95F252052723B00FE1117 /* GameScene.swift */,
-				F31970AE223FF9C50045A391 /* GamePresenter.swift */,
+				0DF70D3B22426268007105D8 /* MixScene.swift */,
+				F31970AE223FF9C50045A391 /* MixPresenter.swift */,
 				F31970B0223FFA2A0045A391 /* GameModel.swift */,
 			);
 			path = Game;
@@ -186,11 +189,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "佐川　晴海";
 				TargetAttributes = {
 					43D95F1B2052723B00FE1117 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -247,7 +251,8 @@
 				43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */,
 				0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */,
 				0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */,
-				F31970AF223FF9C50045A391 /* GamePresenter.swift in Sources */,
+				F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */,
+				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
 				0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */,
 				F31970B1223FFA2A0045A391 /* GameModel.swift in Sources */,
 			);
@@ -289,6 +294,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -296,6 +302,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -346,6 +353,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -353,6 +361,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -393,7 +402,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.inoue.natto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -409,7 +418,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.inoue.natto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

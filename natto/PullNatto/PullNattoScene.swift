@@ -15,7 +15,7 @@ class PullNattoScene: SKScene{
     var score:Int = 0
     var count = 0
     var stickyLevel:Float
-    var nattoCount = 300
+    var nattoCount = 500
     var nattoSprite:[SKSpriteNode] = []
     let ohashi = SKSpriteNode(imageNamed: "pullOhashi")
     var mameflag = false
@@ -38,7 +38,7 @@ class PullNattoScene: SKScene{
         //音楽の再生
         presenter.playBgm()
         //タイマー
-        self.timer = Timer.scheduledTimer(timeInterval: 25, target: self, selector: #selector(GameScene.timerCounter), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 25, target: self, selector: #selector(MixScene.timerCounter), userInfo: nil, repeats: true)
         //原点の変更
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.backgroundColor = SKColor.gray
