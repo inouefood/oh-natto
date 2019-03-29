@@ -13,15 +13,17 @@ class GameScene: SKScene {
     let tutorialButton = UIButton()
     let scrollView = UIScrollView()
     let closeButton = UIButton()
+    let tutorialTitleLabel = UILabel()
+    let descriptionLabel1 = UILabel()
+    let descriptionLabel2 = UILabel()
+    let descriptionLabel3 = UILabel()
+    let descriptionImage1 = UIImageView()
+    let descriptionImage2 = UIImageView()
+    let descriptionImage3 = UIImageView()
     
     var startLabel = SKLabelNode(fontNamed: "Verdana-bold")
     override func didMove(to view: SKView) {
-        
-        
-
-        
-        
-
+    
         tutorialButton.backgroundColor = .red
         tutorialButton.frame.size = CGSize(width: 80, height: 80)
         tutorialButton.layer.position = CGPoint(x: (self.view?.frame.width)! - tutorialButton.frame.width * 1.1, y: 100)
@@ -61,7 +63,6 @@ class GameScene: SKScene {
         print("tap")
         scrollView.frame = CGRect(x: 25, y: 50, width: (self.view?.frame.width)! - 50, height: (self.view?.frame.height)! - 100)
         scrollView.backgroundColor = .gray
-        scrollView.contentSize = CGSize(width: (self.view?.frame.width)! - 100, height: 3000)
         self.view?.addSubview(scrollView)
         
         closeButton.frame.size = CGSize(width: (self.view?.frame.width)!/9, height:  (self.view?.frame.width)!/9)
@@ -71,8 +72,51 @@ class GameScene: SKScene {
         closeButton.layer.cornerRadius = closeButton.frame.width/2
         closeButton.setTitle("X", for: .normal)
         closeButton.titleLabel!.font = UIFont.systemFont(ofSize: 40)
+
         closeButton.addTarget(self, action: #selector(closeTutorial(_:)), for: .touchDown)
         self.view!.addSubview(closeButton)
+        
+        let underLineAttr = [NSAttributedString.Key.underlineStyle.rawValue: NSUnderlineStyle.single.rawValue,
+                             NSAttributedString.Key.underlineColor: UIColor.white] as! [NSAttributedString.Key : Any]
+
+        tutorialTitleLabel.attributedText = NSAttributedString(string: "あそびかた", attributes: underLineAttr)
+        tutorialTitleLabel.font = UIFont.systemFont(ofSize: scrollView.frame.width/10)
+        tutorialTitleLabel.textAlignment = NSTextAlignment.center
+        tutorialTitleLabel.frame = CGRect(x:16, y:30, width:scrollView.frame.width - 32, height: 50)
+        scrollView.addSubview(tutorialTitleLabel)
+        
+        descriptionLabel1.text = "①納豆をできるだけたくさん混ぜてねばり気を出します。混ぜた量によって次の画面での納豆の吸着率が変化します"
+        descriptionLabel1.frame = CGRect(x: 16, y: 50 + tutorialTitleLabel.frame.height, width:scrollView.frame.width - 32, height: scrollView.frame.width/15 * CGFloat((descriptionLabel1.text?.count)! / 12 + 1 ))
+        descriptionLabel1.numberOfLines = 0
+        descriptionLabel1.font = UIFont.systemFont(ofSize: scrollView.frame.width/15)
+        scrollView.addSubview(descriptionLabel1)
+        descriptionImage1.frame = CGRect(x: 8, y: 50 + tutorialTitleLabel.frame.height + descriptionLabel1.frame.height,width: scrollView.frame.width - 16, height: scrollView.frame.width - 16)
+        descriptionImage1.contentMode = UIView.ContentMode.scaleToFill
+        descriptionImage1.image = UIImage(named: "description1")
+        scrollView.addSubview(descriptionImage1)
+    
+        descriptionLabel2.text = "②時間内に納豆を持ち上げてできるだけたくさん食べます"
+        descriptionLabel2.frame = CGRect(x: 16, y: 50 + tutorialTitleLabel.frame.height + descriptionLabel1.frame.height + descriptionImage1.frame.height , width: scrollView.frame.width - 32, height: scrollView.frame.width/15 * CGFloat((descriptionLabel2.text?.count)! / 12 + 1 ))
+        descriptionLabel2.numberOfLines = 0
+        descriptionLabel2.font = UIFont.systemFont(ofSize: scrollView.frame.width/15)
+        scrollView.addSubview(descriptionLabel2)
+        descriptionImage2.frame = CGRect(x: 8, y: 50 + tutorialTitleLabel.frame.height + descriptionLabel1.frame.height + descriptionImage1.frame.height + descriptionLabel2.frame.height , width: scrollView.frame.width - 16, height: scrollView.frame.width - 16)
+        descriptionImage2.contentMode = UIView.ContentMode.scaleToFill
+        descriptionImage2.image = UIImage(named: "description2")
+        scrollView.addSubview(descriptionImage2)
+        
+        
+        descriptionLabel3.text = "③食べた納豆の数でスコアが決まります!良い結果が出たらSNSに投稿しよう！"
+        descriptionLabel3.frame = CGRect(x: 16, y: 50 + tutorialTitleLabel.frame.height + descriptionLabel1.frame.height + descriptionImage1.frame.height + descriptionLabel2.frame.height + descriptionImage2.frame.height, width: scrollView.frame.width - 32, height: scrollView.frame.width/15 * CGFloat((descriptionLabel3.text?.count)! / 12 + 1 ))
+        descriptionLabel3.numberOfLines = 0
+        descriptionLabel3.font = UIFont.systemFont(ofSize: scrollView.frame.width/15)
+        scrollView.addSubview(descriptionLabel3)
+        
+        descriptionImage3.frame = CGRect(x: 8, y: 50 + tutorialTitleLabel.frame.height + descriptionLabel1.frame.height + descriptionImage1.frame.height + descriptionLabel2.frame.height + descriptionImage2.frame.height + descriptionLabel3.frame.height, width: scrollView.frame.width - 16, height: scrollView.frame.width * 2 - 16)
+        descriptionImage3.image = UIImage(named: "description3")
+        descriptionImage3.contentMode = UIView.ContentMode.scaleToFill
+        scrollView.addSubview(descriptionImage3)
+        scrollView.contentSize = CGSize(width: (self.view?.frame.width)! - 100, height: 50 + tutorialTitleLabel.frame.height + descriptionLabel1.frame.height + descriptionImage1.frame.height + descriptionLabel2.frame.height + descriptionImage2.frame.height + descriptionLabel3.frame.height + descriptionImage3.frame.height + 100)
     }
     @objc func closeTutorial(_ sender: UIButton){
         closeButton.removeFromSuperview()
