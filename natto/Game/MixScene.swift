@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class MixScene: SKScene, SKPhysicsContactDelegate {
+class MixScene: SKScene{
     var timer:Timer?
     
     var nattoSprite:[SKSpriteNode] = []
@@ -73,35 +73,15 @@ class MixScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func touchDown(atPoint pos : CGPoint) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         presenter.playEffect1()
         presenter.playEffect2()
     }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        print(pos)
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let pos = touches.first!.location(in: self)
         let px = pos.x
         let py = pos.y - 50
         ohashi.position = CGPoint(x: px, y: py)
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -125,10 +105,11 @@ class MixScene: SKScene, SKPhysicsContactDelegate {
         
         self.timer?.invalidate()
         let scene = PullNattoScene(size: self.size, sticky: stickyLevel)
-        //scene.scaleMode = SKSceneScaleMode.resizeFill
         self.view!.presentScene(scene)
     }
-    
+}
+
+extension MixScene: SKPhysicsContactDelegate {
     //衝突した時に呼ばれる関数
     func didBegin(_ contact: SKPhysicsContact) {
         var firstBody, secondBody: SKPhysicsBody
@@ -143,20 +124,22 @@ class MixScene: SKScene, SKPhysicsContactDelegate {
         //衝突時の処理
         if firstBody.categoryBitMask & ohashiCategory != 0 && secondBody.categoryBitMask & nattoCategory != 0 {
             guard (secondBody.node?.position.x != 0.0 && secondBody.node?.position.y != 0.0) else { return }
-            let path = CGMutablePath()
-            path.move(to: ohashi.position)
-            path.addLine(to:(secondBody.node?.position)!)
-            path.closeSubpath()
-            let curve = SKShapeNode(path: path)
-            curve.strokeColor = .white
-            curve.lineWidth = 4
-            curve.alpha = 0.2
-            curve.zPosition = 1.0
-            curve.name = "curve"
-            curve.isUserInteractionEnabled = false
-            self.addChild(curve)
+            addStickyLine(pos: secondBody.node!.position)
             stickyLevel += 1
         }
     }
+    func addStickyLine(pos: CGPoint){
+        let path = CGMutablePath()
+        path.move(to: ohashi.position)
+        path.addLine(to: pos)
+        path.closeSubpath()
+        let curve = SKShapeNode(path: path)
+        curve.strokeColor = .white
+        curve.lineWidth = 4
+        curve.alpha = 0.2
+        curve.zPosition = 1.0
+        curve.name = "curve"
+        curve.isUserInteractionEnabled = false
+        self.addChild(curve)
+    }
 }
-
