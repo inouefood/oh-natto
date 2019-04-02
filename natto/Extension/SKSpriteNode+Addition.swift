@@ -16,6 +16,5 @@ extension SKSpriteNode {
         self.physicsBody = body
         self.physicsBody?.categoryBitMask = category
         self.physicsBody?.contactTestBitMask = contact
-        self.color = .yellow
     }
 }
