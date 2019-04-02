@@ -9,16 +9,18 @@ import SpriteKit
 import Social
 class ResultScene: SKScene{
     let resultScore:Int
-    let replayLabel = SKLabelNode(fontNamed: "Verdana-bold")
+    let replayLabel:SKLabelNode
     var twitterButton = SKSpriteNode(imageNamed: "twitter_img")
     var facebookButton = SKSpriteNode(imageNamed: "facebook")
     
     var presenter: ResultPresenter?
     
     init(size:CGSize, score: Int) {
+        replayLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY")
         self.resultScore = score
         presenter = ResultPresenterImpl()
         super.init(size: size)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,14 +48,9 @@ class ResultScene: SKScene{
         self.addChild(mamekun)
     }
     func addLabel() {
-        let scoreLabel = SKLabelNode(fontNamed: "Verdana-bold")
-        
-        scoreLabel.text = "SCORE: " + String(resultScore)
-        scoreLabel.fontSize = 100
+        let scoreLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore))
         scoreLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.80)
         self.addChild(scoreLabel)
-        replayLabel.text = "REPLAY"
-        replayLabel.fontSize = 100
         replayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20)
         self.addChild(replayLabel)
     }
@@ -75,7 +72,6 @@ class ResultScene: SKScene{
             if touchNode == replayLabel{
                 let scene = GameScene(size: self.size)
                 let skView = self.view as! SKView
-                //scene.scaleMode = SKSceneScaleMode.aspectFill
                 skView.presentScene(scene)
             }
             if (touchNode == twitterButton) {
