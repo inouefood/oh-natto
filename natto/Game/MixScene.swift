@@ -6,7 +6,6 @@
 //  Copyright © 2019 佐川　晴海. All rights reserved.
 //
 
-import UIKit
 import SpriteKit
 import GameplayKit
 
@@ -57,17 +56,22 @@ class MixScene: SKScene{
         self.addChild(ohashi)
         
         for _ in 0..<nattoCount{
-            let natto = SKSpriteNode(imageNamed:"mame")
+//            let natto = SKSpriteNode(imageNamed:"mame")
             let X = Int(arc4random_uniform(UInt32(self.frame.size.width)))
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
-            natto.position = CGPoint(x: X, y: Y)
-            natto.physicsBody = SKPhysicsBody(circleOfRadius: 20)
+//            natto.position = CGPoint(x: X, y: Y)
+//            natto.physicsBody = SKPhysicsBody(circleOfRadius: 20)
+//            natto.physicsBody!.affectedByGravity = false
+//            natto.zRotation = r
+//            natto.name = "natto"
+//            natto.physicsBody?.categoryBitMask = nattoCategory
+//            natto.physicsBody?.contactTestBitMask = ohashiCategory
+            
+            
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: SKPhysicsBody(circleOfRadius: 20), category: nattoCategory, contact: ohashiCategory)
             natto.physicsBody!.affectedByGravity = false
-            natto.zRotation = r
-            natto.name = "natto"
-            natto.physicsBody?.categoryBitMask = nattoCategory
-            natto.physicsBody?.contactTestBitMask = ohashiCategory
+             natto.zRotation = r
             self.addChild(natto)
             nattoSprite.append(natto)
         }
