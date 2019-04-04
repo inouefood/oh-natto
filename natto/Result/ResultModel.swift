@@ -8,6 +8,7 @@
 
 import Foundation
 import AVFoundation
+import Social
 
 protocol ResultModelInput {
     func loadAudio(resourceName:String, resourceType: String)

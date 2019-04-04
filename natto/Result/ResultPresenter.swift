@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import Social
 
 protocol ResultPresenter {
     func loadAudio(resourceName: String, resourceType: String)
     func playAudio()
+    func showTweetDialog(text: String) -> SLComposeViewController
 }
 class ResultPresenterImpl: ResultPresenter {
     
@@ -25,5 +27,10 @@ class ResultPresenterImpl: ResultPresenter {
     
     func playAudio() {
         model.playAudio()
+    }
+    func showTweetDialog(text: String) -> SLComposeViewController{
+        let twitterCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+        twitterCmp.setInitialText(text)
+        return twitterCmp
     }
 }

@@ -21,7 +21,7 @@ class ResultScene: SKScene{
         self.resultScore = score
         presenter = ResultPresenterImpl()
         super.init(size: size)
-        
+        replayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,7 +52,7 @@ class ResultScene: SKScene{
         let scoreLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore))
         scoreLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.80)
         self.addChild(scoreLabel)
-        replayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20)
+//        replayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20)
         self.addChild(replayLabel)
     }
     func addButton() {
@@ -84,35 +84,16 @@ class ResultScene: SKScene{
             let message: String = "SCORE : " + String(resultScore) + "\n\n納豆食べてパーフェクトボディ！\nhttps://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
             
             if (touchNode == twitterButton) {
-                let twitterCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-                twitterCmp.setInitialText(message)
-                
-                 let currentViewController : UIViewController? = UIApplication.shared.keyWindow?.rootViewController!
-                currentViewController?.present(twitterCmp, animated: true, completion: nil)
+                SLComposeViewController().showTwitterDialog(message: message, vc:(UIApplication.shared.keyWindow?.rootViewController!)!)
             }
             if (touchNode == facebookButton) {
-                
-                let facebookCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-                facebookCmp.setInitialText(message)
-                
-                let currentViewController : UIViewController? = UIApplication.shared.keyWindow?.rootViewController!
-                currentViewController?.present(facebookCmp, animated: true, completion: nil)
+                SLComposeViewController().showFacebookDialog(message: message, vc:(UIApplication.shared.keyWindow?.rootViewController!)!)
             }
             if (touchNode == lineButton) {
                 let urlscheme: String = "line://msg/text"
                 let urlstring = urlscheme + "/" + message
                 
-                guard let  encodedURL = urlstring.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
-                    return
-                }
-                
-                guard let url = URL(string: encodedURL) else {
-                    return
-                }
-                
-                if UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
+                SLComposeViewController().showLineDialog(message: urlstring, vc: (UIApplication.shared.keyWindow?.rootViewController!)!)
             }
         }
     }
