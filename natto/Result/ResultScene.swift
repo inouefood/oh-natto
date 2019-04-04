@@ -12,7 +12,8 @@ class ResultScene: SKScene{
     let replayLabel = SKLabelNode(fontNamed: "Verdana-bold")
     var twitterButton = SKSpriteNode(imageNamed: "twitter_img")
     var facebookButton = SKSpriteNode(imageNamed: "facebook")
-    
+    var lineButton = SKSpriteNode(imageNamed: "LINE_APP")
+
     var presenter: ResultPresenter?
     
     init(size:CGSize, score: Int) {
@@ -58,15 +59,20 @@ class ResultScene: SKScene{
         self.addChild(replayLabel)
     }
     func addButton() {
-        twitterButton.position = CGPoint(x: self.frame.maxX * 0.4, y: self.frame.maxY * 0.1)
+        twitterButton.position = CGPoint(x: self.frame.maxX * 0.3, y: self.frame.maxY * 0.1)
         twitterButton.zPosition = 1.5
         twitterButton.size = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
         self.addChild(twitterButton)
 
-        facebookButton.position = CGPoint(x: self.frame.maxX * 0.6, y: self.frame.maxY * 0.1)
+        facebookButton.position = CGPoint(x: self.frame.maxX * 0.5, y: self.frame.maxY * 0.1)
         facebookButton.zPosition = 1.5
         facebookButton.size = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
         self.addChild(facebookButton)
+        
+        lineButton.position = CGPoint(x: self.frame.maxX * 0.7, y: self.frame.maxY * 0.1)
+        lineButton.zPosition = 1.5
+        lineButton.size = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
+        self.addChild(lineButton)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touches:AnyObject in touches{
@@ -75,25 +81,41 @@ class ResultScene: SKScene{
             if touchNode == replayLabel{
                 let scene = GameScene(size: self.size)
                 let skView = self.view as! SKView
-                //scene.scaleMode = SKSceneScaleMode.aspectFill
                 skView.presentScene(scene)
             }
+            
+            let message: String = "SCORE : " + String(resultScore) + "\n\n納豆食べてパーフェクトボディ！\nhttps://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
+            
             if (touchNode == twitterButton) {
-                    
                 let twitterCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-                    
-                twitterCmp.setInitialText("納豆食べてパーフェクトボディ！")
+                twitterCmp.setInitialText(message)
+                
                  let currentViewController : UIViewController? = UIApplication.shared.keyWindow?.rootViewController!
-                    
                 currentViewController?.present(twitterCmp, animated: true, completion: nil)
             }
             if (touchNode == facebookButton) {
                 
                 let facebookCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                facebookCmp.setInitialText(message)
                 
                 let currentViewController : UIViewController? = UIApplication.shared.keyWindow?.rootViewController!
-                
                 currentViewController?.present(facebookCmp, animated: true, completion: nil)
+            }
+            if (touchNode == lineButton) {
+                let urlscheme: String = "line://msg/text"
+                let urlstring = urlscheme + "/" + message
+                
+                guard let  encodedURL = urlstring.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                    return
+                }
+                
+                guard let url = URL(string: encodedURL) else {
+                    return
+                }
+                
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
             }
         }
     }
