@@ -9,12 +9,20 @@
 import SpriteKit
 
 extension SKSpriteNode {
-    convenience init(image: String, pos: CGPoint, body: SKPhysicsBody, category: UInt32, contact: UInt32) {
-        self.init()
-        self.texture = SKTexture(imageNamed: image)
+    // initializer for MixScene
+    convenience init(image: String, pos: CGPoint, body: SKPhysicsBody, category: UInt32, contact: UInt32, isGravity: Bool) {
+        self.init(imageNamed: image)
         self.position = pos
         self.physicsBody = body
         self.physicsBody?.categoryBitMask = category
         self.physicsBody?.contactTestBitMask = contact
+        self.physicsBody!.affectedByGravity = isGravity
+    }
+    // initializer for PullNattoScene
+    convenience init(image: String, pos: CGPoint, body: SKPhysicsBody, isGravity: Bool) {
+        self.init(imageNamed: image)
+        self.position = pos
+        self.physicsBody = body
+        self.physicsBody!.affectedByGravity = isGravity
     }
 }

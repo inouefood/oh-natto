@@ -14,7 +14,7 @@ class MixScene: SKScene{
     
     var nattoSprite:[SKSpriteNode] = []
     var nattoCount = 500
-    let ohashi = SKSpriteNode(imageNamed: "ohashi")
+    var ohashi = SKSpriteNode()
     var stickyLevel:Int = 0
     var cells = [Int](repeating: 0, count: 108)
     let ohashiCategory: UInt32 = 0x1 << 0
@@ -47,33 +47,16 @@ class MixScene: SKScene{
         self.backgroundColor = SKColor.gray
         
         //お箸
-        ohashi.physicsBody = SKPhysicsBody(circleOfRadius: 50)
-        //お箸の初期ポジションを画面外設定
-        ohashi.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-        ohashi.name = "ohashi"
-        ohashi.physicsBody?.categoryBitMask = ohashiCategory
-        ohashi.physicsBody?.contactTestBitMask = nattoCategory
+        ohashi = SKSpriteNode(image: "ohashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), body: SKPhysicsBody(circleOfRadius: 50), category: ohashiCategory, contact: nattoCategory, isGravity: false)
         self.addChild(ohashi)
         
         for _ in 0..<nattoCount{
-            let natto = SKSpriteNode(imageNamed:"mame")
             let X = Int(arc4random_uniform(UInt32(self.frame.size.width)))
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
-            natto.position = CGPoint(x: X, y: Y)
-            natto.physicsBody = SKPhysicsBody(circleOfRadius: 20)
-            natto.physicsBody!.affectedByGravity = false
-            natto.zRotation = r
-            natto.name = "natto"
-            natto.physicsBody?.categoryBitMask = nattoCategory
-            natto.physicsBody?.contactTestBitMask = ohashiCategory
             
-            //TODO 自作のInitializerで初期化
-//            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: SKPhysicsBody(circleOfRadius: 20), category: nattoCategory, contact: ohashiCategory)
-            
-            
-            natto.physicsBody!.affectedByGravity = false
-             natto.zRotation = r
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: SKPhysicsBody(circleOfRadius: 20), category: nattoCategory, contact: ohashiCategory, isGravity: false)
+            natto.zRotation = r;
             self.addChild(natto)
             nattoSprite.append(natto)
         }
@@ -83,6 +66,7 @@ class MixScene: SKScene{
         presenter.playEffect1()
         presenter.playEffect2()
     }
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let pos = touches.first!.location(in: self)
         let px = pos.x
