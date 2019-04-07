@@ -19,14 +19,21 @@ class PullNattoScene: SKScene{
     var nattoSprite:[SKSpriteNode] = []
     let ohashi = SKSpriteNode(imageNamed: "pullOhashi")
     var mameflag = false
-    var presenter: PullNattoPresenter
+    fileprivate lazy var presenter: PullNattoPresenter! = {
+        let presenter = PullNattoPresenterImpl(output: self, model: PullNattoModel())
+        presenter.loadBgmAudio(resourceName:"natto_bgm_game", resourceType: "wav")
+        presenter.loadEffectAudio(resourceName: "paku", resourceType: "wav")
+        return presenter
+    }()
+    
+    var targetNatto: SKSpriteNode!
     
     init(size: CGSize, sticky: Int) {
         stickyLevel = Float(sticky) * 0.0002
         
-        presenter = PullNattoPresenterImpl()
-        presenter.loadBgmAudio(resourceName:"natto_bgm_game", resourceType: "wav")
-        presenter.loadEffectAudio(resourceName: "paku", resourceType: "wav")
+//        presenter = PullNattoPresenterImpl(output: self, model: PullNattoModel())
+//        presenter.loadBgmAudio(resourceName:"natto_bgm_game", resourceType: "wav")
+//        presenter.loadEffectAudio(resourceName: "paku", resourceType: "wav")
 
         super.init(size: size)
     }
@@ -86,6 +93,17 @@ class PullNattoScene: SKScene{
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
     }
+    @objc func timerCounter(){
+        self.timer?.invalidate()
+        
+        for i in 0..<nattoSprite.count {
+            if (self.frame.size.height < nattoSprite[i].position.y) {
+                score += 1
+            }
+        }
+        let scene = ResultScene(size: self.size, score: score)
+        self.view!.presentScene(scene)
+    }
     
     override func update(_ currentTime: TimeInterval) {
         for i in 0..<nattoCount{
@@ -102,29 +120,28 @@ class PullNattoScene: SKScene{
                 }
             }
             
+            targetNatto = nattoSprite[i]
+            
             //お箸とお豆の距離計算
-            let sentanx:Float = Float(ohashi.position.x + ohashi.size.width / 2.0)
-            let sentany:Float = Float(ohashi.position.y - ohashi.size.height / 2.0)
-            let dvx:Float = sentanx - Float(nattoSprite[i].position.x)
-            let dvy:Float = sentany - Float(nattoSprite[i].position.y)
-            let dist:Float = sqrtf(dvx * dvx + dvy * dvy)
-            //お箸に近づいたときの処理
-            if (dist < 100) {
-                nattoSprite[i].position.x += CGFloat(dvx * Float(stickyLevel))
-                nattoSprite[i].position.y += CGFloat(dvy * Float(stickyLevel))
-            }
+//            let sentanx:Float = Float(ohashi.position.x + ohashi.size.width / 2.0)
+//            let sentany:Float = Float(ohashi.position.y - ohashi.size.height / 2.0)
+//            let dvx:Float = sentanx - Float(nattoSprite[i].position.x)
+//            let dvy:Float = sentany - Float(nattoSprite[i].position.y)
+//            let dist:Float = sqrtf(dvx * dvx + dvy * dvy)
+            
+            presenter.updateNattoPosition(ohashiX: Float(ohashi.position.x), ohashiY: Float(ohashi.position.y),
+                                          ohashiWidth: Float(ohashi.size.width), ohashiHeight: Float(ohashi.size.height),
+                                          nattoX: Float(targetNatto.position.x), nattoY: Float(targetNatto.position.y),
+                                          sticky: stickyLevel)
+            
+            let dist:Float = presenter.ohashiToNattoDistance(ohashiPos: ohashi.position, ohashiSize: ohashi.size, nattoPos: nattoSprite[i].position, sticky: stickyLevel)
         }
     }
-    
-    @objc func timerCounter(){
-        self.timer?.invalidate()
-        
-        for i in 0..<nattoSprite.count {
-            if (self.frame.size.height < nattoSprite[i].position.y) {
-                score += 1
-            }
-        }
-        let scene = ResultScene(size: self.size, score: score)
-        self.view!.presentScene(scene)
+}
+
+extension PullNattoScene: PullNattoPresenterOutput {
+    func showNattoPos(x: Float, y: Float) {
+        targetNatto.position.x += CGFloat(x)
+        targetNatto.position.y += CGFloat(y)
     }
 }
