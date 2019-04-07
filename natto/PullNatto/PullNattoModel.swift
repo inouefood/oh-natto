@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import UIKit
 
 protocol PullNattoModelInput {
     func loadBgmAudio(resourceName: String, resourceType: String)

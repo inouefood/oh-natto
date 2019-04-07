@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SpriteKit
 
 protocol PullNattoPresenter {
     init(output: PullNattoPresenterOutput, model: PullNattoModelInput)
