@@ -61,8 +61,8 @@ class PullNattoScene: SKScene{
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height / 4.0)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * .pi)))
             
-            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: SKPhysicsBody(circleOfRadius: 20), isGravity: true)
-            natto.zRotation = r;
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: 20, isGravity: true)
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: nattoBody, rotate: r)
             self.addChild(natto)
             nattoSprite.append(natto)
         }

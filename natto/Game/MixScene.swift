@@ -47,16 +47,18 @@ class MixScene: SKScene{
         self.backgroundColor = SKColor.gray
         
         //お箸
-        ohashi = SKSpriteNode(image: "ohashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), body: SKPhysicsBody(circleOfRadius: 50), category: ohashiCategory, contact: nattoCategory, isGravity: false)
+        let ohashiBody = SKPhysicsBody().make(circleOfRadius: 50, category: ohashiCategory, contact: nattoCategory, isGravity: false)
+        ohashi = SKSpriteNode(image: "ohashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), body: ohashiBody)
         self.addChild(ohashi)
         
+        //納豆
         for _ in 0..<nattoCount{
             let X = Int(arc4random_uniform(UInt32(self.frame.size.width)))
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
             
-            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: SKPhysicsBody(circleOfRadius: 20), category: nattoCategory, contact: ohashiCategory, isGravity: false)
-            natto.zRotation = r;
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: 20, category: nattoCategory, contact: ohashiCategory, isGravity: false)
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: nattoBody, rotate: r)
             self.addChild(natto)
             nattoSprite.append(natto)
         }

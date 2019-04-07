@@ -9,21 +9,18 @@
 import SpriteKit
 
 extension SKSpriteNode {
-    // initializer for MixScene/mame, ohashi
-    convenience init(image: String, pos: CGPoint, body: SKPhysicsBody, category: UInt32, contact: UInt32, isGravity: Bool) {
+    // initializer for MixScene/ohashi
+    convenience init(image: String, pos: CGPoint, body: SKPhysicsBody) {
         self.init(imageNamed: image)
         self.position = pos
         self.physicsBody = body
-        self.physicsBody?.categoryBitMask = category
-        self.physicsBody?.contactTestBitMask = contact
-        self.physicsBody!.affectedByGravity = isGravity
     }
-    // initializer for PullNattoScene/mame
-    convenience init(image: String, pos: CGPoint, body: SKPhysicsBody, isGravity: Bool) {
+    // initializer for MixScene&PullNattoScene/mame
+    convenience init(image: String, pos: CGPoint, body: SKPhysicsBody, rotate: CGFloat) {
         self.init(imageNamed: image)
         self.position = pos
         self.physicsBody = body
-        self.physicsBody!.affectedByGravity = isGravity
+        self.zRotation = rotate
     }
     // initializer for PullNattoScene/mouth
     convenience init(image: String, viewBounds: CGRect, frame: CGRect, zPos: CGFloat) {
