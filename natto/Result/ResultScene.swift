@@ -7,21 +7,32 @@
 //
 import SpriteKit
 import Social
+
 class ResultScene: SKScene{
     let resultScore:Int
-    let replayLabel:SKLabelNode
-    var twitterButton = SKSpriteNode(imageNamed: "twitter_img")
-    var facebookButton = SKSpriteNode(imageNamed: "facebook")
-    var lineButton = SKSpriteNode(imageNamed: "LINE_APP")
+    lazy var replayLabel: SKLabelNode! = {
+        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY", pos: CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20))
+    }()
+    lazy var scoreLabel: SKLabelNode! = {
+        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore), pos: CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.80))
+    }()
+    lazy var buttonSize = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
+    lazy var twitterButton: SKSpriteNode! = {
+        return SKSpriteNode(image: "twitter_img", pos: CGPoint(x: self.frame.maxX * 0.3, y: self.frame.maxY * 0.1), zPos: 1.5, size: buttonSize)
+    }()
+    lazy var facebookButton: SKSpriteNode! = {
+        return SKSpriteNode(image: "facebook", pos: CGPoint(x: self.frame.maxX * 0.5, y: self.frame.maxY * 0.1), zPos: 1.5, size: buttonSize)
+    }()
+    lazy var lineButton: SKSpriteNode! = {
+        return SKSpriteNode(image: "LINE_APP", pos: CGPoint(x: self.frame.maxX * 0.7, y: self.frame.maxY * 0.1), zPos: 1.5, size: buttonSize)
+    }()
 
     var presenter: ResultPresenter?
     
     init(size:CGSize, score: Int) {
-        replayLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY")
         self.resultScore = score
         presenter = ResultPresenterImpl()
         super.init(size: size)
-        replayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,7 +40,6 @@ class ResultScene: SKScene{
     }
     
     override func didMove(to view: SKView) {
-        
         presenter?.loadAudio(resourceName: "natto_bgm_score", resourceType: "wav")
         presenter?.playAudio()
         
@@ -39,45 +49,31 @@ class ResultScene: SKScene{
     }
     
     func addImage() {
-        let mamekun = SKSpriteNode(imageNamed: "mame01")
+        let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:self.frame.size.width/2,y: self.frame.size.height/2))
         //animation
-        mamekun.position = CGPoint(x:self.frame.size.width/2,y: self.frame.size.height/2)
-        mamekun.size = CGSize(width: mamekun.size.width, height: mamekun.size.height)
-        
         let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"), SKTexture(imageNamed: "mame02"), SKTexture(imageNamed: "mame03")], timePerFrame: 0.2)
         mamekun.run(SKAction.repeatForever(animation))
         self.addChild(mamekun)
     }
+    
     func addLabel() {
-        let scoreLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore))
-        scoreLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.80)
         self.addChild(scoreLabel)
-//        replayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20)
         self.addChild(replayLabel)
     }
+    
     func addButton() {
-        twitterButton.position = CGPoint(x: self.frame.maxX * 0.3, y: self.frame.maxY * 0.1)
-        twitterButton.zPosition = 1.5
-        twitterButton.size = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
         self.addChild(twitterButton)
-
-        facebookButton.position = CGPoint(x: self.frame.maxX * 0.5, y: self.frame.maxY * 0.1)
-        facebookButton.zPosition = 1.5
-        facebookButton.size = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
         self.addChild(facebookButton)
-        
-        lineButton.position = CGPoint(x: self.frame.maxX * 0.7, y: self.frame.maxY * 0.1)
-        lineButton.zPosition = 1.5
-        lineButton.size = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
         self.addChild(lineButton)
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touches:AnyObject in touches{
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)
             if touchNode == replayLabel{
                 let scene = GameScene(size: self.size)
-                let skView = self.view as! SKView
+                let skView = self.view!
                 skView.presentScene(scene)
             }
             

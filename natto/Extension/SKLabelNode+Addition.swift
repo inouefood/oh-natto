@@ -15,4 +15,11 @@ extension SKLabelNode {
         self.fontSize = fontSize
         self.text = text
     }
+    convenience init(font:String, fontSize: CGFloat, text: String, pos: CGPoint){
+        self.init()
+        self.fontName = font
+        self.fontSize = fontSize
+        self.text = text
+        self.position = pos
+    }
 }
