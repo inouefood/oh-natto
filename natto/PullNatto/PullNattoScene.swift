@@ -17,7 +17,7 @@ class PullNattoScene: SKScene{
     var stickyLevel:Float
     var nattoCount = 500
     var nattoSprite:[SKSpriteNode] = []
-    let ohashi = SKSpriteNode(imageNamed: "pullOhashi")
+    var ohashi = SKSpriteNode()
     var mameflag = false
     fileprivate lazy var presenter: PullNattoPresenter! = {
         let presenter = PullNattoPresenterImpl(output: self, model: PullNattoModel())
@@ -49,36 +49,25 @@ class PullNattoScene: SKScene{
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -0.5)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
-        addMouthImage()
+        //お口の初期設定
+        let mouth = SKSpriteNode(image: "pakupaku", viewBounds: (self.view?.bounds)!, frame: self.frame, zPos: 1.0)
+        self.addChild(mouth)
         
-        let ohashiScale = (self.view?.bounds.width)! / ohashi.size.width
-        //お箸の初期ポジション
-        ohashi.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-        ohashi.size = CGSize(width: ohashi.size.width * ohashiScale / 2, height: ohashi.size.height * ohashiScale/2 )
-        ohashi.zPosition = 1.25
+        //お箸の初期設定
+        ohashi = SKSpriteNode(image: "pullOhashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), viewBounds: (self.view?.bounds)!, frame: self.frame, zPos: 1.25)
         self.addChild(ohashi)
         
         //納豆の初期設定
         for _ in 0..<nattoCount{
-            let natto = SKSpriteNode(imageNamed:"mame")
             let X = Int(arc4random_uniform(UInt32(self.frame.size.width)))
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height / 4.0)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * .pi)))
-            natto.position = CGPoint(x: X, y: Y)
-            natto.physicsBody = SKPhysicsBody(circleOfRadius: 20)
-            natto.zRotation = r
+            
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: 20, isGravity: true)
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: nattoBody, rotate: r)
             self.addChild(natto)
             nattoSprite.append(natto)
         }
-    }
-    func addMouthImage() {
-        let mouth = SKSpriteNode(imageNamed: "pakupaku")
-        let scale = (self.view?.bounds.width)! / mouth.size.width
-        //お口
-        mouth.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - (mouth.size.height * scale * 2.0) / 2.0)
-        mouth.size = CGSize(width: self.frame.size.width, height: mouth.size.height * scale * 2.0)
-        mouth.zPosition = 1.0
-        self.addChild(mouth)
     }
     
     func touchMoved(toPoint pos : CGPoint) {
