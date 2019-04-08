@@ -9,15 +9,33 @@
 import Foundation
 
 protocol PullNattoPresenter {
+    init(output: PullNattoPresenterOutput, model: PullNattoModelInput)
     func loadBgmAudio(resourceName: String, resourceType: String)
     func loadEffectAudio(resourceName: String, resourceType: String)
     func playBgm()
     func playEffect()
+    func updateNattoPosition(ohashiX: Float, ohashiY: Float, ohashiWidth: Float, ohashiHeight: Float, nattoX: Float, nattoY: Float, sticky: Float)
 }
+
+protocol PullNattoPresenterOutput {
+    func showUpdateNatto(x: Float, y: Float)
+}
+
 class PullNattoPresenterImpl: PullNattoPresenter {
     private var model: PullNattoModelInput
-    init() {
-        model = PullNattoModel()
+    private var output: PullNattoPresenterOutput
+    
+    required init(output: PullNattoPresenterOutput, model: PullNattoModelInput) {
+        self.output = output
+        self.model = model
+    }
+
+    func updateNattoPosition(ohashiX: Float, ohashiY: Float, ohashiWidth: Float, ohashiHeight: Float, nattoX: Float, nattoY: Float, sticky: Float) {
+        let distAndPos = model.updateNattoPosition(ohashiX: ohashiX, ohashiY: ohashiY, ohashiWidth: ohashiWidth, ohashiHeight: ohashiHeight, nattoX: nattoX, nattoY: nattoY, sticky: sticky)
+        
+        if distAndPos.distance < 100 {
+            output.showUpdateNatto(x: distAndPos.x, y: distAndPos.y)
+        }
     }
     
     func loadBgmAudio(resourceName: String, resourceType: String) {
@@ -35,6 +53,4 @@ class PullNattoPresenterImpl: PullNattoPresenter {
     func playEffect() {
         model.playEffect()
     }
-    
-    
 }
