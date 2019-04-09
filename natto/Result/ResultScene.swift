@@ -73,8 +73,7 @@ class ResultScene: SKScene{
             let touchNode = self.atPoint(location)
             if touchNode == replayLabel{
                 let scene = GameScene(size: self.size)
-                let skView = self.view!
-                skView.presentScene(scene)
+                self.view!.presentScene(scene)
             }
             
             let message: String = "SCORE : " + String(resultScore) + "\n\n納豆食べてパーフェクトボディ！\nhttps://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
