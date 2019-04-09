@@ -20,6 +20,7 @@ class GameScene: SKScene {
     let descriptionImage1 = UIImageView()
     let descriptionImage2 = UIImageView()
     let descriptionImage3 = UIImageView()
+    let userDefaults = UserDefaults.standard
     
     var startLabel = SKLabelNode(fontNamed: "Verdana-bold")
     override func didMove(to view: SKView) {
@@ -30,7 +31,7 @@ class GameScene: SKScene {
         tutorialButton.titleLabel!.font = UIFont.systemFont(ofSize: 40)
         tutorialButton.setTitle("?", for: .normal)
         tutorialButton.layer.cornerRadius = tutorialButton.frame.width/2
-        tutorialButton.addTarget(self, action: #selector(showTutorial(_:)), for: .touchDown)
+        tutorialButton.addTarget(self, action: #selector(showTutorialTapped(_:)), for: .touchDown)
         view.addSubview(tutorialButton)
         
         
@@ -57,9 +58,23 @@ class GameScene: SKScene {
         startLabel.physicsBody?.collisionBitMask = 0x1 << 2
         startLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY/3)
         self.addChild(startLabel)
+        
+        handleUserDefaults()
     }
     
-    @objc func showTutorial(_ sender:UIButton){
+    func handleUserDefaults() {
+        if userDefaults.bool(forKey: "isNotFirstSession") == false {
+            showTutorial()
+            userDefaults.set(true, forKey: "isNotFirstSession")
+            userDefaults.synchronize()
+        }
+    }
+    
+    @objc func showTutorialTapped(_ sender:AnyObject) {
+        showTutorial()
+    }
+    
+    @objc func showTutorial(){
         print("tap")
         scrollView.frame = CGRect(x: 25, y: 50, width: (self.view?.frame.width)! - 50, height: (self.view?.frame.height)! - 100)
         scrollView.backgroundColor = .gray
