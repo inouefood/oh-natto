@@ -74,7 +74,7 @@ class GameScene: SKScene {
         showTutorial()
     }
     
-    @objc func showTutorial(){
+    func showTutorial(){
         print("tap")
         scrollView.frame = CGRect(x: 25, y: 50, width: (self.view?.frame.width)! - 50, height: (self.view?.frame.height)! - 100)
         scrollView.backgroundColor = .gray
