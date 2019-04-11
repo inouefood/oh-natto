@@ -91,16 +91,35 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		0DE54C63225F8F3200006ED4 /* NattoVC */ = {
+		0DE54C63225F8F3200006ED4 /* NattoView */ = {
 			isa = PBXGroup;
 			children = (
 				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
 				0DE54C60225F8F2C00006ED4 /* NattoViewController.xib */,
 			);
-			path = NattoVC;
+			path = NattoView;
 			sourceTree = "<group>";
 		};
-		0DF70CF1223E64BA007105D8 /* sound */ = {
+		0DE54C64225F946000006ED4 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				43D95F252052723B00FE1117 /* GameScene.swift */,
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
+		0DE54C65225F948D00006ED4 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				0DE54C64225F946000006ED4 /* Title */,
+				F31970AD223FF9100045A391 /* Game */,
+				0DF70CFD223E76AF007105D8 /* PullNatto */,
+				0DF70CF2223E68AD007105D8 /* Result */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		0DF70CF1223E64BA007105D8 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
 				43704C94205304BF00F87562 /* mame.mp3 */,
@@ -110,7 +129,7 @@
 				4343CEB02053AB86002CA3BC /* paku.wav */,
 				F3C462D7205399CC005725C3 /* voice_5_pitchup.wav */,
 			);
-			path = sound;
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		0DF70CF2223E68AD007105D8 /* Result */ = {
@@ -161,13 +180,10 @@
 		43D95F1E2052723B00FE1117 /* natto */ = {
 			isa = PBXGroup;
 			children = (
-				0DF70CF1223E64BA007105D8 /* sound */,
-				43D95F252052723B00FE1117 /* GameScene.swift */,
-				0DE54C63225F8F3200006ED4 /* NattoVC */,
+				0DF70CF1223E64BA007105D8 /* Sound */,
 				0DD326B82253A2D700FBE6A1 /* Extension */,
-				F31970AD223FF9100045A391 /* Game */,
-				0DF70CFD223E76AF007105D8 /* PullNatto */,
-				0DF70CF2223E68AD007105D8 /* Result */,
+				0DE54C63225F8F3200006ED4 /* NattoView */,
+				0DE54C65225F948D00006ED4 /* Scene */,
 				43D95F1F2052723B00FE1117 /* AppDelegate.swift */,
 				43D95F292052723B00FE1117 /* Main.storyboard */,
 				43D95F2C2052723B00FE1117 /* Assets.xcassets */,
