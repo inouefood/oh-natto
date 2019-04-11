@@ -26,9 +26,7 @@
 		43704C95205304BF00F87562 /* mame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43704C94205304BF00F87562 /* mame.mp3 */; };
 		439948A4205315480028E85F /* ResultScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439948A3205315480028E85F /* ResultScene.swift */; };
 		43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D95F1F2052723B00FE1117 /* AppDelegate.swift */; };
-		43D95F222052723B00FE1117 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F212052723B00FE1117 /* GameScene.sks */; };
 		43D95F262052723B00FE1117 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D95F252052723B00FE1117 /* GameScene.swift */; };
-		43D95F282052723B00FE1117 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D95F272052723B00FE1117 /* GameViewController.swift */; };
 		43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F292052723B00FE1117 /* Main.storyboard */; };
 		43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2C2052723B00FE1117 /* Assets.xcassets */; };
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
@@ -59,9 +57,7 @@
 		439948A3205315480028E85F /* ResultScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScene.swift; sourceTree = "<group>"; };
 		43D95F1C2052723B00FE1117 /* natto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = natto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D95F1F2052723B00FE1117 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43D95F212052723B00FE1117 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		43D95F252052723B00FE1117 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		43D95F272052723B00FE1117 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		43D95F2A2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43D95F2C2052723B00FE1117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D95F2F2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -165,9 +161,7 @@
 		43D95F1E2052723B00FE1117 /* natto */ = {
 			isa = PBXGroup;
 			children = (
-				43D95F212052723B00FE1117 /* GameScene.sks */,
 				0DF70CF1223E64BA007105D8 /* sound */,
-				43D95F272052723B00FE1117 /* GameViewController.swift */,
 				43D95F252052723B00FE1117 /* GameScene.swift */,
 				0DE54C63225F8F3200006ED4 /* NattoVC */,
 				0DD326B82253A2D700FBE6A1 /* Extension */,
@@ -254,7 +248,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */,
-				43D95F222052723B00FE1117 /* GameScene.sks in Resources */,
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				4343CEB12053AB86002CA3BC /* paku.wav in Resources */,
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
@@ -278,7 +271,6 @@
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
 				43D95F262052723B00FE1117 /* GameScene.swift in Sources */,
-				43D95F282052723B00FE1117 /* GameViewController.swift in Sources */,
 				0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,
 				43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */,
