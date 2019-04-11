@@ -10,6 +10,8 @@
 		0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */; };
 		0DCE81AB2254DEA1002FAE96 /* SLComposeViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */; };
 		0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */; };
+		0DE54C61225F8F2C00006ED4 /* NattoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */; };
+		0DE54C62225F8F2C00006ED4 /* NattoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DE54C60225F8F2C00006ED4 /* NattoViewController.xib */; };
 		0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CF3223E6930007105D8 /* ResultPresenter.swift */; };
 		0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CF7223E6D98007105D8 /* ResultModel.swift */; };
 		0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */; };
@@ -40,6 +42,8 @@
 		0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Addition.swift"; sourceTree = "<group>"; };
 		0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLComposeViewController+Addition.swift"; sourceTree = "<group>"; };
 		0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Addition.swift"; sourceTree = "<group>"; };
+		0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NattoViewController.swift; sourceTree = "<group>"; };
+		0DE54C60225F8F2C00006ED4 /* NattoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NattoViewController.xib; sourceTree = "<group>"; };
 		0DF70CF3223E6930007105D8 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
 		0DF70CF7223E6D98007105D8 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoPresenter.swift; sourceTree = "<group>"; };
@@ -89,6 +93,15 @@
 				F39D9423225A411400FD6401 /* SKPhysicsBody+Addition.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		0DE54C63225F8F3200006ED4 /* NattoVC */ = {
+			isa = PBXGroup;
+			children = (
+				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
+				0DE54C60225F8F2C00006ED4 /* NattoViewController.xib */,
+			);
+			path = NattoVC;
 			sourceTree = "<group>";
 		};
 		0DF70CF1223E64BA007105D8 /* sound */ = {
@@ -156,6 +169,7 @@
 				0DF70CF1223E64BA007105D8 /* sound */,
 				43D95F272052723B00FE1117 /* GameViewController.swift */,
 				43D95F252052723B00FE1117 /* GameScene.swift */,
+				0DE54C63225F8F3200006ED4 /* NattoVC */,
 				0DD326B82253A2D700FBE6A1 /* Extension */,
 				F31970AD223FF9100045A391 /* Game */,
 				0DF70CFD223E76AF007105D8 /* PullNatto */,
@@ -244,6 +258,7 @@
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				4343CEB12053AB86002CA3BC /* paku.wav in Resources */,
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
+				0DE54C62225F8F2C00006ED4 /* NattoViewController.xib in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
 				43704C95205304BF00F87562 /* mame.mp3 in Resources */,
@@ -270,6 +285,7 @@
 				0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */,
 				0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */,
 				0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */,
+				0DE54C61225F8F2C00006ED4 /* NattoViewController.swift in Sources */,
 				F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */,
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
@@ -416,7 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = natto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -432,7 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = natto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
