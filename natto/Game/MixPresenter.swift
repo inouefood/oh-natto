@@ -20,7 +20,7 @@ protocol MixPresenter {
 }
 
 protocol MixPresenterOutput {
-    func showUpdateOhashi(x: Float, y: Float)
+    func showUpdateOhashi(objPos: ObjectPosition)
 }
 
 class MixPresenterImpl: MixPresenter {
@@ -33,8 +33,8 @@ class MixPresenterImpl: MixPresenter {
     }
     
     func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float) {
-        let pos = model.updateOhashiPosition(touchPosX: touchPosX, touchPosY: touchPosY, ohashiRadius: ohashiRadius)
-        output.showUpdateOhashi(x: pos.x, y: pos.y)
+        let objPos = model.updateOhashiPosition(touchPosX: touchPosX, touchPosY: touchPosY, ohashiRadius: ohashiRadius)
+        output.showUpdateOhashi(objPos: objPos)
     }
     
     func loadEffectAudio1(resourceName: String, resourceType: String) {

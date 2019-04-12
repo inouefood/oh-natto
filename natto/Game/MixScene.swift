@@ -124,7 +124,7 @@ extension MixScene: SKPhysicsContactDelegate {
 }
 
 extension MixScene: MixPresenterOutput {
-    func showUpdateOhashi(x: Float, y: Float) {
-        ohashi.position = CGPoint(x: CGFloat(x), y: CGFloat(y))
+    func showUpdateOhashi(objPos: ObjectPosition) {
+        ohashi.position = CGPoint(x: CGFloat(objPos.x), y: CGFloat(objPos.y))
     }
 }

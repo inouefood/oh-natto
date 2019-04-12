@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 
 protocol MixModelInput {
-    func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float) -> (x: Float, y: Float)
+    func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float) -> ObjectPosition
     func loadEffectAudio1(resourceName: String, resourceType: String)
     func loadEffectAudio2(resourceName: String, resourceType: String)
     func playEffect1()
@@ -23,8 +23,8 @@ class MixModel: MixModelInput {
     private var effect1: AVAudioPlayer!
     private var effect2: AVAudioPlayer!
     
-    func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float) -> (x: Float, y: Float) {
-        return (x: touchPosX, y: touchPosY - ohashiRadius)
+    func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float) -> ObjectPosition {
+        return ObjectPosition(x: touchPosX, y: touchPosY - ohashiRadius)
     }
 
     func loadEffectAudio1(resourceName: String, resourceType: String) {
