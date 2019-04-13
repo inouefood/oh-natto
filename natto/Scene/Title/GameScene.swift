@@ -70,9 +70,9 @@ class GameScene: SKScene {
         }
     }
     
-    @objc func showTutorialTapped(_ sender:AnyObject) {
-        showTutorial()
-    }
+//    @objc func showTutorialTapped(_ sender:AnyObject) {
+////        showTutorial()
+//    }
     
     func showTutorial(){
         print("tap")
