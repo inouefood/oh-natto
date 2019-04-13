@@ -25,10 +25,16 @@ class DescriptionViewController: UIViewController {
             descriptionLabel3.text = "③食べた納豆の数でスコアが決まります!良い結果が出たらSNSに投稿しよう！"
         }
     }
+    
+    // - MARK: LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .clear
     }
+    
+    // - MARK: Event
+    
     @IBAction func closeDescription(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

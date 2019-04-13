@@ -15,6 +15,9 @@ class TitleScene: SKScene {
     var width: CGFloat!
     var height: CGFloat!
     var controlWidth: CGFloat!
+    
+    // - MARK: LifeCycle
+    
     override func didMove(to view: SKView) {
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -1.5)
@@ -50,6 +53,8 @@ class TitleScene: SKScene {
             startLabel.position.x = width - controlWidth + startLabel.frame.width/2
         }
     }
+    
+    // - MARK: Event
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touches:AnyObject in touches{
