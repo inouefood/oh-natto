@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0822617A3C00B6642E /* DescriptionViewController.swift */; };
+		0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D815D0922617A3C00B6642E /* DescriptionViewController.xib */; };
 		0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */; };
 		0DCE81AB2254DEA1002FAE96 /* SLComposeViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */; };
 		0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */; };
 		0DE54C61225F8F2C00006ED4 /* NattoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */; };
-		0DE54C62225F8F2C00006ED4 /* NattoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DE54C60225F8F2C00006ED4 /* NattoViewController.xib */; };
 		0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CF3223E6930007105D8 /* ResultPresenter.swift */; };
 		0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CF7223E6D98007105D8 /* ResultModel.swift */; };
 		0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */; };
@@ -37,11 +38,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D815D0822617A3C00B6642E /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		0D815D0922617A3C00B6642E /* DescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionViewController.xib; sourceTree = "<group>"; };
 		0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Addition.swift"; sourceTree = "<group>"; };
 		0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLComposeViewController+Addition.swift"; sourceTree = "<group>"; };
 		0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Addition.swift"; sourceTree = "<group>"; };
 		0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NattoViewController.swift; sourceTree = "<group>"; };
-		0DE54C60225F8F2C00006ED4 /* NattoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NattoViewController.xib; sourceTree = "<group>"; };
 		0DF70CF3223E6930007105D8 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
 		0DF70CF7223E6D98007105D8 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoPresenter.swift; sourceTree = "<group>"; };
@@ -80,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D815D0722617A2A00B6642E /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				0D815D0822617A3C00B6642E /* DescriptionViewController.swift */,
+				0D815D0922617A3C00B6642E /* DescriptionViewController.xib */,
+			);
+			path = Description;
+			sourceTree = "<group>";
+		};
 		0DD326B82253A2D700FBE6A1 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
-				0DE54C60225F8F2C00006ED4 /* NattoViewController.xib */,
 			);
 			path = NattoView;
 			sourceTree = "<group>";
@@ -111,6 +121,7 @@
 		0DE54C65225F948D00006ED4 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				0D815D0722617A2A00B6642E /* Description */,
 				0DE54C64225F946000006ED4 /* Title */,
 				F31970AD223FF9100045A391 /* Game */,
 				0DF70CFD223E76AF007105D8 /* PullNatto */,
@@ -267,12 +278,12 @@
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				4343CEB12053AB86002CA3BC /* paku.wav in Resources */,
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
-				0DE54C62225F8F2C00006ED4 /* NattoViewController.xib in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
 				43704C95205304BF00F87562 /* mame.mp3 in Resources */,
 				F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */,
 				4343CEAD205386F3002CA3BC /* natto_bgm_score.wav in Resources */,
+				0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DCE81AB2254DEA1002FAE96 /* SLComposeViewController+Addition.swift in Sources */,
+				0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */,
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
 				43D95F262052723B00FE1117 /* GameScene.swift in Sources */,

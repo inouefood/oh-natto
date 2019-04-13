@@ -10,7 +10,7 @@ import GameplayKit
 import UIKit
 
 class GameScene: SKScene {
-    let tutorialButton = UIButton()
+//    let tutorialButton = UIButton()
     let scrollView = UIScrollView()
     let closeButton = UIButton()
     let tutorialTitleLabel = UILabel()
@@ -25,15 +25,15 @@ class GameScene: SKScene {
     var startLabel = SKLabelNode(fontNamed: "Verdana-bold")
     override func didMove(to view: SKView) {
     
-        tutorialButton.backgroundColor = .red
-        tutorialButton.frame.size = CGSize(width: 80, height: 80)
-        tutorialButton.layer.position = CGPoint(x: (self.view?.frame.width)! - tutorialButton.frame.width * 1.1, y: 100)
-        tutorialButton.titleLabel!.font = UIFont.systemFont(ofSize: 40)
-        tutorialButton.setTitle("?", for: .normal)
-        tutorialButton.layer.cornerRadius = tutorialButton.frame.width/2
-        tutorialButton.addTarget(self, action: #selector(showTutorialTapped(_:)), for: .touchDown)
-        view.addSubview(tutorialButton)
-        
+//        tutorialButton.backgroundColor = .red
+//        tutorialButton.frame.size = CGSize(width: 80, height: 80)
+//        tutorialButton.layer.position = CGPoint(x: (self.view?.frame.width)! - tutorialButton.frame.width * 1.1, y: 100)
+//        tutorialButton.titleLabel!.font = UIFont.systemFont(ofSize: 40)
+//        tutorialButton.setTitle("?", for: .normal)
+//        tutorialButton.layer.cornerRadius = tutorialButton.frame.width/2
+//        tutorialButton.addTarget(self, action: #selector(showTutorialTapped(_:)), for: .touchDown)
+//        view.addSubview(tutorialButton)
+//
         
         
         for _ in 0...3 {
