@@ -15,6 +15,8 @@ class NattoViewController: UIViewController {
 
     let userDefaults = UserDefaults.standard
     
+    // MARK: - LifeCycle
+    
     override func loadView() {
         let skView = SKView(frame: UIScreen.main.bounds)
         self.view = skView
@@ -46,7 +48,9 @@ class NattoViewController: UIViewController {
         handleUserDefaults()
     }
     
-    func handleUserDefaults() {
+    // MARK: - PrivateMethod
+    
+    private func handleUserDefaults() {
         
         if userDefaults.object(forKey: "isFirstSession") == nil {
             
@@ -59,9 +63,15 @@ class NattoViewController: UIViewController {
         }
     }
     
+    // MARK: - Event
+    
     @objc func showTutorialTapped(_ sender:AnyObject) {
         let vc = DescriptionViewController()
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
+        return .all
     }
 }
