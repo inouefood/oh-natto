@@ -108,14 +108,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		0DE54C63225F8F3200006ED4 /* NattoView */ = {
-			isa = PBXGroup;
-			children = (
-				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
-			);
-			path = NattoView;
-			sourceTree = "<group>";
-		};
 		0DE54C64225F946000006ED4 /* Title */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,8 +191,8 @@
 			children = (
 				0DF70CF1223E64BA007105D8 /* Sound */,
 				0DD326B82253A2D700FBE6A1 /* Extension */,
-				0DE54C63225F8F3200006ED4 /* NattoView */,
 				0DE54C65225F948D00006ED4 /* Scene */,
+				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
 				43D95F1F2052723B00FE1117 /* AppDelegate.swift */,
 				43D95F292052723B00FE1117 /* Main.storyboard */,
 				43D95F2C2052723B00FE1117 /* Assets.xcassets */,
