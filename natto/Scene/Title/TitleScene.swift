@@ -12,12 +12,13 @@ import UIKit
 class TitleScene: SKScene {
 
     var startLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "START")
-    
     var width: CGFloat!
     var height: CGFloat!
     var controlWidth: CGFloat!
-    
     override func didMove(to view: SKView) {
+        self.anchorPoint = CGPoint(x: 0, y: 0)
+        self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -1.5)
+        
         width = self.view!.frame.width
         height = self.view!.frame.height
         controlWidth = width / 10
@@ -26,14 +27,11 @@ class TitleScene: SKScene {
             let mame = SKSpriteNode(imageNamed: "mame")
             mame.position = CGPoint(x:CGFloat(Int.random(in: 100...Int(self.frame.width))-100),
                                     y: CGFloat(Int.random(in: Int(self.frame.height)...Int(self.frame.height+100 ))))
-            mame.physicsBody = SKPhysicsBody(rectangleOf: mame.size)
-            mame.physicsBody?.categoryBitMask = 0x1 << 1
-            mame.physicsBody?.collisionBitMask = 0x1 << 0
+             mame.physicsBody = SKPhysicsBody().make(rectangleOf: mame.size, category: 0x1 << 1, contact: 0x1 << 0, isGravity: true)
             self.addChild(mame)
         }
         
-        self.anchorPoint = CGPoint(x: 0, y: 0)
-        self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -1.5)
+        
         startLabel.fontColor = .white
         startLabel.physicsBody = SKPhysicsBody(circleOfRadius: startLabel.frame.maxX)
         startLabel.physicsBody = SKPhysicsBody().make(circleOfRadius: startLabel.frame.maxX, category: 0x1 << 0, contact: 0x1 << 2, isGravity: false)
