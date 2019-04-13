@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0822617A3C00B6642E /* DescriptionViewController.swift */; };
 		0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D815D0922617A3C00B6642E /* DescriptionViewController.xib */; };
-		0D815D0D2261DB9000B6642E /* TLHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0C2261DB9000B6642E /* TLHorizontalScrollView.swift */; };
+		0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0E2261E3B100B6642E /* Closebutton.swift */; };
+		0D815D112261E42D00B6642E /* CloseButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D815D102261E42D00B6642E /* CloseButton.xib */; };
 		0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */; };
 		0DCE81AB2254DEA1002FAE96 /* SLComposeViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */; };
 		0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */; };
@@ -41,7 +42,8 @@
 /* Begin PBXFileReference section */
 		0D815D0822617A3C00B6642E /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		0D815D0922617A3C00B6642E /* DescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionViewController.xib; sourceTree = "<group>"; };
-		0D815D0C2261DB9000B6642E /* TLHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLHorizontalScrollView.swift; sourceTree = "<group>"; };
+		0D815D0E2261E3B100B6642E /* Closebutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closebutton.swift; sourceTree = "<group>"; };
+		0D815D102261E42D00B6642E /* CloseButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloseButton.xib; sourceTree = "<group>"; };
 		0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Addition.swift"; sourceTree = "<group>"; };
 		0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLComposeViewController+Addition.swift"; sourceTree = "<group>"; };
 		0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Addition.swift"; sourceTree = "<group>"; };
@@ -89,7 +91,8 @@
 			children = (
 				0D815D0822617A3C00B6642E /* DescriptionViewController.swift */,
 				0D815D0922617A3C00B6642E /* DescriptionViewController.xib */,
-				0D815D0C2261DB9000B6642E /* TLHorizontalScrollView.swift */,
+				0D815D0E2261E3B100B6642E /* Closebutton.swift */,
+				0D815D102261E42D00B6642E /* CloseButton.xib */,
 			);
 			path = Description;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
+				0D815D112261E42D00B6642E /* CloseButton.xib in Resources */,
 				43704C95205304BF00F87562 /* mame.mp3 in Resources */,
 				F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */,
 				4343CEAD205386F3002CA3BC /* natto_bgm_score.wav in Resources */,
@@ -303,6 +307,7 @@
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
 				43D95F262052723B00FE1117 /* GameScene.swift in Sources */,
 				0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */,
+				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,
 				43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */,
 				0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */,
@@ -310,7 +315,6 @@
 				0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */,
 				0DE54C61225F8F2C00006ED4 /* NattoViewController.swift in Sources */,
 				F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */,
-				0D815D0D2261DB9000B6642E /* TLHorizontalScrollView.swift in Sources */,
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
 				0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */,
