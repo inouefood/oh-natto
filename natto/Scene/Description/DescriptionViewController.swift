@@ -29,4 +29,7 @@ class DescriptionViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .clear
     }
+    @IBAction func closeDescription(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

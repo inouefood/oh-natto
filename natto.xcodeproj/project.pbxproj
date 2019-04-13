@@ -29,7 +29,7 @@
 		43704C95205304BF00F87562 /* mame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43704C94205304BF00F87562 /* mame.mp3 */; };
 		439948A4205315480028E85F /* ResultScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439948A3205315480028E85F /* ResultScene.swift */; };
 		43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D95F1F2052723B00FE1117 /* AppDelegate.swift */; };
-		43D95F262052723B00FE1117 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D95F252052723B00FE1117 /* GameScene.swift */; };
+		43D95F262052723B00FE1117 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D95F252052723B00FE1117 /* TitleScene.swift */; };
 		43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F292052723B00FE1117 /* Main.storyboard */; };
 		43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2C2052723B00FE1117 /* Assets.xcassets */; };
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
@@ -63,7 +63,7 @@
 		439948A3205315480028E85F /* ResultScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScene.swift; sourceTree = "<group>"; };
 		43D95F1C2052723B00FE1117 /* natto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = natto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D95F1F2052723B00FE1117 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43D95F252052723B00FE1117 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		43D95F252052723B00FE1117 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		43D95F2A2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43D95F2C2052723B00FE1117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D95F2F2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		0DE54C64225F946000006ED4 /* Title */ = {
 			isa = PBXGroup;
 			children = (
-				43D95F252052723B00FE1117 /* GameScene.swift */,
+				43D95F252052723B00FE1117 /* TitleScene.swift */,
 			);
 			path = Title;
 			sourceTree = "<group>";
@@ -305,7 +305,7 @@
 				0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */,
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
-				43D95F262052723B00FE1117 /* GameScene.swift in Sources */,
+				43D95F262052723B00FE1117 /* TitleScene.swift in Sources */,
 				0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */,
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,

@@ -99,6 +99,9 @@
                         <constraint firstAttribute="height" constant="40" id="gvc-8b-hAH"/>
                     </constraints>
                     <state key="normal" title="X"/>
+                    <connections>
+                        <action selector="closeDescription:" destination="-1" eventType="touchUpInside" id="fRg-gu-NeJ"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

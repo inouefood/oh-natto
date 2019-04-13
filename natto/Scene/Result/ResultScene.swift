@@ -76,7 +76,7 @@ class ResultScene: SKScene{
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)
             if touchNode == replayLabel{
-                let scene = GameScene(size: self.size)
+                let scene = TitleScene(size: self.size)
                 let skView = self.view as! SKView
                 skView.presentScene(scene)
             }

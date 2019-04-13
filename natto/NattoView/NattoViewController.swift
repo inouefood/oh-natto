@@ -13,7 +13,7 @@ let tutorialButton = UIButton()
 
 class NattoViewController: UIViewController {
 
-//     let tutorialButton = UIButton()
+    let userDefaults = UserDefaults.standard
     
     override func loadView() {
         let skView = SKView(frame: UIScreen.main.bounds)
@@ -37,15 +37,31 @@ class NattoViewController: UIViewController {
         let skView = self.view as! SKView
         skView.ignoresSiblingOrder = true
         let size = CGSize(width: skView.bounds.size.width*2, height: skView.bounds.size.height*2)
-        let scene = GameScene(size: size)
+        let scene = TitleScene(size: size)
         skView.presentScene(scene)
         
-
+        
     }
+    override func viewDidAppear(_ animated: Bool) {
+        handleUserDefaults()
+    }
+    
+    func handleUserDefaults() {
+        
+        if userDefaults.object(forKey: "isFirstSession") == nil {
+            
+            let vc = DescriptionViewController()
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil)
+            
+            userDefaults.set(true, forKey: "isFirstSession")
+            userDefaults.synchronize()
+        }
+    }
+    
     @objc func showTutorialTapped(_ sender:AnyObject) {
         let vc = DescriptionViewController()
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
-        //        showTutorial()
     }
 }
