@@ -38,4 +38,16 @@ extension SKSpriteNode {
         self.size = CGSize(width: self.size.width * scale / 2.0, height: self.size.height * scale / 2.0)
         self.zPosition = zPos
     }
+    // initializer for ResultScene
+    convenience init(image: String, pos: CGPoint, zPos: CGFloat, size: CGSize) {
+        self.init(imageNamed: image)
+        self.position = pos
+        self.zPosition = zPos
+        self.size = size
+    }
+    // initializer for mamekun
+    convenience init(image: String, pos: CGPoint) {
+        self.init(imageNamed: image)
+        self.position = pos
+    }
 }

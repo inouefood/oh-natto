@@ -18,7 +18,7 @@ protocol PullNattoPresenter {
 }
 
 protocol PullNattoPresenterOutput {
-    func showUpdateNatto(x: Float, y: Float)
+    func showUpdateNatto(objPos: ObjectPosition)
 }
 
 class PullNattoPresenterImpl: PullNattoPresenter {
@@ -31,10 +31,10 @@ class PullNattoPresenterImpl: PullNattoPresenter {
     }
 
     func updateNattoPosition(ohashiX: Float, ohashiY: Float, ohashiWidth: Float, ohashiHeight: Float, nattoX: Float, nattoY: Float, sticky: Float) {
-        let distAndPos = model.updateNattoPosition(ohashiX: ohashiX, ohashiY: ohashiY, ohashiWidth: ohashiWidth, ohashiHeight: ohashiHeight, nattoX: nattoX, nattoY: nattoY, sticky: sticky)
+        let distAndObjPos = model.updateNattoPosition(ohashiX: ohashiX, ohashiY: ohashiY, ohashiWidth: ohashiWidth, ohashiHeight: ohashiHeight, nattoX: nattoX, nattoY: nattoY, sticky: sticky)
         
-        if distAndPos.distance < 100 {
-            output.showUpdateNatto(x: distAndPos.x, y: distAndPos.y)
+        if distAndObjPos.distance < 100 {
+            output.showUpdateNatto(objPos: distAndObjPos.objPos)
         }
     }
     

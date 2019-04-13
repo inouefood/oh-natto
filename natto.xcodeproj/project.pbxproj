@@ -20,6 +20,7 @@
 		0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */; };
 		0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CFE223E7708007105D8 /* PullNattoModel.swift */; };
 		0DF70D3C22426268007105D8 /* MixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70D3B22426268007105D8 /* MixScene.swift */; };
+		0DFEF9C122623BF50061167A /* ObjectPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEF9C022623BF50061167A /* ObjectPosition.swift */; };
 		4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA320537F20002CA3BC /* natto_bgm_game.wav */; };
 		4343CEA62053804C002CA3BC /* voice_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA52053804C002CA3BC /* voice_5.wav */; };
 		4343CEA9205381DE002CA3BC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4343CEA8205381DE002CA3BC /* Social.framework */; };
@@ -53,6 +54,7 @@
 		0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoPresenter.swift; sourceTree = "<group>"; };
 		0DF70CFE223E7708007105D8 /* PullNattoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoModel.swift; sourceTree = "<group>"; };
 		0DF70D3B22426268007105D8 /* MixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixScene.swift; sourceTree = "<group>"; };
+		0DFEF9C022623BF50061167A /* ObjectPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPosition.swift; sourceTree = "<group>"; };
 		4343CEA320537F20002CA3BC /* natto_bgm_game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = natto_bgm_game.wav; sourceTree = "<group>"; };
 		4343CEA52053804C002CA3BC /* voice_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_5.wav; sourceTree = "<group>"; };
 		4343CEA8205381DE002CA3BC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -161,6 +163,15 @@
 			path = PullNatto;
 			sourceTree = "<group>";
 		};
+		0DFEF9BF22623BA50061167A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0DFEF9C022623BF50061167A /* ObjectPosition.swift */,
+			);
+			name = Entity;
+			path = Extension/Entity;
+			sourceTree = "<group>";
+		};
 		4343CEA7205381DD002CA3BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				0DF70CF1223E64BA007105D8 /* Sound */,
+				0DFEF9BF22623BA50061167A /* Entity */,
 				0DD326B82253A2D700FBE6A1 /* Extension */,
 				0DE54C65225F948D00006ED4 /* Scene */,
 				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
@@ -302,6 +314,7 @@
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,
 				43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */,
+				0DFEF9C122623BF50061167A /* ObjectPosition.swift in Sources */,
 				0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */,
 				0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */,
 				0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */,
