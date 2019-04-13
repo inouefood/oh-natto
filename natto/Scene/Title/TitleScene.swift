@@ -68,9 +68,7 @@ class TitleScene: SKScene {
             } else {
                 let mame = SKSpriteNode(imageNamed: "mame")
                 mame.position = location
-                mame.physicsBody = SKPhysicsBody(rectangleOf: mame.size)
-                mame.physicsBody?.categoryBitMask = 0x1 << 1
-                mame.physicsBody?.collisionBitMask = 0x1 << 0
+                mame.physicsBody = SKPhysicsBody().make(rectangleOf: mame.size, category: 0x1 << 1, contact: 0x1 << 0, isGravity: true)
                 self.addChild(mame)
             }
         }
