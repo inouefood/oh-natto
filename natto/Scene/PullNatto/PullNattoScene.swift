@@ -116,9 +116,8 @@ class PullNattoScene: SKScene{
 }
 
 extension PullNattoScene: PullNattoPresenterOutput {
-    
-    func showUpdateNatto(x: Float, y: Float) {
-        targetNatto.position.x += CGFloat(x)
-        targetNatto.position.y += CGFloat(y)
+    func showUpdateNatto(objPos: ObjectPosition) {
+        targetNatto.position.x += CGFloat(objPos.x)
+        targetNatto.position.y += CGFloat(objPos.y)
     }
 }

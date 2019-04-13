@@ -19,13 +19,15 @@ class MixScene: SKScene{
     var cells = [Int](repeating: 0, count: 108)
     let ohashiCategory: UInt32 = 0x1 << 0
     let nattoCategory: UInt32 = 0x1 << 1
-    var presenter: MixPresenter
     
-    override init(size: CGSize) {
-        presenter = MixPresenterImpl()
+    fileprivate lazy var presenter: MixPresenter! = {
+        let presenter = MixPresenterImpl(output: self, model: MixModel())
         presenter.loadEffectAudio1(resourceName: "voice_5", resourceType: "wav")
         presenter.loadEffectAudio2(resourceName: "voice_5_pitchup", resourceType: "wav")
-        
+        return presenter
+    }()
+    
+    override init(size: CGSize) {
         super.init(size: size)
     }
     
@@ -36,7 +38,6 @@ class MixScene: SKScene{
     override func didMove(to view: SKView) {
         //衝突判定のデリゲートをselfにする
         self.physicsWorld.contactDelegate = self
-        
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
@@ -71,24 +72,10 @@ class MixScene: SKScene{
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let pos = touches.first!.location(in: self)
-        let px = pos.x
-        let py = pos.y - 50
-        ohashi.position = CGPoint(x: px, y: py)
+        presenter.updateOhashiPosition(touchPosX: Float(pos.x), touchPosY: Float(pos.y), ohashiRadius: 50)
     }
     
     override func update(_ currentTime: TimeInterval) {
-        for i in 0..<nattoCount{
-            if(nattoSprite[i].position.x > self.frame.size.width || nattoSprite[i].position.x < 0){
-                let X = self.frame.size.width/2
-                let Y = self.frame.size.height/2
-                nattoSprite[i].position = CGPoint(x: X, y: Y)
-            }
-            if(nattoSprite[i].position.y > self.frame.size.height || nattoSprite[i].position.y < 0){
-                let X = self.frame.size.width/2
-                let Y = self.frame.size.height/2
-                nattoSprite[i].position = CGPoint(x: X, y: Y)
-            }
-        }
     }
     
     @objc func timerCounter(){
@@ -133,5 +120,11 @@ extension MixScene: SKPhysicsContactDelegate {
         curve.name = "curve"
         curve.isUserInteractionEnabled = false
         self.addChild(curve)
+    }
+}
+
+extension MixScene: MixPresenterOutput {
+    func showUpdateOhashi(objPos: ObjectPosition) {
+        ohashi.position = CGPoint(x: CGFloat(objPos.x), y: CGFloat(objPos.y))
     }
 }

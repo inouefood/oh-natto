@@ -9,6 +9,8 @@
 import Foundation
 
 protocol MixPresenter {
+    init(output: MixPresenterOutput, model: MixModelInput)
+    func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float)
     func loadEffectAudio1(resourceName: String, resourceType: String)
     func loadEffectAudio2(resourceName: String, resourceType: String)
     func playEffect1()
@@ -17,10 +19,22 @@ protocol MixPresenter {
     func stopEffect2()
 }
 
+protocol MixPresenterOutput {
+    func showUpdateOhashi(objPos: ObjectPosition)
+}
+
 class MixPresenterImpl: MixPresenter {
     private var model: MixModelInput
-    init() {
-        model = MixModel()
+    private var output: MixPresenterOutput
+    
+    required init(output: MixPresenterOutput, model: MixModelInput) {
+        self.output = output
+        self.model = model
+    }
+    
+    func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float) {
+        let objPos = model.updateOhashiPosition(touchPosX: touchPosX, touchPosY: touchPosY, ohashiRadius: ohashiRadius)
+        output.showUpdateOhashi(objPos: objPos)
     }
     
     func loadEffectAudio1(resourceName: String, resourceType: String) {
