@@ -12,7 +12,15 @@ import UIKit
 class TitleScene: SKScene {
 
     var startLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "START")
+    
+    var width: CGFloat!
+    var height: CGFloat!
+    var controlWidth: CGFloat!
+    
     override func didMove(to view: SKView) {
+        width = self.view!.frame.width
+        height = self.view!.frame.height
+        controlWidth = width / 10
     
         for _ in 0...3 {
             let mame = SKSpriteNode(imageNamed: "mame")
@@ -28,12 +36,21 @@ class TitleScene: SKScene {
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -1.5)
         startLabel.fontColor = .white
         startLabel.physicsBody = SKPhysicsBody(circleOfRadius: startLabel.frame.maxX)
-        startLabel.physicsBody?.affectedByGravity = false
-        startLabel.physicsBody?.categoryBitMask = 0x1 << 0
-        startLabel.physicsBody?.collisionBitMask = 0x1 << 2
+        startLabel.physicsBody = SKPhysicsBody().make(circleOfRadius: startLabel.frame.maxX, category: 0x1 << 0, contact: 0x1 << 2, isGravity: false)
         startLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY/3)
         self.addChild(startLabel)
         
+    }
+    override func update(_ currentTime: TimeInterval) {
+        if startLabel.position.y < height/30 + startLabel.frame.height/2{
+            startLabel.position.y = height/30 + startLabel.frame.height/2
+        }
+        if startLabel.position.x < controlWidth + startLabel.frame.width/2 {
+            startLabel.position.x = controlWidth + startLabel.frame.width/2
+        }
+        if startLabel.position.x > width - controlWidth  + startLabel.frame.width/2 {
+            startLabel.position.x = width - controlWidth + startLabel.frame.width/2
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
