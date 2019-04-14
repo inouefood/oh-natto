@@ -13,12 +13,9 @@ class MixScene: SKScene{
     var timer:Timer?
     
     var nattoSprite:[SKSpriteNode] = []
-    var nattoCount = 500
     var ohashi = SKSpriteNode()
     var stickyLevel:Int = 0
     var cells = [Int](repeating: 0, count: 108)
-    let ohashiCategory: UInt32 = 0x1 << 0
-    let nattoCategory: UInt32 = 0x1 << 1
     
     fileprivate lazy var presenter: MixPresenter! = {
         let presenter = MixPresenterImpl(output: self, model: MixModel())
@@ -48,17 +45,17 @@ class MixScene: SKScene{
         self.backgroundColor = SKColor.gray
         
         //お箸
-        let ohashiBody = SKPhysicsBody().make(circleOfRadius: 50, category: ohashiCategory, contact: nattoCategory, isGravity: false)
+        let ohashiBody = SKPhysicsBody().make(circleOfRadius: 50, category: Constant.CollisionBody.ohashi, contact: Constant.CollisionBody.natto, isGravity: false)
         ohashi = SKSpriteNode(image: "ohashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), body: ohashiBody)
         self.addChild(ohashi)
         
         //納豆
-        for _ in 0..<nattoCount{
+        for _ in 0..<Constant.SpriteCount.natto{
             let X = Int(arc4random_uniform(UInt32(self.frame.size.width)))
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
             
-            let nattoBody = SKPhysicsBody().make(circleOfRadius: 20, category: nattoCategory, contact: ohashiCategory, isGravity: false)
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: 20, category: Constant.CollisionBody.natto, contact: Constant.CollisionBody.ohashi, isGravity: false)
             let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: nattoBody, rotate: r)
             self.addChild(natto)
             nattoSprite.append(natto)
@@ -101,7 +98,7 @@ extension MixScene: SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         //衝突時の処理
-        if firstBody.categoryBitMask & ohashiCategory != 0 && secondBody.categoryBitMask & nattoCategory != 0 {
+        if firstBody.categoryBitMask & Constant.CollisionBody.ohashi != 0 && secondBody.categoryBitMask & Constant.CollisionBody.natto != 0 {
             guard (secondBody.node?.position.x != 0.0 && secondBody.node?.position.y != 0.0) else { return }
             addStickyLine(pos: secondBody.node!.position)
             stickyLevel += 1
