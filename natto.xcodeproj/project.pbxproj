@@ -21,6 +21,7 @@
 		0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CFE223E7708007105D8 /* PullNattoModel.swift */; };
 		0DF70D3C22426268007105D8 /* MixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70D3B22426268007105D8 /* MixScene.swift */; };
 		0DFEF9C122623BF50061167A /* ObjectPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEF9C022623BF50061167A /* ObjectPosition.swift */; };
+		0DFEF9CB226362090061167A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEF9CA226362090061167A /* Constant.swift */; };
 		4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA320537F20002CA3BC /* natto_bgm_game.wav */; };
 		4343CEA62053804C002CA3BC /* voice_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA52053804C002CA3BC /* voice_5.wav */; };
 		4343CEA9205381DE002CA3BC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4343CEA8205381DE002CA3BC /* Social.framework */; };
@@ -55,6 +56,7 @@
 		0DF70CFE223E7708007105D8 /* PullNattoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoModel.swift; sourceTree = "<group>"; };
 		0DF70D3B22426268007105D8 /* MixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixScene.swift; sourceTree = "<group>"; };
 		0DFEF9C022623BF50061167A /* ObjectPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPosition.swift; sourceTree = "<group>"; };
+		0DFEF9CA226362090061167A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		4343CEA320537F20002CA3BC /* natto_bgm_game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = natto_bgm_game.wav; sourceTree = "<group>"; };
 		4343CEA52053804C002CA3BC /* voice_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_5.wav; sourceTree = "<group>"; };
 		4343CEA8205381DE002CA3BC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -172,6 +174,14 @@
 			path = Extension/Entity;
 			sourceTree = "<group>";
 		};
+		0DFEF9C9226361F10061167A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0DFEF9CA226362090061167A /* Constant.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		4343CEA7205381DD002CA3BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				0DF70CF1223E64BA007105D8 /* Sound */,
+				0DFEF9C9226361F10061167A /* Common */,
 				0DFEF9BF22623BA50061167A /* Entity */,
 				0DD326B82253A2D700FBE6A1 /* Extension */,
 				0DE54C65225F948D00006ED4 /* Scene */,
@@ -313,6 +324,7 @@
 				0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */,
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,
+				0DFEF9CB226362090061167A /* Constant.swift in Sources */,
 				43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */,
 				0DFEF9C122623BF50061167A /* ObjectPosition.swift in Sources */,
 				0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */,
