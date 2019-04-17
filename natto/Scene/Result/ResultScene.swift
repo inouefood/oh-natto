@@ -46,6 +46,8 @@ class ResultScene: SKScene{
         addImage()
         addLabel()
         addButton()
+        
+        presenter?.popUpReviewDialog()
     }
     
     func addImage() {

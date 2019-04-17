@@ -13,6 +13,7 @@ protocol ResultPresenter {
     func loadAudio(resourceName: String, resourceType: String)
     func playAudio()
     func showTweetDialog(text: String) -> SLComposeViewController
+    func popUpReviewDialog()
 }
 class ResultPresenterImpl: ResultPresenter {
     
@@ -32,5 +33,8 @@ class ResultPresenterImpl: ResultPresenter {
         let twitterCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
         twitterCmp.setInitialText(text)
         return twitterCmp
+    }
+    func popUpReviewDialog() {
+        model.popUpReviewDialog()
     }
 }
