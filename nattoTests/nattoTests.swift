@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import natto
 
 class nattoTests: XCTestCase {
 
@@ -17,6 +18,24 @@ class nattoTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testMixModel(){
+        let model = MixModel()
+        
+        // normal
+        var ohashiPos = model.updateOhashiPosition(touchPosX: 100, touchPosY: 100, ohashiRadius: 50)
+        XCTAssertEqual(ohashiPos, ObjectPosition(x: 100, y: 50))
+        
+        // - value
+        ohashiPos = model.updateOhashiPosition(touchPosX: 100, touchPosY: 0, ohashiRadius: 100)
+        XCTAssertEqual(ohashiPos, ObjectPosition(x: 100, y: -100))
+        
+        // Zero radius
+        ohashiPos = model.updateOhashiPosition(touchPosX: 100, touchPosY: 100, ohashiRadius: 0)
+        XCTAssertEqual(ohashiPos, ObjectPosition(x: 100, y: 100))
+        
+    }
+    
 
     func testExample() {
         // This is an example of a functional test case.
