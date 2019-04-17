@@ -22,6 +22,7 @@
 		0DF70D3C22426268007105D8 /* MixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70D3B22426268007105D8 /* MixScene.swift */; };
 		0DFEF9C122623BF50061167A /* ObjectPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEF9C022623BF50061167A /* ObjectPosition.swift */; };
 		0DFEF9CB226362090061167A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEF9CA226362090061167A /* Constant.swift */; };
+		0DFEF9E322675BF60061167A /* nattoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEF9E222675BF60061167A /* nattoUITests.swift */; };
 		4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA320537F20002CA3BC /* natto_bgm_game.wav */; };
 		4343CEA62053804C002CA3BC /* voice_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA52053804C002CA3BC /* voice_5.wav */; };
 		4343CEA9205381DE002CA3BC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4343CEA8205381DE002CA3BC /* Social.framework */; };
@@ -41,6 +42,16 @@
 		F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3C462D7205399CC005725C3 /* voice_5_pitchup.wav */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0DFEF9E522675BF60061167A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43D95F142052723B00FE1117 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43D95F1B2052723B00FE1117;
+			remoteInfo = natto;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0D815D0822617A3C00B6642E /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		0D815D0922617A3C00B6642E /* DescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionViewController.xib; sourceTree = "<group>"; };
@@ -57,6 +68,9 @@
 		0DF70D3B22426268007105D8 /* MixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixScene.swift; sourceTree = "<group>"; };
 		0DFEF9C022623BF50061167A /* ObjectPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPosition.swift; sourceTree = "<group>"; };
 		0DFEF9CA226362090061167A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0DFEF9E022675BF60061167A /* nattoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nattoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DFEF9E222675BF60061167A /* nattoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nattoUITests.swift; sourceTree = "<group>"; };
+		0DFEF9E422675BF60061167A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4343CEA320537F20002CA3BC /* natto_bgm_game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = natto_bgm_game.wav; sourceTree = "<group>"; };
 		4343CEA52053804C002CA3BC /* voice_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_5.wav; sourceTree = "<group>"; };
 		4343CEA8205381DE002CA3BC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -79,6 +93,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0DFEF9DD22675BF60061167A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43D95F192052723B00FE1117 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,6 +203,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		0DFEF9E122675BF60061167A /* nattoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0DFEF9E222675BF60061167A /* nattoUITests.swift */,
+				0DFEF9E422675BF60061167A /* Info.plist */,
+			);
+			path = nattoUITests;
+			sourceTree = "<group>";
+		};
 		4343CEA7205381DD002CA3BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				43D95F1E2052723B00FE1117 /* natto */,
+				0DFEF9E122675BF60061167A /* nattoUITests */,
 				43D95F1D2052723B00FE1117 /* Products */,
 				4343CEA7205381DD002CA3BC /* Frameworks */,
 			);
@@ -203,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				43D95F1C2052723B00FE1117 /* natto.app */,
+				0DFEF9E022675BF60061167A /* nattoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +270,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0DFEF9DF22675BF60061167A /* nattoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DFEF9E922675BF60061167A /* Build configuration list for PBXNativeTarget "nattoUITests" */;
+			buildPhases = (
+				0DFEF9DC22675BF60061167A /* Sources */,
+				0DFEF9DD22675BF60061167A /* Frameworks */,
+				0DFEF9DE22675BF60061167A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0DFEF9E622675BF60061167A /* PBXTargetDependency */,
+			);
+			name = nattoUITests;
+			productName = nattoUITests;
+			productReference = 0DFEF9E022675BF60061167A /* nattoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		43D95F1B2052723B00FE1117 /* natto */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43D95F342052723B00FE1117 /* Build configuration list for PBXNativeTarget "natto" */;
@@ -261,10 +311,15 @@
 		43D95F142052723B00FE1117 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "佐川　晴海";
 				TargetAttributes = {
+					0DFEF9DF22675BF60061167A = {
+						CreatedOnToolsVersion = 10.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 43D95F1B2052723B00FE1117;
+					};
 					43D95F1B2052723B00FE1117 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1010;
@@ -286,11 +341,19 @@
 			projectRoot = "";
 			targets = (
 				43D95F1B2052723B00FE1117 /* natto */,
+				0DFEF9DF22675BF60061167A /* nattoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0DFEF9DE22675BF60061167A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43D95F1A2052723B00FE1117 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +375,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0DFEF9DC22675BF60061167A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DFEF9E322675BF60061167A /* nattoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43D95F182052723B00FE1117 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,6 +412,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0DFEF9E622675BF60061167A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43D95F1B2052723B00FE1117 /* natto */;
+			targetProxy = 0DFEF9E522675BF60061167A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		43D95F292052723B00FE1117 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -361,6 +440,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0DFEF9E722675BF60061167A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24BSY9Z4H5;
+				INFOPLIST_FILE = nattoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.masala.nattoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = natto;
+			};
+			name = Debug;
+		};
+		0DFEF9E822675BF60061167A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24BSY9Z4H5;
+				INFOPLIST_FILE = nattoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.masala.nattoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = natto;
+			};
+			name = Release;
+		};
 		43D95F322052723B00FE1117 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -507,6 +623,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0DFEF9E922675BF60061167A /* Build configuration list for PBXNativeTarget "nattoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DFEF9E722675BF60061167A /* Debug */,
+				0DFEF9E822675BF60061167A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		43D95F172052723B00FE1117 /* Build configuration list for PBXProject "natto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
