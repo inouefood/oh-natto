@@ -48,9 +48,7 @@ class ResultScene: SKScene{
         addLabel()
         addButton()
         
-        if ((presenter?.isPopUpReviewDialog())!) {
-            SKStoreReviewController.requestReview()
-        }
+        SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter?.isPopUpReviewDialog())!)
     }
     
     func addImage() {
