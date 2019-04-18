@@ -9,12 +9,11 @@
 import Foundation
 import AVFoundation
 import Social
-import StoreKit
 
 protocol ResultModelInput {
     func loadAudio(resourceName:String, resourceType: String)
     func playAudio()
-    func popUpReviewDialog()
+    func isPopUpReviewDialog() -> Bool
 }
 class ResultModel: ResultModelInput{
     private var audio: AVAudioPlayer?
@@ -32,13 +31,14 @@ class ResultModel: ResultModelInput{
         audio?.play()
     }
     
-    func popUpReviewDialog() {
+    func isPopUpReviewDialog() -> Bool {
         let key = "openResultCount"
         UserDefaults.standard.set(UserDefaults.standard.integer(forKey: key) + 1, forKey: key)
         UserDefaults.standard.synchronize()
         let count = UserDefaults.standard.integer(forKey: key)
         if count % 5 == 0 {
-            SKStoreReviewController.requestReview()
+            return true
         }
+        return false
     }
 }
