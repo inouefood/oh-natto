@@ -36,7 +36,7 @@
 		43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2C2052723B00FE1117 /* Assets.xcassets */; };
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
-		F31970B1223FFA2A0045A391 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* GameModel.swift */; };
+		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
 		F346A9C42268E6E800A051FC /* SKStoreReviewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */; };
 		F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39D9423225A411400FD6401 /* SKPhysicsBody+Addition.swift */; };
 		F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3C462D7205399CC005725C3 /* voice_5_pitchup.wav */; };
@@ -74,7 +74,7 @@
 		43D95F2F2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43D95F312052723B00FE1117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
-		F31970B0223FFA2A0045A391 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
 		F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Addition.swift"; sourceTree = "<group>"; };
 		F39D9423225A411400FD6401 /* SKPhysicsBody+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKPhysicsBody+Addition.swift"; sourceTree = "<group>"; };
 		F3C462D7205399CC005725C3 /* voice_5_pitchup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_5_pitchup.wav; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			children = (
 				0DF70D3B22426268007105D8 /* MixScene.swift */,
 				F31970AE223FF9C50045A391 /* MixPresenter.swift */,
-				F31970B0223FFA2A0045A391 /* GameModel.swift */,
+				F31970B0223FFA2A0045A391 /* MixModel.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
 				0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */,
-				F31970B1223FFA2A0045A391 /* GameModel.swift in Sources */,
+				F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
