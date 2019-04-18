@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct ObjectPosition {
+struct ObjectPosition: Equatable {
     var x: Float
     var y: Float
+    
+    static func ==(lhs: ObjectPosition, rhs: ObjectPosition) -> Bool{
+        return lhs.x == rhs.x && lhs.y == rhs.y
+    }
 }
