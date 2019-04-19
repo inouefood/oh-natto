@@ -7,6 +7,7 @@
 //
 import SpriteKit
 import Social
+import StoreKit
 
 class ResultScene: SKScene{
     let resultScore:Int
@@ -46,6 +47,8 @@ class ResultScene: SKScene{
         addImage()
         addLabel()
         addButton()
+        
+        SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter?.isPopUpReviewDialog())!)
     }
     
     func addImage() {

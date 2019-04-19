@@ -13,6 +13,7 @@ import Social
 protocol ResultModelInput {
     func loadAudio(resourceName:String, resourceType: String)
     func playAudio()
+    func isPopUpReviewDialog() -> Bool
 }
 class ResultModel: ResultModelInput{
     private var audio: AVAudioPlayer?
@@ -28,5 +29,16 @@ class ResultModel: ResultModelInput{
     
     func playAudio() {
         audio?.play()
+    }
+    
+    func isPopUpReviewDialog() -> Bool {
+        let key = "openResultCount"
+        UserDefaults.standard.set(UserDefaults.standard.integer(forKey: key) + 1, forKey: key)
+        UserDefaults.standard.synchronize()
+        let count = UserDefaults.standard.integer(forKey: key)
+        if count % 5 == 0 {
+            return true
+        }
+        return false
     }
 }
