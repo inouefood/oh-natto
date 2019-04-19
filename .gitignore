@@ -1,5 +1,4 @@
 # Xcode (from gitignore.io)
-build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -19,7 +18,17 @@ DerivedData
 # CocoaPod
 Pods/*
 
+# bandler
+vendor/*
+
 # others
 *.swp
 !.gitkeep
 .DS_Store
+
+# fastlane
+build/
+fastlane/test_output/*
+fastlane/README.md
+fastlane/report.xml
+screenshots/*
