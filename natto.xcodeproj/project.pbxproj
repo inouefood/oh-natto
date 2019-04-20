@@ -40,6 +40,8 @@
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
 		F346A9C42268E6E800A051FC /* SKStoreReviewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */; };
+		F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */; };
+		F346A9CA226A403E00A051FC /* SKShapeNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346A9C9226A403E00A051FC /* SKShapeNode+Addition.swift */; };
 		F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39D9423225A411400FD6401 /* SKPhysicsBody+Addition.swift */; };
 		F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3C462D7205399CC005725C3 /* voice_5_pitchup.wav */; };
 /* End PBXBuildFile section */
@@ -101,6 +103,8 @@
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
 		F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Addition.swift"; sourceTree = "<group>"; };
+		F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGMutablePath+Addition.swift"; sourceTree = "<group>"; };
+		F346A9C9226A403E00A051FC /* SKShapeNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKShapeNode+Addition.swift"; sourceTree = "<group>"; };
 		F39D9423225A411400FD6401 /* SKPhysicsBody+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKPhysicsBody+Addition.swift"; sourceTree = "<group>"; };
 		F3C462D7205399CC005725C3 /* voice_5_pitchup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_5_pitchup.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +154,8 @@
 				0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */,
 				F39D9423225A411400FD6401 /* SKPhysicsBody+Addition.swift */,
 				F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */,
+				F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */,
+				F346A9C9226A403E00A051FC /* SKShapeNode+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -461,6 +467,8 @@
 				0DCE81AB2254DEA1002FAE96 /* SLComposeViewController+Addition.swift in Sources */,
 				0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */,
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
+				F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */,
+				F346A9CA226A403E00A051FC /* SKShapeNode+Addition.swift in Sources */,
 				F346A9C42268E6E800A051FC /* SKStoreReviewController+Addition.swift in Sources */,
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
 				43D95F262052723B00FE1117 /* TitleScene.swift in Sources */,
