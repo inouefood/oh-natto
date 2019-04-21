@@ -104,19 +104,11 @@ extension MixScene: SKPhysicsContactDelegate {
             stickyLevel += 1
         }
     }
+    
     func addStickyLine(pos: CGPoint){
-        let path = CGMutablePath()
-        path.move(to: ohashi.position)
-        path.addLine(to: pos)
-        path.closeSubpath()
-        let curve = SKShapeNode(path: path)
-        curve.strokeColor = .white
-        curve.lineWidth = 4
-        curve.alpha = 0.2
-        curve.zPosition = 1.0
-        curve.name = "curve"
-        curve.isUserInteractionEnabled = false
-        self.addChild(curve)
+        let stickyPath = CGMutablePath().make(start: ohashi.position, end: pos)
+        let stickyLine = SKShapeNode(path: stickyPath, color: .white, lineWid: 4, alpha: 0.2, zPos: 1.0, isInteractive: false)
+        self.addChild(stickyLine)
     }
 }
 
