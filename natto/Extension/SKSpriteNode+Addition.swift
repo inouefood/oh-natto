@@ -16,11 +16,12 @@ extension SKSpriteNode {
         self.physicsBody = body
     }
     // initializer for MixScene&PullNattoScene/mame
-    convenience init(image: String, pos: CGPoint, body: SKPhysicsBody, rotate: CGFloat) {
+    convenience init(image: String, pos: CGPoint, body: SKPhysicsBody, rotate: CGFloat, size: CGSize) {
         self.init(imageNamed: image)
         self.position = pos
         self.physicsBody = body
         self.zRotation = rotate
+        self.size = size
     }
     // initializer for PullNattoScene/mouth
     convenience init(image: String, viewBounds: CGRect, frame: CGRect, zPos: CGFloat) {
