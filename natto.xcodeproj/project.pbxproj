@@ -173,7 +173,7 @@
 			children = (
 				0D815D0722617A2A00B6642E /* Description */,
 				0DE54C64225F946000006ED4 /* Title */,
-				F31970AD223FF9100045A391 /* Game */,
+				F31970AD223FF9100045A391 /* Mix */,
 				0DF70CFD223E76AF007105D8 /* PullNatto */,
 				0DF70CF2223E68AD007105D8 /* Result */,
 			);
@@ -295,14 +295,14 @@
 			path = natto;
 			sourceTree = "<group>";
 		};
-		F31970AD223FF9100045A391 /* Game */ = {
+		F31970AD223FF9100045A391 /* Mix */ = {
 			isa = PBXGroup;
 			children = (
 				0DF70D3B22426268007105D8 /* MixScene.swift */,
 				F31970AE223FF9C50045A391 /* MixPresenter.swift */,
 				F31970B0223FFA2A0045A391 /* MixModel.swift */,
 			);
-			path = Game;
+			path = Mix;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -56,7 +56,7 @@ class MixScene: SKScene{
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
             
             let nattoBody = SKPhysicsBody().make(circleOfRadius: 20, category: Constant.CollisionBody.natto, contact: Constant.CollisionBody.ohashi, isGravity: false)
-            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: nattoBody, rotate: r)
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: nattoBody, rotate: r, size: CGSize(width: self.frame.size.width/15, height: self.frame.size.width/15))
             self.addChild(natto)
             nattoSprite.append(natto)
         }

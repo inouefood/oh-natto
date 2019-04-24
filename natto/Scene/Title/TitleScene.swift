@@ -16,6 +16,15 @@ class TitleScene: SKScene {
     var height: CGFloat!
     var controlWidth: CGFloat!
     
+    override init(size: CGSize) {
+        super.init(size: size)
+        tutorialButton.isHidden = false
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // - MARK: LifeCycle
     
     override func didMove(to view: SKView) {
@@ -62,7 +71,7 @@ class TitleScene: SKScene {
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)
             if touchNode == startLabel{
-                tutorialButton.removeFromSuperview()
+                tutorialButton.isHidden = true
                 let scene = MixScene(size: self.size)
                 self.view!.presentScene(scene)
             } else {
