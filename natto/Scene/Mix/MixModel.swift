@@ -8,9 +8,11 @@
 
 import Foundation
 import AVFoundation
+import SpriteKit
 
 protocol MixModelInput {
     func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float) -> ObjectPosition
+    func contactOhashiToNatto(contact: SKPhysicsContact) -> CGPoint?
     func loadEffectAudio1(resourceName: String, resourceType: String)
     func loadEffectAudio2(resourceName: String, resourceType: String)
     func playEffect1()
@@ -25,6 +27,23 @@ class MixModel: MixModelInput {
     
     func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float) -> ObjectPosition {
         return ObjectPosition(x: touchPosX, y: touchPosY - ohashiRadius)
+    }
+    
+    func contactOhashiToNatto(contact: SKPhysicsContact) -> CGPoint? {
+        var firstBody, secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        if firstBody.categoryBitMask & Constant.CollisionBody.ohashi != 0
+           && secondBody.categoryBitMask & Constant.CollisionBody.natto != 0 {
+            guard (secondBody.node?.position != CGPoint(x: 0.0, y: 0.0)) else { return nil }
+            return secondBody.node?.position
+        }
+        return nil
     }
 
     func loadEffectAudio1(resourceName: String, resourceType: String) {

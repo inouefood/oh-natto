@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import SpriteKit
 
 protocol MixPresenter {
     init(output: MixPresenterOutput, model: MixModelInput)
     func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float)
+    func contactOhashiToNatto(contact: SKPhysicsContact) -> CGPoint?
     func loadEffectAudio1(resourceName: String, resourceType: String)
     func loadEffectAudio2(resourceName: String, resourceType: String)
     func playEffect1()
@@ -35,6 +37,10 @@ class MixPresenterImpl: MixPresenter {
     func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float) {
         let objPos = model.updateOhashiPosition(touchPosX: touchPosX, touchPosY: touchPosY, ohashiRadius: ohashiRadius)
         output.showUpdateOhashi(objPos: objPos)
+    }
+    
+    func contactOhashiToNatto(contact: SKPhysicsContact) -> CGPoint? {
+        return model.contactOhashiToNatto(contact: contact)
     }
     
     func loadEffectAudio1(resourceName: String, resourceType: String) {

@@ -88,24 +88,13 @@ class MixScene: SKScene{
 extension MixScene: SKPhysicsContactDelegate {
     //衝突した時に呼ばれる関数
     func didBegin(_ contact: SKPhysicsContact) {
-        var firstBody, secondBody: SKPhysicsBody
-        
-        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
-        } else {
-            firstBody = contact.bodyB
-            secondBody = contact.bodyA
-        }
-        //衝突時の処理
-        if firstBody.categoryBitMask & Constant.CollisionBody.ohashi != 0 && secondBody.categoryBitMask & Constant.CollisionBody.natto != 0 {
-            guard (secondBody.node?.position.x != 0.0 && secondBody.node?.position.y != 0.0) else { return }
-            addStickyLine(pos: secondBody.node!.position)
-            stickyLevel += 1
-        }
+        let pos: CGPoint? = presenter.contactOhashiToNatto(contact: contact)
+        guard pos != nil else { return }
+        addStickyLine(pos: pos!)
+        stickyLevel += 1
     }
     
-    func addStickyLine(pos: CGPoint){
+    func addStickyLine(pos: CGPoint) {
         let stickyPath = CGMutablePath().make(start: ohashi.position, end: pos)
         let stickyLine = SKShapeNode(path: stickyPath, color: .white, lineWid: 4, alpha: 0.2, zPos: 1.0, isInteractive: false)
         self.addChild(stickyLine)
