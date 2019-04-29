@@ -20,6 +20,7 @@
 		0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */; };
 		0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CFE223E7708007105D8 /* PullNattoModel.swift */; };
 		0DF70D3C22426268007105D8 /* MixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70D3B22426268007105D8 /* MixScene.swift */; };
+		0DFD696A2276F2BB000DBD93 /* SKScene+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFD69692276F2BB000DBD93 /* SKScene+Addition.swift */; };
 		0DFEF9C122623BF50061167A /* ObjectPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEF9C022623BF50061167A /* ObjectPosition.swift */; };
 		0DFEF9CB226362090061167A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEF9CA226362090061167A /* Constant.swift */; };
 		0DFEF9E322675BF60061167A /* nattoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEF9E222675BF60061167A /* nattoUITests.swift */; };
@@ -77,6 +78,7 @@
 		0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoPresenter.swift; sourceTree = "<group>"; };
 		0DF70CFE223E7708007105D8 /* PullNattoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoModel.swift; sourceTree = "<group>"; };
 		0DF70D3B22426268007105D8 /* MixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixScene.swift; sourceTree = "<group>"; };
+		0DFD69692276F2BB000DBD93 /* SKScene+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Addition.swift"; sourceTree = "<group>"; };
 		0DFEF9C022623BF50061167A /* ObjectPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPosition.swift; sourceTree = "<group>"; };
 		0DFEF9CA226362090061167A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0DFEF9E022675BF60061167A /* nattoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nattoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */,
 				F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */,
 				F346A9C9226A403E00A051FC /* SKShapeNode+Addition.swift */,
+				0DFD69692276F2BB000DBD93 /* SKScene+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				0DE54C61225F8F2C00006ED4 /* NattoViewController.swift in Sources */,
 				F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */,
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
+				0DFD696A2276F2BB000DBD93 /* SKScene+Addition.swift in Sources */,
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
 				0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */,
 				F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */,

@@ -30,6 +30,8 @@ class ResultScene: SKScene{
 
     var presenter: ResultPresenter?
     
+    // MARK: - Initializer
+    
     init(size:CGSize, score: Int) {
         self.resultScore = score
         presenter = ResultPresenterImpl()
@@ -40,36 +42,26 @@ class ResultScene: SKScene{
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - LifeCycle
+    
     override func didMove(to view: SKView) {
         presenter?.loadAudio(resourceName: "natto_bgm_score", resourceType: "wav")
         presenter?.playAudio()
         
         addImage()
-        addLabel()
-        addButton()
+        self.addChild(scoreLabel, replayLabel, twitterButton, facebookButton, lineButton)
         
         SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter?.isPopUpReviewDialog())!)
     }
     
-    func addImage() {
+    private func addImage() {
         let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:self.frame.size.width/2,y: self.frame.size.height/2))
         //animation
         let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"), SKTexture(imageNamed: "mame02"), SKTexture(imageNamed: "mame03")], timePerFrame: 0.2)
         mamekun.run(SKAction.repeatForever(animation))
         self.addChild(mamekun)
     }
-    
-    func addLabel() {
-        self.addChild(scoreLabel)
-        self.addChild(replayLabel)
-    }
-    
-    func addButton() {
-        self.addChild(twitterButton)
-        self.addChild(facebookButton)
-        self.addChild(lineButton)
-    }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touches:AnyObject in touches{
             let location = touches.previousLocation(in: self)
