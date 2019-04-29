@@ -45,7 +45,7 @@ class MixScene: SKScene{
         self.backgroundColor = SKColor.gray
         
         //お箸
-        let ohashiBody = SKPhysicsBody().make(circleOfRadius: 50, category: Constant.CollisionBody.ohashi, contact: Constant.CollisionBody.natto, isGravity: false)
+        let ohashiBody = SKPhysicsBody().make(circleOfRadius: self.frame.size.width/20, category: Constant.CollisionBody.ohashi, contact: Constant.CollisionBody.natto, isGravity: false)
         ohashi = SKSpriteNode(image: "ohashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), body: ohashiBody)
         self.addChild(ohashi)
         
@@ -55,7 +55,7 @@ class MixScene: SKScene{
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
             
-            let nattoBody = SKPhysicsBody().make(circleOfRadius: 20, category: Constant.CollisionBody.natto, contact: Constant.CollisionBody.ohashi, isGravity: false)
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: self.frame.size.width/40, category: Constant.CollisionBody.natto, contact: Constant.CollisionBody.ohashi, isGravity: false)
             let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: nattoBody, rotate: r, size: CGSize(width: self.frame.size.width/15, height: self.frame.size.width/15))
             self.addChild(natto)
             nattoSprite.append(natto)
@@ -69,7 +69,7 @@ class MixScene: SKScene{
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let pos = touches.first!.location(in: self)
-        presenter.updateOhashiPosition(touchPosX: Float(pos.x), touchPosY: Float(pos.y), ohashiRadius: 50)
+        presenter.updateOhashiPosition(touchPosX: Float(pos.x), touchPosY: Float(pos.y), ohashiRadius: Float(self.frame.size.width/20))
     }
     
     override func update(_ currentTime: TimeInterval) {

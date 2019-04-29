@@ -62,8 +62,8 @@ class PullNattoScene: SKScene{
             let Y = Int(arc4random_uniform(UInt32(self.frame.size.height / 4.0)))
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * .pi)))
             
-            let nattoBody = SKPhysicsBody().make(circleOfRadius: 20, isGravity: true)
-            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: nattoBody, rotate: r, size: CGSize(width: self.frame.size.width/20, height: self.frame.size.width/20))
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: self.frame.size.width/40, isGravity: true)
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: X, y: Y), body: nattoBody, rotate: r, size: CGSize(width: self.frame.size.width/17, height: self.frame.size.width/17))
             self.addChild(natto)
             nattoSprite.append(natto)
         }
@@ -109,7 +109,7 @@ class PullNattoScene: SKScene{
             presenter.updateNattoPosition(ohashiX: Float(ohashi.position.x), ohashiY: Float(ohashi.position.y),
                                           ohashiWidth: Float(ohashi.size.width), ohashiHeight: Float(ohashi.size.height),
                                           nattoX: Float(targetNatto.position.x), nattoY: Float(targetNatto.position.y),
-                                          sticky: stickyLevel)
+                                          sticky: stickyLevel, dist: Float(self.frame.size.width/10))
         }
     }
 }
