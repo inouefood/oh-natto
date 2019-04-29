@@ -55,6 +55,9 @@ class TitleScene: SKScene {
         if startLabel.position.y < height/30 + startLabel.frame.height/2{
             startLabel.position.y = height/30 + startLabel.frame.height/2
         }
+        if startLabel.position.y > height - startLabel.frame.height/2{
+            startLabel.position.y = height - startLabel.frame.height/2
+        }
         if startLabel.position.x < controlWidth + startLabel.frame.width/2 {
             startLabel.position.x = controlWidth + startLabel.frame.width/2
         }

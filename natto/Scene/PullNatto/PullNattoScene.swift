@@ -16,7 +16,8 @@ class PullNattoScene: SKScene{
     var count = 0
     var stickyLevel:Float
     var nattoSprite:[SKSpriteNode] = []
-    var ohashi = SKSpriteNode()
+    lazy var ohashi = SKSpriteNode(image: "pullOhashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), viewBounds: (self.view?.bounds)!, frame: self.frame, zPos: 1.25)
+    lazy var mouth = SKSpriteNode(image: "pakupaku", viewBounds: (self.view?.bounds)!, frame: self.frame, zPos: 1.0)
     var mameflag = false
     fileprivate lazy var presenter: PullNattoPresenter! = {
         let presenter = PullNattoPresenterImpl(output: self, model: PullNattoModel())
@@ -48,13 +49,7 @@ class PullNattoScene: SKScene{
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -0.5)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
-        //お口の初期設定
-        let mouth = SKSpriteNode(image: "pakupaku", viewBounds: (self.view?.bounds)!, frame: self.frame, zPos: 1.0)
-        self.addChild(mouth)
-        
-        //お箸の初期設定
-        ohashi = SKSpriteNode(image: "pullOhashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), viewBounds: (self.view?.bounds)!, frame: self.frame, zPos: 1.25)
-        self.addChild(ohashi)
+        self.addChild(mouth, ohashi)
         
         //納豆の初期設定
         for _ in 0..<Constant.SpriteCount.natto {
