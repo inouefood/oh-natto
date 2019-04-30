@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D048FC42277FCE500852FFA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D048FC32277FCE500852FFA /* Settings.bundle */; };
 		0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0822617A3C00B6642E /* DescriptionViewController.swift */; };
 		0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D815D0922617A3C00B6642E /* DescriptionViewController.xib */; };
 		0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0E2261E3B100B6642E /* Closebutton.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D048FC32277FCE500852FFA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0D815D0822617A3C00B6642E /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		0D815D0922617A3C00B6642E /* DescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionViewController.xib; sourceTree = "<group>"; };
 		0D815D0E2261E3B100B6642E /* Closebutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closebutton.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				43D95F2C2052723B00FE1117 /* Assets.xcassets */,
 				43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */,
 				43D95F312052723B00FE1117 /* Info.plist */,
+				0D048FC32277FCE500852FFA /* Settings.bundle */,
 			);
 			path = natto;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				4343CEB12053AB86002CA3BC /* paku.wav in Resources */,
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
+				0D048FC42277FCE500852FFA /* Settings.bundle in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
 				0D815D112261E42D00B6642E /* CloseButton.xib in Resources */,
