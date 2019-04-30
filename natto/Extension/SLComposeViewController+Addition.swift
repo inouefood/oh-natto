@@ -8,6 +8,7 @@
 
 import Foundation
 import Social
+import TwitterKit
 
 extension SLComposeViewController {
     func showTwitterDialog(message: String, vc: UIViewController){
