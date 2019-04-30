@@ -9,7 +9,6 @@
 import Foundation
 import Social
 import TwitterKit
-import FacebookCore
 
 extension SLComposeViewController {
     func showTwitterDialog(message: String, vc: UIViewController){
