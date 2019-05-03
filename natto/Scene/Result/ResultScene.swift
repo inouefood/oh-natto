@@ -12,10 +12,10 @@ import StoreKit
 class ResultScene: SKScene{
     let resultScore:Int
     lazy var replayLabel: SKLabelNode! = {
-        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY", pos: CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20))
+        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY", pos: CGPoint(x: self.frame.midX, y: height * 0.20))
     }()
     lazy var scoreLabel: SKLabelNode! = {
-        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore), pos: CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.80))
+        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore), pos: CGPoint(x: self.frame.midX, y: height * 0.80))
     }()
     lazy var buttonSize = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
     lazy var twitterButton: SKSpriteNode! = {
@@ -55,7 +55,7 @@ class ResultScene: SKScene{
     }
     
     private func addImage() {
-        let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:self.frame.size.width/2,y: self.frame.size.height/2))
+        let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:width/2,y: height/2))
         //animation
         let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"), SKTexture(imageNamed: "mame02"), SKTexture(imageNamed: "mame03")], timePerFrame: 0.2)
         mamekun.run(SKAction.repeatForever(animation))

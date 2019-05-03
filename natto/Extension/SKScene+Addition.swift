@@ -19,7 +19,17 @@ extension SKScene {
     }
     var randY: CGFloat {
         get {
-            return CGFloat.random(in: 0...self.frame.size.width)
+            return CGFloat.random(in: 0...self.frame.size.height)
+        }
+    }
+    var width: CGFloat {
+        get {
+            return frame.width
+        }
+    }
+    var height: CGFloat {
+        get {
+            return frame.height
         }
     }
 }

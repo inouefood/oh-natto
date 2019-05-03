@@ -10,15 +10,15 @@ import GameplayKit
 import UIKit
 
 class TitleScene: SKScene {
-
     var startLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "START")
-    var width: CGFloat!
-    var height: CGFloat!
     var controlWidth: CGFloat!
+    
+    // MARK: - Initializer
     
     override init(size: CGSize) {
         super.init(size: size)
         tutorialButton.isHidden = false
+        controlWidth = width / 10
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,10 +31,6 @@ class TitleScene: SKScene {
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -1.5)
         
-        width = self.view!.frame.width
-        height = self.view!.frame.height
-        controlWidth = width / 10
-    
         for _ in 0...3 {
             let mame = SKSpriteNode(imageNamed: "mame")
             mame.position = CGPoint(x:CGFloat(Int.random(in: 100...Int(self.frame.width))-100),
@@ -42,7 +38,6 @@ class TitleScene: SKScene {
              mame.physicsBody = SKPhysicsBody().make(rectangleOf: mame.size, category: 0x1 << 1, contact: 0x1 << 0, isGravity: true)
             self.addChild(mame)
         }
-        
         
         startLabel.fontColor = .white
         startLabel.physicsBody = SKPhysicsBody(circleOfRadius: startLabel.frame.maxX)
@@ -70,7 +65,6 @@ class TitleScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touches:AnyObject in touches{
-            print(self.atPoint(touches.previousLocation(in: self)))
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)
             if touchNode == startLabel{

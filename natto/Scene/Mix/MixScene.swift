@@ -17,14 +17,14 @@ class MixScene: SKScene{
         for _ in 0..<Constant.SpriteCount.natto{
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
             
-            let nattoBody = SKPhysicsBody().make(circleOfRadius: self.frame.size.width/40, category: Constant.CollisionBody.natto, contact: Constant.CollisionBody.ohashi, isGravity: false)
-            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: randX, y: randY), body: nattoBody, rotate: r, size: CGSize(width: self.frame.size.width/15, height: self.frame.size.width/15))
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: width/40, category: Constant.CollisionBody.natto, contact: Constant.CollisionBody.ohashi, isGravity: false)
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: randX, y: randY), body: nattoBody, rotate: r, size: CGSize(width: width/15, height: width/15))
             sprites.append(natto)
         }
         return sprites
     }()
 
-    lazy var ohashi = SKSpriteNode(image: "ohashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), body: SKPhysicsBody().make(circleOfRadius: self.frame.size.width/20, category: Constant.CollisionBody.ohashi, contact: Constant.CollisionBody.natto, isGravity: false))
+    lazy var ohashi = SKSpriteNode(image: "ohashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), body: SKPhysicsBody().make(circleOfRadius: width/20, category: Constant.CollisionBody.ohashi, contact: Constant.CollisionBody.natto, isGravity: false))
     
     // MARK: - Priperty
     
@@ -76,7 +76,7 @@ class MixScene: SKScene{
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let pos = touches.first!.location(in: self)
-        presenter.updateOhashiPosition(touchPosX: Float(pos.x), touchPosY: Float(pos.y), ohashiRadius: Float(self.frame.size.width/20))
+        presenter.updateOhashiPosition(touchPosX: Float(pos.x), touchPosY: Float(pos.y), ohashiRadius: Float(width/20))
     }
     
     @objc func timerCounter(){
