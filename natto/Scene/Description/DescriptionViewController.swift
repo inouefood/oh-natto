@@ -12,7 +12,7 @@ class DescriptionViewController: UIViewController {
 
     @IBOutlet weak var descriptionLabel1: UILabel! {
         didSet {
-            descriptionLabel1.text = "①納豆をできるだけたくさん混ぜてねばりけを出します。混ぜた量によって次の画面での納豆の吸着率が変化します"
+            descriptionLabel1.text = "①納豆をできるだけたくさん混ぜ、ねばりけを出します。白いネベネバをたくさん発生させることで納豆の吸着率が変化します"
         }
     }
     @IBOutlet weak var descriptionLabel2: UILabel! {

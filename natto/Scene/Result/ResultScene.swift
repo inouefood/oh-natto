@@ -10,12 +10,14 @@ import Social
 import StoreKit
 
 class ResultScene: SKScene{
-    let resultScore:Int
+    
+    // MARK: - NodeInitialize
+   
     lazy var replayLabel: SKLabelNode! = {
-        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY", pos: CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.20))
+        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY", pos: CGPoint(x: self.frame.midX, y: height * 0.20))
     }()
     lazy var scoreLabel: SKLabelNode! = {
-        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore), pos: CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.80))
+        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore), pos: CGPoint(x: self.frame.midX, y: height * 0.80))
     }()
     lazy var buttonSize = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
     lazy var twitterButton: SKSpriteNode! = {
@@ -28,13 +30,20 @@ class ResultScene: SKScene{
         return SKSpriteNode(image: "LINE_APP", pos: CGPoint(x: self.frame.maxX * 0.7, y: self.frame.maxY * 0.1), zPos: 1.5, size: buttonSize)
     }()
 
-    var presenter: ResultPresenter?
+    // MARK: - Property
+    
+    let resultScore:Int
+    var presenter: ResultPresenter {
+        let presenter = ResultPresenterImpl()
+        presenter.loadAudio(resourceName: "natto_bgm_score", resourceType: "wav")
+        return presenter
+    }
     
     // MARK: - Initializer
     
     init(size:CGSize, score: Int) {
         self.resultScore = score
-        presenter = ResultPresenterImpl()
+        
         super.init(size: size)
     }
     
@@ -45,22 +54,26 @@ class ResultScene: SKScene{
     // MARK: - LifeCycle
     
     override func didMove(to view: SKView) {
-        presenter?.loadAudio(resourceName: "natto_bgm_score", resourceType: "wav")
-        presenter?.playAudio()
+        
+        presenter.playAudio()
         
         addImage()
         self.addChild(scoreLabel, replayLabel, twitterButton, facebookButton, lineButton)
         
-        SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter?.isPopUpReviewDialog())!)
+        SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter.isPopUpReviewDialog()))
     }
     
+    // MARK: - PrivateMethod
+    
     private func addImage() {
-        let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:self.frame.size.width/2,y: self.frame.size.height/2))
+        let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:width/2,y: height/2))
         //animation
         let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"), SKTexture(imageNamed: "mame02"), SKTexture(imageNamed: "mame03")], timePerFrame: 0.2)
         mamekun.run(SKAction.repeatForever(animation))
         self.addChild(mamekun)
     }
+    
+    // MARK: - Event
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touches:AnyObject in touches{
