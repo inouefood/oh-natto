@@ -49,7 +49,7 @@ class MixScene: SKScene{
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MAKR: - LifeCycle
+    // MARK: - LifeCycle
     override func didMove(to view: SKView) {
         //衝突判定のデリゲートをselfにする
         self.physicsWorld.contactDelegate = self
