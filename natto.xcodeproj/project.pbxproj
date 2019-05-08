@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D048FC42277FCE500852FFA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D048FC32277FCE500852FFA /* Settings.bundle */; };
-		0D048FC622780D9300852FFA /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D048FC522780D9300852FFA /* TwitterKit.framework */; };
-		0D048FC822780DC400852FFA /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D048FC722780DC400852FFA /* FacebookCore.framework */; };
-		0D048FCF2278144700852FFA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D048FCE2278144700852FFA /* Bolts.framework */; };
-		0D048FD1227814D400852FFA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D048FD0227814D400852FFA /* FBSDKCoreKit.framework */; };
 		0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0822617A3C00B6642E /* DescriptionViewController.swift */; };
 		0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D815D0922617A3C00B6642E /* DescriptionViewController.xib */; };
 		0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0E2261E3B100B6642E /* Closebutton.swift */; };
@@ -142,10 +138,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D048FD1227814D400852FFA /* FBSDKCoreKit.framework in Frameworks */,
-				0D048FCF2278144700852FFA /* Bolts.framework in Frameworks */,
-				0D048FC822780DC400852FFA /* FacebookCore.framework in Frameworks */,
-				0D048FC622780D9300852FFA /* TwitterKit.framework in Frameworks */,
 				4343CEA9205381DE002CA3BC /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,12 +472,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/TwitterKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FacebookLogin.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FacebookShare.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
+				"",
 			);
 			name = "Run Script";
 			outputFileListPaths = (
@@ -494,7 +481,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
