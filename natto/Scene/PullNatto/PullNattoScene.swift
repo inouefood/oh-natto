@@ -97,25 +97,13 @@ class PullNattoScene: SKScene{
     }
     
     override func update(_ currentTime: TimeInterval) {
-        nattoSprite.forEach{ natto in
-            if (height * 0.80 < natto.position.y) {
-                natto.position.y = height + 100
-                mameflag = true
-                if(mameflag){
-                    if(count > 1){
-                        return
-                    }else{
-                        presenter.playEffect()
-                    }
-                        count+=1
-                }
-            }
+        
+        for (i, natto) in nattoSprite.enumerated() {
+            presenter.eatCheck(height: Float(height), nattoY: Float(natto.position.y), index: i)
+
             targetNatto = natto
-            
-            presenter.updateNattoPosition(ohashiX: Float(ohashi.position.x), ohashiY: Float(ohashi.position.y),
-                                          ohashiWidth: Float(ohashi.size.width), ohashiHeight: Float(ohashi.size.height),
-                                          nattoX: Float(targetNatto.position.x), nattoY: Float(targetNatto.position.y),
-                                          sticky: stickyLevel, dist: Float(width/10))
+
+            presenter.updateNattoPosition(ohashiPos: ObjectPosition(pos: ohashi.position), ohashiSize: ObjectPosition(size: ohashi.size), nattoPos: ObjectPosition(pos: natto.position), sticky: stickyLevel, dist: Float(width/10), index: i)
         }
     }
 }
@@ -126,5 +114,17 @@ extension PullNattoScene: PullNattoPresenterOutput {
     func showUpdateNatto(objPos: ObjectPosition) {
         targetNatto.position.x += CGFloat(objPos.x)
         targetNatto.position.y += CGFloat(objPos.y)
+    }
+    func showEatNatto(index: Int){
+        nattoSprite[index].position.y = height + 100
+        mameflag = true
+        if(mameflag){
+            if(count > 1){
+                return
+            }else{
+                presenter.playEffect()
+            }
+            count+=1
+        }
     }
 }
