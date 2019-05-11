@@ -21,6 +21,7 @@ protocol PullNattoModelInput {
 class PullNattoModel: PullNattoModelInput {
     private var bgm: AVAudioPlayer!
     private var effect: AVAudioPlayer!
+    private var isPlaying: Bool = false
     
     
     
@@ -62,6 +63,9 @@ class PullNattoModel: PullNattoModelInput {
     }
     
     func playEffect() {
-        effect.play()
+        if !isPlaying {
+            effect.play()
+            isPlaying = true
+        }
     }
 }
