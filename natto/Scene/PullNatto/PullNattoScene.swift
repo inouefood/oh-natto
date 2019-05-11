@@ -30,18 +30,15 @@ class PullNattoScene: SKScene{
     
     var timer:Timer?
     var score:Int = 0
-    var count = 0
-    var stickyLevel:Float
-    var mameflag = false
+    var soundFlag: Bool = false
+    let stickyLevel:Float
+    
     fileprivate lazy var presenter: PullNattoPresenter! = {
         let presenter = PullNattoPresenterImpl(output: self, model: PullNattoModel())
         presenter.loadBgmAudio(resourceName:"natto_bgm_game", resourceType: "wav")
         presenter.loadEffectAudio(resourceName: "paku", resourceType: "wav")
         return presenter
     }()
-    
-    var targetNatto: SKSpriteNode!
-    
     
     // MARK: - Initializer
     
@@ -101,8 +98,6 @@ class PullNattoScene: SKScene{
         for (i, natto) in nattoSprite.enumerated() {
             presenter.eatCheck(height: Float(height), nattoY: Float(natto.position.y), index: i)
 
-            targetNatto = natto
-
             presenter.updateNattoPosition(ohashiPos: ObjectPosition(pos: ohashi.position), ohashiSize: ObjectPosition(size: ohashi.size), nattoPos: ObjectPosition(pos: natto.position), sticky: stickyLevel, dist: Float(width/10), index: i)
         }
     }
@@ -111,20 +106,17 @@ class PullNattoScene: SKScene{
 // MARK: - PullNattoPresenterOutput
 
 extension PullNattoScene: PullNattoPresenterOutput {
-    func showUpdateNatto(objPos: ObjectPosition) {
-        targetNatto.position.x += CGFloat(objPos.x)
-        targetNatto.position.y += CGFloat(objPos.y)
+    func showUpdateNatto(objPos: ObjectPosition, index: Int) {
+        nattoSprite[index].position.x += CGFloat(objPos.x)
+        nattoSprite[index].position.y += CGFloat(objPos.y)
     }
     func showEatNatto(index: Int){
         nattoSprite[index].position.y = height + 100
-        mameflag = true
-        if(mameflag){
-            if(count > 1){
-                return
-            }else{
-                presenter.playEffect()
-            }
-            count+=1
+        if soundFlag {
+            return
+        }else{
+            presenter.playEffect()
         }
+        soundFlag = true
     }
 }

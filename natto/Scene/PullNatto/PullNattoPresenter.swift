@@ -19,7 +19,7 @@ protocol PullNattoPresenter {
 }
 
 protocol PullNattoPresenterOutput {
-    func showUpdateNatto(objPos: ObjectPosition)
+    func showUpdateNatto(objPos: ObjectPosition, index: Int)
     func showEatNatto(index: Int)
 }
 
@@ -38,7 +38,7 @@ class PullNattoPresenterImpl: PullNattoPresenter {
         let distAndObjPos = model.updateNattoPosition(ohashiPos: ohashiPos, ohashiSize: ohashiSize, nattoPos: nattoPos, sticky: sticky)
         
         if distAndObjPos.distance < dist {
-            output.showUpdateNatto(objPos: distAndObjPos.objPos)
+            output.showUpdateNatto(objPos: distAndObjPos.objPos, index: index)
         }
     }
     
@@ -47,7 +47,6 @@ class PullNattoPresenterImpl: PullNattoPresenter {
             output.showEatNatto(index: index)
         }
     }
-    
     
     func loadBgmAudio(resourceName: String, resourceType: String) {
         model.loadBgmAudio(resourceName: resourceName, resourceType: resourceType)
