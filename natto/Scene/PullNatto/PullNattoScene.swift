@@ -98,7 +98,7 @@ class PullNattoScene: SKScene{
         for (i, natto) in nattoSprite.enumerated() {
             presenter.eatCheck(height: Float(height), nattoY: Float(natto.position.y), index: i)
 
-            presenter.updateNattoPosition(ohashiPos: ObjectPosition(pos: ohashi.position), ohashiSize: ObjectPosition(size: ohashi.size), nattoPos: ObjectPosition(pos: natto.position), sticky: stickyLevel, dist: Float(width/10), index: i)
+            presenter.updateNattoPosition(ohashiPos: ObjectPosition(pos: ohashi.position), ohashiSize: ObjectSize(size: ohashi.size), nattoPos: ObjectPosition(pos: natto.position), sticky: stickyLevel, dist: Float(width/10), index: i)
         }
     }
 }

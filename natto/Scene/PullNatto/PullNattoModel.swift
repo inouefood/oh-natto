@@ -14,7 +14,7 @@ protocol PullNattoModelInput {
     func loadEffectAudio(resourceName: String, resourceType: String)
     func playBgm()
     func playEffect()
-    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectPosition, nattoPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)
+    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)
     func isEat(height: Float, nattoY: Float) -> Bool
 }
 
@@ -24,10 +24,10 @@ class PullNattoModel: PullNattoModelInput {
     
     
     
-    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectPosition, nattoPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)  {
+    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)  {
         
-        let sentanX:Float = ohashiPos.x + ohashiSize.x / 2.0
-        let sentanY:Float = ohashiPos.y - ohashiSize.y / 2.0
+        let sentanX:Float = ohashiPos.x + ohashiSize.width / 2.0
+        let sentanY:Float = ohashiPos.y - ohashiSize.height / 2.0
         let dvx:Float = sentanX - nattoPos.x
         let dvy:Float = sentanY - nattoPos.y
         let dist = sqrtf(dvx * dvx + dvy * dvy)

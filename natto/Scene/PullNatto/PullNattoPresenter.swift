@@ -14,7 +14,7 @@ protocol PullNattoPresenter {
     func loadEffectAudio(resourceName: String, resourceType: String)
     func playBgm()
     func playEffect()
-    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectPosition, nattoPos: ObjectPosition, sticky: Float, dist: Float, index: Int)
+    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float, dist: Float, index: Int)
     func eatCheck(height: Float, nattoY: Float, index: Int)
 }
 
@@ -33,7 +33,7 @@ class PullNattoPresenterImpl: PullNattoPresenter {
         self.model = model
     }
 
-    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectPosition, nattoPos: ObjectPosition, sticky: Float, dist: Float, index: Int) {
+    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float, dist: Float, index: Int) {
   
         let distAndObjPos = model.updateNattoPosition(ohashiPos: ohashiPos, ohashiSize: ohashiSize, nattoPos: nattoPos, sticky: sticky)
         
