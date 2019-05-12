@@ -14,14 +14,17 @@ protocol PullNattoPresenter {
     func loadEffectAudio(resourceName: String, resourceType: String)
     func playBgm()
     func playEffect()
-    func updateNattoPosition(ohashiX: Float, ohashiY: Float, ohashiWidth: Float, ohashiHeight: Float, nattoX: Float, nattoY: Float, sticky: Float, dist: Float)
+    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float, dist: Float, index: Int)
+    func eatCheck(height: Float, nattoY: Float, index: Int)
 }
 
 protocol PullNattoPresenterOutput {
-    func showUpdateNatto(objPos: ObjectPosition)
+    func showUpdateNatto(objPos: ObjectPosition, index: Int)
+    func showEatNatto(index: Int)
 }
 
 class PullNattoPresenterImpl: PullNattoPresenter {
+    
     private var model: PullNattoModelInput
     private var output: PullNattoPresenterOutput
     
@@ -30,11 +33,18 @@ class PullNattoPresenterImpl: PullNattoPresenter {
         self.model = model
     }
 
-    func updateNattoPosition(ohashiX: Float, ohashiY: Float, ohashiWidth: Float, ohashiHeight: Float, nattoX: Float, nattoY: Float, sticky: Float, dist: Float) {
-        let distAndObjPos = model.updateNattoPosition(ohashiX: ohashiX, ohashiY: ohashiY, ohashiWidth: ohashiWidth, ohashiHeight: ohashiHeight, nattoX: nattoX, nattoY: nattoY, sticky: sticky)
+    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float, dist: Float, index: Int) {
+  
+        let distAndObjPos = model.updateNattoPosition(ohashiPos: ohashiPos, ohashiSize: ohashiSize, nattoPos: nattoPos, sticky: sticky)
         
         if distAndObjPos.distance < dist {
-            output.showUpdateNatto(objPos: distAndObjPos.objPos)
+            output.showUpdateNatto(objPos: distAndObjPos.objPos, index: index)
+        }
+    }
+    
+    func  eatCheck(height: Float, nattoY: Float, index: Int) {
+        if model.isEat(height: height, nattoY: nattoY) {
+            output.showEatNatto(index: index)
         }
     }
     

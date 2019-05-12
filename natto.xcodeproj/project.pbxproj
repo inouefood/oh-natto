@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D048FC42277FCE500852FFA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D048FC32277FCE500852FFA /* Settings.bundle */; };
+		0D081FC42286DB5D00B74D86 /* ObjectSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D081FC32286DB5D00B74D86 /* ObjectSize.swift */; };
 		0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0822617A3C00B6642E /* DescriptionViewController.swift */; };
 		0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D815D0922617A3C00B6642E /* DescriptionViewController.xib */; };
 		0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0E2261E3B100B6642E /* Closebutton.swift */; };
@@ -73,6 +74,7 @@
 		0D048FCB22780E1100852FFA /* FacebookShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookShare.framework; path = Carthage/Build/iOS/FacebookShare.framework; sourceTree = "<group>"; };
 		0D048FCE2278144700852FFA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		0D048FD0227814D400852FFA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		0D081FC32286DB5D00B74D86 /* ObjectSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSize.swift; sourceTree = "<group>"; };
 		0D815D0822617A3C00B6642E /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		0D815D0922617A3C00B6642E /* DescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionViewController.xib; sourceTree = "<group>"; };
 		0D815D0E2261E3B100B6642E /* Closebutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closebutton.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				0DFEF9C022623BF50061167A /* ObjectPosition.swift */,
+				0D081FC32286DB5D00B74D86 /* ObjectSize.swift */,
 			);
 			name = Entity;
 			path = Extension/Entity;
@@ -516,6 +519,7 @@
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
 				43D95F262052723B00FE1117 /* TitleScene.swift in Sources */,
 				0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */,
+				0D081FC42286DB5D00B74D86 /* ObjectSize.swift in Sources */,
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,
 				0DFEF9CB226362090061167A /* Constant.swift in Sources */,

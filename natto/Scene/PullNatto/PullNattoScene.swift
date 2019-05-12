@@ -30,9 +30,8 @@ class PullNattoScene: SKScene{
     
     var timer:Timer?
     var score:Int = 0
-    var count = 0
-    var stickyLevel:Float
-    var mameflag = false
+    let stickyLevel:Float
+    
     fileprivate lazy var presenter: PullNattoPresenter! = {
         let presenter = PullNattoPresenterImpl(output: self, model: PullNattoModel())
         presenter.loadBgmAudio(resourceName:"natto_bgm_game", resourceType: "wav")
@@ -40,13 +39,10 @@ class PullNattoScene: SKScene{
         return presenter
     }()
     
-    var targetNatto: SKSpriteNode!
-    
-    
     // MARK: - Initializer
     
     init(size: CGSize, sticky: Int) {
-        stickyLevel = Float(sticky) * 0.0002
+        stickyLevel = Float(sticky) * Constant.Sticky.level
         super.init(size: size)
     }
     required init?(coder aDecoder: NSCoder) {
@@ -56,18 +52,16 @@ class PullNattoScene: SKScene{
     //MARK: - LifeCycle
     
     override func didMove(to view: SKView) {
-        //音楽の再生
-        presenter.playBgm()
-        //タイマー
-        self.timer = Timer.scheduledTimer(timeInterval: 25, target: self, selector: #selector(MixScene.timerCounter), userInfo: nil, repeats: true)
         //原点の変更
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.backgroundColor = SKColor.gray
-        
-        //ワールドの設定
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -0.5)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
+        presenter.playBgm()
+
+        self.timer = Timer.scheduledTimer(timeInterval: 25, target: self, selector: #selector(MixScene.timerCounter), userInfo: nil, repeats: true)
+
         self.addChild(mouth, ohashi)
         nattoSprite.forEach({
             self.addChild($0)
@@ -87,7 +81,7 @@ class PullNattoScene: SKScene{
         self.timer?.invalidate()
         
         for i in 0..<nattoSprite.count {
-            if (height < nattoSprite[i].position.y) {
+            if height < nattoSprite[i].position.y {
                 score += 1
             }
         }
@@ -97,25 +91,10 @@ class PullNattoScene: SKScene{
     }
     
     override func update(_ currentTime: TimeInterval) {
-        nattoSprite.forEach{ natto in
-            if (height * 0.80 < natto.position.y) {
-                natto.position.y = height + 100
-                mameflag = true
-                if(mameflag){
-                    if(count > 1){
-                        return
-                    }else{
-                        presenter.playEffect()
-                    }
-                        count+=1
-                }
-            }
-            targetNatto = natto
-            
-            presenter.updateNattoPosition(ohashiX: Float(ohashi.position.x), ohashiY: Float(ohashi.position.y),
-                                          ohashiWidth: Float(ohashi.size.width), ohashiHeight: Float(ohashi.size.height),
-                                          nattoX: Float(targetNatto.position.x), nattoY: Float(targetNatto.position.y),
-                                          sticky: stickyLevel, dist: Float(width/10))
+        for (i, natto) in nattoSprite.enumerated() {
+            presenter.eatCheck(height: Float(height), nattoY: Float(natto.position.y), index: i)
+
+            presenter.updateNattoPosition(ohashiPos: ObjectPosition(pos: ohashi.position), ohashiSize: ObjectSize(size: ohashi.size), nattoPos: ObjectPosition(pos: natto.position), sticky: stickyLevel, dist: Float(width/10), index: i)
         }
     }
 }
@@ -123,8 +102,12 @@ class PullNattoScene: SKScene{
 // MARK: - PullNattoPresenterOutput
 
 extension PullNattoScene: PullNattoPresenterOutput {
-    func showUpdateNatto(objPos: ObjectPosition) {
-        targetNatto.position.x += CGFloat(objPos.x)
-        targetNatto.position.y += CGFloat(objPos.y)
+    func showUpdateNatto(objPos: ObjectPosition, index: Int) {
+        nattoSprite[index].position.x += CGFloat(objPos.x)
+        nattoSprite[index].position.y += CGFloat(objPos.y)
+    }
+    func showEatNatto(index: Int){
+        nattoSprite[index].position.y = height + 100
+        presenter.playEffect()
     }
 }

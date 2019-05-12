@@ -12,6 +12,9 @@ struct Constant {
     struct SpriteCount {
         static let natto = 500
     }
+    struct Sticky {
+        static let level: Float = 0.0002
+    }
     struct CollisionBody {
         static let ohashi: UInt32 =  0x1 << 0
         static let natto: UInt32 = 0x1 << 1

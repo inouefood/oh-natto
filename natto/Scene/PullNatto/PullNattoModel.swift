@@ -14,22 +14,29 @@ protocol PullNattoModelInput {
     func loadEffectAudio(resourceName: String, resourceType: String)
     func playBgm()
     func playEffect()
-    func updateNattoPosition(ohashiX: Float, ohashiY: Float, ohashiWidth: Float, ohashiHeight: Float, nattoX: Float, nattoY: Float, sticky: Float) -> (objPos: ObjectPosition, distance: Float)
+    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)
+    func isEat(height: Float, nattoY: Float) -> Bool
 }
 
 class PullNattoModel: PullNattoModelInput {
     private var bgm: AVAudioPlayer!
     private var effect: AVAudioPlayer!
+    private var isPlaying: Bool = false
     
-    func updateNattoPosition(ohashiX: Float, ohashiY: Float, ohashiWidth: Float, ohashiHeight: Float, nattoX: Float, nattoY: Float, sticky: Float) -> (objPos: ObjectPosition, distance: Float) {
+    
+    
+    func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)  {
         
-        let sentanX:Float = ohashiX + ohashiWidth / 2.0
-        let sentanY:Float = ohashiY - ohashiHeight / 2.0
-        let dvx:Float = sentanX - nattoX
-        let dvy:Float = sentanY - nattoY
+        let sentanX:Float = ohashiPos.x + ohashiSize.width / 2.0
+        let sentanY:Float = ohashiPos.y - ohashiSize.height / 2.0
+        let dvx:Float = sentanX - nattoPos.x
+        let dvy:Float = sentanY - nattoPos.y
         let dist = sqrtf(dvx * dvx + dvy * dvy)
         return (objPos: ObjectPosition(x: dvx * sticky, y: dvy * sticky), distance: dist)
-        
+    }
+    
+    func isEat(height: Float, nattoY: Float) -> Bool {
+        return height * 0.80 < nattoY ? true : false
     }
     
     func loadBgmAudio(resourceName: String, resourceType: String) {
@@ -56,6 +63,9 @@ class PullNattoModel: PullNattoModelInput {
     }
     
     func playEffect() {
-        effect.play()
+        if !isPlaying {
+            effect.play()
+            isPlaying = true
+        }
     }
 }
