@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PullNattoPresenter {
+protocol PullNattoPresenter:class {
     init(output: PullNattoPresenterOutput, model: PullNattoModelInput)
     func loadBgmAudio(resourceName: String, resourceType: String)
     func loadEffectAudio(resourceName: String, resourceType: String)
@@ -18,7 +18,7 @@ protocol PullNattoPresenter {
     func eatCheck(height: Float, nattoY: Float, index: Int)
 }
 
-protocol PullNattoPresenterOutput {
+protocol PullNattoPresenterOutput:class {
     func showUpdateNatto(objPos: ObjectPosition, index: Int)
     func showEatNatto(index: Int)
 }
@@ -26,7 +26,7 @@ protocol PullNattoPresenterOutput {
 class PullNattoPresenterImpl: PullNattoPresenter {
     
     private var model: PullNattoModelInput
-    private var output: PullNattoPresenterOutput
+    private weak var output: PullNattoPresenterOutput?
     
     required init(output: PullNattoPresenterOutput, model: PullNattoModelInput) {
         self.output = output
@@ -38,13 +38,13 @@ class PullNattoPresenterImpl: PullNattoPresenter {
         let distAndObjPos = model.updateNattoPosition(ohashiPos: ohashiPos, ohashiSize: ohashiSize, nattoPos: nattoPos, sticky: sticky)
         
         if distAndObjPos.distance < dist {
-            output.showUpdateNatto(objPos: distAndObjPos.objPos, index: index)
+            output?.showUpdateNatto(objPos: distAndObjPos.objPos, index: index)
         }
     }
     
     func  eatCheck(height: Float, nattoY: Float, index: Int) {
         if model.isEat(height: height, nattoY: nattoY) {
-            output.showEatNatto(index: index)
+            output?.showEatNatto(index: index)
         }
     }
     
