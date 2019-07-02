@@ -35,7 +35,7 @@ class ResultScene: SKScene{
     let resultScore:Int
     var presenter: ResultPresenter {
         let presenter = ResultPresenterImpl()
-        presenter.loadAudio(resourceName: "natto_bgm_score", resourceType: "wav")
+        presenter.loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
         return presenter
     }
     
