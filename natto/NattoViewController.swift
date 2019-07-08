@@ -30,7 +30,7 @@ class NattoViewController: UIViewController {
             case .latest:
                 print("最新バージョンです")
             case .old:
-                print("旧バージョンです")
+                self.showAppStoreInformation(url: "https://apps.apple.com/jp/app/oh-natto/id1457049172", title: "App Store", message: "最新版にアップデートすることが可能です", openText: "アップデート", closeText: "閉じる")
             case .error:
                 print("エラー")
             }

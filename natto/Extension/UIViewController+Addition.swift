@@ -9,10 +9,10 @@
 import UIKit
 
 extension UIViewController {
-    func showAppStoreInformation(title: String = "", message: String,openText: String, closeText: String, handler: (() -> Void)? = nil) {
+    func showAppStoreInformation(url:String, title: String = "", message: String,openText: String, closeText: String, handler: (() -> Void)? = nil) {
         let bleAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let open: UIAlertAction = UIAlertAction(title: openText, style: .default, handler: { _ in
-            let url = URL(string: "https://apps.apple.com/jp/app/oh-natto/id1457049172")!
+            let url = URL(string: url)!
             
             // URLを開けるかをチェックする
             if UIApplication.shared.canOpenURL(url) {
