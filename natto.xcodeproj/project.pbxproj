@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		054E493322D2D9C00062736D /* AppVersionCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E493222D2D9C00062736D /* AppVersionCompare.swift */; };
+		054E493522D2DD680062736D /* UIApplication+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E493422D2DD680062736D /* UIApplication+Addition.swift */; };
+		054E493722D2DF4F0062736D /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E493622D2DF4F0062736D /* UIViewController+Addition.swift */; };
 		0D048FC42277FCE500852FFA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D048FC32277FCE500852FFA /* Settings.bundle */; };
 		0D081FC42286DB5D00B74D86 /* ObjectSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D081FC32286DB5D00B74D86 /* ObjectSize.swift */; };
 		0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0822617A3C00B6642E /* DescriptionViewController.swift */; };
@@ -69,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		054E493222D2D9C00062736D /* AppVersionCompare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionCompare.swift; sourceTree = "<group>"; };
+		054E493422D2DD680062736D /* UIApplication+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Addition.swift"; sourceTree = "<group>"; };
+		054E493622D2DF4F0062736D /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		0D048FC32277FCE500852FFA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0D048FC522780D9300852FFA /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Carthage/Build/iOS/TwitterKit.framework; sourceTree = "<group>"; };
 		0D048FC722780DC400852FFA /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */,
 				F346A9C9226A403E00A051FC /* SKShapeNode+Addition.swift */,
 				0DFD69692276F2BB000DBD93 /* SKScene+Addition.swift */,
+				054E493422D2DD680062736D /* UIApplication+Addition.swift */,
+				054E493622D2DF4F0062736D /* UIViewController+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -523,6 +529,7 @@
 				43D95F262052723B00FE1117 /* TitleScene.swift in Sources */,
 				0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */,
 				0D081FC42286DB5D00B74D86 /* ObjectSize.swift in Sources */,
+				054E493722D2DF4F0062736D /* UIViewController+Addition.swift in Sources */,
 				054E493322D2D9C00062736D /* AppVersionCompare.swift in Sources */,
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,
@@ -532,6 +539,7 @@
 				0DF70CF8223E6D98007105D8 /* ResultModel.swift in Sources */,
 				0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */,
 				0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */,
+				054E493522D2DD680062736D /* UIApplication+Addition.swift in Sources */,
 				0DE54C61225F8F2C00006ED4 /* NattoViewController.swift in Sources */,
 				F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */,
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
