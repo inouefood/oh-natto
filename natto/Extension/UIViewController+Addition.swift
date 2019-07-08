@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     func showAppStoreInformation(url:String, title: String = "", message: String,openText: String, closeText: String, handler: (() -> Void)? = nil) {
-        let bleAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let open: UIAlertAction = UIAlertAction(title: openText, style: .default, handler: { _ in
             let url = URL(string: url)!
             
@@ -25,13 +25,13 @@ extension UIViewController {
             }
         })
         let close: UIAlertAction = UIAlertAction(title: closeText, style: UIAlertAction.Style.default, handler: { _ in
-            bleAlert.dismiss(animated: true, completion: nil)
+            alert.dismiss(animated: true, completion: nil)
             
             handler?()
         })
-        bleAlert.addAction(open)
-        bleAlert.addAction(close)
-        present(bleAlert, animated: true, completion: nil)
+        alert.addAction(open)
+        alert.addAction(close)
+        present(alert, animated: true, completion: nil)
     }
 }
 
