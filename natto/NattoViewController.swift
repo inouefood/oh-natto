@@ -25,6 +25,17 @@ class NattoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AppVersionCompare.toAppStoreVersion(appId: "1457049172") { (type) in
+            switch type {
+            case .latest:
+                print("最新バージョンです")
+            case .old:
+                print("旧バージョンです")
+            case .error:
+                print("エラー")
+            }
+        }
+        
         
         tutorialButton.backgroundColor = .red
         tutorialButton.frame.size = CGSize(width: 80, height: 80)
