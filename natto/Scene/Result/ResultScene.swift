@@ -57,7 +57,7 @@ class ResultScene: SKScene{
     override func didMove(to view: SKView) {
         
             
-        presenter.checkScoreEvaluation(score: resultScore)
+         presenter.checkScoreEvaluation(score: resultScore)
         
         //TODO 音が鳴らないバグをなんとかする
         presenter.playAudio()

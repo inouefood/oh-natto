@@ -34,14 +34,14 @@ class ResultModel: ResultModelInput{
     }
     
     func checkScoreEvaluation(score: Int) -> Bool {
-        var isBestScore = true
+        var isBestScore = false
        
         if userDefault.object(forKey: "topScore") != nil {
             let topScore:[Int] = userDefault.array(forKey: "topScore") as! [Int]
             
             topScore.forEach{ beforeScore in
-                if beforeScore > score {
-                    isBestScore = false
+                if beforeScore < score {
+                    isBestScore = true
                 }
             }
             if isBestScore {
@@ -49,7 +49,7 @@ class ResultModel: ResultModelInput{
             }
         } else {
             // At first score
-             userDefault.set([score], forKey: "topScore")
+            userDefault.set([score], forKey: "topScore")
         }
         return isBestScore
     }
@@ -65,10 +65,10 @@ class ResultModel: ResultModelInput{
         return false
     }
     
-    func saveBestScore(topScore: [Int], score: Int) {
+    private func saveBestScore(topScore: [Int], score: Int) {
         var scores = topScore
         
-        if scores.count < 3 {
+        if scores.count <= 3  {
             scores.append(score)
         } else {
             scores.remove(at: topScore.last!)

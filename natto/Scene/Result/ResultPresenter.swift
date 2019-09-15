@@ -28,7 +28,11 @@ class ResultPresenterImpl: ResultPresenter {
     }
     
     func checkScoreEvaluation(score: Int) {
-        model.checkScoreEvaluation(score: score)
+        if model.checkScoreEvaluation(score: score) {
+            print("a")
+        } else {
+            print("aa")
+        }
     }
     
     func playAudio() {
