@@ -33,6 +33,7 @@ class ResultScene: SKScene{
     // MARK: - Property
     
     let resultScore:Int
+    
     var presenter: ResultPresenter {
         let presenter = ResultPresenterImpl()
         presenter.loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
@@ -55,6 +56,10 @@ class ResultScene: SKScene{
     
     override func didMove(to view: SKView) {
         
+            
+        presenter.checkScoreEvaluation(score: resultScore)
+        
+        //TODO 音が鳴らないバグをなんとかする
         presenter.playAudio()
         
         addImage()

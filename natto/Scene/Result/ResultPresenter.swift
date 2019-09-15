@@ -14,6 +14,7 @@ protocol ResultPresenter {
     func playAudio()
     func showTweetDialog(text: String) -> SLComposeViewController
     func isPopUpReviewDialog() -> Bool
+    func checkScoreEvaluation(score: Int)
 }
 class ResultPresenterImpl: ResultPresenter {
     
@@ -24,6 +25,10 @@ class ResultPresenterImpl: ResultPresenter {
     }
     func loadAudio(resourceName: String, resourceType: String) {
         model.loadAudio(resourceName: resourceName, resourceType: resourceType)
+    }
+    
+    func checkScoreEvaluation(score: Int) {
+        model.checkScoreEvaluation(score: score)
     }
     
     func playAudio() {
