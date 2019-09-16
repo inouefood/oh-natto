@@ -71,7 +71,9 @@ class ResultModel: ResultModelInput{
         if scores.count <= 3  {
             scores.append(score)
         } else {
-            scores.remove(at: topScore.last!)
+            scores.sort()
+            scores.reverse()
+            scores.remove(at: scores.count - 1)
             scores.append(score)
         }
         userDefault.set(scores, forKey: "topScore")
