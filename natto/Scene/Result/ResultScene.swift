@@ -16,8 +16,11 @@ class ResultScene: SKScene{
     lazy var replayLabel: SKLabelNode! = {
         return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY", pos: CGPoint(x: self.frame.midX, y: height * 0.20))
     }()
+    lazy var bestScoreLabel: SKLabelNode! = {
+        return SKLabelNode(font: "Verdana-bold", fontSize: 50, text: "BEST SCORE: " + String(bestScore), pos: CGPoint(x: self.frame.midX, y: height * 0.85))
+    }()
     lazy var scoreLabel: SKLabelNode! = {
-        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore), pos: CGPoint(x: self.frame.midX, y: height * 0.80))
+        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore), pos: CGPoint(x: self.frame.midX, y: height * 0.90))
     }()
     lazy var buttonSize = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
     lazy var twitterButton: SKSpriteNode! = {
@@ -29,10 +32,15 @@ class ResultScene: SKScene{
     lazy var lineButton: SKSpriteNode! = {
         return SKSpriteNode(image: "LINE_APP", pos: CGPoint(x: self.frame.maxX * 0.7, y: self.frame.maxY * 0.1), zPos: 1.5, size: buttonSize)
     }()
+//    lazy var bestScoreList:
 
     // MARK: - Property
     
     let resultScore:Int
+    lazy var bestScore: Int = {
+       return getBestScore()
+    }()
+    
     var presenter: ResultPresenter {
         let presenter = ResultPresenterImpl()
         presenter.loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
@@ -55,10 +63,14 @@ class ResultScene: SKScene{
     
     override func didMove(to view: SKView) {
         
+            
+         presenter.checkScoreEvaluation(score: resultScore)
+        
+        //TODO 音が鳴らないバグをなんとかする
         presenter.playAudio()
         
         addImage()
-        self.addChild(scoreLabel, replayLabel, twitterButton, facebookButton, lineButton)
+        self.addChild(scoreLabel,bestScoreLabel, replayLabel, twitterButton, facebookButton, lineButton)
         
         SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter.isPopUpReviewDialog()))
     }
@@ -71,6 +83,16 @@ class ResultScene: SKScene{
         let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"), SKTexture(imageNamed: "mame02"), SKTexture(imageNamed: "mame03")], timePerFrame: 0.2)
         mamekun.run(SKAction.repeatForever(animation))
         self.addChild(mamekun)
+    }
+    
+    private func getBestScore() -> Int {
+        if UserDefaults.standard.object(forKey: "topScore") != nil {
+            let topScore:[Int] = UserDefaults.standard.array(forKey: "topScore") as! [Int]
+            return topScore.first!
+        } else {
+            bestScoreLabel.isHidden = true
+            return 0
+        }
     }
     
     // MARK: - Event
