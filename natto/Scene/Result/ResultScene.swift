@@ -10,6 +10,8 @@ import Social
 import StoreKit
 import SceneKit
 
+import AVFoundation
+
 class ResultScene: SKScene{
     
     // MARK: - NodeInitialize
@@ -62,9 +64,10 @@ class ResultScene: SKScene{
     
     var presenter: ResultPresenter {
         let presenter = ResultPresenterImpl(output: self)
-        presenter.loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
         return presenter
     }
+    
+    var audio: AVAudioPlayer!
     
     // MARK: - Initializer
     
@@ -86,7 +89,8 @@ class ResultScene: SKScene{
          presenter.checkScoreEvaluation(score: resultScore)
         
         //TODO 音が鳴らないバグをなんとかする
-        presenter.playAudio()
+        loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
+        
         
         addImage()
         self.addChild(scoreLabel,bestScoreLabel, replayLabel, twitterButton, facebookButton, lineButton)
@@ -94,6 +98,16 @@ class ResultScene: SKScene{
     }
     
     // MARK: - PrivateMethod
+    
+    private func loadAudio(resourceName: String, resourceType: String) {
+        let path = Bundle.main.path(forResource: resourceName, ofType: resourceType)
+        let url = URL(fileURLWithPath: path!)
+        do { try  audio = AVAudioPlayer(contentsOf: url) }
+        catch{ fatalError() }
+        audio.numberOfLoops = -1
+        audio.prepareToPlay()
+        audio.play()
+    }
     
     private func addImage() {
         let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:width/2,y: height/2))

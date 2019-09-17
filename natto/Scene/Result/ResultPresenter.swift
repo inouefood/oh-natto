@@ -10,8 +10,6 @@ import Foundation
 import Social
 
 protocol ResultPresenter {
-    func loadAudio(resourceName: String, resourceType: String)
-    func playAudio()
     func showTweetDialog(text: String) -> SLComposeViewController
     func isPopUpReviewDialog() -> Bool
     func checkScoreEvaluation(score: Int)
@@ -24,21 +22,16 @@ class ResultPresenterImpl: ResultPresenter {
     private var model: ResultModelInput
     private weak var output: ResultPresenterOutput?
     
+    
     init(output: ResultPresenterOutput) {
         self.output = output
         model = ResultModel()
-    }
-    func loadAudio(resourceName: String, resourceType: String) {
-        model.loadAudio(resourceName: resourceName, resourceType: resourceType)
     }
     
     func checkScoreEvaluation(score: Int) {
         output?.showScoreComparison(isBest: model.checkScoreEvaluation(score: score))
     }
     
-    func playAudio() {
-        model.playAudio()
-    }
     func showTweetDialog(text: String) -> SLComposeViewController{
         let twitterCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
         twitterCmp.setInitialText(text)

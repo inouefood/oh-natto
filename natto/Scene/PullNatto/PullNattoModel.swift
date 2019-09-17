@@ -25,6 +25,7 @@ class PullNattoModel: PullNattoModelInput {
     
     
     
+    
     func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)  {
         
         let sentanX:Float = ohashiPos.x + ohashiSize.width / 2.0
