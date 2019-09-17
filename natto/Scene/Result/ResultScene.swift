@@ -16,15 +16,15 @@ class ResultScene: SKScene{
     
     lazy var bestScoreParticle:SCNView! = {
         let scene = SCNScene()
-        
+
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.position = SCNVector3(x: 0, y: -6, z: 10)
         scene.rootNode.addChildNode(cameraNode)
-        
+
         let confetti = SCNParticleSystem(named: "Contiffi.scnp", inDirectory: "")!
         scene.rootNode.addParticleSystem(confetti)
-        
+
         let view = SCNView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
         view.scene = scene
         view.backgroundColor = UIColor.clear
@@ -52,7 +52,6 @@ class ResultScene: SKScene{
     lazy var lineButton: SKSpriteNode! = {
         return SKSpriteNode(image: "LINE_APP", pos: CGPoint(x: self.frame.maxX * 0.7, y: self.frame.maxY * 0.1), zPos: 1.5, size: buttonSize)
     }()
-//    lazy var bestScoreList:
 
     // MARK: - Property
     

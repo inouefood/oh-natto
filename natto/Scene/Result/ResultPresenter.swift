@@ -25,6 +25,7 @@ class ResultPresenterImpl: ResultPresenter {
     private weak var output: ResultPresenterOutput?
     
     init(output: ResultPresenterOutput) {
+        self.output = output
         model = ResultModel()
     }
     func loadAudio(resourceName: String, resourceType: String) {
