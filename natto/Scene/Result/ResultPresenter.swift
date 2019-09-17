@@ -16,11 +16,16 @@ protocol ResultPresenter {
     func isPopUpReviewDialog() -> Bool
     func checkScoreEvaluation(score: Int)
 }
+protocol ResultPresenterOutput: class {
+    func showScoreComparison(isBest: Bool)
+}
 class ResultPresenterImpl: ResultPresenter {
     
     private var model: ResultModelInput
+    private weak var output: ResultPresenterOutput?
     
-    init() {
+    init(output: ResultPresenterOutput) {
+        self.output = output
         model = ResultModel()
     }
     func loadAudio(resourceName: String, resourceType: String) {
@@ -28,11 +33,7 @@ class ResultPresenterImpl: ResultPresenter {
     }
     
     func checkScoreEvaluation(score: Int) {
-        if model.checkScoreEvaluation(score: score) {
-            print("a")
-        } else {
-            print("aa")
-        }
+        output?.showScoreComparison(isBest: model.checkScoreEvaluation(score: score))
     }
     
     func playAudio() {
