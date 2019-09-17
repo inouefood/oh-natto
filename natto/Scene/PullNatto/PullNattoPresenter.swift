@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 protocol PullNattoPresenter:class {
     init(output: PullNattoPresenterOutput, model: PullNattoModelInput)

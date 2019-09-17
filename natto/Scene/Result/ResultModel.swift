@@ -7,31 +7,15 @@
 //
 
 import Foundation
-import AVFoundation
 import Social
 
 protocol ResultModelInput {
-    func loadAudio(resourceName:String, resourceType: String)
-    func playAudio()
     func isPopUpReviewDialog() -> Bool
     func checkScoreEvaluation(score: Int) -> Bool
 }
 class ResultModel: ResultModelInput{
-    private var audio: AVAudioPlayer?
+
     private let userDefault = UserDefaults.standard
-    
-    func loadAudio(resourceName: String, resourceType: String) {
-        let path = Bundle.main.path(forResource: resourceName, ofType: resourceType)
-        let url = URL(fileURLWithPath: path!)
-        do { try  audio = AVAudioPlayer(contentsOf: url) }
-        catch{ fatalError() }
-        audio?.numberOfLoops = -1
-        audio?.prepareToPlay()
-    }
-    
-    func playAudio() {
-        audio?.play()
-    }
     
     func checkScoreEvaluation(score: Int) -> Bool {
         var isBestScore = false
