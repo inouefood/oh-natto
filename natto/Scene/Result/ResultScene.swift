@@ -62,7 +62,7 @@ class ResultScene: SKScene{
     }()
     
     var presenter: ResultPresenter {
-        let presenter = ResultPresenterImpl()
+        let presenter = ResultPresenterImpl(output: self)
         presenter.loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
         return presenter
     }
@@ -91,7 +91,6 @@ class ResultScene: SKScene{
         
         addImage()
         self.addChild(scoreLabel,bestScoreLabel, replayLabel, twitterButton, facebookButton, lineButton)
-        self.view?.addSubview(bestScoreParticle)
         SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter.isPopUpReviewDialog()))
     }
     
@@ -141,6 +140,16 @@ class ResultScene: SKScene{
                 
                 SLComposeViewController().showLineDialog(message: urlstring, vc: (UIApplication.shared.keyWindow?.rootViewController!)!)
             }
+        }
+    }
+}
+
+extension ResultScene: ResultPresenterOutput {
+    func showScoreComparison(isBest: Bool) {
+        if isBest {
+            self.view?.addSubview(bestScoreParticle)
+        } else {
+            bestScoreLabel.isHidden = true
         }
     }
 }
