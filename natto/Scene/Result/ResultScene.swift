@@ -8,10 +8,30 @@
 import SpriteKit
 import Social
 import StoreKit
+import SceneKit
 
 class ResultScene: SKScene{
     
     // MARK: - NodeInitialize
+    
+    lazy var bestScoreParticle:SCNView! = {
+        let scene = SCNScene()
+        
+        let cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        cameraNode.position = SCNVector3(x: 0, y: -6, z: 10)
+        scene.rootNode.addChildNode(cameraNode)
+        
+        let confetti = SCNParticleSystem(named: "Contiffi.scnp", inDirectory: "")!
+        scene.rootNode.addParticleSystem(confetti)
+        
+        let view = SCNView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
+        view.scene = scene
+        view.backgroundColor = UIColor.clear
+        view.autoenablesDefaultLighting = true
+        view.isUserInteractionEnabled = false
+        return view
+    }()
    
     lazy var replayLabel: SKLabelNode! = {
         return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY", pos: CGPoint(x: self.frame.midX, y: height * 0.20))
@@ -71,7 +91,7 @@ class ResultScene: SKScene{
         
         addImage()
         self.addChild(scoreLabel,bestScoreLabel, replayLabel, twitterButton, facebookButton, lineButton)
-        
+        self.view?.addSubview(bestScoreParticle)
         SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter.isPopUpReviewDialog()))
     }
     
@@ -102,6 +122,7 @@ class ResultScene: SKScene{
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)
             if touchNode == replayLabel{
+                self.bestScoreParticle.removeFromSuperview()
                 let scene = TitleScene(size: self.size)
                 self.view!.presentScene(scene)
             }

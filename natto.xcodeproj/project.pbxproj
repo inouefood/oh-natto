@@ -10,6 +10,8 @@
 		054E493322D2D9C00062736D /* AppVersionCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E493222D2D9C00062736D /* AppVersionCompare.swift */; };
 		054E493522D2DD680062736D /* UIApplication+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E493422D2DD680062736D /* UIApplication+Addition.swift */; };
 		054E493722D2DF4F0062736D /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E493622D2DF4F0062736D /* UIViewController+Addition.swift */; };
+		057D3EC82330666A00712E5D /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 057D3EC62330666A00712E5D /* confetti.png */; };
+		057D3EC92330666A00712E5D /* Contiffi.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 057D3EC72330666A00712E5D /* Contiffi.scnp */; };
 		0D048FC42277FCE500852FFA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D048FC32277FCE500852FFA /* Settings.bundle */; };
 		0D081FC42286DB5D00B74D86 /* ObjectSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D081FC32286DB5D00B74D86 /* ObjectSize.swift */; };
 		0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0822617A3C00B6642E /* DescriptionViewController.swift */; };
@@ -73,6 +75,8 @@
 		054E493222D2D9C00062736D /* AppVersionCompare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionCompare.swift; sourceTree = "<group>"; };
 		054E493422D2DD680062736D /* UIApplication+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Addition.swift"; sourceTree = "<group>"; };
 		054E493622D2DF4F0062736D /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
+		057D3EC62330666A00712E5D /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
+		057D3EC72330666A00712E5D /* Contiffi.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Contiffi.scnp; sourceTree = "<group>"; };
 		0D048FC32277FCE500852FFA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0D048FC522780D9300852FFA /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Carthage/Build/iOS/TwitterKit.framework; sourceTree = "<group>"; };
 		0D048FC722780DC400852FFA /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 				439948A3205315480028E85F /* ResultScene.swift */,
 				0DF70CF3223E6930007105D8 /* ResultPresenter.swift */,
 				0DF70CF7223E6D98007105D8 /* ResultModel.swift */,
+				057D3EC62330666A00712E5D /* confetti.png */,
+				057D3EC72330666A00712E5D /* Contiffi.scnp */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -459,9 +465,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */,
+				057D3EC92330666A00712E5D /* Contiffi.scnp in Resources */,
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				4343CEB12053AB86002CA3BC /* paku.wav in Resources */,
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
+				057D3EC82330666A00712E5D /* confetti.png in Resources */,
 				0D048FC42277FCE500852FFA /* Settings.bundle in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
