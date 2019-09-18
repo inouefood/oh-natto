@@ -39,14 +39,11 @@ class ResultModel: ResultModelInput{
     }
     
     func isPopUpReviewDialog() -> Bool {
-        let key = "openResultCount"
-        UserDefaults.standard.set(UserDefaults.standard.integer(forKey: key) + 1, forKey: key)
-        UserDefaults.standard.synchronize()
-        let count = UserDefaults.standard.integer(forKey: key)
-        if count % 5 == 0 {
-            return true
+        if userDefault.object(forKey: "isAlreadyDisplayedReviewAlert") != nil {
+            return false
         }
-        return false
+        userDefault.set(true, forKey: "isAlreadyDisplayedReviewAlert")
+        return true
     }
     
     private func saveBestScore(topScore: [Int], score: Int) {
