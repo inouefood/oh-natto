@@ -18,6 +18,7 @@
 		0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D815D0922617A3C00B6642E /* DescriptionViewController.xib */; };
 		0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0E2261E3B100B6642E /* Closebutton.swift */; };
 		0D815D112261E42D00B6642E /* CloseButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D815D102261E42D00B6642E /* CloseButton.xib */; };
+		0DCD56CF2348E004008F7BAA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DCD56D12348E004008F7BAA /* Localizable.strings */; };
 		0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */; };
 		0DCE81AB2254DEA1002FAE96 /* SLComposeViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */; };
 		0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */; };
@@ -89,6 +90,10 @@
 		0D815D0922617A3C00B6642E /* DescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionViewController.xib; sourceTree = "<group>"; };
 		0D815D0E2261E3B100B6642E /* Closebutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closebutton.swift; sourceTree = "<group>"; };
 		0D815D102261E42D00B6642E /* CloseButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloseButton.xib; sourceTree = "<group>"; };
+		0DCD56C92348DEFD008F7BAA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		0DCD56CA2348DEFE008F7BAA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0DCD56D02348E004008F7BAA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0DCD56D22348E056008F7BAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Addition.swift"; sourceTree = "<group>"; };
 		0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLComposeViewController+Addition.swift"; sourceTree = "<group>"; };
 		0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Addition.swift"; sourceTree = "<group>"; };
@@ -327,6 +332,7 @@
 				43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */,
 				43D95F312052723B00FE1117 /* Info.plist */,
 				0D048FC32277FCE500852FFA /* Settings.bundle */,
+				0DCD56D12348E004008F7BAA /* Localizable.strings */,
 			);
 			path = natto;
 			sourceTree = "<group>";
@@ -432,6 +438,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 43D95F132052723B00FE1117;
 			productRefGroup = 43D95F1D2052723B00FE1117 /* Products */;
@@ -477,6 +484,7 @@
 				43704C95205304BF00F87562 /* mame.mp3 in Resources */,
 				F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */,
 				4343CEAD205386F3002CA3BC /* natto_bgm_score.wav in Resources */,
+				0DCD56CF2348E004008F7BAA /* Localizable.strings in Resources */,
 				0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,10 +582,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0DCD56D12348E004008F7BAA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DCD56D02348E004008F7BAA /* ja */,
+				0DCD56D22348E056008F7BAA /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		43D95F292052723B00FE1117 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				43D95F2A2052723B00FE1117 /* Base */,
+				0DCD56C92348DEFD008F7BAA /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -586,6 +604,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				43D95F2F2052723B00FE1117 /* Base */,
+				0DCD56CA2348DEFE008F7BAA /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -673,6 +692,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -732,6 +752,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
