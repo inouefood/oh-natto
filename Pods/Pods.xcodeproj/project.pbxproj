@@ -1,0 +1,738 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00B1FAFC1313C6F00DE78F7EBDFA6A51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		2934746899EB439DCDCDB524AB29BBB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		3DECBE9FF816E40A57F718C0915E59A7 /* Pods-natto-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224E6F82DAA189E0F44E3FF9424B2B4 /* Pods-natto-dummy.m */; };
+		544FA012FD07F62F35EC0BED8820A4B3 /* Pods-natto-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7729F8A6B83A2C4CAE7BF1CDFAEB29A0 /* Pods-natto-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		701FD1267A2A72F3199D02BA0B5CFBBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		7E010D3540518A23FEF409E38449C56A /* Pods-nattoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E3AE417B0022AB9CDFE200ED55DB8E7 /* Pods-nattoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BB79D24A30B115201320657B5CAE05E /* Pods-nattoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF23103DD4F666F03ED6C98933CE83 /* Pods-nattoTests-dummy.m */; };
+		95921BADE1B7DBF8CCAEC85E8F9C96FC /* Pods-natto-nattoUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64E4830F86C0BEE6B64108118D7C88 /* Pods-natto-nattoUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1648C9A560C89D7DC32C65464A5ED0B /* Pods-natto-nattoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 123BD63AEC17352A4BA59C34E14D061B /* Pods-natto-nattoUITests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59091DF73D3A3EA0A037EF8FBEF00A83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F94D9E830C379ECEC279948BE8AE980;
+			remoteInfo = "Pods-natto";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0BC742B173B76B2B2B6C2EBDA7FCA32B /* Pods-nattoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-nattoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1206A0DE28209CEAF44E7305C8D60385 /* Pods-nattoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-nattoTests-Info.plist"; sourceTree = "<group>"; };
+		123BD63AEC17352A4BA59C34E14D061B /* Pods-natto-nattoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-natto-nattoUITests-dummy.m"; sourceTree = "<group>"; };
+		21B9038E8FCC7DF4EE3DEA328FB4648D /* Pods-natto-nattoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-natto-nattoUITests.modulemap"; sourceTree = "<group>"; };
+		24183C64E1BE3518DB508EF9CE274CB7 /* Pods_natto_nattoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_natto_nattoUITests.framework; path = "Pods-natto-nattoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28A3606F5F4E69772195822DFEF81465 /* Pods-nattoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-nattoTests.modulemap"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		385633C011F1BDD699E24FF0E11D6789 /* Pods-natto-nattoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-natto-nattoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		471E27DA0E76C0C9061D09E48AB256DF /* Pods-nattoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nattoTests.release.xcconfig"; sourceTree = "<group>"; };
+		496F68E2082AB3418F2FDF3E14C746F5 /* Pods-natto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-natto.debug.xcconfig"; sourceTree = "<group>"; };
+		4C63802F55D4CCB0C9F51B59BE42F48F /* Pods-nattoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nattoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E3AE417B0022AB9CDFE200ED55DB8E7 /* Pods-nattoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nattoTests-umbrella.h"; sourceTree = "<group>"; };
+		50899052505C2A2E7D180087E263CA1C /* Pods-natto-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-natto-acknowledgements.plist"; sourceTree = "<group>"; };
+		6CCF23103DD4F666F03ED6C98933CE83 /* Pods-nattoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-nattoTests-dummy.m"; sourceTree = "<group>"; };
+		7224E6F82DAA189E0F44E3FF9424B2B4 /* Pods-natto-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-natto-dummy.m"; sourceTree = "<group>"; };
+		7729F8A6B83A2C4CAE7BF1CDFAEB29A0 /* Pods-natto-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-natto-umbrella.h"; sourceTree = "<group>"; };
+		8B3666A15A901EFAD91FF7574E452807 /* Pods-natto-nattoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-natto-nattoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E1678C4692B81102BED8F2106E09362 /* Pods-natto-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-natto-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9A64E4830F86C0BEE6B64108118D7C88 /* Pods-natto-nattoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-natto-nattoUITests-umbrella.h"; sourceTree = "<group>"; };
+		9D7BDBABCE1896D967BC41B6C871FCA3 /* Pods-natto-nattoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-natto-nattoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AC79B343F4A5448982431E399C3A3D13 /* Pods-natto-nattoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-natto-nattoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AF6C3ABCEB930AD8A0A453B25726AA53 /* Pods-nattoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-nattoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B65101B06D78EAC378F1D1209496DBD3 /* Pods_nattoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_nattoTests.framework; path = "Pods-nattoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0038C209120553293307875E47C51DD /* Pods-natto-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-natto-Info.plist"; sourceTree = "<group>"; };
+		CA82E15FFF4419317A4FBAD9A5F9D018 /* Pods-natto-nattoUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-natto-nattoUITests-Info.plist"; sourceTree = "<group>"; };
+		D7E33783871EFE010681EC9CAF440050 /* Pods-natto.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-natto.modulemap"; sourceTree = "<group>"; };
+		F4540925495ED298045D48F22F04D9CB /* Pods_natto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_natto.framework; path = "Pods-natto.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDDB32EBBD27EFB7F0B25966227C158B /* Pods-natto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-natto.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A0A4C96E4D5FAA69D56571E4DE0B965 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2934746899EB439DCDCDB524AB29BBB0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		463B9B77C9CEF95C3D803F3F90B6C607 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				701FD1267A2A72F3199D02BA0B5CFBBD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A88A55BB20F4BBF1C3B901663176F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00B1FAFC1313C6F00DE78F7EBDFA6A51 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04BBC7211316144BFF97F967298B3CBD /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDF2E2B5F9E11030D572F9641721D37A /* Pods-natto */,
+				4AEFE2F111F6A3D2E1A89B6CB5E529D4 /* Pods-natto-nattoUITests */,
+				4025EBFCA639522AE94385FFD5B9E517 /* Pods-nattoTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		4025EBFCA639522AE94385FFD5B9E517 /* Pods-nattoTests */ = {
+			isa = PBXGroup;
+			children = (
+				28A3606F5F4E69772195822DFEF81465 /* Pods-nattoTests.modulemap */,
+				0BC742B173B76B2B2B6C2EBDA7FCA32B /* Pods-nattoTests-acknowledgements.markdown */,
+				AF6C3ABCEB930AD8A0A453B25726AA53 /* Pods-nattoTests-acknowledgements.plist */,
+				6CCF23103DD4F666F03ED6C98933CE83 /* Pods-nattoTests-dummy.m */,
+				1206A0DE28209CEAF44E7305C8D60385 /* Pods-nattoTests-Info.plist */,
+				4E3AE417B0022AB9CDFE200ED55DB8E7 /* Pods-nattoTests-umbrella.h */,
+				4C63802F55D4CCB0C9F51B59BE42F48F /* Pods-nattoTests.debug.xcconfig */,
+				471E27DA0E76C0C9061D09E48AB256DF /* Pods-nattoTests.release.xcconfig */,
+			);
+			name = "Pods-nattoTests";
+			path = "Target Support Files/Pods-nattoTests";
+			sourceTree = "<group>";
+		};
+		4AEFE2F111F6A3D2E1A89B6CB5E529D4 /* Pods-natto-nattoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				21B9038E8FCC7DF4EE3DEA328FB4648D /* Pods-natto-nattoUITests.modulemap */,
+				AC79B343F4A5448982431E399C3A3D13 /* Pods-natto-nattoUITests-acknowledgements.markdown */,
+				9D7BDBABCE1896D967BC41B6C871FCA3 /* Pods-natto-nattoUITests-acknowledgements.plist */,
+				123BD63AEC17352A4BA59C34E14D061B /* Pods-natto-nattoUITests-dummy.m */,
+				CA82E15FFF4419317A4FBAD9A5F9D018 /* Pods-natto-nattoUITests-Info.plist */,
+				9A64E4830F86C0BEE6B64108118D7C88 /* Pods-natto-nattoUITests-umbrella.h */,
+				8B3666A15A901EFAD91FF7574E452807 /* Pods-natto-nattoUITests.debug.xcconfig */,
+				385633C011F1BDD699E24FF0E11D6789 /* Pods-natto-nattoUITests.release.xcconfig */,
+			);
+			name = "Pods-natto-nattoUITests";
+			path = "Target Support Files/Pods-natto-nattoUITests";
+			sourceTree = "<group>";
+		};
+		AF7705D36FBEA236D20AF6BAD9E24098 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4540925495ED298045D48F22F04D9CB /* Pods_natto.framework */,
+				24183C64E1BE3518DB508EF9CE274CB7 /* Pods_natto_nattoUITests.framework */,
+				B65101B06D78EAC378F1D1209496DBD3 /* Pods_nattoTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				AF7705D36FBEA236D20AF6BAD9E24098 /* Products */,
+				04BBC7211316144BFF97F967298B3CBD /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDF2E2B5F9E11030D572F9641721D37A /* Pods-natto */ = {
+			isa = PBXGroup;
+			children = (
+				D7E33783871EFE010681EC9CAF440050 /* Pods-natto.modulemap */,
+				8E1678C4692B81102BED8F2106E09362 /* Pods-natto-acknowledgements.markdown */,
+				50899052505C2A2E7D180087E263CA1C /* Pods-natto-acknowledgements.plist */,
+				7224E6F82DAA189E0F44E3FF9424B2B4 /* Pods-natto-dummy.m */,
+				C0038C209120553293307875E47C51DD /* Pods-natto-Info.plist */,
+				7729F8A6B83A2C4CAE7BF1CDFAEB29A0 /* Pods-natto-umbrella.h */,
+				496F68E2082AB3418F2FDF3E14C746F5 /* Pods-natto.debug.xcconfig */,
+				FDDB32EBBD27EFB7F0B25966227C158B /* Pods-natto.release.xcconfig */,
+			);
+			name = "Pods-natto";
+			path = "Target Support Files/Pods-natto";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		79D07B4F25685CE3A4193415A3593253 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				544FA012FD07F62F35EC0BED8820A4B3 /* Pods-natto-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB86E2A5110190857EFB00A6CC9E96AC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95921BADE1B7DBF8CCAEC85E8F9C96FC /* Pods-natto-nattoUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE175754E709AB7BF2D5D4A623BFAEF1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E010D3540518A23FEF409E38449C56A /* Pods-nattoTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2F94D9E830C379ECEC279948BE8AE980 /* Pods-natto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03A323A0B1E38099770A470949085392 /* Build configuration list for PBXNativeTarget "Pods-natto" */;
+			buildPhases = (
+				79D07B4F25685CE3A4193415A3593253 /* Headers */,
+				9EBE3DFB51E2A8AF81F0F1D3B8BA41B5 /* Sources */,
+				3A0A4C96E4D5FAA69D56571E4DE0B965 /* Frameworks */,
+				D85DF4869D92A0FF22C735D86DB8EF00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-natto";
+			productName = "Pods-natto";
+			productReference = F4540925495ED298045D48F22F04D9CB /* Pods_natto.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5A2753B1ECD3041344C177700F52478A /* Pods-natto-nattoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B38D1159D155AB157BA567D16BD8862E /* Build configuration list for PBXNativeTarget "Pods-natto-nattoUITests" */;
+			buildPhases = (
+				AB86E2A5110190857EFB00A6CC9E96AC /* Headers */,
+				D33BCF3CBE438C98DA121AB91C76A6B7 /* Sources */,
+				463B9B77C9CEF95C3D803F3F90B6C607 /* Frameworks */,
+				0CC3DB074C709E89651424803F3F9D7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-natto-nattoUITests";
+			productName = "Pods-natto-nattoUITests";
+			productReference = 24183C64E1BE3518DB508EF9CE274CB7 /* Pods_natto_nattoUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5C1B31404272EC2FE378FE1BB11D535D /* Pods-nattoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A4CEEC0597E79BFFEBF88E1C2A3F38 /* Build configuration list for PBXNativeTarget "Pods-nattoTests" */;
+			buildPhases = (
+				CE175754E709AB7BF2D5D4A623BFAEF1 /* Headers */,
+				DA90567FA579571E596BD25F039EAAEF /* Sources */,
+				C7A88A55BB20F4BBF1C3B901663176F8 /* Frameworks */,
+				D49284042C0548C8F9A73F32BCAD1318 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A25AA5F954A05B2382CF07F87BCDE9E3 /* PBXTargetDependency */,
+			);
+			name = "Pods-nattoTests";
+			productName = "Pods-nattoTests";
+			productReference = B65101B06D78EAC378F1D1209496DBD3 /* Pods_nattoTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = AF7705D36FBEA236D20AF6BAD9E24098 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F94D9E830C379ECEC279948BE8AE980 /* Pods-natto */,
+				5A2753B1ECD3041344C177700F52478A /* Pods-natto-nattoUITests */,
+				5C1B31404272EC2FE378FE1BB11D535D /* Pods-nattoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0CC3DB074C709E89651424803F3F9D7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D49284042C0548C8F9A73F32BCAD1318 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D85DF4869D92A0FF22C735D86DB8EF00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9EBE3DFB51E2A8AF81F0F1D3B8BA41B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DECBE9FF816E40A57F718C0915E59A7 /* Pods-natto-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33BCF3CBE438C98DA121AB91C76A6B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1648C9A560C89D7DC32C65464A5ED0B /* Pods-natto-nattoUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA90567FA579571E596BD25F039EAAEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BB79D24A30B115201320657B5CAE05E /* Pods-nattoTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A25AA5F954A05B2382CF07F87BCDE9E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-natto";
+			target = 2F94D9E830C379ECEC279948BE8AE980 /* Pods-natto */;
+			targetProxy = 59091DF73D3A3EA0A037EF8FBEF00A83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		257497152829C177993B5EC99C1D227A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		3B1227F73C3A8E7B2747749E89663E41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 496F68E2082AB3418F2FDF3E14C746F5 /* Pods-natto.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-natto/Pods-natto-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-natto/Pods-natto.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5A895AF536435957E0F2A3298D989E42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C63802F55D4CCB0C9F51B59BE42F48F /* Pods-nattoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-nattoTests/Pods-nattoTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-nattoTests/Pods-nattoTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6A6A5EFB851518680AA12A8AC0C72E22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B3666A15A901EFAD91FF7574E452807 /* Pods-natto-nattoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-natto-nattoUITests/Pods-natto-nattoUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-natto-nattoUITests/Pods-natto-nattoUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		854EA989972302F427395C34B195C6A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 471E27DA0E76C0C9061D09E48AB256DF /* Pods-nattoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-nattoTests/Pods-nattoTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-nattoTests/Pods-nattoTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9FEED4209091B01162A0B3BB6A5774AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDDB32EBBD27EFB7F0B25966227C158B /* Pods-natto.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-natto/Pods-natto-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-natto/Pods-natto.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E457883D00191609080777C1E311DB68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 385633C011F1BDD699E24FF0E11D6789 /* Pods-natto-nattoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-natto-nattoUITests/Pods-natto-nattoUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-natto-nattoUITests/Pods-natto-nattoUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03A323A0B1E38099770A470949085392 /* Build configuration list for PBXNativeTarget "Pods-natto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B1227F73C3A8E7B2747749E89663E41 /* Debug */,
+				9FEED4209091B01162A0B3BB6A5774AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
+				257497152829C177993B5EC99C1D227A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A4CEEC0597E79BFFEBF88E1C2A3F38 /* Build configuration list for PBXNativeTarget "Pods-nattoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A895AF536435957E0F2A3298D989E42 /* Debug */,
+				854EA989972302F427395C34B195C6A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B38D1159D155AB157BA567D16BD8862E /* Build configuration list for PBXNativeTarget "Pods-natto-nattoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A6A5EFB851518680AA12A8AC0C72E22 /* Debug */,
+				E457883D00191609080777C1E311DB68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

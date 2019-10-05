@@ -45,6 +45,9 @@
 		43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F292052723B00FE1117 /* Main.storyboard */; };
 		43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2C2052723B00FE1117 /* Assets.xcassets */; };
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
+		4564AD0C578591459D5C8811 /* Pods_nattoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3156F7F1195BA558CE86E14 /* Pods_nattoTests.framework */; };
+		4715D7DE2733311A74926DDC /* Pods_natto_nattoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D44AD754EF63362AF2FE349 /* Pods_natto_nattoUITests.framework */; };
+		A63320560192222C618D4DF6 /* Pods_natto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D130D1063A64D111693DC0A /* Pods_natto.framework */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
 		F346A9C42268E6E800A051FC /* SKStoreReviewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */; };
@@ -92,6 +95,7 @@
 		0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Addition.swift"; sourceTree = "<group>"; };
 		0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLComposeViewController+Addition.swift"; sourceTree = "<group>"; };
 		0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Addition.swift"; sourceTree = "<group>"; };
+		0DD7C88019A050CBF1FAE28C /* Pods-natto-nattoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natto-nattoUITests.release.xcconfig"; path = "Target Support Files/Pods-natto-nattoUITests/Pods-natto-nattoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NattoViewController.swift; sourceTree = "<group>"; };
 		0DF70CF3223E6930007105D8 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
 		0DF70CF7223E6D98007105D8 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		0DFEF9EE22675CF50061167A /* nattoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nattoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DFEF9F022675CF50061167A /* nattoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nattoTests.swift; sourceTree = "<group>"; };
 		0DFEF9F222675CF50061167A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D44AD754EF63362AF2FE349 /* Pods_natto_nattoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_natto_nattoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39D21273B10B352F2519209C /* Pods-nattoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nattoTests.release.xcconfig"; path = "Target Support Files/Pods-nattoTests/Pods-nattoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4343CEA320537F20002CA3BC /* natto_bgm_game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = natto_bgm_game.wav; sourceTree = "<group>"; };
 		4343CEA52053804C002CA3BC /* voice_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_5.wav; sourceTree = "<group>"; };
 		4343CEA8205381DE002CA3BC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -122,6 +128,12 @@
 		43D95F2C2052723B00FE1117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D95F2F2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43D95F312052723B00FE1117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E6CD93CAACF15B125DF28BC /* Pods-nattoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nattoTests.debug.xcconfig"; path = "Target Support Files/Pods-nattoTests/Pods-nattoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5119477F3EBDC68C18AE0CBD /* Pods-natto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natto.debug.xcconfig"; path = "Target Support Files/Pods-natto/Pods-natto.debug.xcconfig"; sourceTree = "<group>"; };
+		7D130D1063A64D111693DC0A /* Pods_natto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_natto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8643B4C470018FCF87D9FA9 /* Pods-natto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natto.release.xcconfig"; path = "Target Support Files/Pods-natto/Pods-natto.release.xcconfig"; sourceTree = "<group>"; };
+		CB6922565F408085520F517A /* Pods-natto-nattoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natto-nattoUITests.debug.xcconfig"; path = "Target Support Files/Pods-natto-nattoUITests/Pods-natto-nattoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E3156F7F1195BA558CE86E14 /* Pods_nattoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nattoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
 		F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Addition.swift"; sourceTree = "<group>"; };
@@ -136,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4715D7DE2733311A74926DDC /* Pods_natto_nattoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4564AD0C578591459D5C8811 /* Pods_nattoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4343CEA9205381DE002CA3BC /* Social.framework in Frameworks */,
+				A63320560192222C618D4DF6 /* Pods_natto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +292,20 @@
 			path = nattoTests;
 			sourceTree = "<group>";
 		};
+		2DB07AFF2DE283C4EA91CD9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5119477F3EBDC68C18AE0CBD /* Pods-natto.debug.xcconfig */,
+				B8643B4C470018FCF87D9FA9 /* Pods-natto.release.xcconfig */,
+				CB6922565F408085520F517A /* Pods-natto-nattoUITests.debug.xcconfig */,
+				0DD7C88019A050CBF1FAE28C /* Pods-natto-nattoUITests.release.xcconfig */,
+				4E6CD93CAACF15B125DF28BC /* Pods-nattoTests.debug.xcconfig */,
+				39D21273B10B352F2519209C /* Pods-nattoTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4343CEA7205381DD002CA3BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +316,9 @@
 				0D048FC722780DC400852FFA /* FacebookCore.framework */,
 				0D048FC522780D9300852FFA /* TwitterKit.framework */,
 				4343CEA8205381DE002CA3BC /* Social.framework */,
+				7D130D1063A64D111693DC0A /* Pods_natto.framework */,
+				2D44AD754EF63362AF2FE349 /* Pods_natto_nattoUITests.framework */,
+				E3156F7F1195BA558CE86E14 /* Pods_nattoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -299,6 +331,7 @@
 				0DFEF9E122675BF60061167A /* nattoUITests */,
 				43D95F1D2052723B00FE1117 /* Products */,
 				4343CEA7205381DD002CA3BC /* Frameworks */,
+				2DB07AFF2DE283C4EA91CD9D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -348,6 +381,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DFEF9E922675BF60061167A /* Build configuration list for PBXNativeTarget "nattoUITests" */;
 			buildPhases = (
+				8DC4E9B642F8EABDEF5B0C86 /* [CP] Check Pods Manifest.lock */,
 				0DFEF9DC22675BF60061167A /* Sources */,
 				0DFEF9DD22675BF60061167A /* Frameworks */,
 				0DFEF9DE22675BF60061167A /* Resources */,
@@ -366,6 +400,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DFEF9F522675CF50061167A /* Build configuration list for PBXNativeTarget "nattoTests" */;
 			buildPhases = (
+				398152B834E04E9CCB75359A /* [CP] Check Pods Manifest.lock */,
 				0DFEF9EA22675CF50061167A /* Sources */,
 				0DFEF9EB22675CF50061167A /* Frameworks */,
 				0DFEF9EC22675CF50061167A /* Resources */,
@@ -384,6 +419,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43D95F342052723B00FE1117 /* Build configuration list for PBXNativeTarget "natto" */;
 			buildPhases = (
+				671D4C88D9BDAE413568D0D8 /* [CP] Check Pods Manifest.lock */,
 				43D95F182052723B00FE1117 /* Sources */,
 				43D95F192052723B00FE1117 /* Frameworks */,
 				43D95F1A2052723B00FE1117 /* Resources */,
@@ -501,8 +537,73 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\n";
+		};
+		398152B834E04E9CCB75359A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nattoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		671D4C88D9BDAE413568D0D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-natto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DC4E9B642F8EABDEF5B0C86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-natto-nattoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -595,6 +696,7 @@
 /* Begin XCBuildConfiguration section */
 		0DFEF9E722675BF60061167A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB6922565F408085520F517A /* Pods-natto-nattoUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -614,6 +716,7 @@
 		};
 		0DFEF9E822675BF60061167A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DD7C88019A050CBF1FAE28C /* Pods-natto-nattoUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -632,6 +735,7 @@
 		};
 		0DFEF9F622675CF50061167A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E6CD93CAACF15B125DF28BC /* Pods-nattoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -652,6 +756,7 @@
 		};
 		0DFEF9F722675CF50061167A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39D21273B10B352F2519209C /* Pods-nattoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -782,6 +887,7 @@
 		};
 		43D95F352052723B00FE1117 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5119477F3EBDC68C18AE0CBD /* Pods-natto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -806,6 +912,7 @@
 		};
 		43D95F362052723B00FE1117 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8643B4C470018FCF87D9FA9 /* Pods-natto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
