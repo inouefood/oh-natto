@@ -10,6 +10,11 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
 
+    @IBOutlet weak var descriptionTitleLabel: UILabel! {
+        didSet {
+            descriptionTitleLabel.text = localizeString(key: LocalizeKeys.Description.title)
+        }
+    }
     @IBOutlet weak var descriptionLabel1: UILabel! {
         didSet {
             descriptionLabel1.text = localizeString(key: LocalizeKeys.Description.one) 

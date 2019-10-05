@@ -13,6 +13,7 @@
 "UPDATEALERT.BUTTON.UPDATE" = "Update";
 "UPDATEALERT.BUTTON.CLOSE" = "Close";
 
+"DESCRIPTION.TITLE" = "How to play";
 "DESCRIPTION.1" = "①Mix as much natto as possible and put out stickiness. By generating a lot of white nebeneva, the adsorption rate of natto changes";
 "DESCRIPTION.2" = "②Lift natto in time and eat as much as possible";
 "DESCRIPTION.3" = "③Your score will be determined by the number of natto you eat！";
@@ -20,3 +21,6 @@
 "TITLE.BUTTON.START" = "START";
 
 "RESULT.BUTTON.REPLAY" = "REPLAY";
+"RESULT.LABEL.SCORE" = "SCORE: ";
+"RESULT.LABEL.BESTSCORE" = "BEST SCORE: ";
+"RESULT.TWITTER" = "\n\nEat natto and perfect body!";
