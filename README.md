@@ -8,6 +8,16 @@ This repository is an app released to the Apple Store
 
 [![Language](https://img.shields.io/badge/language-Swift%205.0-orange.svg)](https://swift.org)
 
+## Installation
+
+```
+bundle install --path vendor/bundle
+```
+
+```
+bundle exec pod install
+```
+
 ## Description
 
 <img src="https://user-images.githubusercontent.com/42649032/56936545-e53c9380-6b32-11e9-9a1c-22eed7a879b7.gif" width="300">
