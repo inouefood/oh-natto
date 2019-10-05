@@ -10,7 +10,7 @@ import GameplayKit
 import UIKit
 
 class TitleScene: SKScene {
-    var startLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "START")
+    var startLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: localizeString(key: LocalizeKeys.Title.buttonStart))
     var controlWidth: CGFloat!
     
     // MARK: - Initializer

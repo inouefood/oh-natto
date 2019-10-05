@@ -177,12 +177,12 @@
 			path = Description;
 			sourceTree = "<group>";
 		};
-		0DCD56D62348E6BE008F7BAA /* New Group */ = {
+		0DCD56D62348E6BE008F7BAA /* Localize */ = {
 			isa = PBXGroup;
 			children = (
 				0DCD56D72348E72E008F7BAA /* LocalizeKey.swift */,
 			);
-			path = "New Group";
+			path = Localize;
 			sourceTree = "<group>";
 		};
 		0DD326B82253A2D700FBE6A1 /* Extension */ = {
@@ -271,7 +271,7 @@
 		0DFEF9C9226361F10061167A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				0DCD56D62348E6BE008F7BAA /* New Group */,
+				0DCD56D62348E6BE008F7BAA /* Localize */,
 				0DFEF9CA226362090061167A /* Constant.swift */,
 				054E493222D2D9C00062736D /* AppVersionCompare.swift */,
 			);

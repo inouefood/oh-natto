@@ -36,7 +36,7 @@ class ResultScene: SKScene{
     }()
    
     lazy var replayLabel: SKLabelNode! = {
-        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY", pos: CGPoint(x: self.frame.midX, y: height * 0.20))
+        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: localizeString(key: LocalizeKeys.Result.buttonRelpay), pos: CGPoint(x: self.frame.midX, y: height * 0.20))
     }()
     lazy var bestScoreLabel: SKLabelNode! = {
         return SKLabelNode(font: "Verdana-bold", fontSize: 50, text: "BEST SCORE: " + String(bestScore), pos: CGPoint(x: self.frame.midX, y: height * 0.85))

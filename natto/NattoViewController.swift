@@ -30,7 +30,7 @@ class NattoViewController: UIViewController {
             case .latest:
                 print("最新バージョンです")
             case .old:
-                self.showAppStoreInformation(url: "https://apps.apple.com/jp/app/oh-natto/id1457049172", title: "App Store", message: "最新版にアップデートすることが可能です", openText: "アップデート", closeText: "閉じる")
+                self.showAppStoreInformation(url: "https://apps.apple.com/jp/app/oh-natto/id1457049172", title: "App Store", message: localizeString(key: LocalizeKeys.UpdateLeast.message), openText: localizeString(key: LocalizeKeys.UpdateLeast.buttonUpdate), closeText: localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))
             case .error:
                 print("エラー")
             }
