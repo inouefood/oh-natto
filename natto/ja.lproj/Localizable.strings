@@ -5,4 +5,18 @@
   Created by 佐川晴海 on 2019/10/05.
   Copyright © 2019 佐川　晴海. All rights reserved.
 */
-"hello" = "こんにちは";
+"NOTIFICATION.TITLE" = "今日は納豆の日です";
+"NOTIFOCATION.MESSAGE" = "oh! natto!で納豆を混ぜてみませんか？";
+
+"UPDATEALERT.MESSAGE" = "最新版にアップデートすることが可能です";
+"UPDATEALERT.BUTTON.UPDATE" = "アップデート";
+"UPDATEALERT.BUTTON.CLOSE" = "閉じる";
+
+"DESCRIPTION.1" = "①納豆をできるだけたくさん混ぜ、ねばりけを出します。白いネベネバをたくさん発生させることで納豆の吸着率が変化します";
+"DESCRIPTION.2" = "②時間内に納豆を持ち上げてできるだけたくさん食べます";
+"DESCRIPTION.3" = "③食べた納豆の数でスコアが決まります!良い結果が出たらSNSに投稿しよう！";
+
+"TITLE.BUTTON.START" = "はじめる";
+
+"RESULT.BUTTON.REPLAY" = "もういちど";
+
