@@ -19,6 +19,8 @@
 		0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D815D0E2261E3B100B6642E /* Closebutton.swift */; };
 		0D815D112261E42D00B6642E /* CloseButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D815D102261E42D00B6642E /* CloseButton.xib */; };
 		0DCD56CF2348E004008F7BAA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DCD56D12348E004008F7BAA /* Localizable.strings */; };
+		0DCD56D42348E63F008F7BAA /* Swift+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD56D32348E63F008F7BAA /* Swift+Addition.swift */; };
+		0DCD56D82348E72E008F7BAA /* LocalizeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD56D72348E72E008F7BAA /* LocalizeKey.swift */; };
 		0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */; };
 		0DCE81AB2254DEA1002FAE96 /* SLComposeViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */; };
 		0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */; };
@@ -94,6 +96,8 @@
 		0DCD56CA2348DEFE008F7BAA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0DCD56D02348E004008F7BAA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0DCD56D22348E056008F7BAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0DCD56D32348E63F008F7BAA /* Swift+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Addition.swift"; sourceTree = "<group>"; };
+		0DCD56D72348E72E008F7BAA /* LocalizeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeKey.swift; sourceTree = "<group>"; };
 		0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Addition.swift"; sourceTree = "<group>"; };
 		0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLComposeViewController+Addition.swift"; sourceTree = "<group>"; };
 		0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Addition.swift"; sourceTree = "<group>"; };
@@ -173,6 +177,14 @@
 			path = Description;
 			sourceTree = "<group>";
 		};
+		0DCD56D62348E6BE008F7BAA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				0DCD56D72348E72E008F7BAA /* LocalizeKey.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		0DD326B82253A2D700FBE6A1 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +198,7 @@
 				0DFD69692276F2BB000DBD93 /* SKScene+Addition.swift */,
 				054E493422D2DD680062736D /* UIApplication+Addition.swift */,
 				054E493622D2DF4F0062736D /* UIViewController+Addition.swift */,
+				0DCD56D32348E63F008F7BAA /* Swift+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -258,6 +271,7 @@
 		0DFEF9C9226361F10061167A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0DCD56D62348E6BE008F7BAA /* New Group */,
 				0DFEF9CA226362090061167A /* Constant.swift */,
 				054E493222D2D9C00062736D /* AppVersionCompare.swift */,
 			);
@@ -547,6 +561,7 @@
 				0D081FC42286DB5D00B74D86 /* ObjectSize.swift in Sources */,
 				054E493722D2DF4F0062736D /* UIViewController+Addition.swift in Sources */,
 				054E493322D2D9C00062736D /* AppVersionCompare.swift in Sources */,
+				0DCD56D82348E72E008F7BAA /* LocalizeKey.swift in Sources */,
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,
 				0DFEF9CB226362090061167A /* Constant.swift in Sources */,
@@ -559,6 +574,7 @@
 				0DE54C61225F8F2C00006ED4 /* NattoViewController.swift in Sources */,
 				F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */,
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
+				0DCD56D42348E63F008F7BAA /* Swift+Addition.swift in Sources */,
 				0DFD696A2276F2BB000DBD93 /* SKScene+Addition.swift in Sources */,
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
 				0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */,
