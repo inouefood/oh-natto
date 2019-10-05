@@ -139,7 +139,7 @@ class ResultScene: SKScene{
                 self.view!.presentScene(scene)
             }
             
-            let message: String = localizeString(key: LocalizeKeys.Result.score) + String(resultScore) + localizeString(key: LocalizeKeys.Result.tweet) + "\n\nhttps://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
+            let message: String = localizeString(key: LocalizeKeys.Result.score) + String(resultScore) + localizeString(key: LocalizeKeys.Result.tweet) + "\n https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
             
             if (touchNode == twitterButton) {
                 SLComposeViewController().showTwitterDialog(message: message, vc:(UIApplication.shared.keyWindow?.rootViewController!)!)
