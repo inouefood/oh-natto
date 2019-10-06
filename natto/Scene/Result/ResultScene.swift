@@ -36,13 +36,13 @@ class ResultScene: SKScene{
     }()
    
     lazy var replayLabel: SKLabelNode! = {
-        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "REPLAY", pos: CGPoint(x: self.frame.midX, y: height * 0.20))
+        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: localizeString(key: LocalizeKeys.Result.buttonRelpay), pos: CGPoint(x: self.frame.midX, y: height * 0.20))
     }()
     lazy var bestScoreLabel: SKLabelNode! = {
-        return SKLabelNode(font: "Verdana-bold", fontSize: 50, text: "BEST SCORE: " + String(bestScore), pos: CGPoint(x: self.frame.midX, y: height * 0.85))
+        return SKLabelNode(font: "Verdana-bold", fontSize: 50, text: localizeString(key: LocalizeKeys.Result.bestScore) + String(bestScore), pos: CGPoint(x: self.frame.midX, y: height * 0.85))
     }()
     lazy var scoreLabel: SKLabelNode! = {
-        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: "SCORE: " + String(resultScore), pos: CGPoint(x: self.frame.midX, y: height * 0.90))
+        return SKLabelNode(font: "Verdana-bold", fontSize: 100, text: localizeString(key: LocalizeKeys.Result.score) + String(resultScore), pos: CGPoint(x: self.frame.midX, y: height * 0.90))
     }()
     lazy var buttonSize = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
     lazy var twitterButton: SKSpriteNode! = {
@@ -139,7 +139,7 @@ class ResultScene: SKScene{
                 self.view!.presentScene(scene)
             }
             
-            let message: String = "SCORE : " + String(resultScore) + "\n\n納豆食べてパーフェクトボディ！\nhttps://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
+            let message: String = localizeString(key: LocalizeKeys.Result.score) + String(resultScore) + localizeString(key: LocalizeKeys.Result.tweet) + "\n https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
             
             if (touchNode == twitterButton) {
                 SLComposeViewController().showTwitterDialog(message: message, vc:(UIApplication.shared.keyWindow?.rootViewController!)!)

@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = NattoViewController()
         self.window?.makeKeyAndVisible()
@@ -29,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("許可しない")
             }
         }
-        setLocalNotification(title:"今日は納豆の日です", message:"oh! natto!で納豆を混ぜてみませんか？",month: 7, day: 10)
+        setLocalNotification(title:localizeString(key: LocalizeKeys.Notification.title), message:localizeString(key: LocalizeKeys.Notification.message),month: 7, day: 10)
         return true
     }
     

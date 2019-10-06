@@ -10,19 +10,24 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
 
+    @IBOutlet weak var descriptionTitleLabel: UILabel! {
+        didSet {
+            descriptionTitleLabel.text = localizeString(key: LocalizeKeys.Description.title)
+        }
+    }
     @IBOutlet weak var descriptionLabel1: UILabel! {
         didSet {
-            descriptionLabel1.text = "①納豆をできるだけたくさん混ぜ、ねばりけを出します。白いネベネバをたくさん発生させることで納豆の吸着率が変化します"
+            descriptionLabel1.text = localizeString(key: LocalizeKeys.Description.one) 
         }
     }
     @IBOutlet weak var descriptionLabel2: UILabel! {
         didSet {
-            descriptionLabel2.text = "②時間内に納豆を持ち上げてできるだけたくさん食べます"
+            descriptionLabel2.text = localizeString(key: LocalizeKeys.Description.two)
         }
     }
     @IBOutlet weak var descriptionLabel3: UILabel! {
         didSet {
-            descriptionLabel3.text = "③食べた納豆の数でスコアが決まります!良い結果が出たらSNSに投稿しよう！"
+            descriptionLabel3.text = localizeString(key:LocalizeKeys.Description.three)
         }
     }
     

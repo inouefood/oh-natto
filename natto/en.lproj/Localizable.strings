@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  natto
+
+  Created by 佐川晴海 on 2019/10/05.
+  Copyright © 2019 佐川　晴海. All rights reserved.
+*/
+
+"NOTIFICATION.TITLE" = "Today is Natto Day";
+"NOTIFOCATION.MESSAGE" = "Would you like to mix natto with oh! natto ?";
+
+"UPDATEALERT.MESSAGE" = "It is possible to update to the latest version";
+"UPDATEALERT.BUTTON.UPDATE" = "Update";
+"UPDATEALERT.BUTTON.CLOSE" = "Close";
+
+"DESCRIPTION.TITLE" = "How to play";
+"DESCRIPTION.1" = "①Mix natto as much as possible and make it sticky. By generating a lot of white nebeneva, the adsorption rate of natto will change";
+"DESCRIPTION.2" = "②Lift natto in time and eat as much as possible";
+"DESCRIPTION.3" = "③Your score will be determined by the number of natto you’ve eaten！";
+
+"TITLE.BUTTON.START" = "START";
+
+"RESULT.BUTTON.REPLAY" = "REPLAY";
+"RESULT.LABEL.SCORE" = "SCORE: ";
+"RESULT.LABEL.BESTSCORE" = "BEST SCORE: ";
+"RESULT.TWITTER" = "\n\nEat natto and perfect body!";
