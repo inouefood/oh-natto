@@ -14,11 +14,16 @@ class MixScene: SKScene{
     
     lazy var nattoSprite:[SKSpriteNode] = {
         var sprites: [SKSpriteNode] = []
+        var minLength = width > height ? height : width
+        if minLength > 1500 {
+            minLength = 1500
+        }
+        
         for _ in 0..<Constant.SpriteCount.natto{
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
             
-            let nattoBody = SKPhysicsBody().make(circleOfRadius: width/40, category: Constant.CollisionBody.natto, contact: Constant.CollisionBody.ohashi, isGravity: false)
-            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: randX, y: randY), body: nattoBody, rotate: r, size: CGSize(width: width/15, height: width/15))
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: minLength/40, category: Constant.CollisionBody.natto, contact: Constant.CollisionBody.ohashi, isGravity: false)
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: randX, y: randY), body: nattoBody, rotate: r, size: CGSize(width: minLength/15, height: minLength/15))
             sprites.append(natto)
         }
         return sprites

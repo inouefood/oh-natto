@@ -16,9 +16,13 @@ class PullNattoScene: SKScene{
         var sprites:[SKSpriteNode] = []
         for _ in 0..<Constant.SpriteCount.natto {
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * .pi)))
+                var minLength = width > height ? height : width
+            if minLength > 1500 {
+                minLength = 1300
+            }
             
-            let nattoBody = SKPhysicsBody().make(circleOfRadius: width/40, isGravity: true)
-            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: randX, y: randY/4), body: nattoBody, rotate: r, size: CGSize(width: width/17, height: width/17))
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: minLength/40, isGravity: true)
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: randX, y: randY/4), body: nattoBody, rotate: r, size: CGSize(width: minLength/17, height: minLength/17))
             sprites.append(natto)
         }
         return sprites
