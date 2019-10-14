@@ -16,9 +16,13 @@ class PullNattoScene: SKScene{
         var sprites:[SKSpriteNode] = []
         for _ in 0..<Constant.SpriteCount.natto {
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * .pi)))
+                var minLength = width > height ? height : width
+            if minLength > 1500 {
+                minLength = 1300
+            }
             
-            let nattoBody = SKPhysicsBody().make(circleOfRadius: width/40, isGravity: true)
-            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: randX, y: randY/4), body: nattoBody, rotate: r, size: CGSize(width: width/17, height: width/17))
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: minLength/35, isGravity: true)
+            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: randX, y: randY/4), body: nattoBody, rotate: r, size: CGSize(width: minLength/17, height: minLength/17))
             sprites.append(natto)
         }
         return sprites
@@ -91,10 +95,16 @@ class PullNattoScene: SKScene{
     }
     
     override func update(_ currentTime: TimeInterval) {
+        //iPadだと納豆が取れすぎてしまうので調整
+        var minLength = width > height ? height : width
+        if minLength > 1500 {
+            minLength = 1500
+        }
+        
         for (i, natto) in nattoSprite.enumerated() {
             presenter.eatCheck(height: Float(height), nattoY: Float(natto.position.y), index: i)
-
-            presenter.updateNattoPosition(ohashiPos: ObjectPosition(pos: ohashi.position), ohashiSize: ObjectSize(size: ohashi.size), nattoPos: ObjectPosition(pos: natto.position), sticky: stickyLevel, dist: Float(width/10), index: i)
+            
+            presenter.updateNattoPosition(ohashiPos: ObjectPosition(pos: ohashi.position), ohashiSize: ObjectSize(size: ohashi.size), nattoPos: ObjectPosition(pos: natto.position), sticky: stickyLevel, dist: Float(minLength/10), index: i)
         }
     }
 }
