@@ -7,10 +7,8 @@
 //
 
 import Foundation
-import Social
 
 protocol ResultPresenter {
-    func showTweetDialog(text: String) -> SLComposeViewController
     func isPopUpReviewDialog() -> Bool
     func checkScoreEvaluation(score: Int)
 }
@@ -31,12 +29,7 @@ class ResultPresenterImpl: ResultPresenter {
     func checkScoreEvaluation(score: Int) {
         output?.showScoreComparison(isBest: model.checkScoreEvaluation(score: score))
     }
-    
-    func showTweetDialog(text: String) -> SLComposeViewController{
-        let twitterCmp : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-        twitterCmp.setInitialText(text)
-        return twitterCmp
-    }
+
     func isPopUpReviewDialog() -> Bool {
         return model.isPopUpReviewDialog()
     }

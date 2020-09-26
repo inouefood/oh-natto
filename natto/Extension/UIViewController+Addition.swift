@@ -30,7 +30,7 @@ extension UIViewController {
             handler?()
         })
         alert.addAction(open)
-        alert.addAction(close)
+        alert.addAction(close)        
         present(alert, animated: true, completion: nil)
     }
 }
