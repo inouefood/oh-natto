@@ -9,11 +9,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CloseButton" customModule="natto" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CIq-z0-Ich" customClass="CloseButton" customModule="natto" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="65" height="62"/>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CIq-z0-Ich" customClass="CloseButton" customModule="natto" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="567" height="567"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" title="Button"/>
+            <state key="normal" image="close"/>
             <point key="canvasLocation" x="167.39130434782609" y="98.4375"/>
         </button>
     </objects>
+    <resources>
+        <image name="close" width="567" height="567"/>
+    </resources>
 </document>

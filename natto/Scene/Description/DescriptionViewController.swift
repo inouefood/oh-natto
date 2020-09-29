@@ -10,7 +10,13 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.delegate = self
+        }
+    }
     
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var firstPage: DescriptionView! {
         didSet {
             
@@ -37,4 +43,13 @@ class DescriptionViewController: UIViewController {
         self.view.backgroundColor = .clear
     }
  
+    @IBAction func dismissAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension DescriptionViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+    }
 }
