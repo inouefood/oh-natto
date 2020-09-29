@@ -9,13 +9,13 @@
 import SpriteKit
 
 extension SKLabelNode {
-    convenience init(font:String, fontSize: CGFloat, text: String){
+    convenience init(font:String = "Verdana-bold", fontSize: CGFloat, text: String){
         self.init()
         self.fontName = font
         self.fontSize = fontSize
         self.text = text
     }
-    convenience init(font:String, fontSize: CGFloat, text: String, pos: CGPoint){
+    convenience init(font:String = "Verdana-bold", fontSize: CGFloat, text: String, pos: CGPoint){
         self.init()
         self.fontName = font
         self.fontSize = fontSize

@@ -10,7 +10,8 @@ import GameplayKit
 import UIKit
 
 class TitleScene: SKScene {
-    var startLabel = SKLabelNode(font: "Verdana-bold", fontSize: 100, text: localizeString(key: LocalizeKeys.Title.buttonStart))
+    var startLabel = SKLabelNode(fontSize: 100,
+                                 text: localizeString(key: LocalizeKeys.Title.buttonStart))
     var controlWidth: CGFloat!
     
     // MARK: - Initializer
@@ -64,6 +65,7 @@ class TitleScene: SKScene {
     // - MARK: Event
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         for touches:AnyObject in touches{
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)

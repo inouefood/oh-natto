@@ -22,7 +22,6 @@
 		0DCD56D42348E63F008F7BAA /* Swift+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD56D32348E63F008F7BAA /* Swift+Addition.swift */; };
 		0DCD56D82348E72E008F7BAA /* LocalizeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD56D72348E72E008F7BAA /* LocalizeKey.swift */; };
 		0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */; };
-		0DCE81AB2254DEA1002FAE96 /* SLComposeViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */; };
 		0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */; };
 		0DE54C61225F8F2C00006ED4 /* NattoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */; };
 		0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF70CF3223E6930007105D8 /* ResultPresenter.swift */; };
@@ -48,6 +47,8 @@
 		43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F292052723B00FE1117 /* Main.storyboard */; };
 		43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2C2052723B00FE1117 /* Assets.xcassets */; };
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
+		49D62645251F44E500D33404 /* SNSShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D62644251F44E500D33404 /* SNSShareData.swift */; };
+		49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A64251F14CC00E25A9B /* UserStore.swift */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
 		F346A9C42268E6E800A051FC /* SKStoreReviewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */; };
@@ -99,7 +100,6 @@
 		0DCD56D32348E63F008F7BAA /* Swift+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Addition.swift"; sourceTree = "<group>"; };
 		0DCD56D72348E72E008F7BAA /* LocalizeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeKey.swift; sourceTree = "<group>"; };
 		0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Addition.swift"; sourceTree = "<group>"; };
-		0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLComposeViewController+Addition.swift"; sourceTree = "<group>"; };
 		0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Addition.swift"; sourceTree = "<group>"; };
 		0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NattoViewController.swift; sourceTree = "<group>"; };
 		0DF70CF3223E6930007105D8 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
@@ -131,6 +131,8 @@
 		43D95F2C2052723B00FE1117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D95F2F2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43D95F312052723B00FE1117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49D62644251F44E500D33404 /* SNSShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSShareData.swift; sourceTree = "<group>"; };
+		49EC6A64251F14CC00E25A9B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
 		F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Addition.swift"; sourceTree = "<group>"; };
@@ -190,7 +192,6 @@
 			children = (
 				0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */,
 				0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */,
-				0DCE81AA2254DEA1002FAE96 /* SLComposeViewController+Addition.swift */,
 				F39D9423225A411400FD6401 /* SKPhysicsBody+Addition.swift */,
 				F346A9C32268E6E800A051FC /* SKStoreReviewController+Addition.swift */,
 				F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */,
@@ -273,6 +274,7 @@
 			children = (
 				0DCD56D62348E6BE008F7BAA /* Localize */,
 				0DFEF9CA226362090061167A /* Constant.swift */,
+				49D62644251F44E500D33404 /* SNSShareData.swift */,
 				054E493222D2D9C00062736D /* AppVersionCompare.swift */,
 			);
 			path = Common;
@@ -336,6 +338,7 @@
 			children = (
 				0DF70CF1223E64BA007105D8 /* Sound */,
 				0DFEF9C9226361F10061167A /* Common */,
+				49EC6A63251F14B900E25A9B /* Store */,
 				0DFEF9BF22623BA50061167A /* Entity */,
 				0DD326B82253A2D700FBE6A1 /* Extension */,
 				0DE54C65225F948D00006ED4 /* Scene */,
@@ -349,6 +352,14 @@
 				0DCD56D12348E004008F7BAA /* Localizable.strings */,
 			);
 			path = natto;
+			sourceTree = "<group>";
+		};
+		49EC6A63251F14B900E25A9B /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				49EC6A64251F14CC00E25A9B /* UserStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		F31970AD223FF9100045A391 /* Mix */ = {
@@ -549,10 +560,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DCE81AB2254DEA1002FAE96 /* SLComposeViewController+Addition.swift in Sources */,
 				0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */,
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */,
+				49D62645251F44E500D33404 /* SNSShareData.swift in Sources */,
 				F346A9CA226A403E00A051FC /* SKShapeNode+Addition.swift in Sources */,
 				F346A9C42268E6E800A051FC /* SKStoreReviewController+Addition.swift in Sources */,
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
@@ -579,6 +590,7 @@
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
 				0DF70CF4223E6930007105D8 /* ResultPresenter.swift in Sources */,
 				F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */,
+				49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

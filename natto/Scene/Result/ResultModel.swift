@@ -7,43 +7,30 @@
 //
 
 import Foundation
-import Social
 
 protocol ResultModelInput {
     func isPopUpReviewDialog() -> Bool
     func checkScoreEvaluation(score: Int) -> Bool
 }
 class ResultModel: ResultModelInput{
-
-    private let userDefault = UserDefaults.standard
     
     func checkScoreEvaluation(score: Int) -> Bool {
-        var isBestScore = false
-       
-        if userDefault.object(forKey: "topScore") != nil {
-            let topScore:[Int] = userDefault.array(forKey: "topScore") as! [Int]
-            
-            topScore.forEach{ beforeScore in
-                if beforeScore < score {
-                    isBestScore = true
-                }
-            }
-            if isBestScore {
-                saveBestScore(topScore: topScore, score: score)
-            }
-        } else {
-            // At first score
-            userDefault.set([score], forKey: "topScore")
+        guard let pastTopScore = UserStore.topScore() else {
+            UserStore.pastScore = [score]
+            return true
         }
-        return isBestScore
+        
+        return pastTopScore < score
+        
     }
     
     func isPopUpReviewDialog() -> Bool {
-        if userDefault.object(forKey: "isAlreadyDisplayedReviewAlert") != nil {
+        if UserStore.isNeedDisplayedReviewAlert {
+            UserStore.isNeedDisplayedReviewAlert = false
+            return true
+        } else {
             return false
         }
-        userDefault.set(true, forKey: "isAlreadyDisplayedReviewAlert")
-        return true
     }
     
     private func saveBestScore(topScore: [Int], score: Int) {
@@ -57,6 +44,6 @@ class ResultModel: ResultModelInput{
             scores.remove(at: scores.count - 1)
             scores.append(score)
         }
-        userDefault.set(scores, forKey: "topScore")
+        UserStore.pastScore = scores
     }
 }
