@@ -16,7 +16,7 @@ class DescriptionViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var pageControl: UIPageControl! 
     @IBOutlet weak var firstPage: DescriptionView! {
         didSet {
             
@@ -40,7 +40,7 @@ class DescriptionViewController: UIViewController {
     // - MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .clear
+        pageControl.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
     }
  
     @IBAction func dismissAction(_ sender: Any) {

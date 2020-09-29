@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DescriptionViewController" customModule="natto" customModuleProvider="target">
             <connections>
                 <outlet property="firstPage" destination="66S-PN-HpI" id="PQ4-Xc-7WI"/>
-                <outlet property="pageControl" destination="NJ0-lg-7Sd" id="hrI-W3-G19"/>
+                <outlet property="pageControl" destination="NJ0-lg-7Sd" id="OtG-RB-DeF"/>
                 <outlet property="scrollView" destination="mdF-LY-s41" id="f1W-eD-6t1"/>
                 <outlet property="secondPage" destination="Kln-Xs-KFr" id="yRu-ml-O7m"/>
                 <outlet property="therdPage" destination="Wq8-R6-6on" id="I6R-bq-N86"/>
@@ -70,12 +70,12 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="1vW-R6-xQQ"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="4J7-lg-9kb"/>
                 </scrollView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="NJ0-lg-7Sd">
-                    <rect key="frame" x="187.5" y="429.5" width="39" height="37"/>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="NJ0-lg-7Sd" customClass="CustomPageControl" customModule="natto" customModuleProvider="target">
+                    <rect key="frame" x="187.5" y="419.5" width="39" height="37"/>
                     <color key="tintColor" red="0.90196078430000004" green="0.0" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                 </pageControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGx-HN-8IW" customClass="CloseButton" customModule="natto" customModuleProvider="target">
-                    <rect key="frame" x="356" y="59" width="50" height="50"/>
+                    <rect key="frame" x="364" y="44" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Bre-vc-NrB"/>
                         <constraint firstAttribute="width" constant="50" id="cM8-NO-79x"/>
@@ -95,7 +95,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mdF-LY-s41" secondAttribute="trailing" id="gI1-Jl-Vne"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mdF-LY-s41" secondAttribute="bottom" id="nXO-CK-Ifg"/>
                 <constraint firstItem="WGx-HN-8IW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sEq-1c-wIZ"/>
-                <constraint firstItem="NJ0-lg-7Sd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="upG-0N-bJG"/>
+                <constraint firstItem="NJ0-lg-7Sd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-10" id="upG-0N-bJG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="436" y="121"/>
