@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import UIKit
 
 class MixScene: SKScene{
     
@@ -42,6 +43,7 @@ class MixScene: SKScene{
                                                               isGravity: false))
     
     // MARK: - Priperty
+    private let hapticsGenerator = UIImpactFeedbackGenerator(style: .light)
     var stickyLevel:Int = 0
     var cells = [Int](repeating: 0, count: 108)
     var timer:Timer?
@@ -120,6 +122,10 @@ extension MixScene: SKPhysicsContactDelegate {
     }
     
     func addStickyLine(pos: CGPoint) {
+        //振動処理
+        hapticsGenerator.prepare()
+        hapticsGenerator.impactOccurred()
+        
         let stickyPath = CGMutablePath().make(start: ohashi.position, end: pos)
         let stickyLine = SKShapeNode(path: stickyPath,
                                      color: .white,
