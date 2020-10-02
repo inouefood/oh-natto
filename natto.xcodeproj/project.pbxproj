@@ -36,7 +36,6 @@
 		0DFEF9F122675CF50061167A /* nattoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEF9F022675CF50061167A /* nattoTests.swift */; };
 		4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA320537F20002CA3BC /* natto_bgm_game.wav */; };
 		4343CEA62053804C002CA3BC /* voice_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEA52053804C002CA3BC /* voice_5.wav */; };
-		4343CEA9205381DE002CA3BC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4343CEA8205381DE002CA3BC /* Social.framework */; };
 		4343CEAD205386F3002CA3BC /* natto_bgm_score.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEAC205386F3002CA3BC /* natto_bgm_score.wav */; };
 		4343CEB12053AB86002CA3BC /* paku.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4343CEB02053AB86002CA3BC /* paku.wav */; };
 		43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43704C902052E1D900F87562 /* PullNattoScene.swift */; };
@@ -165,7 +164,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4343CEA9205381DE002CA3BC /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +422,6 @@
 				43D95F182052723B00FE1117 /* Sources */,
 				43D95F192052723B00FE1117 /* Frameworks */,
 				43D95F1A2052723B00FE1117 /* Resources */,
-				0D048FCD22780E4B00852FFA /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -522,29 +519,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0D048FCD22780E4B00852FFA /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"",
-			);
-			name = "Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "
-";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DFEF9DC22675BF60061167A /* Sources */ = {
