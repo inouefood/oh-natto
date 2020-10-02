@@ -10,29 +10,38 @@ import SpriteKit
 import GameplayKit
 
 class MixScene: SKScene{
-    //MARK: - NodeInitialize
     
+    //MARK: - NodeInitialize
     lazy var nattoSprite:[SKSpriteNode] = {
         var sprites: [SKSpriteNode] = []
-        var minLength = width > height ? height : width
-        if minLength > 1500 {
-            minLength = 1500
-        }
+        let screenSmallSide = width > height ? height : width
+        let mameSize = CGSize(width: screenSmallSide/20, height: screenSmallSide/20)
         
         for _ in 0..<Constant.SpriteCount.natto{
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
             
-            let nattoBody = SKPhysicsBody().make(circleOfRadius: minLength/40, category: Constant.CollisionBody.natto, contact: Constant.CollisionBody.ohashi, isGravity: false)
-            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: randX, y: randY), body: nattoBody, rotate: r, size: CGSize(width: minLength/15, height: minLength/15))
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: screenSmallSide/40,
+                                                 category: Constant.CollisionBody.natto,
+                                                 contact: Constant.CollisionBody.ohashi,
+                                                 isGravity: false)
+            let natto = SKSpriteNode(image: "mame",
+                                     pos: screenRandomPos(),
+                                     body: nattoBody,
+                                     rotate: r,
+                                     size: mameSize)
             sprites.append(natto)
         }
         return sprites
     }()
 
-    lazy var ohashi = SKSpriteNode(image: "ohashi", pos: CGPoint(x: self.frame.midX, y: self.frame.midY), body: SKPhysicsBody().make(circleOfRadius: width/20, category: Constant.CollisionBody.ohashi, contact: Constant.CollisionBody.natto, isGravity: false))
+    lazy var ohashi = SKSpriteNode(image: "ohashi",
+                                   pos: CGPoint(x: self.frame.midX, y: self.frame.midY),
+                                   body: SKPhysicsBody().make(circleOfRadius: width/20,
+                                                              category: Constant.CollisionBody.ohashi,
+                                                              contact: Constant.CollisionBody.natto,
+                                                              isGravity: false))
     
     // MARK: - Priperty
-    
     var stickyLevel:Int = 0
     var cells = [Int](repeating: 0, count: 108)
     var timer:Timer?
@@ -41,11 +50,11 @@ class MixScene: SKScene{
         let presenter = MixPresenterImpl(output: self, model: MixModel())
         presenter.loadEffectAudio1(resourceName: "voice_5", resourceType: "wav")
         presenter.loadEffectAudio2(resourceName: "voice_5_pitchup", resourceType: "wav")
+        
         return presenter
     }()
     
     //MARK: - Initializer
-    
     override init(size: CGSize) {
         super.init(size: size)
     }
@@ -62,7 +71,11 @@ class MixScene: SKScene{
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
         //タイマー
-        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(MixScene.timerCounter), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 10,
+                                          target: self,
+                                          selector: #selector(MixScene.timerCounter),
+                                          userInfo: nil,
+                                          repeats: true)
         //原点の変更
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.backgroundColor = SKColor.gray
@@ -72,8 +85,8 @@ class MixScene: SKScene{
             self.addChild($0)
         })
     }
-    // MARK:- Event
     
+    // MARK:- Event
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         presenter.playEffect1()
         presenter.playEffect2()
@@ -81,7 +94,9 @@ class MixScene: SKScene{
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let pos = touches.first!.location(in: self)
-        presenter.updateOhashiPosition(touchPosX: Float(pos.x), touchPosY: Float(pos.y), ohashiRadius: Float(width/20))
+        presenter.updateOhashiPosition(touchPosX: Float(pos.x),
+                                       touchPosY: Float(pos.y),
+                                       ohashiRadius: Float(width/20))
     }
     
     @objc func timerCounter(){
@@ -95,7 +110,6 @@ class MixScene: SKScene{
 }
 
 // MARK: - SKPhysicsContactDelegate
-
 extension MixScene: SKPhysicsContactDelegate {
     //衝突した時に呼ばれる関数
     func didBegin(_ contact: SKPhysicsContact) {
@@ -107,11 +121,17 @@ extension MixScene: SKPhysicsContactDelegate {
     
     func addStickyLine(pos: CGPoint) {
         let stickyPath = CGMutablePath().make(start: ohashi.position, end: pos)
-        let stickyLine = SKShapeNode(path: stickyPath, color: .white, lineWid: 4, alpha: 0.2, zPos: 1.0, isInteractive: false)
+        let stickyLine = SKShapeNode(path: stickyPath,
+                                     color: .white,
+                                     lineWid: 4,
+                                     alpha: 0.2,
+                                     zPos: 1.0,
+                                     isInteractive: false)
         self.addChild(stickyLine)
     }
 }
 
+// MARK: - MixPresenterOutput
 extension MixScene: MixPresenterOutput {
     func showUpdateOhashi(objPos: ObjectPosition) {
         ohashi.position = CGPoint(x: CGFloat(objPos.x), y: CGFloat(objPos.y))

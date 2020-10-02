@@ -12,6 +12,11 @@ extension SKScene {
     func addChild(_ nodes: SKNode...) {
         nodes.forEach{addChild($0)}
     }
+    
+    func screenRandomPos() -> CGPoint {
+        return CGPoint(x: randX, y: randY)
+    }
+    
     var randX: CGFloat {
         get {
             return CGFloat.random(in: 0...self.frame.size.width)
