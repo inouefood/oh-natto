@@ -30,9 +30,7 @@ class CloseButton: UIButton {
     }
     
     private func setupAttributes() {
-        layer.cornerRadius = self.frame.width/2
-        backgroundColor = UIColor(red: 0x55 / 0xFF, green: 0x55 / 0xFF, blue: 0x55 / 0xFF, alpha: 1.0)
-        setTitleColor(.white, for: .normal)
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+        backgroundColor = .clear
+        setImage(UIImage(named: "close")?.withRenderingMode(.alwaysOriginal), for: .normal)
     }
 }

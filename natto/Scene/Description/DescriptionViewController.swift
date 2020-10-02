@@ -10,37 +10,47 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
 
-    @IBOutlet weak var descriptionTitleLabel: UILabel! {
+    @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
-            descriptionTitleLabel.text = localizeString(key: LocalizeKeys.Description.title)
+            scrollView.delegate = self
         }
     }
-    @IBOutlet weak var descriptionLabel1: UILabel! {
+    
+    @IBOutlet weak var pageControl: UIPageControl! 
+    @IBOutlet weak var firstPage: DescriptionView! {
         didSet {
-            descriptionLabel1.text = localizeString(key: LocalizeKeys.Description.one) 
+            
+            firstPage.setDescription(image: UIImage(named: "description1"),
+                                     text: localizeString(key: LocalizeKeys.Description.one))
         }
     }
-    @IBOutlet weak var descriptionLabel2: UILabel! {
+    @IBOutlet weak var secondPage: DescriptionView!{
         didSet {
-            descriptionLabel2.text = localizeString(key: LocalizeKeys.Description.two)
+            secondPage.setDescription(image: UIImage(named: "description2"),
+                                      text: localizeString(key: LocalizeKeys.Description.two))
         }
     }
-    @IBOutlet weak var descriptionLabel3: UILabel! {
+    @IBOutlet weak var therdPage: DescriptionView!{
         didSet {
-            descriptionLabel3.text = localizeString(key:LocalizeKeys.Description.three)
+            therdPage.setDescription(image: UIImage(named: "description3"),
+                                     text: localizeString(key: LocalizeKeys.Description.three))
         }
     }
     
     // - MARK: LifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .clear
+        self.view.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1.0)
+        pageControl.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
     }
-    
-    // - MARK: Event
-    
-    @IBAction func closeDescription(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+ 
+    @IBAction func dismissAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension DescriptionViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
     }
 }
