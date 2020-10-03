@@ -14,6 +14,7 @@ final class UserStore {
         case bestScore
         case isNeedDisplayedReviewAlert
         case totalNattoCount
+        case eatPoint
     }
     
     //初回表示かどうか
@@ -74,5 +75,37 @@ final class UserStore {
             return totalNattoCount
         }
     }
+    
+    //納豆、トッピング各種を食べたポイント
+    static var eatPoint:[String:Int]? {
+        set{
+            UserDefaults.standard.set(newValue, forKey: Key.eatPoint.rawValue)
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            guard let eatPoint = UserDefaults.standard.object(forKey: Key.eatPoint.rawValue) as?  [String:Int] else {
+                return nil
+            }
+            return eatPoint
+        }
+        
+    }
 }
 
+
+extension UserStore {
+    static func saveEatPoint(natto: Int) {
+        let nattoKey = "natto"
+        guard var eatPoint = UserStore.eatPoint else {
+            UserStore.eatPoint = [nattoKey: natto]
+            return
+        }
+        if let pastNattoPint = eatPoint["natto"]{
+            eatPoint.updateValue(pastNattoPint + natto, forKey: nattoKey)
+        } else {
+            eatPoint.updateValue(natto, forKey: nattoKey)
+        }
+        
+        UserStore.eatPoint = eatPoint
+    }
+}
