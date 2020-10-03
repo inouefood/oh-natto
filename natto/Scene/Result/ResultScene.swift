@@ -74,22 +74,16 @@ class ResultScene: SKScene{
     
     // MARK: - LifeCycle
     override func didMove(to view: SKView) {
-        SNSShareData.shared.button.isHidden = false
-        SNSShareData.shared.message = localizeString(key: LocalizeKeys.Result.score) + String(resultScore) + localizeString(key: LocalizeKeys.Result.tweet) + "\n https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
-    
-        loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
+        super.didMove(to: view)
         
-        addImage()
-        self.addChild(scoreLabel,
-                      bestScoreLabel,
-                      replayLabel)
+        setScreenInit()
         
-        if UserStore.totalNattoCount > 200 && UserStore.isNeedDisplayedReviewAlert {
+        UserStore.totalNattoCount += resultScore
+        if UserStore.totalNattoCount > 1000 && UserStore.isNeedDisplayedReviewAlert {
             UserStore.isNeedDisplayedReviewAlert = false
             SKStoreReviewController.requestReview()
         }
-        UserStore.totalNattoCount += resultScore
-
+        
         guard let bestScore = UserStore.bestScore else {
             UserStore.bestScore = resultScore
             return
@@ -101,7 +95,6 @@ class ResultScene: SKScene{
     }
     
     // MARK: - PrivateMethod
-    
     private func loadAudio(resourceName: String, resourceType: String) {
         let path = Bundle.main.path(forResource: resourceName, ofType: resourceType)
         let url = URL(fileURLWithPath: path!)
@@ -112,7 +105,13 @@ class ResultScene: SKScene{
         audio.play()
     }
     
-    private func addImage() {
+    private func setScreenInit() {
+        loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
+        
+        self.addChild(scoreLabel,
+                      bestScoreLabel,
+                      replayLabel)
+        
         let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:width/2,y: height/2))
         let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"),
                                                SKTexture(imageNamed: "mame02"),
@@ -120,23 +119,18 @@ class ResultScene: SKScene{
                                          timePerFrame: 0.2)
         mamekun.run(SKAction.repeatForever(animation))
         self.addChild(mamekun)
-    }
-    
-    private func getBestScore() -> Int {
-        guard let topScore = UserStore.bestScore else {
-            bestScoreLabel.isHidden = true
-            return 0
-        }
-        return topScore
         
+        //TODO ボタンを　SKSpriteNodeで作り替える
+        SNSShareData.shared.button.isHidden = false
+        SNSShareData.shared.message = localizeString(key: LocalizeKeys.Result.score) + String(resultScore) + localizeString(key: LocalizeKeys.Result.tweet) + "\n https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
     }
     
     // MARK: - Event
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touches:AnyObject in touches{
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)
+            
             if touchNode == replayLabel{
                 SNSShareData.shared.button.isHidden = true
                 self.bestScoreParticle.removeFromSuperview()
