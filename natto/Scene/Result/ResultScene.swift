@@ -78,18 +78,21 @@ class ResultScene: SKScene{
     // MARK: - LifeCycle
     override func didMove(to view: SKView) {
         SNSShareData.shared.button.isHidden = false
+        SNSShareData.shared.message = localizeString(key: LocalizeKeys.Result.score) + String(resultScore) + localizeString(key: LocalizeKeys.Result.tweet) + "\n https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
         
         presenter.checkScoreEvaluation(score: resultScore)
-        
         loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
         
         addImage()
         self.addChild(scoreLabel,
                       bestScoreLabel,
                       replayLabel)
-        SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter.isPopUpReviewDialog()))
         
-        SNSShareData.shared.message = localizeString(key: LocalizeKeys.Result.score) + String(resultScore) + localizeString(key: LocalizeKeys.Result.tweet) + "\n https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
+        if UserStore.totalNattoCount > 1000 {
+            SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter.isPopUpReviewDialog()))
+        }
+        UserStore.totalNattoCount += resultScore
+        
     }
     
     // MARK: - PrivateMethod

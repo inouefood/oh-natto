@@ -13,6 +13,7 @@ final class UserStore {
         case isFirstSession
         case pastScore
         case isNeedDisplayedReviewAlert
+        case totalNattoCount
     }
     
     //初回表示かどうか
@@ -56,6 +57,21 @@ final class UserStore {
                 return true
             }
             return isNeedDisplayedReviewAlert
+        }
+    }
+    
+    //今まで納豆を食べた合計の値
+    static var totalNattoCount: Int {
+        set {
+            UserDefaults.standard.set(newValue, forKey: Key.totalNattoCount.rawValue)
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            guard let totalNattoCount = UserDefaults.standard.object(forKey: Key.totalNattoCount.rawValue) as? Int else {
+                return 0
+            }
+            
+            return totalNattoCount
         }
     }
 }
