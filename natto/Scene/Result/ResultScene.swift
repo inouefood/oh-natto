@@ -39,9 +39,15 @@ class ResultScene: SKScene{
                            pos: CGPoint(x: self.frame.midX, y: height * 0.20))
     }()
     lazy var bestScoreLabel: SKLabelNode! = {
-        return SKLabelNode(fontSize: 50,
-                           text: localizeString(key: LocalizeKeys.Result.bestScore) + String(bestScore),
-                           pos: CGPoint(x: self.frame.midX, y: height * 0.85))
+        if let bestScore = UserStore.bestScore {
+            return SKLabelNode(fontSize: 50,
+                               text: localizeString(key: LocalizeKeys.Result.bestScore) + String(bestScore),
+                               pos: CGPoint(x: self.frame.midX, y: height * 0.85))
+        }
+        
+        let node = SKLabelNode()
+        node.isHidden = true
+        return node
     }()
     lazy var scoreLabel: SKLabelNode! = {
         return SKLabelNode(fontSize: 100,
@@ -53,15 +59,6 @@ class ResultScene: SKScene{
 
     // MARK: - Property
     let resultScore:Int
-    lazy var bestScore: Int = {
-       return getBestScore()
-    }()
-    
-    var presenter: ResultPresenter {
-        let presenter = ResultPresenterImpl(output: self)
-        return presenter
-    }
-    
     var audio: AVAudioPlayer!
     
     // MARK: - Initializer
@@ -77,23 +74,27 @@ class ResultScene: SKScene{
     
     // MARK: - LifeCycle
     override func didMove(to view: SKView) {
-        SNSShareData.shared.button.isHidden = false
+        super.didMove(to: view)
         
-        presenter.checkScoreEvaluation(score: resultScore)
+        setScreenInit()
         
-        loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
+        UserStore.totalNattoCount += resultScore
+        if UserStore.totalNattoCount > 1000 && UserStore.isNeedDisplayedReviewAlert {
+            UserStore.isNeedDisplayedReviewAlert = false
+            SKStoreReviewController.requestReview()
+        }
         
-        addImage()
-        self.addChild(scoreLabel,
-                      bestScoreLabel,
-                      replayLabel)
-        SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter.isPopUpReviewDialog()))
+        guard let bestScore = UserStore.bestScore else {
+            UserStore.bestScore = resultScore
+            return
+        }
+        if resultScore > bestScore {
+            self.view?.addSubview(bestScoreParticle)
+        }
         
-        SNSShareData.shared.message = localizeString(key: LocalizeKeys.Result.score) + String(resultScore) + localizeString(key: LocalizeKeys.Result.tweet) + "\n https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
     }
     
     // MARK: - PrivateMethod
-    
     private func loadAudio(resourceName: String, resourceType: String) {
         let path = Bundle.main.path(forResource: resourceName, ofType: resourceType)
         let url = URL(fileURLWithPath: path!)
@@ -104,7 +105,13 @@ class ResultScene: SKScene{
         audio.play()
     }
     
-    private func addImage() {
+    private func setScreenInit() {
+        loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
+        
+        self.addChild(scoreLabel,
+                      bestScoreLabel,
+                      replayLabel)
+        
         let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:width/2,y: height/2))
         let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"),
                                                SKTexture(imageNamed: "mame02"),
@@ -112,23 +119,18 @@ class ResultScene: SKScene{
                                          timePerFrame: 0.2)
         mamekun.run(SKAction.repeatForever(animation))
         self.addChild(mamekun)
-    }
-    
-    private func getBestScore() -> Int {
-        guard let topScore = UserStore.topScore() else {
-            bestScoreLabel.isHidden = true
-            return 0
-        }
-        return topScore
         
+        //TODO ボタンを　SKSpriteNodeで作り替える
+        SNSShareData.shared.button.isHidden = false
+        SNSShareData.shared.message = localizeString(key: LocalizeKeys.Result.score) + String(resultScore) + localizeString(key: LocalizeKeys.Result.tweet) + "\n https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
     }
     
     // MARK: - Event
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touches:AnyObject in touches{
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)
+            
             if touchNode == replayLabel{
                 SNSShareData.shared.button.isHidden = true
                 self.bestScoreParticle.removeFromSuperview()
@@ -139,10 +141,3 @@ class ResultScene: SKScene{
     }
 }
 
-extension ResultScene: ResultPresenterOutput {
-    func showScoreComparison(isBest: Bool) {
-        if isBest {
-            self.view?.addSubview(bestScoreParticle)
-        }
-    }
-}

@@ -11,8 +11,9 @@ import Foundation
 final class UserStore {
     private enum Key: String {
         case isFirstSession
-        case pastScore
+        case bestScore
         case isNeedDisplayedReviewAlert
+        case totalNattoCount
     }
     
     //初回表示かどうか
@@ -31,16 +32,16 @@ final class UserStore {
     }
     
     //最高得点
-    static var pastScore: [Int]? {
+    static var bestScore: Int? {
         set {
-            UserDefaults.standard.set(newValue, forKey: Key.pastScore.rawValue)
+            UserDefaults.standard.set(newValue, forKey: Key.bestScore.rawValue)
             UserDefaults.standard.synchronize()
         }
         get {
-            guard let pastScore =  UserDefaults.standard.object(forKey: Key.pastScore.rawValue) as? [Int] else {
+            guard let bestScore =  UserDefaults.standard.object(forKey: Key.bestScore.rawValue) as? Int else {
                 return nil
             }
-            return pastScore
+            return bestScore
             
         }
     }
@@ -58,17 +59,20 @@ final class UserStore {
             return isNeedDisplayedReviewAlert
         }
     }
-}
-
-extension UserStore {
-    static func topScore() -> Int? {
-        guard let pastScore =  UserDefaults.standard.object(forKey: Key.pastScore.rawValue) as? [Int] else {
-            return nil
+    
+    //今まで納豆を食べた合計の値
+    static var totalNattoCount: Int {
+        set {
+            UserDefaults.standard.set(newValue, forKey: Key.totalNattoCount.rawValue)
+            UserDefaults.standard.synchronize()
         }
-        
-        let sortScore: [Int] = pastScore.sorted(by: >)
-        let bestScore = sortScore.first
-        
-        return bestScore
+        get {
+            guard let totalNattoCount = UserDefaults.standard.object(forKey: Key.totalNattoCount.rawValue) as? Int else {
+                return 0
+            }
+            
+            return totalNattoCount
+        }
     }
 }
+
