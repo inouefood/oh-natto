@@ -59,12 +59,6 @@ class ResultScene: SKScene{
 
     // MARK: - Property
     let resultScore:Int
-    
-    var presenter: ResultPresenter {
-        let presenter = ResultPresenterImpl(output: self)
-        return presenter
-    }
-    
     var audio: AVAudioPlayer!
     
     // MARK: - Initializer
@@ -90,10 +84,19 @@ class ResultScene: SKScene{
                       bestScoreLabel,
                       replayLabel)
         
-        if UserStore.totalNattoCount > 1000 {
-            SKStoreReviewController().popUpReviewRequest(isPopUp: (presenter.isPopUpReviewDialog()))
+        if UserStore.totalNattoCount > 200 && UserStore.isNeedDisplayedReviewAlert {
+            UserStore.isNeedDisplayedReviewAlert = false
+            SKStoreReviewController.requestReview()
         }
         UserStore.totalNattoCount += resultScore
+
+        guard let bestScore = UserStore.bestScore else {
+            UserStore.bestScore = resultScore
+            return
+        }
+        if resultScore > bestScore {
+            self.view?.addSubview(bestScoreParticle)
+        }
         
     }
     
@@ -144,10 +147,3 @@ class ResultScene: SKScene{
     }
 }
 
-extension ResultScene: ResultPresenterOutput {
-    func showScoreComparison(isBest: Bool) {
-        if isBest {
-            self.view?.addSubview(bestScoreParticle)
-        }
-    }
-}
