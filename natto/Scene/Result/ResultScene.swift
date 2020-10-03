@@ -55,7 +55,8 @@ class ResultScene: SKScene{
                            pos: CGPoint(x: self.frame.midX,
                                         y: height * 0.90))
     }()
-    lazy var buttonSize = CGSize(width: self.frame.maxX * 0.1, height: self.frame.maxX * 0.1)
+    lazy var buttonSize = CGSize(width: self.frame.maxX * 0.1,
+                                 height: self.frame.maxX * 0.1)
 
     // MARK: - Property
     let resultScore:Int
@@ -78,12 +79,17 @@ class ResultScene: SKScene{
         
         setScreenInit()
         
+        //値の保存
+        UserStore.saveEatPoint(natto: resultScore)
         UserStore.totalNattoCount += resultScore
+        
+        //レビューダイアログの表示
         if UserStore.totalNattoCount > 1000 && UserStore.isNeedDisplayedReviewAlert {
             UserStore.isNeedDisplayedReviewAlert = false
             SKStoreReviewController.requestReview()
         }
         
+        //紙吹雪表示処理の判定
         guard let bestScore = UserStore.bestScore else {
             UserStore.bestScore = resultScore
             return

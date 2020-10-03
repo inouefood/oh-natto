@@ -92,3 +92,20 @@ final class UserStore {
     }
 }
 
+
+extension UserStore {
+    static func saveEatPoint(natto: Int) {
+        let nattoKey = "natto"
+        guard var eatPoint = UserStore.eatPoint else {
+            UserStore.eatPoint = [nattoKey: natto]
+            return
+        }
+        if let pastNattoPint = eatPoint["natto"]{
+            eatPoint.updateValue(pastNattoPint + natto, forKey: nattoKey)
+        } else {
+            eatPoint.updateValue(natto, forKey: nattoKey)
+        }
+        
+        UserStore.eatPoint = eatPoint
+    }
+}
