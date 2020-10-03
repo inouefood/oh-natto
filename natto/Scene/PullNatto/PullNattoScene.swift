@@ -14,19 +14,23 @@ class PullNattoScene: SKScene{
     // MARK: - NodeInitialize
     lazy var nattoSprite:[SKSpriteNode] = {
         var sprites:[SKSpriteNode] = []
+        let screenSmallSide = width > height ? height : width
+        let mameSize = CGSize(width: screenSmallSide/17, height: screenSmallSide/17)
+        
         for _ in 0..<Constant.SpriteCount.natto {
             let r = CGFloat(arc4random_uniform(UInt32(2.0 * .pi)))
-                var minLength = width > height ? height : width
-            if minLength > 1500 {
-                minLength = 1300
-            }
             
-            let nattoBody = SKPhysicsBody().make(circleOfRadius: minLength/35, isGravity: true)
-            let natto = SKSpriteNode(image: "mame", pos: CGPoint(x: randX, y: randY/4), body: nattoBody, rotate: r, size: CGSize(width: minLength/17, height: minLength/17))
+            let nattoBody = SKPhysicsBody().make(circleOfRadius: screenSmallSide/40,
+                                                 isGravity: true)
+            let natto = SKSpriteNode(image: "mame",
+                                     pos: CGPoint(x: randX, y: randY/4),
+                                     body: nattoBody, rotate: r, size: CGSize(width: screenSmallSide/17, height: screenSmallSide/17))
             sprites.append(natto)
         }
+        
         return sprites
-        }()
+    }()
+    
     
     lazy var ohashi = SKSpriteNode(image: "pullOhashi",
                                    pos: CGPoint(x: self.frame.midX, y: self.frame.midY),
@@ -86,11 +90,7 @@ class PullNattoScene: SKScene{
     }
     
     override func update(_ currentTime: TimeInterval) {
-        //iPadだと納豆が取れすぎてしまうので調整
-        var minLength = width > height ? height : width
-        if minLength > 1500 {
-            minLength = 1500
-        }
+        let screenSmallSide = width > height ? height : width
         
         for (i, natto) in nattoSprite.enumerated() {
             presenter.eatCheck(height: Float(height),
@@ -101,7 +101,7 @@ class PullNattoScene: SKScene{
                                           ohashiSize: ObjectSize(size: ohashi.size),
                                           nattoPos: ObjectPosition(pos: natto.position),
                                           sticky: stickyLevel,
-                                          dist: Float(minLength/10),
+                                          dist: Float(screenSmallSide/10),
                                           index: i)
         }
     }
