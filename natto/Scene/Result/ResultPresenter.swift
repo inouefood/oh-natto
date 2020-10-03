@@ -10,7 +10,6 @@ import Foundation
 
 protocol ResultPresenter {
     func isPopUpReviewDialog() -> Bool
-    func checkScoreEvaluation(score: Int)
 }
 protocol ResultPresenterOutput: class {
     func showScoreComparison(isBest: Bool)
@@ -24,10 +23,6 @@ class ResultPresenterImpl: ResultPresenter {
     init(output: ResultPresenterOutput) {
         self.output = output
         model = ResultModel()
-    }
-    
-    func checkScoreEvaluation(score: Int) {
-        output?.showScoreComparison(isBest: model.checkScoreEvaluation(score: score))
     }
 
     func isPopUpReviewDialog() -> Bool {

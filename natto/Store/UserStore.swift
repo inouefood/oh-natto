@@ -11,7 +11,7 @@ import Foundation
 final class UserStore {
     private enum Key: String {
         case isFirstSession
-        case pastScore
+        case bestScore
         case isNeedDisplayedReviewAlert
         case totalNattoCount
     }
@@ -32,16 +32,16 @@ final class UserStore {
     }
     
     //最高得点
-    static var pastScore: [Int]? {
+    static var bestScore: Int? {
         set {
-            UserDefaults.standard.set(newValue, forKey: Key.pastScore.rawValue)
+            UserDefaults.standard.set(newValue, forKey: Key.bestScore.rawValue)
             UserDefaults.standard.synchronize()
         }
         get {
-            guard let pastScore =  UserDefaults.standard.object(forKey: Key.pastScore.rawValue) as? [Int] else {
+            guard let bestScore =  UserDefaults.standard.object(forKey: Key.bestScore.rawValue) as? Int else {
                 return nil
             }
-            return pastScore
+            return bestScore
             
         }
     }
@@ -76,15 +76,3 @@ final class UserStore {
     }
 }
 
-extension UserStore {
-    static func topScore() -> Int? {
-        guard let pastScore =  UserDefaults.standard.object(forKey: Key.pastScore.rawValue) as? [Int] else {
-            return nil
-        }
-        
-        let sortScore: [Int] = pastScore.sorted(by: >)
-        let bestScore = sortScore.first
-        
-        return bestScore
-    }
-}

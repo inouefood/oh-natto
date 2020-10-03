@@ -39,9 +39,15 @@ class ResultScene: SKScene{
                            pos: CGPoint(x: self.frame.midX, y: height * 0.20))
     }()
     lazy var bestScoreLabel: SKLabelNode! = {
-        return SKLabelNode(fontSize: 50,
-                           text: localizeString(key: LocalizeKeys.Result.bestScore) + String(bestScore),
-                           pos: CGPoint(x: self.frame.midX, y: height * 0.85))
+        if let bestScore = UserStore.bestScore {
+            return SKLabelNode(fontSize: 50,
+                               text: localizeString(key: LocalizeKeys.Result.bestScore) + String(bestScore),
+                               pos: CGPoint(x: self.frame.midX, y: height * 0.85))
+        }
+        
+        let node = SKLabelNode()
+        node.isHidden = true
+        return node
     }()
     lazy var scoreLabel: SKLabelNode! = {
         return SKLabelNode(fontSize: 100,
@@ -53,9 +59,6 @@ class ResultScene: SKScene{
 
     // MARK: - Property
     let resultScore:Int
-    lazy var bestScore: Int = {
-       return getBestScore()
-    }()
     
     var presenter: ResultPresenter {
         let presenter = ResultPresenterImpl(output: self)
@@ -79,8 +82,7 @@ class ResultScene: SKScene{
     override func didMove(to view: SKView) {
         SNSShareData.shared.button.isHidden = false
         SNSShareData.shared.message = localizeString(key: LocalizeKeys.Result.score) + String(resultScore) + localizeString(key: LocalizeKeys.Result.tweet) + "\n https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
-        
-        presenter.checkScoreEvaluation(score: resultScore)
+    
         loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
         
         addImage()
@@ -118,7 +120,7 @@ class ResultScene: SKScene{
     }
     
     private func getBestScore() -> Int {
-        guard let topScore = UserStore.topScore() else {
+        guard let topScore = UserStore.bestScore else {
             bestScoreLabel.isHidden = true
             return 0
         }
