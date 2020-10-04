@@ -241,8 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				439948A3205315480028E85F /* ResultScene.swift */,
-				057D3EC62330666A00712E5D /* confetti.png */,
-				057D3EC72330666A00712E5D /* Contiffi.scnp */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -375,6 +373,8 @@
 			children = (
 				49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */,
 				49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */,
+				057D3EC62330666A00712E5D /* confetti.png */,
+				057D3EC72330666A00712E5D /* Contiffi.scnp */,
 			);
 			path = BestScore;
 			sourceTree = "<group>";

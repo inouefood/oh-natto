@@ -10,6 +10,21 @@ import UIKit
 import SceneKit
 
 class BestScoreViewController: UIViewController {
+    @IBOutlet weak var closeButton: UIButton! {
+        didSet {
+            closeButton.setTitle(localizeString(key: LocalizeKeys.UpdateLeast.buttonClose), for: .normal)
+            closeButton.layer.cornerRadius = 4
+        }
+    }
+    
+    @IBOutlet weak var shareButton: UIButton! {
+        didSet {
+            //TODO localizeに定義する
+            shareButton.setTitle("共有", for: .normal)
+            shareButton.layer.cornerRadius = 4
+        }
+    }
+    
     
     @IBOutlet weak var scoreBaseView: UIView! {
         didSet {
@@ -44,8 +59,20 @@ class BestScoreViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .clear
         
-//        self.view?.addSubview(bestScoreParticle)
+        self.view?.addSubview(bestScoreParticle)
+    }
+    
+    @IBAction func dismissAction(_ sender: Any) {
+        self.bestScoreParticle.removeFromSuperview()
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func shareAction(_ sender: Any) {
+        let activityItems: [Any] = [SNSShareData.shared.message]
 
+        let activityVc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        activityVc.modalPresentationStyle = .fullScreen
+        self.present(activityVc, animated: true, completion: nil)
+        
     }
     
 }

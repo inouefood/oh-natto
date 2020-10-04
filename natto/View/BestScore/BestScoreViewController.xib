@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BestScoreViewController" customModule="natto" customModuleProvider="target">
             <connections>
+                <outlet property="closeButton" destination="rfl-1g-z1D" id="MPr-Rq-iFs"/>
                 <outlet property="scoreBaseView" destination="IvL-f0-msJ" id="6T2-lz-7ud"/>
+                <outlet property="shareButton" destination="5NE-DS-f5C" id="O7W-MB-FYL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,10 +23,48 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IvL-f0-msJ">
                     <rect key="frame" x="32" y="224" width="350" height="448"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jML-4E-lgb">
+                            <rect key="frame" x="8" y="387" width="334" height="45"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfl-1g-z1D">
+                                    <rect key="frame" x="0.0" y="0.0" width="163" height="45"/>
+                                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                    <state key="normal" title="閉じる">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="dismissAction:" destination="-1" eventType="touchUpInside" id="w9y-to-fqt"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NE-DS-f5C">
+                                    <rect key="frame" x="171" y="0.0" width="163" height="45"/>
+                                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                    <state key="normal" title="共有">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="wfF-wl-m5N"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="Yyf-OC-cxD"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="jML-4E-lgb" secondAttribute="bottom" constant="16" id="3MJ-n3-8HZ"/>
+                        <constraint firstAttribute="trailing" secondItem="jML-4E-lgb" secondAttribute="trailing" constant="8" id="dlL-iE-nij"/>
+                        <constraint firstItem="jML-4E-lgb" firstAttribute="height" secondItem="IvL-f0-msJ" secondAttribute="height" multiplier="0.1" id="iFJ-Ql-faC"/>
+                        <constraint firstItem="jML-4E-lgb" firstAttribute="leading" secondItem="IvL-f0-msJ" secondAttribute="leading" constant="8" id="voy-cm-Tpz"/>
+                    </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="IvL-f0-msJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="8Ni-g5-zDi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IvL-f0-msJ" secondAttribute="trailing" constant="32" id="HT5-Ti-bqf"/>
