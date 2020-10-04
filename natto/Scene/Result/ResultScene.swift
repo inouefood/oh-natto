@@ -114,9 +114,7 @@ class ResultScene: SKScene{
     private func setScreenInit() {
         loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
         
-        self.addChild(scoreLabel,
-                      bestScoreLabel,
-                      replayLabel)
+        self.addChild(scoreLabel, bestScoreLabel, replayLabel)
         
         let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:width/2,y: height/2))
         let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"),
