@@ -7,7 +7,6 @@
 //
 import SpriteKit
 import StoreKit
-import SceneKit
 
 import AVFoundation
 
@@ -15,24 +14,24 @@ class ResultScene: SKScene{
     
     // MARK: - NodeInitialize
     
-    lazy var bestScoreParticle:SCNView! = {
-        let scene = SCNScene()
-
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: -6, z: 10)
-        scene.rootNode.addChildNode(cameraNode)
-
-        let confetti = SCNParticleSystem(named: "Contiffi.scnp", inDirectory: "")!
-        scene.rootNode.addParticleSystem(confetti)
-
-        let view = SCNView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
-        view.scene = scene
-        view.backgroundColor = UIColor.clear
-        view.autoenablesDefaultLighting = true
-        view.isUserInteractionEnabled = false
-        return view
-    }()
+//    lazy var bestScoreParticle:SCNView! = {
+//        let scene = SCNScene()
+//
+//        let cameraNode = SCNNode()
+//        cameraNode.camera = SCNCamera()
+//        cameraNode.position = SCNVector3(x: 0, y: -6, z: 10)
+//        scene.rootNode.addChildNode(cameraNode)
+//
+//        let confetti = SCNParticleSystem(named: "Contiffi.scnp", inDirectory: "")!
+//        scene.rootNode.addParticleSystem(confetti)
+//
+//        let view = SCNView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
+//        view.scene = scene
+//        view.backgroundColor = UIColor.clear
+//        view.autoenablesDefaultLighting = true
+//        view.isUserInteractionEnabled = false
+//        return view
+//    }()
    
     lazy var replayLabel: SKLabelNode! = {
         return SKLabelNode(fontSize: 100, text: localizeString(key: LocalizeKeys.Result.buttonRelpay),
@@ -79,6 +78,13 @@ class ResultScene: SKScene{
         
         setScreenInit()
         
+        //TODO検証用　消す
+        let vc = BestScoreViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        topViewController()?.present(vc, animated: false, completion: nil)
+        return
+        
+        
         //値の保存
         UserStore.saveEatPoint(natto: resultScore)
         UserStore.totalNattoCount += resultScore
@@ -95,7 +101,10 @@ class ResultScene: SKScene{
             return
         }
         if resultScore > bestScore {
-            self.view?.addSubview(bestScoreParticle)
+            let vc = BestScoreViewController()
+            vc.modalPresentationStyle = .overCurrentContext
+            topViewController()?.present(vc, animated: false, completion: nil)
+            return
         }
         
     }
@@ -137,11 +146,11 @@ class ResultScene: SKScene{
             
             if touchNode == replayLabel{
                 SNSShareData.shared.button.isHidden = true
-                self.bestScoreParticle.removeFromSuperview()
+                
+//                self.bestScoreParticle.removeFromSuperview()
                 let scene = TitleScene(size: self.size)
                 self.view!.presentScene(scene)
             }
         }
     }
 }
-

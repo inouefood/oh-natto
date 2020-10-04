@@ -7,24 +7,45 @@
 //
 
 import UIKit
+import SceneKit
 
 class BestScoreViewController: UIViewController {
+    
+    @IBOutlet weak var scoreBaseView: UIView! {
+        didSet {
+            scoreBaseView.layer.cornerRadius = 16
+        }
+    }
+    
+    lazy var bestScoreParticle:SCNView! = {
+        let scene = SCNScene()
+
+        let cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        cameraNode.position = SCNVector3(x: 0, y: -6, z: 10)
+        scene.rootNode.addChildNode(cameraNode)
+
+        let confetti = SCNParticleSystem(named: "Contiffi.scnp", inDirectory: "")!
+        scene.rootNode.addParticleSystem(confetti)
+
+        let view = SCNView(frame: CGRect(x: 0,
+                                         y: 0,
+                                         width: self.view.frame.width,
+                                         height: self.view.frame.height))
+        view.scene = scene
+        view.backgroundColor = UIColor.clear
+        view.autoenablesDefaultLighting = true
+        view.isUserInteractionEnabled = false
+        return view
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .clear
+        
+//        self.view?.addSubview(bestScoreParticle)
 
-        // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

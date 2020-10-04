@@ -37,4 +37,12 @@ extension SKScene {
             return frame.height
         }
     }
+    
+    func topViewController() -> UIViewController? {
+        var vc = UIApplication.shared.keyWindow?.rootViewController
+        while vc?.presentedViewController != nil {
+            vc = vc?.presentedViewController
+        }
+        return vc
+    }
 }
