@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="closeButton" destination="rfl-1g-z1D" id="MPr-Rq-iFs"/>
                 <outlet property="scoreBaseView" destination="IvL-f0-msJ" id="6T2-lz-7ud"/>
+                <outlet property="scoreLabel" destination="bWX-Uy-XP9" id="Et0-Ch-fJE"/>
                 <outlet property="shareButton" destination="5NE-DS-f5C" id="O7W-MB-FYL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -50,30 +51,58 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="36" id="Yyf-OC-cxD"/>
-                            </constraints>
                         </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ニューベストスコア" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBD-7L-9tS">
+                            <rect key="frame" x="8" y="16" width="334" height="26.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="jML-4E-lgb" secondAttribute="bottom" constant="16" id="3MJ-n3-8HZ"/>
+                        <constraint firstItem="xBD-7L-9tS" firstAttribute="leading" secondItem="IvL-f0-msJ" secondAttribute="leading" constant="8" id="7Pj-ki-c07"/>
+                        <constraint firstAttribute="trailing" secondItem="xBD-7L-9tS" secondAttribute="trailing" constant="8" id="K2G-9f-HYt"/>
                         <constraint firstAttribute="trailing" secondItem="jML-4E-lgb" secondAttribute="trailing" constant="8" id="dlL-iE-nij"/>
                         <constraint firstItem="jML-4E-lgb" firstAttribute="height" secondItem="IvL-f0-msJ" secondAttribute="height" multiplier="0.1" id="iFJ-Ql-faC"/>
+                        <constraint firstItem="xBD-7L-9tS" firstAttribute="top" secondItem="IvL-f0-msJ" secondAttribute="top" constant="16" id="nSP-YR-3pr"/>
                         <constraint firstItem="jML-4E-lgb" firstAttribute="leading" secondItem="IvL-f0-msJ" secondAttribute="leading" constant="8" id="voy-cm-Tpz"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="125,412" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWX-Uy-XP9">
+                    <rect key="frame" x="150.5" y="548.5" width="113.5" height="38.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mame-icon" translatesAutoresizingMaskIntoConstraints="NO" id="VzE-h7-3Dl">
+                    <rect key="frame" x="67" y="282.5" width="280" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="MTC-NM-Bnf"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="VzE-h7-3Dl" firstAttribute="width" secondItem="IvL-f0-msJ" secondAttribute="width" multiplier="0.8" id="27s-BR-wxb"/>
+                <constraint firstItem="rfl-1g-z1D" firstAttribute="top" secondItem="bWX-Uy-XP9" secondAttribute="bottom" constant="24" id="4sW-g8-vYp"/>
                 <constraint firstItem="IvL-f0-msJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="8Ni-g5-zDi"/>
+                <constraint firstItem="VzE-h7-3Dl" firstAttribute="centerX" secondItem="bWX-Uy-XP9" secondAttribute="centerX" id="DKY-5X-6kl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IvL-f0-msJ" secondAttribute="trailing" constant="32" id="HT5-Ti-bqf"/>
+                <constraint firstItem="bWX-Uy-XP9" firstAttribute="top" secondItem="VzE-h7-3Dl" secondAttribute="bottom" constant="16" id="Lgf-hC-Z1q"/>
+                <constraint firstItem="VzE-h7-3Dl" firstAttribute="top" secondItem="xBD-7L-9tS" secondAttribute="bottom" constant="16" id="MzH-WF-iDH"/>
                 <constraint firstItem="IvL-f0-msJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ToS-hn-gy7"/>
+                <constraint firstItem="bWX-Uy-XP9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="d5f-yv-wXH"/>
                 <constraint firstItem="IvL-f0-msJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="eKa-zU-E29"/>
                 <constraint firstItem="IvL-f0-msJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gpl-eP-9bZ"/>
+                <constraint firstItem="VzE-h7-3Dl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="238.5" id="r0M-TM-T9U"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="112" y="95"/>
+            <point key="canvasLocation" x="111.59420289855073" y="94.419642857142847"/>
         </view>
     </objects>
+    <resources>
+        <image name="mame-icon" width="512" height="512"/>
+    </resources>
 </document>

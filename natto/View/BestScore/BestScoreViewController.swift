@@ -25,12 +25,12 @@ class BestScoreViewController: UIViewController {
         }
     }
     
-    
     @IBOutlet weak var scoreBaseView: UIView! {
         didSet {
             scoreBaseView.layer.cornerRadius = 16
         }
     }
+    @IBOutlet weak var scoreLabel: UILabel!
     
     lazy var bestScoreParticle:SCNView! = {
         let scene = SCNScene()
@@ -54,11 +54,10 @@ class BestScoreViewController: UIViewController {
         return view
     }()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .clear
         
+        self.view.backgroundColor = .clear
         self.view?.addSubview(bestScoreParticle)
     }
     
@@ -66,6 +65,7 @@ class BestScoreViewController: UIViewController {
         self.bestScoreParticle.removeFromSuperview()
         self.dismiss(animated: true, completion: nil)
     }
+
     @IBAction func shareAction(_ sender: Any) {
         let activityItems: [Any] = [SNSShareData.shared.message]
 
