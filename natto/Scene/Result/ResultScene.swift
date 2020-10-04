@@ -16,6 +16,7 @@ class ResultScene: SKScene{
         return SKLabelNode(fontSize: 100, text: localizeString(key: LocalizeKeys.Result.buttonRelpay),
                            pos: CGPoint(x: self.frame.midX, y: height * 0.20))
     }()
+    
     lazy var bestScoreLabel: SKLabelNode! = {
         if let bestScore = UserStore.bestScore {
             return SKLabelNode(fontSize: 50,
@@ -27,14 +28,13 @@ class ResultScene: SKScene{
         node.isHidden = true
         return node
     }()
+    
     lazy var scoreLabel: SKLabelNode! = {
         return SKLabelNode(fontSize: 100,
                            text: localizeString(key: LocalizeKeys.Result.score) + String(resultScore),
                            pos: CGPoint(x: self.frame.midX,
                                         y: height * 0.90))
     }()
-    lazy var buttonSize = CGSize(width: self.frame.maxX * 0.1,
-                                 height: self.frame.maxX * 0.1)
 
     // MARK: - Property
     let resultScore:Int
