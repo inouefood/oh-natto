@@ -56,13 +56,6 @@ class ResultScene: SKScene{
         
         setScreenInit()
         
-        //TODO検証用　消す
-        let vc = BestScoreViewController()
-        vc.modalPresentationStyle = .overCurrentContext
-        topViewController()?.present(vc, animated: false, completion: nil)
-        return
-        
-        
         //値の保存
         UserStore.saveEatPoint(natto: resultScore)
         UserStore.totalNattoCount += resultScore
@@ -79,7 +72,7 @@ class ResultScene: SKScene{
             return
         }
         if resultScore > bestScore {
-            let vc = BestScoreViewController()
+            let vc = BestScoreViewController(score: resultScore)
             vc.modalPresentationStyle = .overCurrentContext
             topViewController()?.present(vc, animated: false, completion: nil)
             return
