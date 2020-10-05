@@ -10,7 +10,7 @@
 
 "UPDATEALERT.MESSAGE" = "最新版にアップデートすることが可能です";
 "UPDATEALERT.BUTTON.UPDATE" = "アップデート";
-"UPDATEALERT.BUTTON.CLOSE" = "閉じる";
+"UPDATEALERT.BUTTON.CLOSE" = "とじる";
 
 "DESCRIPTION.TITLE" = "あそびかた";
 "DESCRIPTION.1" = "納豆をできるだけたくさん混ぜ、ねばりけを出します。白いネバネバをたくさん発生させることで納豆の吸着率が変化します";
@@ -24,3 +24,8 @@
 "RESULT.LABEL.SCORE" = "スコア: ";
 "RESULT.LABEL.BESTSCORE" = "最高得点: ";
 "RESULT.TWITTER" = "\n\n納豆食べてパーフェクトボディ！\n";
+
+// ベストスコア画面
+"BEST.LABEL.TITLE" = "ニューベストスコア!!";
+"BEST.BUTTON.CLOSE" = "とじる";
+"BEST.BUTTON.SHARE" = "共有";

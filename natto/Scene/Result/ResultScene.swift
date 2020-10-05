@@ -7,33 +7,11 @@
 //
 import SpriteKit
 import StoreKit
-import SceneKit
-
 import AVFoundation
 
 class ResultScene: SKScene{
     
     // MARK: - NodeInitialize
-    
-    lazy var bestScoreParticle:SCNView! = {
-        let scene = SCNScene()
-
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: -6, z: 10)
-        scene.rootNode.addChildNode(cameraNode)
-
-        let confetti = SCNParticleSystem(named: "Contiffi.scnp", inDirectory: "")!
-        scene.rootNode.addParticleSystem(confetti)
-
-        let view = SCNView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
-        view.scene = scene
-        view.backgroundColor = UIColor.clear
-        view.autoenablesDefaultLighting = true
-        view.isUserInteractionEnabled = false
-        return view
-    }()
-   
     lazy var replayLabel: SKLabelNode! = {
         return SKLabelNode(fontSize: 100, text: localizeString(key: LocalizeKeys.Result.buttonRelpay),
                            pos: CGPoint(x: self.frame.midX, y: height * 0.20))
@@ -65,7 +43,6 @@ class ResultScene: SKScene{
     // MARK: - Initializer
     init(size:CGSize, score: Int) {
         self.resultScore = score
-        
         super.init(size: size)
     }
     
@@ -95,7 +72,10 @@ class ResultScene: SKScene{
             return
         }
         if resultScore > bestScore {
-            self.view?.addSubview(bestScoreParticle)
+            let vc = BestScoreViewController(score: resultScore)
+            vc.modalPresentationStyle = .overCurrentContext
+            topViewController()?.present(vc, animated: false, completion: nil)
+            return
         }
         
     }
@@ -114,9 +94,7 @@ class ResultScene: SKScene{
     private func setScreenInit() {
         loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
         
-        self.addChild(scoreLabel,
-                      bestScoreLabel,
-                      replayLabel)
+        self.addChild(scoreLabel, bestScoreLabel, replayLabel)
         
         let mamekun = SKSpriteNode(image: "mame01", pos: CGPoint(x:width/2,y: height/2))
         let animation = SKAction.animate(with:[SKTexture(imageNamed: "mame01"),
@@ -139,11 +117,10 @@ class ResultScene: SKScene{
             
             if touchNode == replayLabel{
                 SNSShareData.shared.button.isHidden = true
-                self.bestScoreParticle.removeFromSuperview()
+                
                 let scene = TitleScene(size: self.size)
                 self.view!.presentScene(scene)
             }
         }
     }
 }
-

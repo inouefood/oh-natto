@@ -45,11 +45,21 @@ struct LocalizeKeys {
             return rawValue
         }
     }
+    
     enum Result: String, LocalizeKeyGeneratable {
         case buttonRelpay = "RESULT.BUTTON.REPLAY"
         case score = "RESULT.LABEL.SCORE"
         case bestScore =  "RESULT.LABEL.BESTSCORE"
         case tweet = "RESULT.TWITTER"
+        var key: String {
+            return rawValue
+        }
+    }
+    
+    enum BestScore: String, LocalizeKeyGeneratable {
+        case title = "BEST.LABEL.TITLE"
+        case close = "BEST.BUTTON.CLOSE"
+        case share = "BEST.BUTTON.SHARE"
         var key: String {
             return rawValue
         }

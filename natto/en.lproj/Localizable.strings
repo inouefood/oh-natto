@@ -24,3 +24,8 @@
 "RESULT.LABEL.SCORE" = "SCORE: ";
 "RESULT.LABEL.BESTSCORE" = "BEST SCORE: ";
 "RESULT.TWITTER" = "\n\nEat natto and perfect body!";
+
+// ベストスコア画面
+"BEST.LABEL.TITLE" = "New Best Score!!";
+"BEST.BUTTON.CLOSE" = "close";
+"BEST.BUTTON.SHARE" = "share";

@@ -46,6 +46,8 @@
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
 		497D132D2523305F007B1129 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D132C2523305F007B1129 /* DescriptionView.swift */; };
 		497D132F2523306F007B1129 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497D132E2523306F007B1129 /* DescriptionView.xib */; };
+		49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */; };
+		49B94C322529BA2200BF6C53 /* BestScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */; };
 		49D62645251F44E500D33404 /* SNSShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D62644251F44E500D33404 /* SNSShareData.swift */; };
 		49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A64251F14CC00E25A9B /* UserStore.swift */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
@@ -129,6 +131,8 @@
 		43D95F312052723B00FE1117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		497D132E2523306F007B1129 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
+		49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScoreViewController.swift; sourceTree = "<group>"; };
+		49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestScoreViewController.xib; sourceTree = "<group>"; };
 		49D62644251F44E500D33404 /* SNSShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSShareData.swift; sourceTree = "<group>"; };
 		49EC6A64251F14CC00E25A9B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
@@ -212,7 +216,6 @@
 		0DE54C65225F948D00006ED4 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				0D815D0722617A2A00B6642E /* Description */,
 				0DE54C64225F946000006ED4 /* Title */,
 				F31970AD223FF9100045A391 /* Mix */,
 				0DF70CFD223E76AF007105D8 /* PullNatto */,
@@ -238,8 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				439948A3205315480028E85F /* ResultScene.swift */,
-				057D3EC62330666A00712E5D /* confetti.png */,
-				057D3EC72330666A00712E5D /* Contiffi.scnp */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -337,9 +338,8 @@
 				0DFEF9BF22623BA50061167A /* Entity */,
 				0DD326B82253A2D700FBE6A1 /* Extension */,
 				0DE54C65225F948D00006ED4 /* Scene */,
-				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
+				49B94C2D2529B98300BF6C53 /* View */,
 				43D95F1F2052723B00FE1117 /* AppDelegate.swift */,
-				43D95F292052723B00FE1117 /* Main.storyboard */,
 				43D95F2C2052723B00FE1117 /* Assets.xcassets */,
 				43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */,
 				43D95F312052723B00FE1117 /* Info.plist */,
@@ -347,6 +347,36 @@
 				0DCD56D12348E004008F7BAA /* Localizable.strings */,
 			);
 			path = natto;
+			sourceTree = "<group>";
+		};
+		49B94C2D2529B98300BF6C53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49B94C2E2529B98C00BF6C53 /* Main */,
+				0D815D0722617A2A00B6642E /* Description */,
+				49B94C362529BA2E00BF6C53 /* BestScore */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49B94C2E2529B98C00BF6C53 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
+				43D95F292052723B00FE1117 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		49B94C362529BA2E00BF6C53 /* BestScore */ = {
+			isa = PBXGroup;
+			children = (
+				49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */,
+				49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */,
+				057D3EC62330666A00712E5D /* confetti.png */,
+				057D3EC72330666A00712E5D /* Contiffi.scnp */,
+			);
+			path = BestScore;
 			sourceTree = "<group>";
 		};
 		49EC6A63251F14B900E25A9B /* Store */ = {
@@ -504,6 +534,7 @@
 				43704C95205304BF00F87562 /* mame.mp3 in Resources */,
 				F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */,
 				4343CEAD205386F3002CA3BC /* natto_bgm_score.wav in Resources */,
+				49B94C322529BA2200BF6C53 /* BestScoreViewController.xib in Resources */,
 				0DCD56CF2348E004008F7BAA /* Localizable.strings in Resources */,
 				0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */,
 			);
@@ -533,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */,
+				49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */,
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */,
 				49D62645251F44E500D33404 /* SNSShareData.swift in Sources */,
