@@ -11,7 +11,7 @@ import StoreKit
 import AVFoundation
 
 class ResultViewController: UIViewController {
-    private var audio: AVAudioPlayer!
+    var audio: AVAudioPlayer!
     private var score: Int
     
     var dismissHandler: (()->())?
@@ -114,9 +114,7 @@ class ResultViewController: UIViewController {
         audio.prepareToPlay()
         audio.play()
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
+    @IBAction func retryAction(_ sender: Any) {
         dismissHandler?()
     }
 

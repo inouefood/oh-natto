@@ -50,6 +50,9 @@
                     <state key="normal" title="もう一度遊ぶ">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="retryAction:" destination="-1" eventType="touchUpInside" id="Nhg-WD-UO2"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今まで食べた納豆の数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M50-5T-Zxa">
                     <rect key="frame" x="16" y="756" width="382" height="30"/>

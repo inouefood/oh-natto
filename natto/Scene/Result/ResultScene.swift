@@ -38,17 +38,13 @@ class ResultScene: SKScene{
         vc.dismissHandler = {
             SNSShareData.shared.button.isHidden = true
             
-            
+            vc.audio.stop()
             vc.dismiss(animated: false, completion: nil)
             let scene = TitleScene(size: self.size)
             view.presentScene(scene)
         }
         vc.modalPresentationStyle = .overCurrentContext
         topViewController()?.present(vc, animated: false, completion: nil)
-        return
-        
-        setScreenInit()
-        
     }
     
    
