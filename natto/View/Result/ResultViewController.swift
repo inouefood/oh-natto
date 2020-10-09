@@ -48,7 +48,20 @@ class ResultViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            let imageArr:[UIImage]? = [UIImage(named: "mame01")!,
+                                       UIImage(named: "mame02")!,
+                                       UIImage(named: "mame03")!,
+                                       UIImage(named: "mame02")!]
+
+            imageView.animationImages = imageArr
+            imageView.animationDuration = 0.9
+            imageView.animationRepeatCount = 0
+                    
+            imageView.startAnimating()
+        }
+    }
     // MARK: - Initializer
     init(score: Int) {
         self.score = score
