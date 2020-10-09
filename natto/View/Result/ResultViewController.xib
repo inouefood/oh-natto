@@ -12,8 +12,10 @@
             <connections>
                 <outlet property="bestScoreLabel" destination="PAC-8u-Onm" id="Rwz-Gl-dWa"/>
                 <outlet property="imageView" destination="6vp-Uz-ZqN" id="tlU-Ex-5TA"/>
+                <outlet property="retryButton" destination="M1s-7V-g7X" id="5x8-gO-2Z0"/>
                 <outlet property="scoreLabel" destination="KYc-DA-xwh" id="k0R-SL-h5R"/>
                 <outlet property="totalNattoCountLabel" destination="DyG-w2-9o3" id="RuT-Cn-1LK"/>
+                <outlet property="totalNattoDescriptionLabel" destination="M50-5T-Zxa" id="Md3-DA-uri"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,10 +37,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mame01" translatesAutoresizingMaskIntoConstraints="NO" id="6vp-Uz-ZqN">
-                    <rect key="frame" x="57" y="298" width="300" height="300"/>
+                    <rect key="frame" x="82" y="323" width="250" height="250"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="300" id="6AW-Yk-ElU"/>
-                        <constraint firstAttribute="width" constant="300" id="McP-ph-man"/>
+                        <constraint firstAttribute="height" constant="250" id="6AW-Yk-ElU"/>
+                        <constraint firstAttribute="width" constant="250" id="McP-ph-man"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1s-7V-g7X">

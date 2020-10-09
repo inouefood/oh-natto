@@ -19,6 +19,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel! {
         didSet {
             scoreLabel.text = localizeString(key: LocalizeKeys.Result.score) + String(score)
+            scoreLabel.font = UIFont(name: "Verdana-bold", size: 35)
         }
     }
     @IBOutlet weak var bestScoreLabel: UILabel! {
@@ -28,9 +29,24 @@ class ResultViewController: UIViewController {
                 return
             }
             bestScoreLabel.text = localizeString(key: LocalizeKeys.Result.bestScore) + bsetScore.description
+            bestScoreLabel.font = UIFont(name: "Verdana-bold", size: 25)
         }
     }
-    @IBOutlet weak var totalNattoCountLabel: UILabel!
+    @IBOutlet weak var totalNattoDescriptionLabel: UILabel! {
+        didSet {
+            totalNattoDescriptionLabel.font = UIFont(name: "Verdana-bold", size: 25)
+        }
+    }
+    @IBOutlet weak var totalNattoCountLabel: UILabel! {
+        didSet {
+            totalNattoCountLabel.font = UIFont(name: "Verdana-bold", size: 25)
+        }
+    }
+    @IBOutlet weak var retryButton: UIButton! {
+        didSet {
+            retryButton.titleLabel?.font = UIFont(name: "Verdana-bold", size: 35)
+        }
+    }
     
     @IBOutlet weak var imageView: UIImageView!
     // MARK: - Initializer
