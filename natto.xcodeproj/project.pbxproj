@@ -44,11 +44,14 @@
 		43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F292052723B00FE1117 /* Main.storyboard */; };
 		43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2C2052723B00FE1117 /* Assets.xcassets */; };
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
+		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
+		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
 		497D132D2523305F007B1129 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D132C2523305F007B1129 /* DescriptionView.swift */; };
 		497D132F2523306F007B1129 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497D132E2523306F007B1129 /* DescriptionView.xib */; };
 		49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */; };
 		49B94C322529BA2200BF6C53 /* BestScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */; };
-		49D62645251F44E500D33404 /* SNSShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D62644251F44E500D33404 /* SNSShareData.swift */; };
+		49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCE3253085B000F9C30E /* ShareButton.swift */; };
+		49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CCE9253085D600F9C30E /* ShareButton.xib */; };
 		49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A64251F14CC00E25A9B /* UserStore.swift */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
@@ -129,11 +132,14 @@
 		43D95F2C2052723B00FE1117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D95F2F2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43D95F312052723B00FE1117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		497D132E2523306F007B1129 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
 		49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScoreViewController.swift; sourceTree = "<group>"; };
 		49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestScoreViewController.xib; sourceTree = "<group>"; };
-		49D62644251F44E500D33404 /* SNSShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSShareData.swift; sourceTree = "<group>"; };
+		49D9CCE3253085B000F9C30E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
+		49D9CCE9253085D600F9C30E /* ShareButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareButton.xib; sourceTree = "<group>"; };
 		49EC6A64251F14CC00E25A9B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
@@ -173,10 +179,7 @@
 			children = (
 				0D815D0822617A3C00B6642E /* DescriptionViewController.swift */,
 				0D815D0922617A3C00B6642E /* DescriptionViewController.xib */,
-				0D815D0E2261E3B100B6642E /* Closebutton.swift */,
-				0D815D102261E42D00B6642E /* CloseButton.xib */,
-				497D132C2523305F007B1129 /* DescriptionView.swift */,
-				497D132E2523306F007B1129 /* DescriptionView.xib */,
+				4933B7B62529E41400BFCCE8 /* customView */,
 			);
 			path = Description;
 			sourceTree = "<group>";
@@ -270,7 +273,6 @@
 			children = (
 				0DCD56D62348E6BE008F7BAA /* Localize */,
 				0DFEF9CA226362090061167A /* Constant.swift */,
-				49D62644251F44E500D33404 /* SNSShareData.swift */,
 				054E493222D2D9C00062736D /* AppVersionCompare.swift */,
 			);
 			path = Common;
@@ -349,11 +351,33 @@
 			path = natto;
 			sourceTree = "<group>";
 		};
+		4933B7AB2529E3A000BFCCE8 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */,
+				4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */,
+				49D9CCE8253085BB00F9C30E /* view */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		4933B7B62529E41400BFCCE8 /* customView */ = {
+			isa = PBXGroup;
+			children = (
+				0D815D0E2261E3B100B6642E /* Closebutton.swift */,
+				0D815D102261E42D00B6642E /* CloseButton.xib */,
+				497D132C2523305F007B1129 /* DescriptionView.swift */,
+				497D132E2523306F007B1129 /* DescriptionView.xib */,
+			);
+			path = customView;
+			sourceTree = "<group>";
+		};
 		49B94C2D2529B98300BF6C53 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				49B94C2E2529B98C00BF6C53 /* Main */,
 				0D815D0722617A2A00B6642E /* Description */,
+				4933B7AB2529E3A000BFCCE8 /* Result */,
 				49B94C362529BA2E00BF6C53 /* BestScore */,
 			);
 			path = View;
@@ -377,6 +401,15 @@
 				057D3EC72330666A00712E5D /* Contiffi.scnp */,
 			);
 			path = BestScore;
+			sourceTree = "<group>";
+		};
+		49D9CCE8253085BB00F9C30E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				49D9CCE3253085B000F9C30E /* ShareButton.swift */,
+				49D9CCE9253085D600F9C30E /* ShareButton.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		49EC6A63251F14B900E25A9B /* Store */ = {
@@ -527,12 +560,14 @@
 				4343CEB12053AB86002CA3BC /* paku.wav in Resources */,
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
 				057D3EC82330666A00712E5D /* confetti.png in Resources */,
+				4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */,
 				0D048FC42277FCE500852FFA /* Settings.bundle in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
 				0D815D112261E42D00B6642E /* CloseButton.xib in Resources */,
 				43704C95205304BF00F87562 /* mame.mp3 in Resources */,
 				F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */,
+				49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */,
 				4343CEAD205386F3002CA3BC /* natto_bgm_score.wav in Resources */,
 				49B94C322529BA2200BF6C53 /* BestScoreViewController.xib in Resources */,
 				0DCD56CF2348E004008F7BAA /* Localizable.strings in Resources */,
@@ -567,7 +602,6 @@
 				49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */,
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */,
-				49D62645251F44E500D33404 /* SNSShareData.swift in Sources */,
 				F346A9CA226A403E00A051FC /* SKShapeNode+Addition.swift in Sources */,
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
 				43D95F262052723B00FE1117 /* TitleScene.swift in Sources */,
@@ -590,7 +624,9 @@
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
 				0DCD56D42348E63F008F7BAA /* Swift+Addition.swift in Sources */,
 				0DFD696A2276F2BB000DBD93 /* SKScene+Addition.swift in Sources */,
+				49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */,
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
+				4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */,
 				F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */,
 				49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */,
 			);

@@ -29,14 +29,6 @@ class NattoViewController: UIViewController {
         tutorialButton.addTarget(self, action: #selector(showTutorialTapped), for: .touchUpInside)
         self.view.addSubview(tutorialButton)
         
-        SNSShareData.shared.button.backgroundColor = .lightGray
-        SNSShareData.shared.button.frame.size = CGSize(width: 50, height: 50)
-        SNSShareData.shared.button.setImage(UIImage(named: "share"), for: .normal)
-        SNSShareData.shared.button.layer.position = CGPoint(x: (self.view?.frame.width)! - tutorialButton.frame.width * 1.1,y: (self.view?.frame.height)! - 50)
-        SNSShareData.shared.button.layer.cornerRadius = SNSShareData.shared.button.frame.width/2
-        SNSShareData.shared.button.addTarget(self, action: #selector(showSNSTapped), for: .touchUpInside)
-        SNSShareData.shared.button.isHidden = true
-        self.view.addSubview(SNSShareData.shared.button)
     }
     
     override func viewDidLoad() {
@@ -77,14 +69,6 @@ class NattoViewController: UIViewController {
         let vc = DescriptionViewController()
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
-    }
-    
-    @objc func showSNSTapped() {
-        let activityItems: [Any] = [SNSShareData.shared.message]
-
-        let activityVc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        activityVc.modalPresentationStyle = .fullScreen
-        self.present(activityVc, animated: true, completion: nil)
     }
     
     override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
