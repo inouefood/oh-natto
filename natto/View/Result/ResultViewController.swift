@@ -62,6 +62,7 @@ class ResultViewController: UIViewController {
             imageView.startAnimating()
         }
     }
+    
     // MARK: - Initializer
     init(score: Int) {
         self.score = score
@@ -77,6 +78,7 @@ class ResultViewController: UIViewController {
     }
     
 
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1.0)
@@ -88,6 +90,7 @@ class ResultViewController: UIViewController {
             SKStoreReviewController.requestReview()
         }
         
+        //didSetの中で代入するとUserDefaultに反映される前の合計数が取れてしまうのでここで代入
         let totalNattoCount = UserStore.totalNattoCount
         totalNattoCountLabel.text = totalNattoCount.description + "粒"
         
@@ -114,8 +117,16 @@ class ResultViewController: UIViewController {
         audio.prepareToPlay()
         audio.play()
     }
+
     @IBAction func retryAction(_ sender: Any) {
         dismissHandler?()
     }
+    @IBAction func shareAction(_ sender: Any) {
+        let activityItems: [Any] = ["\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"]
 
+        let activityVc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        activityVc.modalPresentationStyle = .fullScreen
+        self.present(activityVc, animated: true, completion: nil)
+    }
+    
 }

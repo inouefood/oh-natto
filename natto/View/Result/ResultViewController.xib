@@ -73,11 +73,22 @@
                         <constraint firstAttribute="height" constant="1" id="qeM-ue-Sg0"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw7-z5-njc" customClass="ShareButton" customModule="natto" customModuleProvider="target">
+                    <rect key="frame" x="356" y="706" width="42" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="YgT-ov-5Fp"/>
+                        <constraint firstAttribute="height" constant="42" id="jzr-U2-Pzt"/>
+                    </constraints>
+                    <connections>
+                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="z4e-GZ-hd8"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="M1s-7V-g7X" firstAttribute="top" secondItem="DyG-w2-9o3" secondAttribute="bottom" constant="8" id="0CB-TL-IsH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vw7-z5-njc" secondAttribute="trailing" constant="16" id="EWp-V6-rSz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PAC-8u-Onm" secondAttribute="trailing" constant="16" id="EqE-Dz-t4C"/>
                 <constraint firstItem="DyG-w2-9o3" firstAttribute="top" secondItem="M50-5T-Zxa" secondAttribute="bottom" constant="4" id="FRq-Pp-8VI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M50-5T-Zxa" secondAttribute="trailing" constant="16" id="MET-1q-zmg"/>
@@ -97,10 +108,16 @@
                 <constraint firstItem="cBc-ti-JzC" firstAttribute="top" secondItem="DyG-w2-9o3" secondAttribute="bottom" id="tc3-n2-rAO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DyG-w2-9o3" secondAttribute="trailing" constant="32" id="tia-ZA-gmL"/>
                 <constraint firstItem="KYc-DA-xwh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="wR0-Vs-YX3"/>
+                <constraint firstItem="M50-5T-Zxa" firstAttribute="top" secondItem="vw7-z5-njc" secondAttribute="bottom" constant="8" symbolic="YES" id="zFk-yT-eN9"/>
             </constraints>
             <point key="canvasLocation" x="-146.37681159420291" y="94.419642857142847"/>
         </view>
     </objects>
+    <designables>
+        <designable name="vw7-z5-njc">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="mame01" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
