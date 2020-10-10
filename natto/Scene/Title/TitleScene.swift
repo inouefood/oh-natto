@@ -71,7 +71,7 @@ class TitleScene: SKScene {
             let touchNode = self.atPoint(location)
             if touchNode == startLabel{
                 tutorialButton.isHidden = true
-                let scene = MixScene(size: self.size)
+                let scene = MixScene(size: self.size, topping: nil)
                 self.view!.presentScene(scene)
             } else {
                 let mame = SKSpriteNode(imageNamed: "mame")
