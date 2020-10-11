@@ -53,6 +53,8 @@
 		49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCE3253085B000F9C30E /* ShareButton.swift */; };
 		49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CCE9253085D600F9C30E /* ShareButton.xib */; };
 		49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCFA25320F6A00F9C30E /* Topping.swift */; };
+		49D9CD082533056C00F9C30E /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CD062533056C00F9C30E /* StoreViewController.swift */; };
+		49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CD072533056C00F9C30E /* StoreViewController.xib */; };
 		49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A64251F14CC00E25A9B /* UserStore.swift */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
@@ -142,6 +144,8 @@
 		49D9CCE3253085B000F9C30E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		49D9CCE9253085D600F9C30E /* ShareButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareButton.xib; sourceTree = "<group>"; };
 		49D9CCFA25320F6A00F9C30E /* Topping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topping.swift; sourceTree = "<group>"; };
+		49D9CD062533056C00F9C30E /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		49D9CD072533056C00F9C30E /* StoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
 		49EC6A64251F14CC00E25A9B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
@@ -381,6 +385,7 @@
 				49B94C2E2529B98C00BF6C53 /* Main */,
 				0D815D0722617A2A00B6642E /* Description */,
 				4933B7AB2529E3A000BFCCE8 /* Result */,
+				49D9CD052533054B00F9C30E /* Store */,
 				49B94C362529BA2E00BF6C53 /* BestScore */,
 			);
 			path = View;
@@ -413,6 +418,15 @@
 				49D9CCE9253085D600F9C30E /* ShareButton.xib */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		49D9CD052533054B00F9C30E /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				49D9CD062533056C00F9C30E /* StoreViewController.swift */,
+				49D9CD072533056C00F9C30E /* StoreViewController.xib */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		49EC6A63251F14B900E25A9B /* Store */ = {
@@ -564,6 +578,7 @@
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
 				057D3EC82330666A00712E5D /* confetti.png in Resources */,
 				4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */,
+				49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */,
 				0D048FC42277FCE500852FFA /* Settings.bundle in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
@@ -603,6 +618,7 @@
 			files = (
 				0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */,
 				49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */,
+				49D9CD082533056C00F9C30E /* StoreViewController.swift in Sources */,
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */,
 				F346A9CA226A403E00A051FC /* SKShapeNode+Addition.swift in Sources */,
