@@ -31,7 +31,6 @@ class PullNattoScene: SKScene{
         return sprites
     }()
     
-    
     lazy var ohashi = SKSpriteNode(image: "pullOhashi",
                                    pos: CGPoint(x: self.frame.midX, y: self.frame.midY),
                                    viewBounds: (self.view?.bounds)!,
@@ -42,6 +41,8 @@ class PullNattoScene: SKScene{
                                   viewBounds: (self.view?.bounds)!,
                                   frame: self.frame,
                                   zPos: 1.0)
+    
+    var toppingSprite:[SKSpriteNode] = []
     
     // MARK: - Property
     var timer:Timer?
@@ -89,13 +90,14 @@ class PullNattoScene: SKScene{
         nattoSprite.forEach({
             self.addChild($0)
         })
+        createToppingItem()
     }
     
     override func update(_ currentTime: TimeInterval) {
         let screenSmallSide = width > height ? height : width
         
         for (i, natto) in nattoSprite.enumerated() {
-            presenter.eatCheck(height: Float(height),
+            presenter.nattoEatCheck(height: Float(height),
                                nattoY: Float(natto.position.y),
                                index: i)
             
@@ -106,6 +108,59 @@ class PullNattoScene: SKScene{
                                           dist: Float(screenSmallSide/10),
                                           index: i)
         }
+        
+        //TODO お箸にトッピングがくっつかないので直す
+        for (i, topping) in toppingSprite.enumerated() {
+            presenter.toppingEatCheck(height: Float(height),
+                               toppingY: Float(topping.position.y),
+                               index: i)
+            
+            presenter.updateToppingPosition(ohashiPos: ObjectPosition(pos: topping.position),
+                                            ohashiSize: ObjectSize(size: ohashi.size),
+                                            toppingPos: ObjectPosition(pos: topping.position),
+                                            sticky: stickyLevel,
+                                            dist: Float(screenSmallSide/10),
+                                            index: i)
+        }
+
+    }
+    
+    private func createToppingItem() {
+        topping?.forEach{topping in
+            
+            let screenSmallSide = width > height ? height : width
+            var toppingSize:CGSize!
+            var bodyRadius:CGFloat!
+            
+            switch topping.type {
+            
+            case .negi:
+                toppingSize = CGSize(width: screenSmallSide/15, height: screenSmallSide/15)
+                bodyRadius = screenSmallSide/30
+            case .okura:
+                toppingSize = CGSize(width: screenSmallSide/7, height: screenSmallSide/7)
+                bodyRadius = screenSmallSide/25
+            case .sirasu:
+                toppingSize = CGSize(width: screenSmallSide/7, height: screenSmallSide/17)
+                bodyRadius = screenSmallSide/30
+            }
+            
+            for _ in 0..<topping.quantity {
+                let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
+                
+                let itemBody = SKPhysicsBody().make(circleOfRadius: bodyRadius,
+                                                     category: Constant.CollisionBody.topping,
+                                                     contact: Constant.CollisionBody.ohashi,
+                                                     isGravity: true)
+                let item = SKSpriteNode(image: topping.imageName,
+                                         pos: CGPoint(x: randX, y: randY/4),
+                                         body: itemBody,
+                                         rotate: r,
+                                         size: toppingSize)
+                toppingSprite.append(item)
+                self.addChild(item)
+            }
+        }
     }
     
     //MARK: - Event
@@ -113,7 +168,6 @@ class PullNattoScene: SKScene{
         for t in touches {
             let pos = t.location(in: self)
             ohashi.position = CGPoint(x: pos.x, y: pos.y)
-            
         }
     }
     
@@ -134,6 +188,15 @@ class PullNattoScene: SKScene{
 
 // MARK: - PullNattoPresenterOutput
 extension PullNattoScene: PullNattoPresenterOutput {
+    func showUpdateTopping(objPos: ObjectPosition, index: Int) {
+        toppingSprite[index].position.x += CGFloat(objPos.x)
+        toppingSprite[index].position.y += CGFloat(objPos.y)
+    }
+    func showEatTopping(index: Int){
+        toppingSprite[index].position.y = height + 100
+        presenter.playEffect()
+    }
+    
     func showUpdateNatto(objPos: ObjectPosition, index: Int) {
         nattoSprite[index].position.x += CGFloat(objPos.x)
         nattoSprite[index].position.y += CGFloat(objPos.y)

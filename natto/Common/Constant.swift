@@ -18,5 +18,6 @@ struct Constant {
     struct CollisionBody {
         static let ohashi: UInt32 =  0x1 << 0
         static let natto: UInt32 = 0x1 << 1
+        static let topping: UInt32 = 0x1 << 1
     }
 }
