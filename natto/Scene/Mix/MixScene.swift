@@ -44,6 +44,7 @@ class MixScene: SKScene{
     
     // MARK: - Priperty
     private let hapticsGenerator = UIImpactFeedbackGenerator(style: .light)
+    private let topping: [Topping]?
     var stickyLevel:Int = 0
     var cells = [Int](repeating: 0, count: 108)
     var timer:Timer?
@@ -57,7 +58,8 @@ class MixScene: SKScene{
     }()
     
     //MARK: - Initializer
-    override init(size: CGSize) {
+    init(size: CGSize, topping: [Topping]?) {
+        self.topping = topping
         super.init(size: size)
     }
     
@@ -71,6 +73,8 @@ class MixScene: SKScene{
         self.physicsWorld.contactDelegate = self
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        
+        
         
         //タイマー
         self.timer = Timer.scheduledTimer(timeInterval: 10,
@@ -86,6 +90,30 @@ class MixScene: SKScene{
         nattoSprite.forEach({
             self.addChild($0)
         })
+        createToppingItem()
+        
+    }
+    
+    private func createToppingItem() {
+        topping?.forEach{topping in
+            let screenSmallSide = width > height ? height : width
+            let toppingSize = CGSize(width: screenSmallSide/20, height: screenSmallSide/20)
+            
+            for _ in 0..<topping.quantity {
+                let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
+                
+                let itemBody = SKPhysicsBody().make(circleOfRadius: screenSmallSide/40,
+                                                     category: Constant.CollisionBody.natto,
+                                                     contact: Constant.CollisionBody.ohashi,
+                                                     isGravity: false)
+                let item = SKSpriteNode(image: topping.imageName,
+                                         pos: screenRandomPos(),
+                                         body: itemBody,
+                                         rotate: r,
+                                         size: toppingSize)
+                self.addChild(item)
+            }
+        }
     }
     
     // MARK:- Event
