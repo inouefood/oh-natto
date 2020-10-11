@@ -15,16 +15,15 @@ protocol PullNattoModelInput {
     func playBgm()
     func playEffect()
     func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)
-    func isEat(height: Float, nattoY: Float) -> Bool
+    func updateToppingPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, toppingPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)
+    func isEat(height: Float, y: Float) -> Bool
 }
 
 class PullNattoModel: PullNattoModelInput {
+    
     private var bgm: AVAudioPlayer!
     private var effect: AVAudioPlayer!
     private var isPlaying: Bool = false
-    
-    
-    
     
     func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)  {
         
@@ -36,8 +35,18 @@ class PullNattoModel: PullNattoModelInput {
         return (objPos: ObjectPosition(x: dvx * sticky, y: dvy * sticky), distance: dist)
     }
     
-    func isEat(height: Float, nattoY: Float) -> Bool {
-        return height * 0.80 < nattoY ? true : false
+    func updateToppingPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, toppingPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float) {
+        
+        let sentanX:Float = ohashiPos.x + ohashiSize.width / 2.0
+        let sentanY:Float = ohashiPos.y - ohashiSize.height / 2.0
+        let dvx:Float = sentanX - toppingPos.x
+        let dvy:Float = sentanY - toppingPos.y
+        let dist = sqrtf(dvx * dvx + dvy * dvy)
+        return (objPos: ObjectPosition(x: dvx * sticky, y: dvy * sticky), distance: dist)
+    }
+    
+    func isEat(height: Float, y: Float) -> Bool {
+        return height * 0.80 < y ? true : false
     }
     
     func loadBgmAudio(resourceName: String, resourceType: String) {

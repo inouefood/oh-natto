@@ -16,12 +16,16 @@ protocol PullNattoPresenter:class {
     func playBgm()
     func playEffect()
     func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float, dist: Float, index: Int)
-    func eatCheck(height: Float, nattoY: Float, index: Int)
+    func updateToppingPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, toppingPos: ObjectPosition, sticky: Float, dist: Float, index: Int)
+    func nattoEatCheck(height: Float, nattoY: Float, index: Int)
+    func toppingEatCheck(height: Float, toppingY: Float, index: Int)
 }
 
 protocol PullNattoPresenterOutput:class {
     func showUpdateNatto(objPos: ObjectPosition, index: Int)
     func showEatNatto(index: Int)
+    func showUpdateTopping(objPos: ObjectPosition, index: Int)
+    func showEatTopping(index: Int)
 }
 
 class PullNattoPresenterImpl: PullNattoPresenter {
@@ -43,9 +47,27 @@ class PullNattoPresenterImpl: PullNattoPresenter {
         }
     }
     
-    func  eatCheck(height: Float, nattoY: Float, index: Int) {
-        if model.isEat(height: height, nattoY: nattoY) {
+    func updateToppingPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, toppingPos: ObjectPosition, sticky: Float, dist: Float, index: Int) {
+        
+        let distAndObjPos = model.updateToppingPosition(ohashiPos: ohashiPos,
+                                                        ohashiSize: ohashiSize,
+                                                        toppingPos: toppingPos,
+                                                        sticky: sticky)
+        
+        if distAndObjPos.distance < dist {
+            output?.showUpdateTopping(objPos: distAndObjPos.objPos, index: index)
+        }
+    }
+    
+    func  nattoEatCheck(height: Float, nattoY: Float, index: Int) {
+        if model.isEat(height: height, y: nattoY) {
             output?.showEatNatto(index: index)
+        }
+    }
+    
+    func toppingEatCheck(height: Float, toppingY: Float, index: Int) {
+        if model.isEat(height: height, y: toppingY) {
+            output?.showEatTopping(index: index)
         }
     }
     
