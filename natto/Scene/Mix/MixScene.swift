@@ -97,7 +97,16 @@ class MixScene: SKScene{
     private func createToppingItem() {
         topping?.forEach{topping in
             let screenSmallSide = width > height ? height : width
-            let toppingSize = CGSize(width: screenSmallSide/20, height: screenSmallSide/20)
+            var toppingSize:CGSize!
+            switch topping.type {
+            
+            case .negi:
+                toppingSize = CGSize(width: screenSmallSide/18, height: screenSmallSide/18)
+            case .okura:
+                toppingSize = CGSize(width: screenSmallSide/10, height: screenSmallSide/10)
+            case .sirasu:
+                toppingSize = CGSize(width: screenSmallSide/10, height: screenSmallSide/20)
+            }
             
             for _ in 0..<topping.quantity {
                 let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
@@ -134,7 +143,7 @@ class MixScene: SKScene{
         presenter.stopEffect2()
         
         self.timer?.invalidate()
-        let scene = PullNattoScene(size: self.size, sticky: stickyLevel)
+        let scene = PullNattoScene(size: self.size, sticky: stickyLevel, topping: topping)
         self.view!.presentScene(scene)
     }
 }

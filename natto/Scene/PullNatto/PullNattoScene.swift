@@ -47,6 +47,7 @@ class PullNattoScene: SKScene{
     var timer:Timer?
     var score:Int = 0
     let stickyLevel:Float
+    let topping:[Topping]?
     
     fileprivate lazy var presenter: PullNattoPresenter! = {
         let presenter = PullNattoPresenterImpl(output: self, model: PullNattoModel())
@@ -57,8 +58,9 @@ class PullNattoScene: SKScene{
     }()
     
     // MARK: - Initializer
-    init(size: CGSize, sticky: Int) {
+    init(size: CGSize, sticky: Int, topping:[Topping]?) {
         stickyLevel = Float(sticky) * Constant.Sticky.level
+        self.topping = topping
         super.init(size: size)
     }
     

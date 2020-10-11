@@ -9,12 +9,23 @@
 import UIKit
 
 protocol Topping {
+    var type: ToppingType { get }
     var quantity: Int {get}
     var point: Int {get}
     var imageName: String {get}
 }
 
+enum ToppingType {
+    case negi
+    case okura
+    case sirasu
+}
+
 class Negi: Topping {
+    var type: ToppingType {
+        return .negi
+    }
+    
     var imageName: String {
         return "negi"
     }
@@ -30,6 +41,10 @@ class Negi: Topping {
 }
 
 class Okura: Topping {
+    var type: ToppingType {
+        return .okura
+    }
+    
     var imageName: String {
         return "okura"
     }
@@ -44,6 +59,10 @@ class Okura: Topping {
 }
 
 class Sirasu: Topping {
+    var type: ToppingType {
+        return .sirasu
+    }
+    
     var imageName: String {
         return "sirasu"
     }

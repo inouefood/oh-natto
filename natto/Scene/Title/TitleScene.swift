@@ -71,7 +71,8 @@ class TitleScene: SKScene {
             let touchNode = self.atPoint(location)
             if touchNode == startLabel{
                 tutorialButton.isHidden = true
-                let scene = MixScene(size: self.size, topping: nil)
+                //TODO トッピングで選択されたものを渡せるようにする
+                let scene = MixScene(size: self.size, topping: [Sirasu(), Okura(), Negi()])
                 self.view!.presentScene(scene)
             } else {
                 let mame = SKSpriteNode(imageNamed: "mame")
