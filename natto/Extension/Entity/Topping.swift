@@ -28,3 +28,31 @@ class Negi: Topping {
     }
     
 }
+
+class Okura: Topping {
+    var imageName: String {
+        return "okura"
+    }
+    
+    var quantity: Int {
+        return 10
+    }
+    
+    var point: Int {
+        return 5
+    }
+}
+
+class Sirasu: Topping {
+    var imageName: String {
+        return "sirasu"
+    }
+    
+    var quantity: Int {
+        return 10
+    }
+    
+    var point: Int {
+        return 10
+    }
+}
