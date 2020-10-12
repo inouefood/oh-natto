@@ -15,6 +15,7 @@ final class UserStore {
         case isNeedDisplayedReviewAlert
         case totalNattoCount
         case eatPoint
+        case ownedItem
     }
     
     //初回表示かどうか
@@ -89,6 +90,20 @@ final class UserStore {
             return eatPoint
         }
         
+    }
+    
+    //保有しているアイテム
+    static var ownedItem:[String: Int]? {
+        set{
+            UserDefaults.standard.set(newValue, forKey: Key.ownedItem.rawValue)
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            guard let eatPoint = UserDefaults.standard.object(forKey: Key.ownedItem.rawValue) as?  [String:Int] else {
+                return nil
+            }
+            return eatPoint
+        }
     }
 }
 

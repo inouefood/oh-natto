@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+    
     func showAppStoreInformation(url:String, title: String = "", message: String,openText: String, closeText: String, handler: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let open: UIAlertAction = UIAlertAction(title: openText, style: .default, handler: { _ in
@@ -33,5 +34,24 @@ extension UIViewController {
         alert.addAction(close)        
         present(alert, animated: true, completion: nil)
     }
-}
 
+    func showInformation(title: String = "", message: String = "", yesButtonText: String,
+                         closeButtonText: String, handler: (() -> Void)? = nil) {
+        
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        let yes: UIAlertAction = UIAlertAction(title: yesButtonText, style: .default, handler: { _ in
+            alert.dismiss(animated: true, completion: nil)
+            handler?()
+        })
+        
+        let close: UIAlertAction = UIAlertAction(title: closeButtonText, style: .default, handler: { _ in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        alert.addAction(yes)
+        alert.addAction(close)
+        present(alert, animated: true, completion: nil)
+    }
+    
+}
