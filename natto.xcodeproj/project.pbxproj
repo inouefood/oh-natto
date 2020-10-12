@@ -44,6 +44,8 @@
 		43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F292052723B00FE1117 /* Main.storyboard */; };
 		43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2C2052723B00FE1117 /* Assets.xcassets */; };
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
+		490C1B2D25351CC10094C76F /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C1B2B25351CC10094C76F /* SelectViewController.swift */; };
+		490C1B2E25351CC10094C76F /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B2C25351CC10094C76F /* SelectViewController.xib */; };
 		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
 		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
 		497D132D2523305F007B1129 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D132C2523305F007B1129 /* DescriptionView.swift */; };
@@ -135,6 +137,8 @@
 		43D95F2C2052723B00FE1117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D95F2F2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43D95F312052723B00FE1117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		490C1B2B25351CC10094C76F /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		490C1B2C25351CC10094C76F /* SelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
 		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
@@ -358,6 +362,15 @@
 			path = natto;
 			sourceTree = "<group>";
 		};
+		490C1B2A25351CA40094C76F /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				490C1B2B25351CC10094C76F /* SelectViewController.swift */,
+				490C1B2C25351CC10094C76F /* SelectViewController.xib */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
 		4933B7AB2529E3A000BFCCE8 /* Result */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +398,7 @@
 				49B94C2E2529B98C00BF6C53 /* Main */,
 				0D815D0722617A2A00B6642E /* Description */,
 				4933B7AB2529E3A000BFCCE8 /* Result */,
+				490C1B2A25351CA40094C76F /* Select */,
 				49D9CD052533054B00F9C30E /* Store */,
 				49B94C362529BA2E00BF6C53 /* BestScore */,
 			);
@@ -571,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */,
+				490C1B2E25351CC10094C76F /* SelectViewController.xib in Resources */,
 				057D3EC92330666A00712E5D /* Contiffi.scnp in Resources */,
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				497D132F2523306F007B1129 /* DescriptionView.xib in Resources */,
@@ -616,6 +631,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490C1B2D25351CC10094C76F /* SelectViewController.swift in Sources */,
 				0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */,
 				49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */,
 				49D9CD082533056C00F9C30E /* StoreViewController.swift in Sources */,

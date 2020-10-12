@@ -121,12 +121,12 @@ class ResultViewController: UIViewController {
     @IBAction func retryAction(_ sender: Any) {
         dismissHandler?()
     }
-    @IBAction func shareAction(_ sender: Any) {
-        let activityItems: [Any] = ["\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"]
 
-        let activityVc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        activityVc.modalPresentationStyle = .fullScreen
-        self.present(activityVc, animated: true, completion: nil)
+    @IBAction func openSelectAction(_ sender: Any) {
+        //TODO シェアボタンの画像をセレクトの適切なものに置き換える
+        let vc = SelectViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: false, completion: nil)
     }
     
 }

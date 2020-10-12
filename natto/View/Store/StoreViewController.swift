@@ -38,4 +38,7 @@ class StoreViewController: UIViewController {
             
         }
     }
+    @IBAction func dismissAction(_ sender: Any) {
+        dismiss(animated: false, completion: nil)
+    }
 }
