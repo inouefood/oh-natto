@@ -371,6 +371,8 @@
 			children = (
 				490C1B2B25351CC10094C76F /* SelectViewController.swift */,
 				490C1B2C25351CC10094C76F /* SelectViewController.xib */,
+				490C1B35253525050094C76F /* TotalEat */,
+				49D9CD052533054B00F9C30E /* Store */,
 			);
 			path = Select;
 			sourceTree = "<group>";
@@ -389,7 +391,9 @@
 			children = (
 				4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */,
 				4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */,
-				49D9CCE8253085BB00F9C30E /* view */,
+				49D9CCE8253085BB00F9C30E /* customView */,
+				49B94C362529BA2E00BF6C53 /* BestScore */,
+				490C1B2A25351CA40094C76F /* Select */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -411,10 +415,6 @@
 				49B94C2E2529B98C00BF6C53 /* Main */,
 				0D815D0722617A2A00B6642E /* Description */,
 				4933B7AB2529E3A000BFCCE8 /* Result */,
-				490C1B2A25351CA40094C76F /* Select */,
-				49D9CD052533054B00F9C30E /* Store */,
-				49B94C362529BA2E00BF6C53 /* BestScore */,
-				490C1B35253525050094C76F /* TotalEat */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,13 +439,13 @@
 			path = BestScore;
 			sourceTree = "<group>";
 		};
-		49D9CCE8253085BB00F9C30E /* view */ = {
+		49D9CCE8253085BB00F9C30E /* customView */ = {
 			isa = PBXGroup;
 			children = (
 				49D9CCE3253085B000F9C30E /* ShareButton.swift */,
 				49D9CCE9253085D600F9C30E /* ShareButton.xib */,
 			);
-			path = view;
+			path = customView;
 			sourceTree = "<group>";
 		};
 		49D9CD052533054B00F9C30E /* Store */ = {
