@@ -44,6 +44,10 @@
 		43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F292052723B00FE1117 /* Main.storyboard */; };
 		43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2C2052723B00FE1117 /* Assets.xcassets */; };
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
+		490C1B2D25351CC10094C76F /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C1B2B25351CC10094C76F /* SelectViewController.swift */; };
+		490C1B2E25351CC10094C76F /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B2C25351CC10094C76F /* SelectViewController.xib */; };
+		490C1B382535251A0094C76F /* TotalEatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C1B362535251A0094C76F /* TotalEatViewController.swift */; };
+		490C1B392535251A0094C76F /* TotalEatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B372535251A0094C76F /* TotalEatViewController.xib */; };
 		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
 		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
 		497D132D2523305F007B1129 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D132C2523305F007B1129 /* DescriptionView.swift */; };
@@ -53,6 +57,8 @@
 		49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCE3253085B000F9C30E /* ShareButton.swift */; };
 		49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CCE9253085D600F9C30E /* ShareButton.xib */; };
 		49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCFA25320F6A00F9C30E /* Topping.swift */; };
+		49D9CD082533056C00F9C30E /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CD062533056C00F9C30E /* StoreViewController.swift */; };
+		49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CD072533056C00F9C30E /* StoreViewController.xib */; };
 		49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A64251F14CC00E25A9B /* UserStore.swift */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
@@ -133,6 +139,10 @@
 		43D95F2C2052723B00FE1117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D95F2F2052723B00FE1117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43D95F312052723B00FE1117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		490C1B2B25351CC10094C76F /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		490C1B2C25351CC10094C76F /* SelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
+		490C1B362535251A0094C76F /* TotalEatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalEatViewController.swift; sourceTree = "<group>"; };
+		490C1B372535251A0094C76F /* TotalEatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalEatViewController.xib; sourceTree = "<group>"; };
 		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
@@ -142,6 +152,8 @@
 		49D9CCE3253085B000F9C30E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		49D9CCE9253085D600F9C30E /* ShareButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareButton.xib; sourceTree = "<group>"; };
 		49D9CCFA25320F6A00F9C30E /* Topping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topping.swift; sourceTree = "<group>"; };
+		49D9CD062533056C00F9C30E /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		49D9CD072533056C00F9C30E /* StoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
 		49EC6A64251F14CC00E25A9B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
@@ -354,6 +366,24 @@
 			path = natto;
 			sourceTree = "<group>";
 		};
+		490C1B2A25351CA40094C76F /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				490C1B2B25351CC10094C76F /* SelectViewController.swift */,
+				490C1B2C25351CC10094C76F /* SelectViewController.xib */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		490C1B35253525050094C76F /* TotalEat */ = {
+			isa = PBXGroup;
+			children = (
+				490C1B362535251A0094C76F /* TotalEatViewController.swift */,
+				490C1B372535251A0094C76F /* TotalEatViewController.xib */,
+			);
+			path = TotalEat;
+			sourceTree = "<group>";
+		};
 		4933B7AB2529E3A000BFCCE8 /* Result */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,7 +411,10 @@
 				49B94C2E2529B98C00BF6C53 /* Main */,
 				0D815D0722617A2A00B6642E /* Description */,
 				4933B7AB2529E3A000BFCCE8 /* Result */,
+				490C1B2A25351CA40094C76F /* Select */,
+				49D9CD052533054B00F9C30E /* Store */,
 				49B94C362529BA2E00BF6C53 /* BestScore */,
+				490C1B35253525050094C76F /* TotalEat */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -413,6 +446,15 @@
 				49D9CCE9253085D600F9C30E /* ShareButton.xib */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		49D9CD052533054B00F9C30E /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				49D9CD062533056C00F9C30E /* StoreViewController.swift */,
+				49D9CD072533056C00F9C30E /* StoreViewController.xib */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		49EC6A63251F14B900E25A9B /* Store */ = {
@@ -557,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */,
+				490C1B2E25351CC10094C76F /* SelectViewController.xib in Resources */,
 				057D3EC92330666A00712E5D /* Contiffi.scnp in Resources */,
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				497D132F2523306F007B1129 /* DescriptionView.xib in Resources */,
@@ -564,6 +607,7 @@
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
 				057D3EC82330666A00712E5D /* confetti.png in Resources */,
 				4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */,
+				49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */,
 				0D048FC42277FCE500852FFA /* Settings.bundle in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
@@ -574,6 +618,7 @@
 				4343CEAD205386F3002CA3BC /* natto_bgm_score.wav in Resources */,
 				49B94C322529BA2200BF6C53 /* BestScoreViewController.xib in Resources */,
 				0DCD56CF2348E004008F7BAA /* Localizable.strings in Resources */,
+				490C1B392535251A0094C76F /* TotalEatViewController.xib in Resources */,
 				0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,8 +646,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490C1B2D25351CC10094C76F /* SelectViewController.swift in Sources */,
 				0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */,
 				49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */,
+				49D9CD082533056C00F9C30E /* StoreViewController.swift in Sources */,
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */,
 				F346A9CA226A403E00A051FC /* SKShapeNode+Addition.swift in Sources */,
@@ -613,6 +660,7 @@
 				49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */,
 				054E493722D2DF4F0062736D /* UIViewController+Addition.swift in Sources */,
 				054E493322D2D9C00062736D /* AppVersionCompare.swift in Sources */,
+				490C1B382535251A0094C76F /* TotalEatViewController.swift in Sources */,
 				0DCD56D82348E72E008F7BAA /* LocalizeKey.swift in Sources */,
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,

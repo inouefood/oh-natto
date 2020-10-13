@@ -80,7 +80,7 @@
                         <constraint firstAttribute="height" constant="42" id="jzr-U2-Pzt"/>
                     </constraints>
                     <connections>
-                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="z4e-GZ-hd8"/>
+                        <action selector="openSelectAction:" destination="-1" eventType="touchUpInside" id="0Ws-9u-fy6"/>
                     </connections>
                 </button>
             </subviews>
