@@ -46,6 +46,8 @@
 		43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D95F2E2052723B00FE1117 /* LaunchScreen.storyboard */; };
 		490C1B2D25351CC10094C76F /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C1B2B25351CC10094C76F /* SelectViewController.swift */; };
 		490C1B2E25351CC10094C76F /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B2C25351CC10094C76F /* SelectViewController.xib */; };
+		490C1B382535251A0094C76F /* TotalEatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C1B362535251A0094C76F /* TotalEatViewController.swift */; };
+		490C1B392535251A0094C76F /* TotalEatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B372535251A0094C76F /* TotalEatViewController.xib */; };
 		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
 		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
 		497D132D2523305F007B1129 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D132C2523305F007B1129 /* DescriptionView.swift */; };
@@ -139,6 +141,8 @@
 		43D95F312052723B00FE1117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490C1B2B25351CC10094C76F /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		490C1B2C25351CC10094C76F /* SelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
+		490C1B362535251A0094C76F /* TotalEatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalEatViewController.swift; sourceTree = "<group>"; };
+		490C1B372535251A0094C76F /* TotalEatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalEatViewController.xib; sourceTree = "<group>"; };
 		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
@@ -371,6 +375,15 @@
 			path = Select;
 			sourceTree = "<group>";
 		};
+		490C1B35253525050094C76F /* TotalEat */ = {
+			isa = PBXGroup;
+			children = (
+				490C1B362535251A0094C76F /* TotalEatViewController.swift */,
+				490C1B372535251A0094C76F /* TotalEatViewController.xib */,
+			);
+			path = TotalEat;
+			sourceTree = "<group>";
+		};
 		4933B7AB2529E3A000BFCCE8 /* Result */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +414,7 @@
 				490C1B2A25351CA40094C76F /* Select */,
 				49D9CD052533054B00F9C30E /* Store */,
 				49B94C362529BA2E00BF6C53 /* BestScore */,
+				490C1B35253525050094C76F /* TotalEat */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -604,6 +618,7 @@
 				4343CEAD205386F3002CA3BC /* natto_bgm_score.wav in Resources */,
 				49B94C322529BA2200BF6C53 /* BestScoreViewController.xib in Resources */,
 				0DCD56CF2348E004008F7BAA /* Localizable.strings in Resources */,
+				490C1B392535251A0094C76F /* TotalEatViewController.xib in Resources */,
 				0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +660,7 @@
 				49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */,
 				054E493722D2DF4F0062736D /* UIViewController+Addition.swift in Sources */,
 				054E493322D2D9C00062736D /* AppVersionCompare.swift in Sources */,
+				490C1B382535251A0094C76F /* TotalEatViewController.swift in Sources */,
 				0DCD56D82348E72E008F7BAA /* LocalizeKey.swift in Sources */,
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,

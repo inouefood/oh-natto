@@ -22,6 +22,12 @@ class SelectViewController: UIViewController {
         present(vc, animated: false, completion: nil)
     }
     
+    @IBAction func openTotalEatPage(_ sender: Any) {
+        let vc = TotalEatViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: false, completion: nil)
+    }
+    
     @IBAction func dismissAction(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }

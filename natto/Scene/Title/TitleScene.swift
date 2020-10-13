@@ -75,13 +75,6 @@ class TitleScene: SKScene {
                 let scene = MixScene(size: self.size, topping: [])
                 self.view!.presentScene(scene)
             } else {
-                //TODO 検証
-                let vc = StoreViewController()
-                vc.modalPresentationStyle = .overCurrentContext
-                topViewController()?.present(vc, animated: false, completion: nil)
-                
-                
-                
                 let mame = SKSpriteNode(imageNamed: "mame")
                 mame.position = location
                 mame.physicsBody = SKPhysicsBody().make(rectangleOf: mame.size, category: 0x1 << 1, contact: 0x1 << 0, isGravity: true)
