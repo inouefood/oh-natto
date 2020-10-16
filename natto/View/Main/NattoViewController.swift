@@ -66,9 +66,12 @@ class NattoViewController: UIViewController {
     // MARK: - Event
     
     @objc func showTutorialTapped() {
-        let vc = DescriptionViewController()
+        let vc = SelectTitleInfoViewController()
         vc.modalPresentationStyle = .overCurrentContext
-        self.present(vc, animated: true, completion: nil)
+        self.present(vc, animated: false, completion: nil)
+//        let vc = DescriptionViewController()
+//        vc.modalPresentationStyle = .overCurrentContext
+//        self.present(vc, animated: true, completion: nil)
     }
     
     override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {

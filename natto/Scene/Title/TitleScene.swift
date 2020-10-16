@@ -13,6 +13,7 @@ class TitleScene: SKScene {
     var startLabel = SKLabelNode(fontSize: 100,
                                  text: localizeString(key: LocalizeKeys.Title.buttonStart))
     var controlWidth: CGFloat!
+    private var selectedItems:[Topping] = []
     
     // MARK: - Initializer
     

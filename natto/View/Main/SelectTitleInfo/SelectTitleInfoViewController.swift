@@ -9,6 +9,9 @@
 import UIKit
 
 class SelectTitleInfoViewController: UIViewController {
+    
+    private var selectedItems:[Topping] = []
+    var selectItemHandler:(([Topping])->Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +21,18 @@ class SelectTitleInfoViewController: UIViewController {
     @IBAction func dismissAction(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        dismiss(animated: false, completion: nil)
+    @IBAction func showTutorial(_ sender: Any) {
+        let vc = DescriptionViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func showToppingItem(_ sender: Any) {
+        let vc = ToppingSelectViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.selectItemHandler = {
+            self.selectedItems = $0
+        }
+        self.present(vc, animated: false, completion: nil)
     }
 }
