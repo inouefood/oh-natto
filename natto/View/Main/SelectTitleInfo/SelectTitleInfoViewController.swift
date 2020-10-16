@@ -19,6 +19,7 @@ class SelectTitleInfoViewController: UIViewController {
     }
 
     @IBAction func dismissAction(_ sender: Any) {
+        selectItemHandler?(selectedItems)
         dismiss(animated: false, completion: nil)
     }
     @IBAction func showTutorial(_ sender: Any) {

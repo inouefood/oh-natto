@@ -80,13 +80,16 @@ class TitleScene: SKScene {
             let touchNode = self.atPoint(location)
             if touchNode == startLabel{
                 //TODO トッピングで選択されたものを渡せるようにする
-                let scene = MixScene(size: self.size, topping: [])
+                let scene = MixScene(size: self.size, topping: selectedItems)
                 self.view!.presentScene(scene)
                 
             } else if touchNode == infoButton {
                 
                 let vc = SelectTitleInfoViewController()
                 vc.modalPresentationStyle = .overCurrentContext
+                vc.selectItemHandler = {
+                    self.selectedItems = $0
+                }
                 topViewController()?.present(vc, animated: false, completion: nil)
             }else {
                 let mame = SKSpriteNode(imageNamed: "mame")
