@@ -9,9 +9,6 @@
 import UIKit
 import SpriteKit
 
-//TODO グローバル変数になっているので修正する
-let tutorialButton = UIButton()
-
 class NattoViewController: UIViewController {
     
     // MARK: - LifeCycle
@@ -19,16 +16,6 @@ class NattoViewController: UIViewController {
     override func loadView() {
         let skView = SKView(frame: UIScreen.main.bounds)
         self.view = skView
-        
-        tutorialButton.backgroundColor = .red
-        tutorialButton.frame.size = CGSize(width: 60, height: 60)
-        tutorialButton.layer.position = CGPoint(x: (self.view?.frame.width)! - tutorialButton.frame.width * 1.1, y: 70)
-        tutorialButton.titleLabel!.font = UIFont.systemFont(ofSize: 40)
-        tutorialButton.layer.cornerRadius = tutorialButton.frame.width/2
-        tutorialButton.setTitle("?", for: .normal)
-        tutorialButton.addTarget(self, action: #selector(showTutorialTapped), for: .touchUpInside)
-        self.view.addSubview(tutorialButton)
-        
     }
     
     override func viewDidLoad() {
@@ -61,17 +48,6 @@ class NattoViewController: UIViewController {
             vc.modalPresentationStyle = .overCurrentContext
             self.present(vc, animated: true, completion: nil)
         }
-    }
-    
-    // MARK: - Event
-    
-    @objc func showTutorialTapped() {
-        let vc = SelectTitleInfoViewController()
-        vc.modalPresentationStyle = .overCurrentContext
-        self.present(vc, animated: false, completion: nil)
-//        let vc = DescriptionViewController()
-//        vc.modalPresentationStyle = .overCurrentContext
-//        self.present(vc, animated: true, completion: nil)
     }
     
     override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
