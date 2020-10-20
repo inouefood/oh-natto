@@ -10,6 +10,6 @@ import UIKit
 
 class ToppingSelectViewController: UIViewController {
     override func viewDidLoad() {
-        
+        self.view.backgroundColor = .orange
     }
 }

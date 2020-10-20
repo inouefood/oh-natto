@@ -13,12 +13,12 @@ class EquipmentSelectViewController: UIViewController {
     @IBOutlet weak var closeButton: CloseButton!
     
     private lazy var pagingItem: [UIViewController] = {
-        let firstVC = SelectTitleInfoViewController()
-        firstVC.title = "first"
-        let secondVC = SelectTitleInfoViewController()
-        secondVC.title = "second"
-        let thirdVC = SelectTitleInfoViewController()
-        thirdVC.title = "third"
+        let firstVC = ToppingSelectViewController()
+        firstVC.title = "トッピング"
+        let secondVC = ItemSelectViewController()
+        secondVC.title = "アイテム"
+        let thirdVC = MameSelectViewController()
+        thirdVC.title = "豆"
         
         return [firstVC, secondVC, thirdVC]
     }()

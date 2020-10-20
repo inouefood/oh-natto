@@ -61,6 +61,10 @@
 		497D132F2523306F007B1129 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497D132E2523306F007B1129 /* DescriptionView.xib */; };
 		49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */; };
 		49B94C322529BA2200BF6C53 /* BestScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */; };
+		49D3AB3E253F0D87008422F3 /* MameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3AB3C253F0D87008422F3 /* MameSelectViewController.swift */; };
+		49D3AB3F253F0D87008422F3 /* MameSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D3AB3D253F0D87008422F3 /* MameSelectViewController.xib */; };
+		49D3AB47253F0DD7008422F3 /* ItemSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3AB45253F0DD7008422F3 /* ItemSelectViewController.swift */; };
+		49D3AB48253F0DD7008422F3 /* ItemSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D3AB46253F0DD7008422F3 /* ItemSelectViewController.xib */; };
 		49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCE3253085B000F9C30E /* ShareButton.swift */; };
 		49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CCE9253085D600F9C30E /* ShareButton.xib */; };
 		49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCFA25320F6A00F9C30E /* Topping.swift */; };
@@ -162,6 +166,10 @@
 		497D132E2523306F007B1129 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
 		49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScoreViewController.swift; sourceTree = "<group>"; };
 		49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestScoreViewController.xib; sourceTree = "<group>"; };
+		49D3AB3C253F0D87008422F3 /* MameSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MameSelectViewController.swift; sourceTree = "<group>"; };
+		49D3AB3D253F0D87008422F3 /* MameSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MameSelectViewController.xib; sourceTree = "<group>"; };
+		49D3AB45253F0DD7008422F3 /* ItemSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectViewController.swift; sourceTree = "<group>"; };
+		49D3AB46253F0DD7008422F3 /* ItemSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemSelectViewController.xib; sourceTree = "<group>"; };
 		49D9CCE3253085B000F9C30E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		49D9CCE9253085D600F9C30E /* ShareButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareButton.xib; sourceTree = "<group>"; };
 		49D9CCFA25320F6A00F9C30E /* Topping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topping.swift; sourceTree = "<group>"; };
@@ -415,6 +423,8 @@
 				49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */,
 				49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */,
 				4941A84A253A95AD00977604 /* ToppingSelect */,
+				49D3AB43253F0D90008422F3 /* MameSelect */,
+				49D3AB44253F0D9F008422F3 /* ItemSelect */,
 			);
 			path = EquipmentSelect;
 			sourceTree = "<group>";
@@ -481,6 +491,24 @@
 				057D3EC72330666A00712E5D /* Contiffi.scnp */,
 			);
 			path = BestScore;
+			sourceTree = "<group>";
+		};
+		49D3AB43253F0D90008422F3 /* MameSelect */ = {
+			isa = PBXGroup;
+			children = (
+				49D3AB3C253F0D87008422F3 /* MameSelectViewController.swift */,
+				49D3AB3D253F0D87008422F3 /* MameSelectViewController.xib */,
+			);
+			path = MameSelect;
+			sourceTree = "<group>";
+		};
+		49D3AB44253F0D9F008422F3 /* ItemSelect */ = {
+			isa = PBXGroup;
+			children = (
+				49D3AB45253F0DD7008422F3 /* ItemSelectViewController.swift */,
+				49D3AB46253F0DD7008422F3 /* ItemSelectViewController.xib */,
+			);
+			path = ItemSelect;
 			sourceTree = "<group>";
 		};
 		49D9CCE8253085BB00F9C30E /* customView */ = {
@@ -658,9 +686,11 @@
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
 				490C1B7325352EF70094C76F /* ToppingSelectViewController.xib in Resources */,
 				057D3EC82330666A00712E5D /* confetti.png in Resources */,
+				49D3AB3F253F0D87008422F3 /* MameSelectViewController.xib in Resources */,
 				4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */,
 				49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */,
 				0D048FC42277FCE500852FFA /* Settings.bundle in Resources */,
+				49D3AB48253F0DD7008422F3 /* ItemSelectViewController.xib in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
 				0D815D112261E42D00B6642E /* CloseButton.xib in Resources */,
@@ -706,6 +736,7 @@
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */,
 				F346A9CA226A403E00A051FC /* SKShapeNode+Addition.swift in Sources */,
+				49D3AB47253F0DD7008422F3 /* ItemSelectViewController.swift in Sources */,
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
 				43D95F262052723B00FE1117 /* TitleScene.swift in Sources */,
 				0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */,
@@ -713,6 +744,7 @@
 				49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */,
 				054E493722D2DF4F0062736D /* UIViewController+Addition.swift in Sources */,
 				054E493322D2D9C00062736D /* AppVersionCompare.swift in Sources */,
+				49D3AB3E253F0D87008422F3 /* MameSelectViewController.swift in Sources */,
 				490C1B382535251A0094C76F /* TotalEatViewController.swift in Sources */,
 				0DCD56D82348E72E008F7BAA /* LocalizeKey.swift in Sources */,
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
