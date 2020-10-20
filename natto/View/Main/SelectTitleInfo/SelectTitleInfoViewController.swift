@@ -29,7 +29,7 @@ class SelectTitleInfoViewController: UIViewController {
     }
     
     @IBAction func showToppingItem(_ sender: Any) {
-        let vc = ToppingSelectViewController()
+        let vc = EquipmentSelectViewController()
         vc.modalPresentationStyle = .overCurrentContext
         vc.selectItemHandler = {
             self.selectedItems = $0

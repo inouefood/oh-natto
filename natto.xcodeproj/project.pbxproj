@@ -52,6 +52,8 @@
 		490C1B6B25352A7C0094C76F /* SelectTitleInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B6925352A7C0094C76F /* SelectTitleInfoViewController.xib */; };
 		490C1B7225352EF70094C76F /* ToppingSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C1B7025352EF70094C76F /* ToppingSelectViewController.swift */; };
 		490C1B7325352EF70094C76F /* ToppingSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */; };
+		49199F59253F0A6D00F935D9 /* EquipmentSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */; };
+		49199F5A253F0A6D00F935D9 /* EquipmentSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */; };
 		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
 		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
 		4941A843253A053100977604 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 4941A842253A053100977604 /* Parchment */; };
@@ -152,6 +154,8 @@
 		490C1B6925352A7C0094C76F /* SelectTitleInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectTitleInfoViewController.xib; sourceTree = "<group>"; };
 		490C1B7025352EF70094C76F /* ToppingSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToppingSelectViewController.swift; sourceTree = "<group>"; };
 		490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToppingSelectViewController.xib; sourceTree = "<group>"; };
+		49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSelectViewController.swift; sourceTree = "<group>"; };
+		49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentSelectViewController.xib; sourceTree = "<group>"; };
 		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
@@ -405,13 +409,14 @@
 			path = SelectTitleInfo;
 			sourceTree = "<group>";
 		};
-		490C1B6F25352ED80094C76F /* ToppingSelect */ = {
+		490C1B6F25352ED80094C76F /* EquipmentSelect */ = {
 			isa = PBXGroup;
 			children = (
-				490C1B7025352EF70094C76F /* ToppingSelectViewController.swift */,
-				490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */,
+				49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */,
+				49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */,
+				4941A84A253A95AD00977604 /* ToppingSelect */,
 			);
-			path = ToppingSelect;
+			path = EquipmentSelect;
 			sourceTree = "<group>";
 		};
 		4933B7AB2529E3A000BFCCE8 /* Result */ = {
@@ -437,6 +442,15 @@
 			path = customView;
 			sourceTree = "<group>";
 		};
+		4941A84A253A95AD00977604 /* ToppingSelect */ = {
+			isa = PBXGroup;
+			children = (
+				490C1B7025352EF70094C76F /* ToppingSelectViewController.swift */,
+				490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */,
+			);
+			path = ToppingSelect;
+			sourceTree = "<group>";
+		};
 		49B94C2D2529B98300BF6C53 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,7 +467,7 @@
 				43D95F292052723B00FE1117 /* Main.storyboard */,
 				0D815D0722617A2A00B6642E /* Description */,
 				490C1B6725352A360094C76F /* SelectTitleInfo */,
-				490C1B6F25352ED80094C76F /* ToppingSelect */,
+				490C1B6F25352ED80094C76F /* EquipmentSelect */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -650,6 +664,7 @@
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
 				0D815D112261E42D00B6642E /* CloseButton.xib in Resources */,
+				49199F5A253F0A6D00F935D9 /* EquipmentSelectViewController.xib in Resources */,
 				43704C95205304BF00F87562 /* mame.mp3 in Resources */,
 				F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */,
 				49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */,
@@ -715,6 +730,7 @@
 				F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */,
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
 				0DCD56D42348E63F008F7BAA /* Swift+Addition.swift in Sources */,
+				49199F59253F0A6D00F935D9 /* EquipmentSelectViewController.swift in Sources */,
 				0DFD696A2276F2BB000DBD93 /* SKScene+Addition.swift in Sources */,
 				49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */,
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
