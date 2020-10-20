@@ -13,17 +13,21 @@ class EquipmentSelectViewController: UIViewController {
     @IBOutlet weak var closeButton: CloseButton!
     
     private lazy var pagingItem: [UIViewController] = {
-        let firstVC = ToppingSelectViewController()
-        firstVC.title = "トッピング"
+        let toppingVC = ToppingSelectViewController()
+        toppingVC.selectHandler = {
+            self.selectedItems = $0
+        }
+        toppingVC.title = "トッピング"
+        
         let secondVC = ItemSelectViewController()
         secondVC.title = "アイテム"
         let thirdVC = MameSelectViewController()
         thirdVC.title = "豆"
         
-        return [firstVC, secondVC, thirdVC]
+        return [toppingVC, secondVC, thirdVC]
     }()
     
-    private var selectedItems: [Topping] = []
+    var selectedItems: [Topping] = []
     
     var selectItemHandler:(([Topping])->Void)?
 
@@ -44,10 +48,6 @@ class EquipmentSelectViewController: UIViewController {
 
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        selectedItems.append(Negi())
-    }
     @IBAction func dismissAction(_ sender: Any) {
         selectItemHandler?(selectedItems)
         dismiss(animated: false, completion: nil)
