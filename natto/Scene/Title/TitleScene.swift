@@ -113,14 +113,20 @@ class TitleScene: SKScene {
                 self.view!.presentScene(scene)
                 
             } else if touchNode == infoButton {
-                if tutorialButton.isHidden {
-                    tutorialButton.isHidden = false
-                    itemSelectButton.isHidden = false
-                    settingButton.isHidden = false
+                if self.tutorialButton.isHidden {
+                    let action = SKAction.rotate(toAngle: -(.pi / 2), duration: 0.3)
+                    infoButton.run(action) {
+                        self.tutorialButton.isHidden = false
+                        self.itemSelectButton.isHidden = false
+                        self.settingButton.isHidden = false
+                    }
                 } else {
-                    tutorialButton.isHidden = true
-                    itemSelectButton.isHidden = true
-                    settingButton.isHidden = true
+                    let action = SKAction.rotate(toAngle: 0, duration: 0.3)
+                    infoButton.run(action) {
+                        self.tutorialButton.isHidden = true
+                        self.itemSelectButton.isHidden = true
+                        self.settingButton.isHidden = true
+                    }
                 }
             
             } else if touchNode == tutorialButton {
