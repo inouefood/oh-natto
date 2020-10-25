@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToppingSelectViewController" customModule="natto" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="JPe-wv-yJb" id="vFL-Ce-d3k"/>
                 <outlet property="firstToppingImage" destination="0wN-2A-N5A" id="x1U-QE-2Iq"/>
                 <outlet property="resetButton" destination="teN-YZ-sqG" id="K0U-ns-fDH"/>
                 <outlet property="secondToppingImage" destination="CKj-2R-lvX" id="fjr-gL-U9v"/>
@@ -61,18 +62,32 @@
                         <action selector="resetAction:" destination="-1" eventType="touchUpInside" id="zfM-MG-PlS"/>
                     </connections>
                 </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JPe-wv-yJb">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Zr-Sb-e0d">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="JPe-wv-yJb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0Vt-xC-Su1"/>
                 <constraint firstItem="y4O-iu-cpd" firstAttribute="leading" secondItem="CKj-2R-lvX" secondAttribute="trailing" constant="20" id="8nT-hO-E4T"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="teN-YZ-sqG" secondAttribute="bottom" constant="24" id="9QF-8n-qmq"/>
                 <constraint firstItem="teN-YZ-sqG" firstAttribute="top" secondItem="CKj-2R-lvX" secondAttribute="bottom" constant="38" id="E0L-HX-7fm"/>
+                <constraint firstAttribute="trailing" secondItem="JPe-wv-yJb" secondAttribute="trailing" id="Fzr-AZ-eFH"/>
                 <constraint firstItem="teN-YZ-sqG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KbF-3r-vWu"/>
                 <constraint firstItem="CKj-2R-lvX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MJR-j1-mZB"/>
                 <constraint firstItem="teN-YZ-sqG" firstAttribute="top" secondItem="0wN-2A-N5A" secondAttribute="bottom" constant="38" id="SZP-xy-REj"/>
                 <constraint firstItem="CKj-2R-lvX" firstAttribute="leading" secondItem="0wN-2A-N5A" secondAttribute="trailing" constant="20" id="YMs-G7-7AD"/>
+                <constraint firstItem="JPe-wv-yJb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jdL-4m-gel"/>
                 <constraint firstItem="teN-YZ-sqG" firstAttribute="top" secondItem="y4O-iu-cpd" secondAttribute="bottom" constant="38" id="t4B-Um-zXQ"/>
+                <constraint firstItem="JPe-wv-yJb" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="yYM-jB-hBx"/>
             </constraints>
             <point key="canvasLocation" x="-145" y="90"/>
         </view>
