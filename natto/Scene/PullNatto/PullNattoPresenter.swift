@@ -40,7 +40,10 @@ class PullNattoPresenterImpl: PullNattoPresenter {
 
     func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float, dist: Float, index: Int) {
   
-        let distAndObjPos = model.updateNattoPosition(ohashiPos: ohashiPos, ohashiSize: ohashiSize, nattoPos: nattoPos, sticky: sticky)
+        let distAndObjPos = model.updateNattoPosition(ohashiPos: ohashiPos,
+                                                      ohashiSize: ohashiSize,
+                                                      nattoPos: nattoPos,
+                                                      sticky: sticky)
         
         if distAndObjPos.distance < dist {
             output?.showUpdateNatto(objPos: distAndObjPos.objPos, index: index)

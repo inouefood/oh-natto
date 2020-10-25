@@ -12,13 +12,21 @@ import UIKit
 class TitleScene: SKScene {
     var startLabel = SKLabelNode(fontSize: 100,
                                  text: localizeString(key: LocalizeKeys.Title.buttonStart))
+    lazy var infoButton: SKSpriteNode = {
+        let node = SKSpriteNode(imageNamed: "mame-icon")
+        node.size = CGSize(width: 120, height: 120)
+        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 16) - node.size.width,
+                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height)
+        
+        return node
+    }()
     var controlWidth: CGFloat!
+    private var selectedItems:[Topping] = []
     
     // MARK: - Initializer
     
     override init(size: CGSize) {
         super.init(size: size)
-        tutorialButton.isHidden = false
         controlWidth = width / 10
     }
     
@@ -46,6 +54,7 @@ class TitleScene: SKScene {
         startLabel.physicsBody = SKPhysicsBody().make(circleOfRadius: startLabel.frame.maxX, category: 0x1 << 0, contact: 0x1 << 2, isGravity: false)
         startLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY/3)
         self.addChild(startLabel)
+        self.addChild(infoButton)
         
     }
     override func update(_ currentTime: TimeInterval) {
@@ -71,11 +80,19 @@ class TitleScene: SKScene {
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)
             if touchNode == startLabel{
-                tutorialButton.isHidden = true
                 //TODO トッピングで選択されたものを渡せるようにする
-                let scene = MixScene(size: self.size, topping: [])
+                let scene = MixScene(size: self.size, topping: selectedItems)
                 self.view!.presentScene(scene)
-            } else {
+                
+            } else if touchNode == infoButton {
+                
+                let vc = SelectTitleInfoViewController()
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.selectItemHandler = {
+                    self.selectedItems = $0
+                }
+                topViewController()?.present(vc, animated: false, completion: nil)
+            }else {
                 let mame = SKSpriteNode(imageNamed: "mame")
                 mame.size = CGSize(width: (frame.width+frame.height)*0.025, height: (frame.width+frame.height)*0.025)
                 mame.position = location

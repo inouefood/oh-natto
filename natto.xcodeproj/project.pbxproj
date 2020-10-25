@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,12 +48,25 @@
 		490C1B2E25351CC10094C76F /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B2C25351CC10094C76F /* SelectViewController.xib */; };
 		490C1B382535251A0094C76F /* TotalEatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C1B362535251A0094C76F /* TotalEatViewController.swift */; };
 		490C1B392535251A0094C76F /* TotalEatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B372535251A0094C76F /* TotalEatViewController.xib */; };
+		490C1B6A25352A7C0094C76F /* SelectTitleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C1B6825352A7C0094C76F /* SelectTitleInfoViewController.swift */; };
+		490C1B6B25352A7C0094C76F /* SelectTitleInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B6925352A7C0094C76F /* SelectTitleInfoViewController.xib */; };
+		490C1B7225352EF70094C76F /* ToppingSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C1B7025352EF70094C76F /* ToppingSelectViewController.swift */; };
+		490C1B7325352EF70094C76F /* ToppingSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */; };
+		49199F59253F0A6D00F935D9 /* EquipmentSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */; };
+		49199F5A253F0A6D00F935D9 /* EquipmentSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */; };
 		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
 		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
+		4941A843253A053100977604 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 4941A842253A053100977604 /* Parchment */; };
+		496B97912545535000D1D6EB /* ToppingSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */; };
+		496B97922545535000D1D6EB /* ToppingSelectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */; };
 		497D132D2523305F007B1129 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D132C2523305F007B1129 /* DescriptionView.swift */; };
 		497D132F2523306F007B1129 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497D132E2523306F007B1129 /* DescriptionView.xib */; };
 		49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */; };
 		49B94C322529BA2200BF6C53 /* BestScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */; };
+		49D3AB3E253F0D87008422F3 /* MameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3AB3C253F0D87008422F3 /* MameSelectViewController.swift */; };
+		49D3AB3F253F0D87008422F3 /* MameSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D3AB3D253F0D87008422F3 /* MameSelectViewController.xib */; };
+		49D3AB47253F0DD7008422F3 /* ItemSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3AB45253F0DD7008422F3 /* ItemSelectViewController.swift */; };
+		49D3AB48253F0DD7008422F3 /* ItemSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D3AB46253F0DD7008422F3 /* ItemSelectViewController.xib */; };
 		49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCE3253085B000F9C30E /* ShareButton.swift */; };
 		49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CCE9253085D600F9C30E /* ShareButton.xib */; };
 		49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCFA25320F6A00F9C30E /* Topping.swift */; };
@@ -143,12 +156,24 @@
 		490C1B2C25351CC10094C76F /* SelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
 		490C1B362535251A0094C76F /* TotalEatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalEatViewController.swift; sourceTree = "<group>"; };
 		490C1B372535251A0094C76F /* TotalEatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalEatViewController.xib; sourceTree = "<group>"; };
+		490C1B6825352A7C0094C76F /* SelectTitleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTitleInfoViewController.swift; sourceTree = "<group>"; };
+		490C1B6925352A7C0094C76F /* SelectTitleInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectTitleInfoViewController.xib; sourceTree = "<group>"; };
+		490C1B7025352EF70094C76F /* ToppingSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToppingSelectViewController.swift; sourceTree = "<group>"; };
+		490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToppingSelectViewController.xib; sourceTree = "<group>"; };
+		49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSelectViewController.swift; sourceTree = "<group>"; };
+		49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentSelectViewController.xib; sourceTree = "<group>"; };
 		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToppingSelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToppingSelectCollectionViewCell.xib; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		497D132E2523306F007B1129 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
 		49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScoreViewController.swift; sourceTree = "<group>"; };
 		49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestScoreViewController.xib; sourceTree = "<group>"; };
+		49D3AB3C253F0D87008422F3 /* MameSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MameSelectViewController.swift; sourceTree = "<group>"; };
+		49D3AB3D253F0D87008422F3 /* MameSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MameSelectViewController.xib; sourceTree = "<group>"; };
+		49D3AB45253F0DD7008422F3 /* ItemSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectViewController.swift; sourceTree = "<group>"; };
+		49D3AB46253F0DD7008422F3 /* ItemSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemSelectViewController.xib; sourceTree = "<group>"; };
 		49D9CCE3253085B000F9C30E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		49D9CCE9253085D600F9C30E /* ShareButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareButton.xib; sourceTree = "<group>"; };
 		49D9CCFA25320F6A00F9C30E /* Topping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topping.swift; sourceTree = "<group>"; };
@@ -182,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4941A843253A053100977604 /* Parchment in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +397,8 @@
 			children = (
 				490C1B2B25351CC10094C76F /* SelectViewController.swift */,
 				490C1B2C25351CC10094C76F /* SelectViewController.xib */,
+				490C1B35253525050094C76F /* TotalEat */,
+				49D9CD052533054B00F9C30E /* Store */,
 			);
 			path = Select;
 			sourceTree = "<group>";
@@ -384,12 +412,35 @@
 			path = TotalEat;
 			sourceTree = "<group>";
 		};
+		490C1B6725352A360094C76F /* SelectTitleInfo */ = {
+			isa = PBXGroup;
+			children = (
+				490C1B6825352A7C0094C76F /* SelectTitleInfoViewController.swift */,
+				490C1B6925352A7C0094C76F /* SelectTitleInfoViewController.xib */,
+			);
+			path = SelectTitleInfo;
+			sourceTree = "<group>";
+		};
+		490C1B6F25352ED80094C76F /* EquipmentSelect */ = {
+			isa = PBXGroup;
+			children = (
+				49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */,
+				49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */,
+				4941A84A253A95AD00977604 /* ToppingSelect */,
+				49D3AB43253F0D90008422F3 /* MameSelect */,
+				49D3AB44253F0D9F008422F3 /* ItemSelect */,
+			);
+			path = EquipmentSelect;
+			sourceTree = "<group>";
+		};
 		4933B7AB2529E3A000BFCCE8 /* Result */ = {
 			isa = PBXGroup;
 			children = (
 				4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */,
 				4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */,
-				49D9CCE8253085BB00F9C30E /* view */,
+				49D9CCE8253085BB00F9C30E /* customView */,
+				49B94C362529BA2E00BF6C53 /* BestScore */,
+				490C1B2A25351CA40094C76F /* Select */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -405,16 +456,30 @@
 			path = customView;
 			sourceTree = "<group>";
 		};
+		4941A84A253A95AD00977604 /* ToppingSelect */ = {
+			isa = PBXGroup;
+			children = (
+				490C1B7025352EF70094C76F /* ToppingSelectViewController.swift */,
+				490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */,
+				496B978E2545531900D1D6EB /* Cell */,
+			);
+			path = ToppingSelect;
+			sourceTree = "<group>";
+		};
+		496B978E2545531900D1D6EB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */,
+				496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		49B94C2D2529B98300BF6C53 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				49B94C2E2529B98C00BF6C53 /* Main */,
-				0D815D0722617A2A00B6642E /* Description */,
 				4933B7AB2529E3A000BFCCE8 /* Result */,
-				490C1B2A25351CA40094C76F /* Select */,
-				49D9CD052533054B00F9C30E /* Store */,
-				49B94C362529BA2E00BF6C53 /* BestScore */,
-				490C1B35253525050094C76F /* TotalEat */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -424,6 +489,9 @@
 			children = (
 				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
 				43D95F292052723B00FE1117 /* Main.storyboard */,
+				0D815D0722617A2A00B6642E /* Description */,
+				490C1B6725352A360094C76F /* SelectTitleInfo */,
+				490C1B6F25352ED80094C76F /* EquipmentSelect */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -439,13 +507,31 @@
 			path = BestScore;
 			sourceTree = "<group>";
 		};
-		49D9CCE8253085BB00F9C30E /* view */ = {
+		49D3AB43253F0D90008422F3 /* MameSelect */ = {
+			isa = PBXGroup;
+			children = (
+				49D3AB3C253F0D87008422F3 /* MameSelectViewController.swift */,
+				49D3AB3D253F0D87008422F3 /* MameSelectViewController.xib */,
+			);
+			path = MameSelect;
+			sourceTree = "<group>";
+		};
+		49D3AB44253F0D9F008422F3 /* ItemSelect */ = {
+			isa = PBXGroup;
+			children = (
+				49D3AB45253F0DD7008422F3 /* ItemSelectViewController.swift */,
+				49D3AB46253F0DD7008422F3 /* ItemSelectViewController.xib */,
+			);
+			path = ItemSelect;
+			sourceTree = "<group>";
+		};
+		49D9CCE8253085BB00F9C30E /* customView */ = {
 			isa = PBXGroup;
 			children = (
 				49D9CCE3253085B000F9C30E /* ShareButton.swift */,
 				49D9CCE9253085D600F9C30E /* ShareButton.xib */,
 			);
-			path = view;
+			path = customView;
 			sourceTree = "<group>";
 		};
 		49D9CD052533054B00F9C30E /* Store */ = {
@@ -527,6 +613,9 @@
 			dependencies = (
 			);
 			name = natto;
+			packageProductDependencies = (
+				4941A842253A053100977604 /* Parchment */,
+			);
 			productName = natto;
 			productReference = 43D95F1C2052723B00FE1117 /* natto.app */;
 			productType = "com.apple.product-type.application";
@@ -568,6 +657,9 @@
 				ja,
 			);
 			mainGroup = 43D95F132052723B00FE1117;
+			packageReferences = (
+				4941A841253A053100977604 /* XCRemoteSwiftPackageReference "Parchment" */,
+			);
 			productRefGroup = 43D95F1D2052723B00FE1117 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -601,17 +693,23 @@
 				43D95F2B2052723B00FE1117 /* Main.storyboard in Resources */,
 				490C1B2E25351CC10094C76F /* SelectViewController.xib in Resources */,
 				057D3EC92330666A00712E5D /* Contiffi.scnp in Resources */,
+				490C1B6B25352A7C0094C76F /* SelectTitleInfoViewController.xib in Resources */,
+				496B97922545535000D1D6EB /* ToppingSelectCollectionViewCell.xib in Resources */,
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				497D132F2523306F007B1129 /* DescriptionView.xib in Resources */,
 				4343CEB12053AB86002CA3BC /* paku.wav in Resources */,
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
+				490C1B7325352EF70094C76F /* ToppingSelectViewController.xib in Resources */,
 				057D3EC82330666A00712E5D /* confetti.png in Resources */,
+				49D3AB3F253F0D87008422F3 /* MameSelectViewController.xib in Resources */,
 				4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */,
 				49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */,
 				0D048FC42277FCE500852FFA /* Settings.bundle in Resources */,
+				49D3AB48253F0DD7008422F3 /* ItemSelectViewController.xib in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
 				0D815D112261E42D00B6642E /* CloseButton.xib in Resources */,
+				49199F5A253F0A6D00F935D9 /* EquipmentSelectViewController.xib in Resources */,
 				43704C95205304BF00F87562 /* mame.mp3 in Resources */,
 				F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */,
 				49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */,
@@ -653,6 +751,7 @@
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */,
 				F346A9CA226A403E00A051FC /* SKShapeNode+Addition.swift in Sources */,
+				49D3AB47253F0DD7008422F3 /* ItemSelectViewController.swift in Sources */,
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
 				43D95F262052723B00FE1117 /* TitleScene.swift in Sources */,
 				0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */,
@@ -660,6 +759,7 @@
 				49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */,
 				054E493722D2DF4F0062736D /* UIViewController+Addition.swift in Sources */,
 				054E493322D2D9C00062736D /* AppVersionCompare.swift in Sources */,
+				49D3AB3E253F0D87008422F3 /* MameSelectViewController.swift in Sources */,
 				490C1B382535251A0094C76F /* TotalEatViewController.swift in Sources */,
 				0DCD56D82348E72E008F7BAA /* LocalizeKey.swift in Sources */,
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
@@ -668,13 +768,17 @@
 				0DFEF9CB226362090061167A /* Constant.swift in Sources */,
 				43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */,
 				0DFEF9C122623BF50061167A /* ObjectPosition.swift in Sources */,
+				496B97912545535000D1D6EB /* ToppingSelectCollectionViewCell.swift in Sources */,
 				0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */,
+				490C1B6A25352A7C0094C76F /* SelectTitleInfoViewController.swift in Sources */,
+				490C1B7225352EF70094C76F /* ToppingSelectViewController.swift in Sources */,
 				0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */,
 				054E493522D2DD680062736D /* UIApplication+Addition.swift in Sources */,
 				0DE54C61225F8F2C00006ED4 /* NattoViewController.swift in Sources */,
 				F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */,
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
 				0DCD56D42348E63F008F7BAA /* Swift+Addition.swift in Sources */,
+				49199F59253F0A6D00F935D9 /* EquipmentSelectViewController.swift in Sources */,
 				0DFD696A2276F2BB000DBD93 /* SKScene+Addition.swift in Sources */,
 				49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */,
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
@@ -738,7 +842,11 @@
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = nattoUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.masala.nattoUITests;
@@ -757,7 +865,11 @@
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = nattoUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.masala.nattoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -776,7 +888,11 @@
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = nattoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.masala.nattoTests;
@@ -796,7 +912,11 @@
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = nattoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.masala.nattoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -914,7 +1034,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -933,7 +1054,10 @@
 				);
 				INFOPLIST_FILE = natto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "inoueFood.oh-natto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -957,7 +1081,10 @@
 				);
 				INFOPLIST_FILE = natto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "inoueFood.oh-natto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1007,6 +1134,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4941A841253A053100977604 /* XCRemoteSwiftPackageReference "Parchment" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rechsteiner/Parchment";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4941A842253A053100977604 /* Parchment */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4941A841253A053100977604 /* XCRemoteSwiftPackageReference "Parchment" */;
+			productName = Parchment;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43D95F142052723B00FE1117 /* Project object */;
 }

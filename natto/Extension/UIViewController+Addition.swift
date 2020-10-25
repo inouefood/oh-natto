@@ -54,4 +54,14 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func showInformation(message: String, closeButtonText: String, handler: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        let close: UIAlertAction = UIAlertAction(title: closeButtonText, style: .default, handler: { _ in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        alert.addAction(close)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }

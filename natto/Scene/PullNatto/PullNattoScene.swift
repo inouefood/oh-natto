@@ -24,7 +24,10 @@ class PullNattoScene: SKScene{
                                                  isGravity: true)
             let natto = SKSpriteNode(image: "mame",
                                      pos: CGPoint(x: randX, y: randY/4),
-                                     body: nattoBody, rotate: r, size: CGSize(width: screenSmallSide/17, height: screenSmallSide/17))
+                                     body: nattoBody,
+                                     rotate: r,
+                                     size: CGSize(width: screenSmallSide/17,
+                                                  height: screenSmallSide/17))
             sprites.append(natto)
         }
         
@@ -126,6 +129,7 @@ class PullNattoScene: SKScene{
     }
     
     private func createToppingItem() {
+        
         topping?.forEach{topping in
             
             let screenSmallSide = width > height ? height : width
@@ -149,8 +153,6 @@ class PullNattoScene: SKScene{
                 let r = CGFloat(arc4random_uniform(UInt32(2.0 * Double.pi)))
                 
                 let itemBody = SKPhysicsBody().make(circleOfRadius: bodyRadius,
-                                                     category: Constant.CollisionBody.topping,
-                                                     contact: Constant.CollisionBody.ohashi,
                                                      isGravity: true)
                 let item = SKSpriteNode(image: topping.imageName,
                                          pos: CGPoint(x: randX, y: randY/4),
