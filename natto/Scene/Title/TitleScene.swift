@@ -145,13 +145,24 @@ class TitleScene: SKScene {
                 //TODO
                 
             } else {
-                let mame = SKSpriteNode(imageNamed: "mame")
-                mame.size = CGSize(width: (frame.width+frame.height)*0.025, height: (frame.width+frame.height)*0.025)
-                mame.position = location
-                mame.physicsBody = SKPhysicsBody().make(rectangleOf: mame.size, category: 0x1 << 1, contact: 0x1 << 0, isGravity: true)
-                self.addChild(mame)
+                let sprite: SKSpriteNode!
+                let randomCount = Int.random(in: 0...3)
+                
+                if selectedItems.isEmpty {
+                    sprite = SKSpriteNode(imageNamed: "mame")
+                } else {
+                    if randomCount != 0 {
+                        sprite = SKSpriteNode(imageNamed: "mame")
+                    } else {
+                        sprite = SKSpriteNode(imageNamed:selectedItems.randomElement()!.imageName)
+                    }
+                }
+                
+                sprite.size = CGSize(width: (frame.width+frame.height)*0.025, height: (frame.width+frame.height)*0.025)
+                sprite.position = location
+                sprite.physicsBody = SKPhysicsBody().make(rectangleOf: sprite.size, category: 0x1 << 1, contact: 0x1 << 0, isGravity: true)
+                self.addChild(sprite)
             }
         }
     }
 }
-
