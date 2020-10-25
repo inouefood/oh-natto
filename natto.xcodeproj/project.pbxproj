@@ -57,6 +57,8 @@
 		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
 		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
 		4941A843253A053100977604 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 4941A842253A053100977604 /* Parchment */; };
+		496B97912545535000D1D6EB /* ToppingSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */; };
+		496B97922545535000D1D6EB /* ToppingSelectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */; };
 		497D132D2523305F007B1129 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D132C2523305F007B1129 /* DescriptionView.swift */; };
 		497D132F2523306F007B1129 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497D132E2523306F007B1129 /* DescriptionView.xib */; };
 		49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */; };
@@ -162,6 +164,8 @@
 		49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentSelectViewController.xib; sourceTree = "<group>"; };
 		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToppingSelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToppingSelectCollectionViewCell.xib; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		497D132E2523306F007B1129 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
 		49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScoreViewController.swift; sourceTree = "<group>"; };
@@ -457,8 +461,18 @@
 			children = (
 				490C1B7025352EF70094C76F /* ToppingSelectViewController.swift */,
 				490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */,
+				496B978E2545531900D1D6EB /* Cell */,
 			);
 			path = ToppingSelect;
+			sourceTree = "<group>";
+		};
+		496B978E2545531900D1D6EB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */,
+				496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		49B94C2D2529B98300BF6C53 /* View */ = {
@@ -680,6 +694,7 @@
 				490C1B2E25351CC10094C76F /* SelectViewController.xib in Resources */,
 				057D3EC92330666A00712E5D /* Contiffi.scnp in Resources */,
 				490C1B6B25352A7C0094C76F /* SelectTitleInfoViewController.xib in Resources */,
+				496B97922545535000D1D6EB /* ToppingSelectCollectionViewCell.xib in Resources */,
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				497D132F2523306F007B1129 /* DescriptionView.xib in Resources */,
 				4343CEB12053AB86002CA3BC /* paku.wav in Resources */,
@@ -753,6 +768,7 @@
 				0DFEF9CB226362090061167A /* Constant.swift in Sources */,
 				43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */,
 				0DFEF9C122623BF50061167A /* ObjectPosition.swift in Sources */,
+				496B97912545535000D1D6EB /* ToppingSelectCollectionViewCell.swift in Sources */,
 				0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */,
 				490C1B6A25352A7C0094C76F /* SelectTitleInfoViewController.swift in Sources */,
 				490C1B7225352EF70094C76F /* ToppingSelectViewController.swift in Sources */,

@@ -14,6 +14,7 @@ class ToppingSelectViewController: UIViewController {
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+            collectionView.register(UINib(nibName: "ToppingSelectCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ToppingSelectCollectionViewCell")
             
             
             let layout = UICollectionViewFlowLayout()
@@ -79,12 +80,11 @@ class ToppingSelectViewController: UIViewController {
 
 extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 18 // 表示するセルの数
+            return 4
     }
         
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) // 表示するセルを登録(先程命名した"Cell")
-        cell.backgroundColor = .red  // セルの色
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ToppingSelectCollectionViewCell", for: indexPath)
         return cell
     }
     
