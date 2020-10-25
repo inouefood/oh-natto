@@ -33,9 +33,15 @@ class ToppingSelectViewController: UIViewController {
     @IBOutlet weak var secondToppingImage: UIImageView!
     @IBOutlet weak var thirdToppingImage: UIImageView!
     
+    var decisionAction: (()->())?
+    
+    @IBOutlet weak var decisionButton: UIButton! {
+        didSet {
+            decisionButton.setTitle("けってい", for: .normal)
+        }
+    }
     @IBOutlet weak var resetButton: UIButton! {
         didSet {
-            resetButton.layer.cornerRadius = 6
             resetButton.setTitle("リセット", for: .normal)
         }
     }
@@ -47,22 +53,8 @@ class ToppingSelectViewController: UIViewController {
         self.view.backgroundColor = .orange
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        //TODO ここで選択されたものを表示するようにする
-        if firstToppingImage.image == nil {
-            selectTopping.append(Negi())
-            firstToppingImage.image = UIImage(named: "negi")
-        } else if secondToppingImage.image == nil {
-            selectTopping.append(Negi())
-            secondToppingImage.image = UIImage(named: "negi")
-        } else {
-            selectTopping.append(Negi())
-            thirdToppingImage.image = UIImage(named: "negi")
-        }
-        selectHandler?(selectTopping)
-
+    @IBAction func decisionAction(_ sender: Any) {
+        decisionAction?()
     }
     
     @IBAction func resetAction(_ sender: Any) {
@@ -97,28 +89,44 @@ extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionV
         if firstToppingImage.image == nil {
             if indexPath.row == 0 {
                 firstToppingImage.image = mockTopping[indexPath.row].image
+                //TODO ここがべた書きになってしまっているのでcellから取得して良い感じに判定できるようにする
+                selectTopping.append(Negi())
             } else if indexPath.row == 1 {
                 firstToppingImage.image = mockTopping[indexPath.row].image
+                selectTopping.append(Okura())
             } else {
                 firstToppingImage.image = mockTopping[indexPath.row].image
+                selectTopping.append(Sirasu())
             }
+            selectHandler?(selectTopping)
             
         } else if thirdToppingImage.image == nil {
             if indexPath.row == 0 {
                 thirdToppingImage.image = mockTopping[indexPath.row].image
+                selectTopping.append(Negi())
             } else if indexPath.row == 1 {
                 thirdToppingImage.image = mockTopping[indexPath.row].image
+                selectTopping.append(Okura())
             } else {
                 thirdToppingImage.image = mockTopping[indexPath.row].image
+                selectTopping.append(Sirasu())
             }
+            selectHandler?(selectTopping)
         } else if secondToppingImage.image == nil {
             if indexPath.row == 0 {
                 secondToppingImage.image = mockTopping[indexPath.row].image
+                selectTopping.append(Negi())
             } else if indexPath.row == 1 {
                 secondToppingImage.image = mockTopping[indexPath.row].image
+                selectTopping.append(Okura())
             } else {
                 secondToppingImage.image = mockTopping[indexPath.row].image
+                selectTopping.append(Sirasu())
             }
+            selectHandler?(selectTopping)
+        } else {
+            showInformation(message: "トッピングは3個まで使用することができます",
+                            closeButtonText: localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))
         }
     }
 }

@@ -17,6 +17,10 @@ class EquipmentSelectViewController: UIViewController {
         toppingVC.selectHandler = {
             self.selectedItems = $0
         }
+        toppingVC.decisionAction = {
+            self.selectItemHandler?(self.selectedItems)
+            self.dismiss(animated: true, completion: nil)
+        }
         toppingVC.title = "トッピング"
         
         let secondVC = ItemSelectViewController()
