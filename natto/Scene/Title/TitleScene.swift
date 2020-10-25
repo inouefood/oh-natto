@@ -31,7 +31,7 @@ class TitleScene: SKScene {
     }()
     
     lazy var itemSelectButton: SKSpriteNode = {
-        let node = SKSpriteNode(imageNamed: "mame-icon")
+        let node = SKSpriteNode(imageNamed: "equipmentIcon")
         node.size = CGSize(width: 70, height: 70)
         node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 10) - node.size.width - 30,
                                 y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 250)
@@ -130,11 +130,10 @@ class TitleScene: SKScene {
                 
             } else if touchNode == itemSelectButton {
                 let vc = EquipmentSelectViewController()
-                vc.modalPresentationStyle = .overCurrentContext
                 vc.selectItemHandler = {
                     self.selectedItems = $0
                 }
-                topViewController()?.present(vc, animated: false, completion: nil)
+                topViewController()?.present(vc, animated: true, completion: nil)
                 
             }else if touchNode == settingButton {
                 //TODO

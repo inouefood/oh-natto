@@ -54,7 +54,7 @@ class EquipmentSelectViewController: UIViewController {
     
     @IBAction func dismissAction(_ sender: Any) {
         selectItemHandler?(selectedItems)
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
 
     }
     
