@@ -31,6 +31,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="866-OV-KOf" secondAttribute="trailing" constant="8" id="05O-vO-JDx"/>
                             <constraint firstAttribute="bottom" secondItem="866-OV-KOf" secondAttribute="bottom" constant="8" id="BaD-sf-kMa"/>

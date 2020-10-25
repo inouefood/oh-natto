@@ -24,30 +24,50 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CKj-2R-lvX">
-                    <rect key="frame" x="187" y="724" width="40" height="40"/>
-                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9z-YB-aQ5">
+                    <rect key="frame" x="0.0" y="448" width="414" height="448"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mame" translatesAutoresizingMaskIntoConstraints="NO" id="ZNg-3u-RYP">
+                            <rect key="frame" x="64" y="8" width="286" height="338"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0wN-2A-N5A">
+                            <rect key="frame" x="74" y="38" width="40" height="40"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="4Me-JB-p0p"/>
+                                <constraint firstAttribute="height" constant="40" id="5S9-h3-Vjn"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CKj-2R-lvX">
+                            <rect key="frame" x="64" y="296" width="40" height="40"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="O70-R9-evi"/>
+                                <constraint firstAttribute="height" constant="40" id="g6r-rb-zII"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y4O-iu-cpd">
+                            <rect key="frame" x="310" y="157" width="40" height="40"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="6iZ-oM-pfY"/>
+                                <constraint firstAttribute="width" constant="40" id="pmF-kb-Kzf"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="It1-jn-fPx"/>
-                        <constraint firstAttribute="height" constant="40" id="OfC-w0-mbm"/>
+                        <constraint firstItem="ZNg-3u-RYP" firstAttribute="leading" secondItem="U9z-YB-aQ5" secondAttribute="leading" constant="64" id="1TD-ck-eLz"/>
+                        <constraint firstItem="ZNg-3u-RYP" firstAttribute="leading" secondItem="0wN-2A-N5A" secondAttribute="trailing" constant="-50" id="2q3-ue-qrz"/>
+                        <constraint firstItem="y4O-iu-cpd" firstAttribute="centerY" secondItem="ZNg-3u-RYP" secondAttribute="centerY" id="4Z4-Mk-D7M"/>
+                        <constraint firstItem="ZNg-3u-RYP" firstAttribute="top" secondItem="U9z-YB-aQ5" secondAttribute="top" constant="8" id="9hp-33-KzJ"/>
+                        <constraint firstItem="ZNg-3u-RYP" firstAttribute="leading" secondItem="CKj-2R-lvX" secondAttribute="trailing" constant="-40" id="Gg9-XO-bVf"/>
+                        <constraint firstAttribute="trailing" secondItem="ZNg-3u-RYP" secondAttribute="trailing" constant="64" id="N0r-Rk-Q07"/>
+                        <constraint firstItem="CKj-2R-lvX" firstAttribute="top" secondItem="ZNg-3u-RYP" secondAttribute="bottom" constant="-50" id="RgI-Zo-xa3"/>
+                        <constraint firstItem="y4O-iu-cpd" firstAttribute="leading" secondItem="ZNg-3u-RYP" secondAttribute="trailing" constant="-40" id="VbR-bs-NQG"/>
+                        <constraint firstItem="0wN-2A-N5A" firstAttribute="firstBaseline" secondItem="ZNg-3u-RYP" secondAttribute="firstBaseline" constant="30" id="Znt-O4-VEC"/>
                     </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0wN-2A-N5A">
-                    <rect key="frame" x="127" y="724" width="40" height="40"/>
-                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="5ej-0O-RNQ"/>
-                        <constraint firstAttribute="width" constant="40" id="Zbq-Ns-nXM"/>
-                    </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y4O-iu-cpd">
-                    <rect key="frame" x="247" y="724" width="40" height="40"/>
-                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="6iZ-oM-pfY"/>
-                        <constraint firstAttribute="width" constant="40" id="pmF-kb-Kzf"/>
-                    </constraints>
-                </imageView>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teN-YZ-sqG">
                     <rect key="frame" x="107" y="802" width="200" height="36"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,22 +97,22 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="JPe-wv-yJb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0Vt-xC-Su1"/>
-                <constraint firstItem="y4O-iu-cpd" firstAttribute="leading" secondItem="CKj-2R-lvX" secondAttribute="trailing" constant="20" id="8nT-hO-E4T"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="teN-YZ-sqG" secondAttribute="bottom" constant="24" id="9QF-8n-qmq"/>
-                <constraint firstItem="teN-YZ-sqG" firstAttribute="top" secondItem="CKj-2R-lvX" secondAttribute="bottom" constant="38" id="E0L-HX-7fm"/>
                 <constraint firstAttribute="trailing" secondItem="JPe-wv-yJb" secondAttribute="trailing" id="Fzr-AZ-eFH"/>
+                <constraint firstAttribute="bottom" secondItem="U9z-YB-aQ5" secondAttribute="bottom" id="IxZ-zL-u5g"/>
+                <constraint firstItem="U9z-YB-aQ5" firstAttribute="top" secondItem="JPe-wv-yJb" secondAttribute="bottom" id="JMj-yG-jWh"/>
                 <constraint firstItem="teN-YZ-sqG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KbF-3r-vWu"/>
-                <constraint firstItem="CKj-2R-lvX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MJR-j1-mZB"/>
-                <constraint firstItem="teN-YZ-sqG" firstAttribute="top" secondItem="0wN-2A-N5A" secondAttribute="bottom" constant="38" id="SZP-xy-REj"/>
-                <constraint firstItem="CKj-2R-lvX" firstAttribute="leading" secondItem="0wN-2A-N5A" secondAttribute="trailing" constant="20" id="YMs-G7-7AD"/>
+                <constraint firstItem="U9z-YB-aQ5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PT3-Ve-Pyg"/>
+                <constraint firstItem="teN-YZ-sqG" firstAttribute="top" secondItem="ZNg-3u-RYP" secondAttribute="bottom" constant="8" id="VxN-pb-xKy"/>
+                <constraint firstItem="U9z-YB-aQ5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aA4-ba-MXf"/>
                 <constraint firstItem="JPe-wv-yJb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jdL-4m-gel"/>
-                <constraint firstItem="teN-YZ-sqG" firstAttribute="top" secondItem="y4O-iu-cpd" secondAttribute="bottom" constant="38" id="t4B-Um-zXQ"/>
                 <constraint firstItem="JPe-wv-yJb" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="yYM-jB-hBx"/>
             </constraints>
-            <point key="canvasLocation" x="-145" y="90"/>
+            <point key="canvasLocation" x="-146.37681159420291" y="89.732142857142847"/>
         </view>
     </objects>
     <resources>
+        <image name="mame" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -44,7 +44,7 @@ class EquipmentSelectViewController: UIViewController {
         pagingViewController.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         pagingViewController.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         pagingViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        pagingViewController.view.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 16).isActive = true
+        pagingViewController.view.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 0).isActive = true
 
     }
     

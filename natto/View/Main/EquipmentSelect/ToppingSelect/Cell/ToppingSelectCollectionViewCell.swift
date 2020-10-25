@@ -9,6 +9,20 @@
 import UIKit
 
 class ToppingSelectCollectionViewCell: UICollectionViewCell {
+    struct ViewModel {
+        var image: UIImage
+        var count: Int
+    }
+    
+    var viewModel: ViewModel? {
+        didSet {
+            guard let viewModel = viewModel else {
+                return
+            }
+            toppingCountLabel.text = viewModel.count.description
+            toppingImage.image = viewModel.image
+        }
+    }
 
     @IBOutlet weak var toppingCountLabel: UILabel!
     @IBOutlet weak var toppingImageBaseView: UIView!
@@ -16,7 +30,6 @@ class ToppingSelectCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
-
+    
 }
