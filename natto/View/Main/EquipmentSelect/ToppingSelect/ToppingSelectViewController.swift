@@ -86,8 +86,17 @@ extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //TODO 選択された際にセルのカウント情報を書き換える
+        let cell = collectionView.cellForItem(at: indexPath) as! ToppingSelectCollectionViewCell
+        let count = Int(cell.toppingCountLabel.text!)! - 1
+        if count < 0 {
+            showInformation(message: "アイテムが足りません",
+                            closeButtonText: localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))
+            return
+        }
+        cell.toppingCountLabel.text = count.description
         
         if firstToppingImage.image == nil {
+            
             firstToppingImage.image = mockTopping[indexPath.row].image
             selectTopping.append(mockTopping[indexPath.row].instance)
             selectHandler?(selectTopping)
