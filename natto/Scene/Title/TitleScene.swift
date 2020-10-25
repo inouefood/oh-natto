@@ -12,6 +12,7 @@ import UIKit
 class TitleScene: SKScene {
     var startLabel = SKLabelNode(fontSize: 100,
                                  text: localizeString(key: LocalizeKeys.Title.buttonStart))
+    
     lazy var infoButton: SKSpriteNode = {
         let node = SKSpriteNode(imageNamed: "mame-icon")
         node.size = CGSize(width: 120, height: 120)
@@ -20,6 +21,33 @@ class TitleScene: SKScene {
         
         return node
     }()
+    lazy var tutorialButton: SKSpriteNode = {
+        let node = SKSpriteNode(imageNamed: "mame-icon")
+        node.size = CGSize(width: 70, height: 70)
+        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 16) - node.size.width - 50,
+                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 180)
+        node.isHidden = true
+        return node
+    }()
+    
+    lazy var itemSelectButton: SKSpriteNode = {
+        let node = SKSpriteNode(imageNamed: "mame-icon")
+        node.size = CGSize(width: 70, height: 70)
+        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 16) - node.size.width - 50,
+                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 280)
+        node.isHidden = true
+        return node
+    }()
+    
+    lazy var settingButton: SKSpriteNode = {
+        let node = SKSpriteNode(imageNamed: "mame-icon")
+        node.size = CGSize(width: 70, height: 70)
+        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 16) - node.size.width - 50,
+                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 380)
+        node.isHidden = true
+        return node
+    }()
+    
     var controlWidth: CGFloat!
     private var selectedItems:[Topping] = []
     
@@ -53,10 +81,10 @@ class TitleScene: SKScene {
         startLabel.physicsBody = SKPhysicsBody(circleOfRadius: startLabel.frame.maxX)
         startLabel.physicsBody = SKPhysicsBody().make(circleOfRadius: startLabel.frame.maxX, category: 0x1 << 0, contact: 0x1 << 2, isGravity: false)
         startLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY/3)
-        self.addChild(startLabel)
-        self.addChild(infoButton)
         
+        self.addChild(startLabel, infoButton, tutorialButton, itemSelectButton, settingButton)
     }
+    
     override func update(_ currentTime: TimeInterval) {
         if startLabel.position.y < height/30 + startLabel.frame.height/2{
             startLabel.position.y = height/30 + startLabel.frame.height/2
@@ -86,13 +114,38 @@ class TitleScene: SKScene {
                 
             } else if touchNode == infoButton {
                 
-                let vc = SelectTitleInfoViewController()
+                if tutorialButton.isHidden {
+                    tutorialButton.isHidden = false
+                    itemSelectButton.isHidden = false
+                    settingButton.isHidden = false
+                } else {
+                    tutorialButton.isHidden = true
+                    itemSelectButton.isHidden = true
+                    settingButton.isHidden = true
+                }
+                
+//                let vc = SelectTitleInfoViewController()
+//                vc.modalPresentationStyle = .overCurrentContext
+//                vc.selectItemHandler = {
+//                    self.selectedItems = $0
+//                }
+//                topViewController()?.present(vc, animated: false, completion: nil)
+            } else if touchNode == tutorialButton {
+                let vc = DescriptionViewController()
+                vc.modalPresentationStyle = .overCurrentContext
+                topViewController()?.present(vc, animated: true, completion: nil)
+                
+            } else if touchNode == itemSelectButton {
+                let vc = EquipmentSelectViewController()
                 vc.modalPresentationStyle = .overCurrentContext
                 vc.selectItemHandler = {
                     self.selectedItems = $0
                 }
                 topViewController()?.present(vc, animated: false, completion: nil)
-            }else {
+                
+            }else if touchNode == settingButton {
+                //TODO
+            } else {
                 let mame = SKSpriteNode(imageNamed: "mame")
                 mame.size = CGSize(width: (frame.width+frame.height)*0.025, height: (frame.width+frame.height)*0.025)
                 mame.position = location
