@@ -14,18 +14,18 @@ class TitleScene: SKScene {
                                  text: localizeString(key: LocalizeKeys.Title.buttonStart))
     
     lazy var infoButton: SKSpriteNode = {
-        let node = SKSpriteNode(imageNamed: "mame-icon")
-        node.size = CGSize(width: 120, height: 120)
-        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 16) - node.size.width,
+        let node = SKSpriteNode(imageNamed: "infoIcon")
+        node.size = CGSize(width: 100, height: 100)
+        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 10) - node.size.width,
                                 y: ((self.view!.frame.height) * 2 - 16) - node.size.height)
         
         return node
     }()
     lazy var tutorialButton: SKSpriteNode = {
-        let node = SKSpriteNode(imageNamed: "mame-icon")
+        let node = SKSpriteNode(imageNamed: "tutorialIcon")
         node.size = CGSize(width: 70, height: 70)
-        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 16) - node.size.width - 50,
-                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 180)
+        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 10) - node.size.width - 30,
+                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 150)
         node.isHidden = true
         return node
     }()
@@ -33,17 +33,17 @@ class TitleScene: SKScene {
     lazy var itemSelectButton: SKSpriteNode = {
         let node = SKSpriteNode(imageNamed: "mame-icon")
         node.size = CGSize(width: 70, height: 70)
-        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 16) - node.size.width - 50,
-                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 280)
+        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 10) - node.size.width - 30,
+                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 250)
         node.isHidden = true
         return node
     }()
     
     lazy var settingButton: SKSpriteNode = {
-        let node = SKSpriteNode(imageNamed: "mame-icon")
+        let node = SKSpriteNode(imageNamed: "settingIcon")
         node.size = CGSize(width: 70, height: 70)
-        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 16) - node.size.width - 50,
-                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 380)
+        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 10) - node.size.width - 30,
+                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 350)
         node.isHidden = true
         return node
     }()
@@ -113,7 +113,6 @@ class TitleScene: SKScene {
                 self.view!.presentScene(scene)
                 
             } else if touchNode == infoButton {
-                
                 if tutorialButton.isHidden {
                     tutorialButton.isHidden = false
                     itemSelectButton.isHidden = false
@@ -139,6 +138,7 @@ class TitleScene: SKScene {
                 
             }else if touchNode == settingButton {
                 //TODO
+                
             } else {
                 let mame = SKSpriteNode(imageNamed: "mame")
                 mame.size = CGSize(width: (frame.width+frame.height)*0.025, height: (frame.width+frame.height)*0.025)
