@@ -123,13 +123,7 @@ class TitleScene: SKScene {
                     itemSelectButton.isHidden = true
                     settingButton.isHidden = true
                 }
-                
-//                let vc = SelectTitleInfoViewController()
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.selectItemHandler = {
-//                    self.selectedItems = $0
-//                }
-//                topViewController()?.present(vc, animated: false, completion: nil)
+            
             } else if touchNode == tutorialButton {
                 let vc = DescriptionViewController()
                 vc.modalPresentationStyle = .overCurrentContext
