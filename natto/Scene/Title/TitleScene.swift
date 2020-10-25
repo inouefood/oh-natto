@@ -34,9 +34,10 @@ class TitleScene: SKScene {
         
         for _ in 0...3 {
             let mame = SKSpriteNode(imageNamed: "mame")
+            mame.size = CGSize(width: (frame.width+frame.height)*0.025, height: (frame.width+frame.height)*0.025)
             mame.position = CGPoint(x:CGFloat(Int.random(in: 100...Int(self.frame.width))-100),
                                     y: CGFloat(Int.random(in: Int(self.frame.height)...Int(self.frame.height+100 ))))
-             mame.physicsBody = SKPhysicsBody().make(rectangleOf: mame.size, category: 0x1 << 1, contact: 0x1 << 0, isGravity: true)
+            mame.physicsBody = SKPhysicsBody().make(rectangleOf: mame.size, category: 0x1 << 1, contact: 0x1 << 0, isGravity: true)
             self.addChild(mame)
         }
         
@@ -76,6 +77,7 @@ class TitleScene: SKScene {
                 self.view!.presentScene(scene)
             } else {
                 let mame = SKSpriteNode(imageNamed: "mame")
+                mame.size = CGSize(width: (frame.width+frame.height)*0.025, height: (frame.width+frame.height)*0.025)
                 mame.position = location
                 mame.physicsBody = SKPhysicsBody().make(rectangleOf: mame.size, category: 0x1 << 1, contact: 0x1 << 0, isGravity: true)
                 self.addChild(mame)
