@@ -54,6 +54,8 @@
 		49199F5A253F0A6D00F935D9 /* EquipmentSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */; };
 		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
 		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
+		493B410F2546FBF700F26C4F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B410D2546FBF700F26C4F /* SettingViewController.swift */; };
+		493B41102546FBF700F26C4F /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493B410E2546FBF700F26C4F /* SettingViewController.xib */; };
 		4941A843253A053100977604 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 4941A842253A053100977604 /* Parchment */; };
 		496B97912545535000D1D6EB /* ToppingSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */; };
 		496B97922545535000D1D6EB /* ToppingSelectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */; };
@@ -160,6 +162,8 @@
 		49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentSelectViewController.xib; sourceTree = "<group>"; };
 		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		493B410D2546FBF700F26C4F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		493B410E2546FBF700F26C4F /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToppingSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToppingSelectCollectionViewCell.xib; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
@@ -443,6 +447,15 @@
 			path = customView;
 			sourceTree = "<group>";
 		};
+		493B410C2546FBE200F26C4F /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				493B410D2546FBF700F26C4F /* SettingViewController.swift */,
+				493B410E2546FBF700F26C4F /* SettingViewController.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		4941A84A253A95AD00977604 /* ToppingSelect */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +487,7 @@
 		49B94C2E2529B98C00BF6C53 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				493B410C2546FBE200F26C4F /* Setting */,
 				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
 				43D95F292052723B00FE1117 /* Main.storyboard */,
 				0D815D0722617A2A00B6642E /* Description */,
@@ -683,6 +697,7 @@
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				497D132F2523306F007B1129 /* DescriptionView.xib in Resources */,
 				4343CEB12053AB86002CA3BC /* paku.wav in Resources */,
+				493B41102546FBF700F26C4F /* SettingViewController.xib in Resources */,
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
 				490C1B7325352EF70094C76F /* ToppingSelectViewController.xib in Resources */,
 				057D3EC82330666A00712E5D /* confetti.png in Resources */,
@@ -767,6 +782,7 @@
 				49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */,
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
 				4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */,
+				493B410F2546FBF700F26C4F /* SettingViewController.swift in Sources */,
 				F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */,
 				49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */,
 			);
