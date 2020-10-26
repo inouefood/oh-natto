@@ -9,13 +9,14 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-    let settingArr = ["端末の振動", "プライバシーポリシー", "レビュー", "プッシュ通知"]
+    let settingArr = ["端末の振動", "プライバシーポリシー", "レビュー", "プッシュ通知", "バージョン"]
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
             tableView.register(cellType: SettingTableViewCell.self)
+            tableView.register(cellType: AppVersionTableViewCell.self)
         }
     }
     override func viewDidLoad() {
@@ -40,9 +41,28 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
-        cell.label.text = settingArr[indexPath.row]
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
+            cell.label.text = settingArr[indexPath.row]
+            cell.selectionStyle = .none
+            return cell
+        } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
+            cell.label.text = settingArr[indexPath.row]
+            return cell
+        } else if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
+            cell.label.text = settingArr[indexPath.row]
+            return cell
+        } else if indexPath.row == 3 {
+            let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
+            cell.label.text = settingArr[indexPath.row]
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(with: AppVersionTableViewCell.self, for: indexPath)
+            cell.selectionStyle = .none
+            return cell
+        }
     }
     
 }
