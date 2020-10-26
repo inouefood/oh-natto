@@ -36,7 +36,9 @@ class NattoViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         let size = CGSize(width: skView.bounds.size.width*2, height: skView.bounds.size.height*2)
         let scene = TitleScene(size: size)
+        
         skView.presentScene(scene)
+        
         
     }
     override func viewDidAppear(_ animated: Bool) {
