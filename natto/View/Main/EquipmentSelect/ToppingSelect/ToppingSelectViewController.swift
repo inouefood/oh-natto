@@ -11,9 +11,9 @@ import UIKit
 class ToppingSelectViewController: UIViewController {
     //TODO 本番用のアイテムを入れる
     let mockTopping = [
-        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "negi")!, count: 3),
-        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "okura")!, count: 3),
-                                                  ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "sirasu")!, count: 3)]
+        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "negi")!, count: 3,  instance: Negi()),
+        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "okura")!, count: 3, instance: Okura()),
+        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "sirasu")!, count: 3, instance: Sirasu())]
     
     
     @IBOutlet weak var collectionView: UICollectionView! {
@@ -86,44 +86,31 @@ extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //TODO 選択された際にセルのカウント情報を書き換える
+        let cell = collectionView.cellForItem(at: indexPath) as! ToppingSelectCollectionViewCell
+        let count = Int(cell.toppingCountLabel.text!)! - 1
+        if count < 0 {
+            showInformation(message: "アイテムが足りません",
+                            closeButtonText: localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))
+            return
+        }
+        cell.toppingCountLabel.text = count.description
+        
         if firstToppingImage.image == nil {
-            if indexPath.row == 0 {
-                firstToppingImage.image = mockTopping[indexPath.row].image
-                //TODO ここがべた書きになってしまっているのでcellから取得して良い感じに判定できるようにする
-                selectTopping.append(Negi())
-            } else if indexPath.row == 1 {
-                firstToppingImage.image = mockTopping[indexPath.row].image
-                selectTopping.append(Okura())
-            } else {
-                firstToppingImage.image = mockTopping[indexPath.row].image
-                selectTopping.append(Sirasu())
-            }
+            
+            firstToppingImage.image = mockTopping[indexPath.row].image
+            selectTopping.append(mockTopping[indexPath.row].instance)
             selectHandler?(selectTopping)
             
         } else if thirdToppingImage.image == nil {
-            if indexPath.row == 0 {
-                thirdToppingImage.image = mockTopping[indexPath.row].image
-                selectTopping.append(Negi())
-            } else if indexPath.row == 1 {
-                thirdToppingImage.image = mockTopping[indexPath.row].image
-                selectTopping.append(Okura())
-            } else {
-                thirdToppingImage.image = mockTopping[indexPath.row].image
-                selectTopping.append(Sirasu())
-            }
+            thirdToppingImage.image = mockTopping[indexPath.row].image
+            selectTopping.append(mockTopping[indexPath.row].instance)
             selectHandler?(selectTopping)
+            
         } else if secondToppingImage.image == nil {
-            if indexPath.row == 0 {
-                secondToppingImage.image = mockTopping[indexPath.row].image
-                selectTopping.append(Negi())
-            } else if indexPath.row == 1 {
-                secondToppingImage.image = mockTopping[indexPath.row].image
-                selectTopping.append(Okura())
-            } else {
-                secondToppingImage.image = mockTopping[indexPath.row].image
-                selectTopping.append(Sirasu())
-            }
+            secondToppingImage.image = mockTopping[indexPath.row].image
+            selectTopping.append(mockTopping[indexPath.row].instance)
             selectHandler?(selectTopping)
+            
         } else {
             showInformation(message: "トッピングは3個まで使用することができます",
                             closeButtonText: localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))

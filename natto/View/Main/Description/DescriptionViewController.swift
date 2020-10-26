@@ -42,10 +42,16 @@ class DescriptionViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1.0)
         pageControl.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+        
+        pageControl.addTarget(self, action: #selector(self.pageControlSelectionAction(_:)), for: .touchUpInside)
     }
  
     @IBAction func dismissAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func pageControlSelectionAction(_ sender: UIPageControl){
+        print("tapped")
     }
 }
 

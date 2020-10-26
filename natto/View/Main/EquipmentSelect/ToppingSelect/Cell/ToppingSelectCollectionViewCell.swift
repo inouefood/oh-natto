@@ -12,6 +12,7 @@ class ToppingSelectCollectionViewCell: UICollectionViewCell {
     struct ViewModel {
         var image: UIImage
         var count: Int
+        var instance: Topping
     }
     
     var viewModel: ViewModel? {
