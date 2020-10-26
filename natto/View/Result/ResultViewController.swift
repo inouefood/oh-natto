@@ -32,16 +32,6 @@ class ResultViewController: UIViewController {
             bestScoreLabel.font = UIFont(name: "Verdana-bold", size: 25)
         }
     }
-    @IBOutlet weak var totalNattoDescriptionLabel: UILabel! {
-        didSet {
-            totalNattoDescriptionLabel.font = UIFont(name: "Verdana-bold", size: 25)
-        }
-    }
-    @IBOutlet weak var totalNattoCountLabel: UILabel! {
-        didSet {
-            totalNattoCountLabel.font = UIFont(name: "Verdana-bold", size: 25)
-        }
-    }
     @IBOutlet weak var retryButton: UIButton! {
         didSet {
             retryButton.titleLabel?.font = UIFont(name: "Verdana-bold", size: 35)
@@ -89,10 +79,6 @@ class ResultViewController: UIViewController {
             UserStore.isNeedDisplayedReviewAlert = false
             SKStoreReviewController.requestReview()
         }
-        
-        //didSetの中で代入するとUserDefaultに反映される前の合計数が取れてしまうのでここで代入
-        let totalNattoCount = UserStore.totalNattoCount
-        totalNattoCountLabel.text = totalNattoCount.description + "粒"
         
         //紙吹雪表示処理の判定
         guard let bestScore = UserStore.bestScore else {

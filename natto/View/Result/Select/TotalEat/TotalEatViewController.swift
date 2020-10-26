@@ -17,7 +17,7 @@ class TotalEatViewController: UIViewController {
     }
     @IBOutlet weak var totalNattoCountLabel: UILabel!{
         didSet {
-            totalNattoDescriptionLabel.font = UIFont(name: "Verdana-bold", size: 25)
+            totalNattoCountLabel.font = UIFont(name: "Verdana-bold", size: 25)
         }
     }
     override func viewDidLoad() {

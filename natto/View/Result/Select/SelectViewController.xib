@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqx-cN-boM">
-                    <rect key="frame" x="352" y="784" width="46" height="46"/>
+                    <rect key="frame" x="352" y="696" width="46" height="46"/>
                     <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="Rf1-lP-Iud"/>
@@ -31,7 +31,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9J-NR-svX">
-                    <rect key="frame" x="264" y="700" width="80" height="80"/>
+                    <rect key="frame" x="264" y="612" width="80" height="80"/>
                     <color key="backgroundColor" red="1" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="RsD-qR-N1H"/>
@@ -43,7 +43,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lL-1u-XBk" customClass="ShareButton" customModule="natto" customModuleProvider="target">
-                    <rect key="frame" x="202" y="784" width="40" height="40"/>
+                    <rect key="frame" x="202" y="696" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="CCX-Ts-56Y"/>
                         <constraint firstAttribute="width" constant="40" id="cJi-y8-BHV"/>
@@ -54,7 +54,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6O-al-1US">
-                    <rect key="frame" x="190" y="702" width="40" height="40"/>
+                    <rect key="frame" x="190" y="614" width="40" height="40"/>
                     <color key="backgroundColor" red="1" green="1" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="GJM-eH-zni"/>
@@ -76,7 +76,7 @@
                 <constraint firstItem="I9J-NR-svX" firstAttribute="leading" secondItem="7lL-1u-XBk" secondAttribute="trailing" constant="22" id="Qjl-va-Yhz"/>
                 <constraint firstItem="I9J-NR-svX" firstAttribute="leading" secondItem="e6O-al-1US" secondAttribute="trailing" constant="34" id="RWH-4l-gUh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I9J-NR-svX" secondAttribute="trailing" constant="70" id="itx-wd-95V"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xqx-cN-boM" secondAttribute="bottom" constant="32" id="u85-oz-G05"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xqx-cN-boM" secondAttribute="bottom" constant="120" id="u85-oz-G05"/>
             </constraints>
             <point key="canvasLocation" x="118.84057971014494" y="89.732142857142847"/>
         </view>
