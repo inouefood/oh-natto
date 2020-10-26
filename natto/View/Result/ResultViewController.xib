@@ -51,25 +51,24 @@
                         <action selector="retryAction:" destination="-1" eventType="touchUpInside" id="Nhg-WD-UO2"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw7-z5-njc" customClass="ShareButton" customModule="natto" customModuleProvider="target">
-                    <rect key="frame" x="356" y="700" width="42" height="42"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob3-gy-vbk">
+                    <rect key="frame" x="352" y="696" width="46" height="46"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="42" id="YgT-ov-5Fp"/>
-                        <constraint firstAttribute="height" constant="42" id="jzr-U2-Pzt"/>
+                        <constraint firstAttribute="height" constant="46" id="dc7-Kd-wTU"/>
+                        <constraint firstAttribute="width" constant="46" id="egV-7C-OfV"/>
                     </constraints>
                     <state key="normal" image="infoIcon"/>
                     <connections>
-                        <action selector="openSelectAction:" destination="-1" eventType="touchUpInside" id="0Ws-9u-fy6"/>
+                        <action selector="openSelectAction:" destination="-1" eventType="touchUpInside" id="oAW-Lt-PwL"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vw7-z5-njc" secondAttribute="trailing" constant="16" id="EWp-V6-rSz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ob3-gy-vbk" secondAttribute="bottom" constant="120" id="1b9-3S-Zjp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PAC-8u-Onm" secondAttribute="trailing" constant="16" id="EqE-Dz-t4C"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vw7-z5-njc" secondAttribute="bottom" constant="120" id="Ick-Xu-dC9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ob3-gy-vbk" secondAttribute="trailing" constant="16" id="HtN-55-dv9"/>
                 <constraint firstItem="PAC-8u-Onm" firstAttribute="top" secondItem="KYc-DA-xwh" secondAttribute="bottom" constant="8" id="UD4-FV-UPJ"/>
                 <constraint firstItem="6vp-Uz-ZqN" firstAttribute="centerX" secondItem="PAC-8u-Onm" secondAttribute="centerX" id="YpY-9s-bdj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M1s-7V-g7X" secondAttribute="trailing" constant="16" id="bKq-44-qHO"/>
@@ -84,11 +83,6 @@
             <point key="canvasLocation" x="-146.37681159420291" y="94.419642857142847"/>
         </view>
     </objects>
-    <designables>
-        <designable name="vw7-z5-njc">
-            <size key="intrinsicContentSize" width="600" height="600"/>
-        </designable>
-    </designables>
     <resources>
         <image name="infoIcon" width="600" height="600"/>
         <image name="mame01" width="500" height="500"/>

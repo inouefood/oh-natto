@@ -43,24 +43,12 @@
                         <action selector="openStorePage:" destination="-1" eventType="touchUpInside" id="2yY-Ac-59v"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lL-1u-XBk" customClass="ShareButton" customModule="natto" customModuleProvider="target">
-                    <rect key="frame" x="231" y="686" width="40" height="40"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="CCX-Ts-56Y"/>
-                        <constraint firstAttribute="width" constant="40" id="cJi-y8-BHV"/>
-                    </constraints>
-                    <state key="normal" title="Button" image="shareIcon"/>
-                    <connections>
-                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="hQ6-di-UJF"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6O-al-1US">
-                    <rect key="frame" x="215" y="618" width="40" height="40"/>
+                    <rect key="frame" x="205" y="618" width="50" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="GJM-eH-zni"/>
-                        <constraint firstAttribute="height" constant="40" id="jz5-Bk-a4z"/>
+                        <constraint firstAttribute="width" constant="50" id="GJM-eH-zni"/>
+                        <constraint firstAttribute="height" constant="50" id="jz5-Bk-a4z"/>
                     </constraints>
                     <state key="normal" title="Button" image="totalEatNattoIcon"/>
                     <connections>
@@ -68,20 +56,33 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPo-TX-2qk">
-                    <rect key="frame" x="339" y="566" width="40" height="40"/>
+                    <rect key="frame" x="339" y="561" width="45" height="45"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="96H-7W-2p7"/>
-                        <constraint firstAttribute="width" constant="40" id="tmc-zx-3W2"/>
+                        <constraint firstAttribute="height" constant="45" id="96H-7W-2p7"/>
+                        <constraint firstAttribute="width" constant="45" id="tmc-zx-3W2"/>
                     </constraints>
                     <state key="normal" title="Button" image="settingIcon"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq1-yZ-L6H">
-                    <rect key="frame" x="265" y="560" width="40" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fR-oh-un8">
+                    <rect key="frame" x="221" y="686" width="50" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Pnm-22-FWN"/>
-                        <constraint firstAttribute="width" constant="40" id="mQu-Hx-jUb"/>
+                        <constraint firstAttribute="height" constant="50" id="MvO-Pb-zc6"/>
+                        <constraint firstAttribute="width" constant="50" id="RPC-Yn-Y67"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="shareIcon"/>
+                    <connections>
+                        <action selector="openTotalEatPage:" destination="-1" eventType="touchUpInside" id="SxC-iv-gVK"/>
+                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="Cre-YT-xZL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq1-yZ-L6H">
+                    <rect key="frame" x="254" y="556" width="50" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Pnm-22-FWN"/>
+                        <constraint firstAttribute="width" constant="50" id="mQu-Hx-jUb"/>
                     </constraints>
                     <state key="normal" title="Button" image="mametisikiIcon"/>
                 </button>
@@ -90,26 +91,21 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="rPo-TX-2qk" firstAttribute="leading" secondItem="I9J-NR-svX" secondAttribute="trailing" constant="-20" id="5dq-TT-QHh"/>
-                <constraint firstItem="7lL-1u-XBk" firstAttribute="top" secondItem="I9J-NR-svX" secondAttribute="bottom" constant="-10" id="7WE-5R-Dv4"/>
-                <constraint firstItem="7lL-1u-XBk" firstAttribute="top" secondItem="e6O-al-1US" secondAttribute="bottom" constant="28" id="Auf-pK-UeQ"/>
+                <constraint firstItem="I9J-NR-svX" firstAttribute="leading" secondItem="6fR-oh-un8" secondAttribute="trailing" constant="8" symbolic="YES" id="5u5-uz-dby"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xqx-cN-boM" secondAttribute="trailing" constant="16" id="Hm2-Vq-cZI"/>
                 <constraint firstItem="xqx-cN-boM" firstAttribute="top" secondItem="I9J-NR-svX" secondAttribute="bottom" id="NL2-1E-MQe"/>
-                <constraint firstItem="I9J-NR-svX" firstAttribute="leading" secondItem="7lL-1u-XBk" secondAttribute="trailing" constant="8" id="Qjl-va-Yhz"/>
-                <constraint firstItem="I9J-NR-svX" firstAttribute="leading" secondItem="e6O-al-1US" secondAttribute="trailing" constant="24" id="RWH-4l-gUh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I9J-NR-svX" secondAttribute="trailing" constant="55" id="itx-wd-95V"/>
                 <constraint firstItem="I9J-NR-svX" firstAttribute="top" secondItem="rPo-TX-2qk" secondAttribute="bottom" constant="10" id="nmm-eL-OYz"/>
-                <constraint firstItem="I9J-NR-svX" firstAttribute="top" secondItem="Lq1-yZ-L6H" secondAttribute="bottom" constant="16" id="oaa-mv-Ouh"/>
-                <constraint firstItem="I9J-NR-svX" firstAttribute="leading" secondItem="Lq1-yZ-L6H" secondAttribute="trailing" constant="-26" id="tdj-Ll-ugz"/>
+                <constraint firstItem="I9J-NR-svX" firstAttribute="top" secondItem="Lq1-yZ-L6H" secondAttribute="bottom" constant="10" id="oaa-mv-Ouh"/>
+                <constraint firstItem="6fR-oh-un8" firstAttribute="top" secondItem="I9J-NR-svX" secondAttribute="bottom" constant="-10" id="qZy-d5-fSq"/>
+                <constraint firstItem="I9J-NR-svX" firstAttribute="leading" secondItem="e6O-al-1US" secondAttribute="trailing" constant="24" id="qbG-nM-T59"/>
+                <constraint firstItem="e6O-al-1US" firstAttribute="top" secondItem="Lq1-yZ-L6H" secondAttribute="bottom" constant="12" id="rml-F4-SGL"/>
+                <constraint firstItem="I9J-NR-svX" firstAttribute="leading" secondItem="Lq1-yZ-L6H" secondAttribute="trailing" constant="-25" id="tdj-Ll-ugz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xqx-cN-boM" secondAttribute="bottom" constant="120" id="u85-oz-G05"/>
             </constraints>
             <point key="canvasLocation" x="118.84057971014494" y="89.732142857142847"/>
         </view>
     </objects>
-    <designables>
-        <designable name="7lL-1u-XBk">
-            <size key="intrinsicContentSize" width="654" height="600"/>
-        </designable>
-    </designables>
     <resources>
         <image name="infoIcon" width="600" height="600"/>
         <image name="mametisikiIcon" width="600" height="600"/>

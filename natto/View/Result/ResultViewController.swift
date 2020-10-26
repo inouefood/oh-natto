@@ -109,7 +109,6 @@ class ResultViewController: UIViewController {
     }
 
     @IBAction func openSelectAction(_ sender: Any) {
-        //TODO シェアボタンの画像をセレクトの適切なものに置き換える
         let vc = SelectViewController()
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: false, completion: nil)
