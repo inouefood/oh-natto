@@ -51,12 +51,14 @@
                         <action selector="retryAction:" destination="-1" eventType="touchUpInside" id="Nhg-WD-UO2"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw7-z5-njc" customClass="ShareButton" customModule="natto" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw7-z5-njc" customClass="ShareButton" customModule="natto" customModuleProvider="target">
                     <rect key="frame" x="356" y="700" width="42" height="42"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="YgT-ov-5Fp"/>
                         <constraint firstAttribute="height" constant="42" id="jzr-U2-Pzt"/>
                     </constraints>
+                    <state key="normal" image="infoIcon"/>
                     <connections>
                         <action selector="openSelectAction:" destination="-1" eventType="touchUpInside" id="0Ws-9u-fy6"/>
                     </connections>
@@ -84,10 +86,11 @@
     </objects>
     <designables>
         <designable name="vw7-z5-njc">
-            <size key="intrinsicContentSize" width="30" height="30"/>
+            <size key="intrinsicContentSize" width="600" height="600"/>
         </designable>
     </designables>
     <resources>
+        <image name="infoIcon" width="600" height="600"/>
         <image name="mame01" width="500" height="500"/>
     </resources>
 </document>
