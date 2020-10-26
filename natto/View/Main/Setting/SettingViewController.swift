@@ -18,8 +18,16 @@ class SettingViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "設定"
+        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "close")?.withRenderingMode(.alwaysOriginal),
+                                                 style: .plain,
+                                                 target: self,
+                                                 action: #selector(closeAction))
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+    
+    @objc func closeAction() {
+        dismiss(animated: true, completion: nil)
     }
 
 }
