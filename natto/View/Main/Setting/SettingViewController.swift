@@ -9,11 +9,13 @@
 import UIKit
 
 class SettingViewController: UIViewController {
+    let settingArr = ["端末の振動", "プライバシーポリシー", "レビュー", "プッシュ通知"]
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.register(cellType: SettingTableViewCell.self)
         }
     }
     override func viewDidLoad() {
@@ -34,12 +36,13 @@ class SettingViewController: UIViewController {
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return settingArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
+        cell.label.text = settingArr[indexPath.row]
+        return cell
     }
-    
     
 }
