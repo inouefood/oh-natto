@@ -42,13 +42,14 @@
                         <action selector="openStorePage:" destination="-1" eventType="touchUpInside" id="2yY-Ac-59v"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lL-1u-XBk" customClass="ShareButton" customModule="natto" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lL-1u-XBk" customClass="ShareButton" customModule="natto" customModuleProvider="target">
                     <rect key="frame" x="202" y="696" width="40" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="CCX-Ts-56Y"/>
                         <constraint firstAttribute="width" constant="40" id="cJi-y8-BHV"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Button" image="totalEatNattoIcon"/>
                     <connections>
                         <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="hQ6-di-UJF"/>
                     </connections>
@@ -83,10 +84,11 @@
     </objects>
     <designables>
         <designable name="7lL-1u-XBk">
-            <size key="intrinsicContentSize" width="46" height="30"/>
+            <size key="intrinsicContentSize" width="654" height="600"/>
         </designable>
     </designables>
     <resources>
+        <image name="totalEatNattoIcon" width="600" height="600"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
