@@ -118,7 +118,7 @@ class PullNattoScene: SKScene{
                                toppingY: Float(topping.position.y),
                                index: i)
             
-            presenter.updateToppingPosition(ohashiPos: ObjectPosition(pos: topping.position),
+            presenter.updateToppingPosition(ohashiPos: ObjectPosition(pos: ohashi.position),
                                             ohashiSize: ObjectSize(size: ohashi.size),
                                             toppingPos: ObjectPosition(pos: topping.position),
                                             sticky: stickyLevel,
