@@ -9,7 +9,9 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-    let settingArr = ["端末の振動", "プライバシーポリシー", "レビュー", "プッシュ通知", "バージョン"]
+    let settingArr = [["端末の振動"],
+                      [ "プライバシーポリシー", "レビュー", "プッシュ通知", "バージョン"]]
+    let sectionArr = ["設定", "その他"]
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -37,26 +39,33 @@ class SettingViewController: UIViewController {
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingArr.count
+        return settingArr[section].count
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionArr[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
-            cell.label.text = settingArr[indexPath.row]
+            cell.label.text = settingArr[indexPath.section][indexPath.row]
             cell.selectionStyle = .none
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
-            cell.label.text = settingArr[indexPath.row]
+            cell.label.text = settingArr[indexPath.section][indexPath.row]
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
-            cell.label.text = settingArr[indexPath.row]
+            cell.label.text = settingArr[indexPath.section][indexPath.row]
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
-            cell.label.text = settingArr[indexPath.row]
+            cell.label.text = settingArr[indexPath.section][indexPath.row]
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(with: AppVersionTableViewCell.self, for: indexPath)
