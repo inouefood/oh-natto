@@ -63,6 +63,9 @@
                         <constraint firstAttribute="width" constant="45" id="tmc-zx-3W2"/>
                     </constraints>
                     <state key="normal" title="Button" image="settingIcon"/>
+                    <connections>
+                        <action selector="openSettingPage:" destination="-1" eventType="touchUpInside" id="YMx-IB-PDh"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fR-oh-un8">
                     <rect key="frame" x="221" y="686" width="50" height="50"/>
