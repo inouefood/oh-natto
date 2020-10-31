@@ -52,6 +52,10 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
             cell.label.text = settingArr[indexPath.section][indexPath.row]
             cell.selectionStyle = .none
+            cell.switchButton.isOn = UserStore.hapticSetting
+            cell.switchHandler = { toggle in
+                UserStore.hapticSetting = toggle
+            }
             return cell
             
         } else if indexPath.row == 0 && indexPath.section == 1 {

@@ -16,6 +16,7 @@ final class UserStore {
         case totalNattoCount
         case eatPoint
         case ownedItem
+        case hapticSetting
     }
     
     //初回表示かどうか
@@ -103,6 +104,19 @@ final class UserStore {
                 return nil
             }
             return eatPoint
+        }
+    }
+    
+    static var hapticSetting: Bool {
+        set {
+            UserDefaults.standard.set(newValue, forKey: Key.hapticSetting.rawValue)
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            guard let hapticSetting =  UserDefaults.standard.object(forKey: Key.hapticSetting.rawValue) as? Bool else {
+                return true
+            }
+            return hapticSetting
         }
     }
 }
