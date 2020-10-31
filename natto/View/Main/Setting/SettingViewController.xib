@@ -21,22 +21,36 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XKh-6t-E3g">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVQ-EP-mnZ">
+                    <rect key="frame" x="370" y="58" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="3eB-Pp-D3z"/>
+                        <constraint firstAttribute="height" constant="36" id="Kwd-5C-xjz"/>
+                    </constraints>
+                    <state key="normal" image="close"/>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="fgP-cK-AzQ"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XKh-6t-E3g" secondAttribute="trailing" id="4Gb-Nk-2kr"/>
+                <constraint firstItem="XKh-6t-E3g" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="9hg-e1-u4S"/>
+                <constraint firstItem="XKh-6t-E3g" firstAttribute="top" secondItem="TVQ-EP-mnZ" secondAttribute="bottom" id="FVo-0T-6zG"/>
                 <constraint firstAttribute="bottom" secondItem="XKh-6t-E3g" secondAttribute="bottom" id="OEM-o8-1UU"/>
                 <constraint firstItem="XKh-6t-E3g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QoW-8g-ktU"/>
-                <constraint firstItem="XKh-6t-E3g" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hAl-eb-qh9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TVQ-EP-mnZ" secondAttribute="trailing" constant="8" id="kaF-ox-hsh"/>
             </constraints>
             <point key="canvasLocation" x="118.84057971014494" y="88.392857142857139"/>
         </view>
     </objects>
     <resources>
+        <image name="close" width="567" height="567"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

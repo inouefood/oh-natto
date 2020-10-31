@@ -26,16 +26,10 @@ class SettingViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "設定"
-        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "close")?.withRenderingMode(.alwaysOriginal),
-                                                 style: .plain,
-                                                 target: self,
-                                                 action: #selector(closeAction))
-        self.navigationItem.rightBarButtonItem = rightBarButtonItem
         tableView.tableFooterView = UIView()
     }
     
-    @objc func closeAction() {
+    @IBAction func closeAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 
