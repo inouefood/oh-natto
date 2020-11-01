@@ -28,6 +28,9 @@ class SelectViewController: UIViewController {
         present(vc, animated: false, completion: nil)
     }
     
+    @IBAction func openSettingPage(_ sender: Any) {
+        present(SettingViewController(), animated: true, completion: nil)
+    }
     @IBAction func dismissAction(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }

@@ -159,9 +159,10 @@ extension MixScene: SKPhysicsContactDelegate {
     }
     
     func addStickyLine(pos: CGPoint) {
-        //振動処理
-        hapticsGenerator.prepare()
-        hapticsGenerator.impactOccurred()
+        if UserStore.hapticSetting {
+            hapticsGenerator.prepare()
+            hapticsGenerator.impactOccurred()
+        }
         
         let stickyPath = CGMutablePath().make(start: ohashi.position, end: pos)
         let stickyLine = SKShapeNode(path: stickyPath,

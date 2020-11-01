@@ -54,6 +54,14 @@
 		49199F5A253F0A6D00F935D9 /* EquipmentSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */; };
 		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
 		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
+		493B410F2546FBF700F26C4F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B410D2546FBF700F26C4F /* SettingViewController.swift */; };
+		493B41102546FBF700F26C4F /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493B410E2546FBF700F26C4F /* SettingViewController.xib */; };
+		493B411A2547013F00F26C4F /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B41182547013F00F26C4F /* SettingTableViewCell.swift */; };
+		493B411B2547013F00F26C4F /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493B41192547013F00F26C4F /* SettingTableViewCell.xib */; };
+		493B4123254704BE00F26C4F /* UITableView+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B4122254704BE00F26C4F /* UITableView+Addition.swift */; };
+		493B412B254704EA00F26C4F /* NSObject+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B412A254704EA00F26C4F /* NSObject+Addition.swift */; };
+		493B41312547078600F26C4F /* AppVersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B412F2547078600F26C4F /* AppVersionTableViewCell.swift */; };
+		493B41322547078600F26C4F /* AppVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493B41302547078600F26C4F /* AppVersionTableViewCell.xib */; };
 		4941A843253A053100977604 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 4941A842253A053100977604 /* Parchment */; };
 		496B97912545535000D1D6EB /* ToppingSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */; };
 		496B97922545535000D1D6EB /* ToppingSelectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */; };
@@ -160,6 +168,14 @@
 		49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentSelectViewController.xib; sourceTree = "<group>"; };
 		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		493B410D2546FBF700F26C4F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		493B410E2546FBF700F26C4F /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		493B41182547013F00F26C4F /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		493B41192547013F00F26C4F /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		493B4122254704BE00F26C4F /* UITableView+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Addition.swift"; sourceTree = "<group>"; };
+		493B412A254704EA00F26C4F /* NSObject+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Addition.swift"; sourceTree = "<group>"; };
+		493B412F2547078600F26C4F /* AppVersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionTableViewCell.swift; sourceTree = "<group>"; };
+		493B41302547078600F26C4F /* AppVersionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppVersionTableViewCell.xib; sourceTree = "<group>"; };
 		496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToppingSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToppingSelectCollectionViewCell.xib; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
@@ -240,6 +256,8 @@
 				054E493422D2DD680062736D /* UIApplication+Addition.swift */,
 				054E493622D2DF4F0062736D /* UIViewController+Addition.swift */,
 				0DCD56D32348E63F008F7BAA /* Swift+Addition.swift */,
+				493B4122254704BE00F26C4F /* UITableView+Addition.swift */,
+				493B412A254704EA00F26C4F /* NSObject+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -443,6 +461,27 @@
 			path = customView;
 			sourceTree = "<group>";
 		};
+		493B410C2546FBE200F26C4F /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				493B410D2546FBF700F26C4F /* SettingViewController.swift */,
+				493B410E2546FBF700F26C4F /* SettingViewController.xib */,
+				493B41172547010100F26C4F /* cell */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		493B41172547010100F26C4F /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				493B41182547013F00F26C4F /* SettingTableViewCell.swift */,
+				493B41192547013F00F26C4F /* SettingTableViewCell.xib */,
+				493B412F2547078600F26C4F /* AppVersionTableViewCell.swift */,
+				493B41302547078600F26C4F /* AppVersionTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		4941A84A253A95AD00977604 /* ToppingSelect */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +515,7 @@
 			children = (
 				0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */,
 				43D95F292052723B00FE1117 /* Main.storyboard */,
+				493B410C2546FBE200F26C4F /* Setting */,
 				0D815D0722617A2A00B6642E /* Description */,
 				490C1B6F25352ED80094C76F /* EquipmentSelect */,
 			);
@@ -682,11 +722,14 @@
 				496B97922545535000D1D6EB /* ToppingSelectCollectionViewCell.xib in Resources */,
 				43D95F2D2052723B00FE1117 /* Assets.xcassets in Resources */,
 				497D132F2523306F007B1129 /* DescriptionView.xib in Resources */,
+				493B41322547078600F26C4F /* AppVersionTableViewCell.xib in Resources */,
 				4343CEB12053AB86002CA3BC /* paku.wav in Resources */,
+				493B41102546FBF700F26C4F /* SettingViewController.xib in Resources */,
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
 				490C1B7325352EF70094C76F /* ToppingSelectViewController.xib in Resources */,
 				057D3EC82330666A00712E5D /* confetti.png in Resources */,
 				49D3AB3F253F0D87008422F3 /* MameSelectViewController.xib in Resources */,
+				493B411B2547013F00F26C4F /* SettingTableViewCell.xib in Resources */,
 				4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */,
 				49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */,
 				0D048FC42277FCE500852FFA /* Settings.bundle in Resources */,
@@ -738,6 +781,7 @@
 				F346A9CA226A403E00A051FC /* SKShapeNode+Addition.swift in Sources */,
 				49D3AB47253F0DD7008422F3 /* ItemSelectViewController.swift in Sources */,
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
+				493B4123254704BE00F26C4F /* UITableView+Addition.swift in Sources */,
 				43D95F262052723B00FE1117 /* TitleScene.swift in Sources */,
 				0DD326B722539E8600FBE6A1 /* SKSpriteNode+Addition.swift in Sources */,
 				0D081FC42286DB5D00B74D86 /* ObjectSize.swift in Sources */,
@@ -756,17 +800,21 @@
 				496B97912545535000D1D6EB /* ToppingSelectCollectionViewCell.swift in Sources */,
 				0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */,
 				490C1B7225352EF70094C76F /* ToppingSelectViewController.swift in Sources */,
+				493B41312547078600F26C4F /* AppVersionTableViewCell.swift in Sources */,
 				0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */,
 				054E493522D2DD680062736D /* UIApplication+Addition.swift in Sources */,
 				0DE54C61225F8F2C00006ED4 /* NattoViewController.swift in Sources */,
+				493B411A2547013F00F26C4F /* SettingTableViewCell.swift in Sources */,
 				F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */,
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
 				0DCD56D42348E63F008F7BAA /* Swift+Addition.swift in Sources */,
 				49199F59253F0A6D00F935D9 /* EquipmentSelectViewController.swift in Sources */,
 				0DFD696A2276F2BB000DBD93 /* SKScene+Addition.swift in Sources */,
+				493B412B254704EA00F26C4F /* NSObject+Addition.swift in Sources */,
 				49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */,
 				F39D9424225A411400FD6401 /* SKPhysicsBody+Addition.swift in Sources */,
 				4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */,
+				493B410F2546FBF700F26C4F /* SettingViewController.swift in Sources */,
 				F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */,
 				49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */,
 			);

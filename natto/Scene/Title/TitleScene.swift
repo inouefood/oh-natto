@@ -142,7 +142,7 @@ class TitleScene: SKScene {
                 topViewController()?.present(vc, animated: true, completion: nil)
                 
             }else if touchNode == settingButton {
-                //TODO
+                topViewController()?.present(SettingViewController(), animated: true, completion: nil)
                 
             } else {
                 let sprite: SKSpriteNode!
