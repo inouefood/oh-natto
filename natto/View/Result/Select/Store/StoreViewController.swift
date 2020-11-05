@@ -28,13 +28,14 @@ class StoreViewController: UIViewController {
             
             
             //アイテム購入
-            let negiKey = "ownedNegi"
-            guard let item = UserStore.ownedItem,
-                  let negi = item[negiKey] else {
-                UserStore.ownedItem = [negiKey:1]
+            guard var item = UserStore.ownedItem else {
+                let item = OwnedItem(negi: 1, okura: 0, sirasu: 0)
+                UserStore.ownedItem = item
                 return
             }
-            UserStore.ownedItem?.updateValue(negi + 1, forKey: negiKey)
+
+            item.negi += 1
+            UserStore.ownedItem = item
             
         }
     }

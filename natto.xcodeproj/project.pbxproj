@@ -63,6 +63,7 @@
 		493B41312547078600F26C4F /* AppVersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B412F2547078600F26C4F /* AppVersionTableViewCell.swift */; };
 		493B41322547078600F26C4F /* AppVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493B41302547078600F26C4F /* AppVersionTableViewCell.xib */; };
 		4941A843253A053100977604 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 4941A842253A053100977604 /* Parchment */; };
+		494B51D525543043009DD52C /* OwnedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B51D425543043009DD52C /* OwnedItem.swift */; };
 		496B97912545535000D1D6EB /* ToppingSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */; };
 		496B97922545535000D1D6EB /* ToppingSelectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */; };
 		497D132D2523305F007B1129 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D132C2523305F007B1129 /* DescriptionView.swift */; };
@@ -176,6 +177,7 @@
 		493B412A254704EA00F26C4F /* NSObject+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Addition.swift"; sourceTree = "<group>"; };
 		493B412F2547078600F26C4F /* AppVersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionTableViewCell.swift; sourceTree = "<group>"; };
 		493B41302547078600F26C4F /* AppVersionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppVersionTableViewCell.xib; sourceTree = "<group>"; };
+		494B51D425543043009DD52C /* OwnedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedItem.swift; sourceTree = "<group>"; };
 		496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToppingSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		496B97902545535000D1D6EB /* ToppingSelectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToppingSelectCollectionViewCell.xib; sourceTree = "<group>"; };
 		497D132C2523305F007B1129 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				0DFEF9C022623BF50061167A /* ObjectPosition.swift */,
 				0D081FC32286DB5D00B74D86 /* ObjectSize.swift */,
 				49D9CCFA25320F6A00F9C30E /* Topping.swift */,
+				494B51D425543043009DD52C /* OwnedItem.swift */,
 			);
 			name = Entity;
 			path = Extension/Entity;
@@ -774,6 +777,7 @@
 			files = (
 				490C1B2D25351CC10094C76F /* SelectViewController.swift in Sources */,
 				0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */,
+				494B51D525543043009DD52C /* OwnedItem.swift in Sources */,
 				49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */,
 				49D9CD082533056C00F9C30E /* StoreViewController.swift in Sources */,
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,

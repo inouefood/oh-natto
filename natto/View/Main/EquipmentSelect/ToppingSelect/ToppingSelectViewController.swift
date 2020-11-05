@@ -51,6 +51,11 @@ class ToppingSelectViewController: UIViewController {
     
     override func viewDidLoad() {
         self.view.backgroundColor = .orange
+        let negiKey = "ownedNegi"
+        
+        let items = UserStore.ownedItem
+        items
+        
     }
     
     @IBAction func decisionAction(_ sender: Any) {
