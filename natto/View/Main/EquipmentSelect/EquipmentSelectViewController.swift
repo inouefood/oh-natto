@@ -16,11 +16,9 @@ class EquipmentSelectViewController: UIViewController {
         let toppingVC = ToppingSelectViewController()
         let items = UserStore.ownedItem
         toppingVC.toppings = items?.createItemList() ?? []
-        toppingVC.selectHandler = {
-            self.selectedItems = $0
-        }
+
         toppingVC.decisionAction = {
-            self.selectItemHandler?(self.selectedItems)
+            self.selectItemHandler?(ToppingManager.shared.selectItem)
             self.dismiss(animated: true, completion: nil)
         }
         toppingVC.title = "トッピング"
@@ -32,8 +30,6 @@ class EquipmentSelectViewController: UIViewController {
         
         return [toppingVC, secondVC, thirdVC]
     }()
-    
-    var selectedItems: [Topping] = []
     
     var selectItemHandler:(([Topping])->Void)?
 
@@ -55,7 +51,7 @@ class EquipmentSelectViewController: UIViewController {
     }
     
     @IBAction func dismissAction(_ sender: Any) {
-        selectItemHandler?(selectedItems)
+        selectItemHandler?(ToppingManager.shared.selectItem)
         dismiss(animated: true, completion: nil)
 
     }
