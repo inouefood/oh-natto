@@ -9,12 +9,8 @@
 import UIKit
 
 class ToppingSelectViewController: UIViewController {
-    //TODO 本番用のアイテムを入れる
-    let mockTopping = [
-        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "negi")!, count: 3,  instance: Negi()),
-        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "okura")!, count: 3, instance: Okura()),
-        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "sirasu")!, count: 3, instance: Sirasu())]
     
+    var toppings:[ToppingSelectCollectionViewCell.ViewModel] = []
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -51,11 +47,6 @@ class ToppingSelectViewController: UIViewController {
     
     override func viewDidLoad() {
         self.view.backgroundColor = .orange
-        let negiKey = "ownedNegi"
-        
-        let items = UserStore.ownedItem
-        items
-        
     }
     
     @IBAction func decisionAction(_ sender: Any) {
@@ -74,12 +65,12 @@ class ToppingSelectViewController: UIViewController {
 
 extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mockTopping.count
+        return toppings.count
     }
         
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ToppingSelectCollectionViewCell", for: indexPath) as! ToppingSelectCollectionViewCell
-        cell.viewModel = mockTopping[indexPath.row]
+        cell.viewModel = toppings[indexPath.row]
         return cell
     }
     
@@ -102,18 +93,18 @@ extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionV
         
         if firstToppingImage.image == nil {
             
-            firstToppingImage.image = mockTopping[indexPath.row].image
-            selectTopping.append(mockTopping[indexPath.row].instance)
+            firstToppingImage.image = toppings[indexPath.row].image
+            selectTopping.append(toppings[indexPath.row].instance)
             selectHandler?(selectTopping)
             
         } else if thirdToppingImage.image == nil {
-            thirdToppingImage.image = mockTopping[indexPath.row].image
-            selectTopping.append(mockTopping[indexPath.row].instance)
+            thirdToppingImage.image = toppings[indexPath.row].image
+            selectTopping.append(toppings[indexPath.row].instance)
             selectHandler?(selectTopping)
             
         } else if secondToppingImage.image == nil {
-            secondToppingImage.image = mockTopping[indexPath.row].image
-            selectTopping.append(mockTopping[indexPath.row].instance)
+            secondToppingImage.image = toppings[indexPath.row].image
+            selectTopping.append(toppings[indexPath.row].instance)
             selectHandler?(selectTopping)
             
         } else {

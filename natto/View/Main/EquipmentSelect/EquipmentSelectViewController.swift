@@ -14,6 +14,8 @@ class EquipmentSelectViewController: UIViewController {
     
     private lazy var pagingItem: [UIViewController] = {
         let toppingVC = ToppingSelectViewController()
+        let items = UserStore.ownedItem
+        toppingVC.toppings = items?.createItemList() ?? []
         toppingVC.selectHandler = {
             self.selectedItems = $0
         }
