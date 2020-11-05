@@ -15,10 +15,10 @@ class EquipmentSelectViewController: UIViewController {
     private lazy var pagingItem: [UIViewController] = {
         let toppingVC = ToppingSelectViewController()
         let items = UserStore.ownedItem
-        toppingVC.toppings = items?.createItemList() ?? []
+        toppingVC.toppings = items?.createItemList(alreadySelect: ToppingManager.shared.selectedItem) ?? []
 
         toppingVC.decisionAction = {
-            self.selectItemHandler?(ToppingManager.shared.selectItem)
+            self.selectItemHandler?(ToppingManager.shared.selectedItem)
             self.dismiss(animated: true, completion: nil)
         }
         toppingVC.title = "トッピング"
@@ -51,7 +51,7 @@ class EquipmentSelectViewController: UIViewController {
     }
     
     @IBAction func dismissAction(_ sender: Any) {
-        selectItemHandler?(ToppingManager.shared.selectItem)
+        selectItemHandler?(ToppingManager.shared.selectedItem)
         dismiss(animated: true, completion: nil)
 
     }

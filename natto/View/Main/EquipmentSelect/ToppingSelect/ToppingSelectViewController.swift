@@ -9,7 +9,7 @@
 import UIKit
 
 class ToppingManager: NSObject {
-    var selectItem:[Topping] = []
+    var selectedItem:[Topping] = []
 
     static let shared: ToppingManager = ToppingManager()
     private override init() {}
@@ -33,9 +33,6 @@ class ToppingSelectViewController: UIViewController {
     @IBOutlet weak var firstToppingImage: UIImageView!
     @IBOutlet weak var secondToppingImage: UIImageView!
     @IBOutlet weak var thirdToppingImage: UIImageView!
-    
-    
-    
     @IBOutlet weak var decisionButton: UIButton! {
         didSet {
             decisionButton.setTitle("けってい", for: .normal)
@@ -49,14 +46,28 @@ class ToppingSelectViewController: UIViewController {
     
     var decisionAction: (()->())?
     var toppings:[ToppingSelectCollectionViewCell.ViewModel] = []
-    private var selectTopping:[Topping] = []
     
     override func viewDidLoad() {
-        self.view.backgroundColor = .orange
+        ToppingManager.shared.selectedItem.forEach{
+            setImage(image: UIImage(named: $0.imageName))
+        }
+    
+    }
+    
+    private func setImage(image: UIImage?) {
+        if firstToppingImage.image == nil {
+            firstToppingImage.image = image
+          
+        } else if thirdToppingImage.image == nil {
+            thirdToppingImage.image = image
+    
+        } else if secondToppingImage.image == nil {
+            secondToppingImage.image = image
+            
+        }
     }
     
     @IBAction func decisionAction(_ sender: Any) {
-        ToppingManager.shared.selectItem = selectTopping
         decisionAction?()
     }
     
@@ -65,8 +76,7 @@ class ToppingSelectViewController: UIViewController {
         secondToppingImage.image = nil
         thirdToppingImage.image = nil
         
-        selectTopping = []
-        ToppingManager.shared.selectItem = []
+        ToppingManager.shared.selectedItem = []
     }
 }
 
@@ -101,18 +111,15 @@ extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionV
         if firstToppingImage.image == nil {
             
             firstToppingImage.image = toppings[indexPath.row].image
-            selectTopping.append(toppings[indexPath.row].instance)
-            ToppingManager.shared.selectItem = selectTopping
+            ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else if thirdToppingImage.image == nil {
             thirdToppingImage.image = toppings[indexPath.row].image
-            selectTopping.append(toppings[indexPath.row].instance)
-            ToppingManager.shared.selectItem = selectTopping
+            ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else if secondToppingImage.image == nil {
             secondToppingImage.image = toppings[indexPath.row].image
-            selectTopping.append(toppings[indexPath.row].instance)
-            ToppingManager.shared.selectItem = selectTopping
+            ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else {
             showInformation(message: "トッピングは3個まで使用することができます",
