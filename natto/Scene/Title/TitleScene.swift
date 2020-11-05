@@ -108,7 +108,7 @@ class TitleScene: SKScene {
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)
             if touchNode == startLabel{
-                //TODO トッピングで選択されたものを渡せるようにする
+                updateOwnedToppingItems()
                 let scene = MixScene(size: self.size, topping: selectedItems)
                 self.view!.presentScene(scene)
                 
@@ -164,5 +164,30 @@ class TitleScene: SKScene {
                 self.addChild(sprite)
             }
         }
+    }
+    private func updateOwnedToppingItems(){
+        guard var item = UserStore.ownedItem else {
+            return
+        }
+        var selectNegi = 0
+        var selectOkura = 0
+        var selectSirasu = 0
+        
+        ToppingManager.shared.selectedItem.forEach{
+            switch $0.type {
+            case .negi:
+                selectNegi += 1
+            case .okura:
+                selectOkura += 1
+            case .sirasu:
+                selectSirasu += 1
+            }
+        }
+        item.negi -= selectNegi
+        item.okura -= selectOkura
+        item.sirasu -= selectSirasu
+        
+        UserStore.ownedItem = item
+        ToppingManager.shared.selectedItem = []
     }
 }
