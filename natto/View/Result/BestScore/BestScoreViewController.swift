@@ -10,6 +10,7 @@ import UIKit
 import SceneKit
 
 class BestScoreViewController: UIViewController {
+    @IBOutlet weak var screenshotView: UIView!
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = localizeString(key: LocalizeKeys.BestScore.title)
