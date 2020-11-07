@@ -86,7 +86,9 @@ class BestScoreViewController: UIViewController {
 
     @IBAction func shareAction(_ sender: Any) {
         //TODO 画像をツイートできるようにする
-        let activityItems: [Any] = ["\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"]
+        let image = screenshotView.convertToImage()
+        let text = "\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
+        let activityItems: [Any] = [image, text]
         let activityVc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         activityVc.modalPresentationStyle = .fullScreen
         self.present(activityVc, animated: true, completion: nil)
