@@ -73,7 +73,6 @@
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="decisionAction:" destination="-1" eventType="touchUpInside" id="xxb-c3-ODU"/>
-                                <action selector="resetAction:" destination="-1" eventType="touchUpInside" id="9Wv-4D-3sB"/>
                             </connections>
                         </button>
                     </subviews>

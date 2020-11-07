@@ -94,16 +94,18 @@ final class UserStore {
     }
     
     //保有しているアイテム
-    static var ownedItem:[String: Int]? {
+    static var ownedItem:OwnedItem? {
         set{
-            UserDefaults.standard.set(newValue, forKey: Key.ownedItem.rawValue)
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: Key.ownedItem.rawValue)
             UserDefaults.standard.synchronize()
         }
         get {
-            guard let eatPoint = UserDefaults.standard.object(forKey: Key.ownedItem.rawValue) as?  [String:Int] else {
+            if let data = UserDefaults.standard.value(forKey: Key.ownedItem.rawValue) as? Data {
+                let ownedItem = try? PropertyListDecoder().decode(OwnedItem.self, from: data)
+                return ownedItem
+            } else {
                 return nil
             }
-            return eatPoint
         }
     }
     

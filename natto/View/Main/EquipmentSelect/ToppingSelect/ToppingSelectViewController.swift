@@ -8,13 +8,14 @@
 
 import UIKit
 
+class ToppingManager: NSObject {
+    var selectedItem:[Topping] = []
+
+    static let shared: ToppingManager = ToppingManager()
+    private override init() {}
+}
+
 class ToppingSelectViewController: UIViewController {
-    //TODO 本番用のアイテムを入れる
-    let mockTopping = [
-        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "negi")!, count: 3,  instance: Negi()),
-        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "okura")!, count: 3, instance: Okura()),
-        ToppingSelectCollectionViewCell.ViewModel(image: UIImage(named: "sirasu")!, count: 3, instance: Sirasu())]
-    
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -32,9 +33,6 @@ class ToppingSelectViewController: UIViewController {
     @IBOutlet weak var firstToppingImage: UIImageView!
     @IBOutlet weak var secondToppingImage: UIImageView!
     @IBOutlet weak var thirdToppingImage: UIImageView!
-    
-    var decisionAction: (()->())?
-    
     @IBOutlet weak var decisionButton: UIButton! {
         didSet {
             decisionButton.setTitle("けってい", for: .normal)
@@ -46,11 +44,27 @@ class ToppingSelectViewController: UIViewController {
         }
     }
     
-    var selectHandler: (([Topping])->Void)?
-    private var selectTopping:[Topping] = []
+    var decisionAction: (()->())?
+    var toppings:[ToppingSelectCollectionViewCell.ViewModel] = []
     
     override func viewDidLoad() {
-        self.view.backgroundColor = .orange
+        ToppingManager.shared.selectedItem.forEach{
+            setImage(image: UIImage(named: $0.imageName))
+        }
+    
+    }
+    
+    private func setImage(image: UIImage?) {
+        if firstToppingImage.image == nil {
+            firstToppingImage.image = image
+          
+        } else if thirdToppingImage.image == nil {
+            thirdToppingImage.image = image
+    
+        } else if secondToppingImage.image == nil {
+            secondToppingImage.image = image
+            
+        }
     }
     
     @IBAction func decisionAction(_ sender: Any) {
@@ -62,19 +76,18 @@ class ToppingSelectViewController: UIViewController {
         secondToppingImage.image = nil
         thirdToppingImage.image = nil
         
-        selectTopping = []
-        selectHandler?(selectTopping)
+        ToppingManager.shared.selectedItem = []
     }
 }
 
 extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mockTopping.count
+        return toppings.count
     }
         
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ToppingSelectCollectionViewCell", for: indexPath) as! ToppingSelectCollectionViewCell
-        cell.viewModel = mockTopping[indexPath.row]
+        cell.viewModel = toppings[indexPath.row]
         return cell
     }
     
@@ -97,19 +110,16 @@ extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionV
         
         if firstToppingImage.image == nil {
             
-            firstToppingImage.image = mockTopping[indexPath.row].image
-            selectTopping.append(mockTopping[indexPath.row].instance)
-            selectHandler?(selectTopping)
+            firstToppingImage.image = toppings[indexPath.row].image
+            ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else if thirdToppingImage.image == nil {
-            thirdToppingImage.image = mockTopping[indexPath.row].image
-            selectTopping.append(mockTopping[indexPath.row].instance)
-            selectHandler?(selectTopping)
+            thirdToppingImage.image = toppings[indexPath.row].image
+            ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else if secondToppingImage.image == nil {
-            secondToppingImage.image = mockTopping[indexPath.row].image
-            selectTopping.append(mockTopping[indexPath.row].instance)
-            selectHandler?(selectTopping)
+            secondToppingImage.image = toppings[indexPath.row].image
+            ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else {
             showInformation(message: "トッピングは3個まで使用することができます",
