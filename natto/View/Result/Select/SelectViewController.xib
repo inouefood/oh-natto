@@ -76,7 +76,6 @@
                     </constraints>
                     <state key="normal" title="Button" image="shareIcon"/>
                     <connections>
-                        <action selector="openTotalEatPage:" destination="-1" eventType="touchUpInside" id="SxC-iv-gVK"/>
                         <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="Cre-YT-xZL"/>
                     </connections>
                 </button>
