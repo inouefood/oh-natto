@@ -80,6 +80,7 @@
 		49D9CD082533056C00F9C30E /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CD062533056C00F9C30E /* StoreViewController.swift */; };
 		49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CD072533056C00F9C30E /* StoreViewController.xib */; };
 		49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A64251F14CC00E25A9B /* UserStore.swift */; };
+		49EE35572556C7BC00305D38 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE35562556C7BC00305D38 /* UIImage+Addition.swift */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
 		F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */; };
@@ -194,6 +195,7 @@
 		49D9CD062533056C00F9C30E /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		49D9CD072533056C00F9C30E /* StoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
 		49EC6A64251F14CC00E25A9B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		49EE35562556C7BC00305D38 /* UIImage+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Addition.swift"; sourceTree = "<group>"; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
 		F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGMutablePath+Addition.swift"; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				0DCD56D32348E63F008F7BAA /* Swift+Addition.swift */,
 				493B4122254704BE00F26C4F /* UITableView+Addition.swift */,
 				493B412A254704EA00F26C4F /* NSObject+Addition.swift */,
+				49EE35562556C7BC00305D38 /* UIImage+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				49D3AB3E253F0D87008422F3 /* MameSelectViewController.swift in Sources */,
 				490C1B382535251A0094C76F /* TotalEatViewController.swift in Sources */,
 				0DCD56D82348E72E008F7BAA /* LocalizeKey.swift in Sources */,
+				49EE35572556C7BC00305D38 /* UIImage+Addition.swift in Sources */,
 				0D815D0F2261E3B100B6642E /* Closebutton.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,
 				497D132D2523305F007B1129 /* DescriptionView.swift in Sources */,

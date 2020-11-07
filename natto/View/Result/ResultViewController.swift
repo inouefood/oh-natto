@@ -71,16 +71,18 @@ class ResultViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1.0)
         loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         //レビューダイアログの表示
         if UserStore.totalNattoCount > 1000 && UserStore.isNeedDisplayedReviewAlert {
             UserStore.isNeedDisplayedReviewAlert = false
             SKStoreReviewController.requestReview()
         }
         
-        //紙吹雪表示処理の判定
         guard let bestScore = UserStore.bestScore else {
             UserStore.bestScore = score
             return
