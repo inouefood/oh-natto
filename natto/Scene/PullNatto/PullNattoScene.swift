@@ -45,7 +45,7 @@ class PullNattoScene: SKScene{
                                   frame: self.frame,
                                   zPos: 1.0)
     
-    var toppingSprite:[SKSpriteNode] = []
+    var toppingSprite:[ToppingSpriteNode] = []
     
     // MARK: - Property
     var timer:Timer?
@@ -112,7 +112,6 @@ class PullNattoScene: SKScene{
                                           index: i)
         }
         
-        //TODO お箸にトッピングがくっつかないので直す
         for (i, topping) in toppingSprite.enumerated() {
             presenter.toppingEatCheck(height: Float(height),
                                toppingY: Float(topping.position.y),
@@ -154,11 +153,13 @@ class PullNattoScene: SKScene{
                 
                 let itemBody = SKPhysicsBody().make(circleOfRadius: bodyRadius,
                                                      isGravity: true)
-                let item = SKSpriteNode(image: topping.imageName,
-                                         pos: CGPoint(x: randX, y: randY/4),
-                                         body: itemBody,
-                                         rotate: r,
-                                         size: toppingSize)
+                let item = ToppingSpriteNode(image: topping.imageName,
+                                             pos: CGPoint(x: randX, y: randY/4),
+                                             body: itemBody,
+                                             rotate: r,
+                                             size: toppingSize)
+                item.point = topping.point
+                
                 toppingSprite.append(item)
                 self.addChild(item)
             }
@@ -181,6 +182,20 @@ class PullNattoScene: SKScene{
                 score += 1
             }
         }
+        nattoSprite.forEach{
+            if height < $0.position.y {
+                score += 1
+            }
+        }
+        
+        toppingSprite.forEach{
+            if height < $0.position.y {
+                if let point = $0.point {
+                    score += point
+                }
+            }
+        }
+        
         presenter = nil
         
         let scene = ResultScene(size: self.size, score: score)

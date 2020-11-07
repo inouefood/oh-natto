@@ -8,6 +8,11 @@
 
 import SpriteKit
 
+class ToppingSpriteNode: SKSpriteNode {
+    var point: Int?
+
+}
+
 extension SKSpriteNode {
     // initializer for MixScene/ohashi
     convenience init(image: String, pos: CGPoint, body: SKPhysicsBody) {
