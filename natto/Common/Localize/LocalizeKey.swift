@@ -64,11 +64,21 @@ struct LocalizeKeys {
             return rawValue
         }
     }
+    
+    enum Setting: String, LocalizeKeyGeneratable {
+        case cellArrVibration = "SETTING.CELLARR.VIBRATION"
+        case cellArrPrivacyPolicy = "SETTING.CELLARR.PRIVACYPOLICY"
+        case cellArrReview = "SETTING.CELLARR.REVIEW"
+        case cellArrPushNortification = "SETTING.CELLARR.PUSHNORTIFICATION"
+        case cellArrVersion = "SETTING.CELLARR.VERSION"
+        case sectionArrSetting = "SETTING.SECTIONARR.SETTING"
+        case sectionArrOther = "SETTING.SECTIONARR.OTHER"
+        
+        var key: String {
+            return rawValue
+        }
+    }
 }
-
-
-
-
 
 
 

@@ -29,3 +29,12 @@
 "BEST.LABEL.TITLE" = "New Best Score!!";
 "BEST.BUTTON.CLOSE" = "close";
 "BEST.BUTTON.SHARE" = "share";
+
+//設定画面
+"SETTING.CELLARR.VIBRATION" = "Terminal vibration";
+"SETTING.CELLARR.PRIVACYPOLICY" = " Privacy policy";
+"SETTING.CELLARR.REVIEW" = "Review";
+"SETTING.CELLARR.PUSHNORTIFICATION" = "Push Notification";
+"SETTING.CELLARR.VERSION" = "Version";
+"SETTING.SECTIONARR.SETTING"= "Setting";
+"SETTING.SECTIONARR.OTHER" = "Other";
