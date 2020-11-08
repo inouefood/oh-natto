@@ -78,9 +78,14 @@ struct LocalizeKeys {
             return rawValue
         }
     }
+    
+    enum ToppingSelect: String, LocalizeKeyGeneratable {
+        case decision = "TOPPINGSELECT.DECISION"
+        case reset = "TOPPINGSELECT.RESET"
+        case alertItemLess = "TOPPINGSELECT.ALERT.ITEMLESS"
+        case alertSelectOver = "TOPPINGSELECT.ALERT.SELECTOVER"
+        var key: String {
+            return rawValue
+        }
+    }
 }
-
-
-
-
-

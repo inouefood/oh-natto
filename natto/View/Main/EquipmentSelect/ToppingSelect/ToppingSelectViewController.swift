@@ -35,12 +35,12 @@ class ToppingSelectViewController: UIViewController {
     @IBOutlet weak var thirdToppingImage: UIImageView!
     @IBOutlet weak var decisionButton: UIButton! {
         didSet {
-            decisionButton.setTitle("けってい", for: .normal)
+            decisionButton.setTitle(localizeString(key: LocalizeKeys.ToppingSelect.decision), for: .normal)
         }
     }
     @IBOutlet weak var resetButton: UIButton! {
         didSet {
-            resetButton.setTitle("リセット", for: .normal)
+            resetButton.setTitle(localizeString(key: LocalizeKeys.ToppingSelect.reset), for: .normal)
         }
     }
     
@@ -102,7 +102,7 @@ extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionV
         let cell = collectionView.cellForItem(at: indexPath) as! ToppingSelectCollectionViewCell
         let count = Int(cell.toppingCountLabel.text!)! - 1
         if count < 0 {
-            showInformation(message: "アイテムが足りません",
+            showInformation(message: localizeString(key: LocalizeKeys.ToppingSelect.alertItemLess),
                             closeButtonText: localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))
             return
         }
@@ -122,7 +122,7 @@ extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionV
             ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else {
-            showInformation(message: "トッピングは3個まで使用することができます",
+            showInformation(message: localizeString(key:LocalizeKeys.ToppingSelect.alertSelectOver),
                             closeButtonText: localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))
         }
     }

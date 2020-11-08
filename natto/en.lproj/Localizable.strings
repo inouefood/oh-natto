@@ -38,3 +38,9 @@
 "SETTING.CELLARR.VERSION" = "Version";
 "SETTING.SECTIONARR.SETTING"= "Setting";
 "SETTING.SECTIONARR.OTHER" = "Other";
+
+//トッピング選択
+"TOPPINGSELECT.DECISION" = "Decision";
+"TOPPINGSELECT.RESET" =  "Reset";
+"TOPPINGSELECT.ALERT.ITEMLESS" = "Not enough items";
+"TOPPINGSELECT.ALERT.SELECTOVER" = "You can use up to 3 toppings";
