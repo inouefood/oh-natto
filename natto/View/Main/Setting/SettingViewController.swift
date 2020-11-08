@@ -10,10 +10,9 @@ import UIKit
 import SafariServices
 
 class SettingViewController: UIViewController {
-    
-    let settingArr = [["端末の振動"],
-                      [ "プライバシーポリシー", "レビュー", "プッシュ通知", "バージョン"]]
-    let sectionArr = ["設定", "その他"]
+    let settingArr = [[localizeString(key: LocalizeKeys.Setting.cellArrVibration)],
+                      [ localizeString(key: LocalizeKeys.Setting.cellArrPrivacyPolicy), localizeString(key: LocalizeKeys.Setting.cellArrReview), localizeString(key: LocalizeKeys.Setting.cellArrPushNortification), localizeString(key: LocalizeKeys.Setting.cellArrVersion)]]
+    let sectionArr = [ localizeString(key: LocalizeKeys.Setting.sectionArrSetting), localizeString(key: LocalizeKeys.Setting.sectionArrOther)]
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -78,6 +77,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             let cell = tableView.dequeueReusableCell(with: AppVersionTableViewCell.self, for: indexPath)
+            cell.titleLabel.text = settingArr[indexPath.section][indexPath.row]
             cell.selectionStyle = .none
             return cell
             

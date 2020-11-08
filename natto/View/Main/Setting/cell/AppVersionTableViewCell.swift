@@ -9,6 +9,7 @@
 import UIKit
 
 class AppVersionTableViewCell: UITableViewCell {
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
     
     override func awakeFromNib() {
