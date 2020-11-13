@@ -10,8 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultViewController" customModule="natto" customModuleProvider="target">
             <connections>
-                <outlet property="bestScoreLabel" destination="PAC-8u-Onm" id="Rwz-Gl-dWa"/>
-                <outlet property="imageView" destination="6vp-Uz-ZqN" id="tlU-Ex-5TA"/>
                 <outlet property="retryButton" destination="M1s-7V-g7X" id="5x8-gO-2Z0"/>
                 <outlet property="scoreLabel" destination="KYc-DA-xwh" id="k0R-SL-h5R"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -28,19 +26,6 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ベストスコア" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAC-8u-Onm">
-                    <rect key="frame" x="16" y="110" width="382" height="33.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mame01" translatesAutoresizingMaskIntoConstraints="NO" id="6vp-Uz-ZqN">
-                    <rect key="frame" x="82" y="323" width="250" height="250"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="250" id="6AW-Yk-ElU"/>
-                        <constraint firstAttribute="width" constant="250" id="McP-ph-man"/>
-                    </constraints>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1s-7V-g7X">
                     <rect key="frame" x="16" y="772" width="382" height="54"/>
                     <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -67,17 +52,12 @@
             <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ob3-gy-vbk" secondAttribute="bottom" constant="120" id="1b9-3S-Zjp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PAC-8u-Onm" secondAttribute="trailing" constant="16" id="EqE-Dz-t4C"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ob3-gy-vbk" secondAttribute="trailing" constant="16" id="HtN-55-dv9"/>
-                <constraint firstItem="PAC-8u-Onm" firstAttribute="top" secondItem="KYc-DA-xwh" secondAttribute="bottom" constant="8" id="UD4-FV-UPJ"/>
-                <constraint firstItem="6vp-Uz-ZqN" firstAttribute="centerX" secondItem="PAC-8u-Onm" secondAttribute="centerX" id="YpY-9s-bdj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M1s-7V-g7X" secondAttribute="trailing" constant="16" id="bKq-44-qHO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KYc-DA-xwh" secondAttribute="trailing" constant="16" id="ciM-iK-FKl"/>
                 <constraint firstItem="M1s-7V-g7X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dGm-9p-IuK"/>
-                <constraint firstItem="6vp-Uz-ZqN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jEQ-zl-m8X"/>
                 <constraint firstItem="KYc-DA-xwh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="l6r-Zy-QO1"/>
                 <constraint firstAttribute="bottom" secondItem="M1s-7V-g7X" secondAttribute="bottom" constant="70" id="lNm-hq-Jnt"/>
-                <constraint firstItem="PAC-8u-Onm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="rPm-Xg-4wD"/>
                 <constraint firstItem="KYc-DA-xwh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="wR0-Vs-YX3"/>
             </constraints>
             <point key="canvasLocation" x="-146.37681159420291" y="94.419642857142847"/>
@@ -85,6 +65,5 @@
     </objects>
     <resources>
         <image name="infoIcon" width="600" height="600"/>
-        <image name="mame01" width="500" height="500"/>
     </resources>
 </document>

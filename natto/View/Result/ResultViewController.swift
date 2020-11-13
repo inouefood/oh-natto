@@ -22,34 +22,9 @@ class ResultViewController: UIViewController {
             scoreLabel.font = UIFont(name: "Verdana-bold", size: 35)
         }
     }
-    @IBOutlet weak var bestScoreLabel: UILabel! {
-        didSet {
-            guard let bsetScore = UserStore.bestScore else {
-                bestScoreLabel.isHidden = true
-                return
-            }
-            bestScoreLabel.text = localizeString(key: LocalizeKeys.Result.bestScore) + bsetScore.description
-            bestScoreLabel.font = UIFont(name: "Verdana-bold", size: 25)
-        }
-    }
     @IBOutlet weak var retryButton: UIButton! {
         didSet {
             retryButton.titleLabel?.font = UIFont(name: "Verdana-bold", size: 35)
-        }
-    }
-    
-    @IBOutlet weak var imageView: UIImageView! {
-        didSet {
-            let imageArr:[UIImage]? = [UIImage(named: "mame01")!,
-                                       UIImage(named: "mame02")!,
-                                       UIImage(named: "mame03")!,
-                                       UIImage(named: "mame02")!]
-
-            imageView.animationImages = imageArr
-            imageView.animationDuration = 0.9
-            imageView.animationRepeatCount = 0
-                    
-            imageView.startAnimating()
         }
     }
     
