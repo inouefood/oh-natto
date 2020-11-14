@@ -16,9 +16,24 @@ class ResultViewController: UIViewController {
     
     var dismissHandler: (()->())?
     
+    @IBOutlet weak var tipsTitleLabel: UILabel! {
+        didSet {
+            tipsTitleLabel.text = localizeString(key: LocalizeKeys.Result.tipsTitle)
+        }
+    }
+    @IBOutlet weak var tipsLabel: UILabel! {
+        didSet {
+            tipsLabel.text = "弥生時代にはすでに納豆はあったらしいよ"
+        }
+    }
+    @IBOutlet weak var scoreTitleLabel: UILabel! {
+        didSet {
+            scoreTitleLabel.text = localizeString(key: LocalizeKeys.Result.scoreTitle)
+        }
+    }
     @IBOutlet weak var scoreLabel: UILabel! {
         didSet {
-            scoreLabel.text = localizeString(key: LocalizeKeys.Result.score) + String(score)
+            scoreLabel.text = String(score) + localizeString(key: LocalizeKeys.Result.score)
             scoreLabel.font = UIFont(name: "Verdana-bold", size: 35)
         }
     }
