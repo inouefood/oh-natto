@@ -61,7 +61,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1.0)
+        view.backgroundColor = UIColor(appColor: .background)
         loadAudio(resourceName: "natto_bgm_score.wav", resourceType: "")
     }
     
