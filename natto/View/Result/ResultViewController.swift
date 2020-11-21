@@ -34,7 +34,6 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel! {
         didSet {
             scoreLabel.text = String(score) + localizeString(key: LocalizeKeys.Result.score)
-            scoreLabel.font = UIFont(name: "Verdana-bold", size: 35)
         }
     }
     @IBOutlet weak var retryButton: UIButton! {
