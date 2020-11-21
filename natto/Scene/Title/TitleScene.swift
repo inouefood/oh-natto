@@ -135,10 +135,15 @@ class TitleScene: SKScene {
                 topViewController()?.present(vc, animated: true, completion: nil)
                 
             } else if touchNode == itemSelectButton {
-                let vc = EquipmentSelectViewController()
-                vc.selectItemHandler = {
-                    self.selectedItems = $0
+                let vc = ToppingSelectViewController()
+                let items = UserStore.ownedItem
+                vc.toppings = items?.createItemList(alreadySelect: ToppingManager.shared.selectedItem) ?? []
+
+                vc.decisionAction = {
+//                    self.selectedItems = $0
+//                    self.dismiss(animated: true, completion: nil)
                 }
+                
                 topViewController()?.present(vc, animated: true, completion: nil)
                 
             }else if touchNode == settingButton {
