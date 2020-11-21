@@ -52,6 +52,7 @@
 		490C1B7325352EF70094C76F /* ToppingSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */; };
 		49199F59253F0A6D00F935D9 /* EquipmentSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */; };
 		49199F5A253F0A6D00F935D9 /* EquipmentSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */; };
+		491D83952568DF84009E9975 /* UIColor+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491D83942568DF84009E9975 /* UIColor+Addition.swift */; };
 		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
 		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
 		493B410F2546FBF700F26C4F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B410D2546FBF700F26C4F /* SettingViewController.swift */; };
@@ -168,6 +169,7 @@
 		490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToppingSelectViewController.xib; sourceTree = "<group>"; };
 		49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSelectViewController.swift; sourceTree = "<group>"; };
 		49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentSelectViewController.xib; sourceTree = "<group>"; };
+		491D83942568DF84009E9975 /* UIColor+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Addition.swift"; sourceTree = "<group>"; };
 		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		493B410D2546FBF700F26C4F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				493B4122254704BE00F26C4F /* UITableView+Addition.swift */,
 				493B412A254704EA00F26C4F /* NSObject+Addition.swift */,
 				49EE35562556C7BC00305D38 /* UIImage+Addition.swift */,
+				491D83942568DF84009E9975 /* UIColor+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -815,6 +818,7 @@
 				493B411A2547013F00F26C4F /* SettingTableViewCell.swift in Sources */,
 				F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */,
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
+				491D83952568DF84009E9975 /* UIColor+Addition.swift in Sources */,
 				0DCD56D42348E63F008F7BAA /* Swift+Addition.swift in Sources */,
 				49199F59253F0A6D00F935D9 /* EquipmentSelectViewController.swift in Sources */,
 				0DFD696A2276F2BB000DBD93 /* SKScene+Addition.swift in Sources */,
