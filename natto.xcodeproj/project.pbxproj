@@ -50,8 +50,6 @@
 		490C1B392535251A0094C76F /* TotalEatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B372535251A0094C76F /* TotalEatViewController.xib */; };
 		490C1B7225352EF70094C76F /* ToppingSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C1B7025352EF70094C76F /* ToppingSelectViewController.swift */; };
 		490C1B7325352EF70094C76F /* ToppingSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */; };
-		49199F59253F0A6D00F935D9 /* EquipmentSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */; };
-		49199F5A253F0A6D00F935D9 /* EquipmentSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */; };
 		491D83952568DF84009E9975 /* UIColor+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491D83942568DF84009E9975 /* UIColor+Addition.swift */; };
 		4933B7AE2529E3C800BFCCE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */; };
 		4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */; };
@@ -71,10 +69,6 @@
 		497D132F2523306F007B1129 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497D132E2523306F007B1129 /* DescriptionView.xib */; };
 		49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */; };
 		49B94C322529BA2200BF6C53 /* BestScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */; };
-		49D3AB3E253F0D87008422F3 /* MameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3AB3C253F0D87008422F3 /* MameSelectViewController.swift */; };
-		49D3AB3F253F0D87008422F3 /* MameSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D3AB3D253F0D87008422F3 /* MameSelectViewController.xib */; };
-		49D3AB47253F0DD7008422F3 /* ItemSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3AB45253F0DD7008422F3 /* ItemSelectViewController.swift */; };
-		49D3AB48253F0DD7008422F3 /* ItemSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D3AB46253F0DD7008422F3 /* ItemSelectViewController.xib */; };
 		49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCE3253085B000F9C30E /* ShareButton.swift */; };
 		49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CCE9253085D600F9C30E /* ShareButton.xib */; };
 		49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCFA25320F6A00F9C30E /* Topping.swift */; };
@@ -167,8 +161,6 @@
 		490C1B372535251A0094C76F /* TotalEatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalEatViewController.xib; sourceTree = "<group>"; };
 		490C1B7025352EF70094C76F /* ToppingSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToppingSelectViewController.swift; sourceTree = "<group>"; };
 		490C1B7125352EF70094C76F /* ToppingSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToppingSelectViewController.xib; sourceTree = "<group>"; };
-		49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSelectViewController.swift; sourceTree = "<group>"; };
-		49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentSelectViewController.xib; sourceTree = "<group>"; };
 		491D83942568DF84009E9975 /* UIColor+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Addition.swift"; sourceTree = "<group>"; };
 		4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4933B7AD2529E3C800BFCCE8 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
@@ -187,10 +179,6 @@
 		497D132E2523306F007B1129 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
 		49B94C2F2529BA2200BF6C53 /* BestScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScoreViewController.swift; sourceTree = "<group>"; };
 		49B94C302529BA2200BF6C53 /* BestScoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestScoreViewController.xib; sourceTree = "<group>"; };
-		49D3AB3C253F0D87008422F3 /* MameSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MameSelectViewController.swift; sourceTree = "<group>"; };
-		49D3AB3D253F0D87008422F3 /* MameSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MameSelectViewController.xib; sourceTree = "<group>"; };
-		49D3AB45253F0DD7008422F3 /* ItemSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectViewController.swift; sourceTree = "<group>"; };
-		49D3AB46253F0DD7008422F3 /* ItemSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemSelectViewController.xib; sourceTree = "<group>"; };
 		49D9CCE3253085B000F9C30E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		49D9CCE9253085D600F9C30E /* ShareButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareButton.xib; sourceTree = "<group>"; };
 		49D9CCFA25320F6A00F9C30E /* Topping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topping.swift; sourceTree = "<group>"; };
@@ -435,18 +423,6 @@
 			path = TotalEat;
 			sourceTree = "<group>";
 		};
-		490C1B6F25352ED80094C76F /* EquipmentSelect */ = {
-			isa = PBXGroup;
-			children = (
-				49199F57253F0A6D00F935D9 /* EquipmentSelectViewController.swift */,
-				49199F58253F0A6D00F935D9 /* EquipmentSelectViewController.xib */,
-				4941A84A253A95AD00977604 /* ToppingSelect */,
-				49D3AB43253F0D90008422F3 /* MameSelect */,
-				49D3AB44253F0D9F008422F3 /* ItemSelect */,
-			);
-			path = EquipmentSelect;
-			sourceTree = "<group>";
-		};
 		4933B7AB2529E3A000BFCCE8 /* Result */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,7 +502,7 @@
 				43D95F292052723B00FE1117 /* Main.storyboard */,
 				493B410C2546FBE200F26C4F /* Setting */,
 				0D815D0722617A2A00B6642E /* Description */,
-				490C1B6F25352ED80094C76F /* EquipmentSelect */,
+				4941A84A253A95AD00977604 /* ToppingSelect */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -540,24 +516,6 @@
 				057D3EC72330666A00712E5D /* Contiffi.scnp */,
 			);
 			path = BestScore;
-			sourceTree = "<group>";
-		};
-		49D3AB43253F0D90008422F3 /* MameSelect */ = {
-			isa = PBXGroup;
-			children = (
-				49D3AB3C253F0D87008422F3 /* MameSelectViewController.swift */,
-				49D3AB3D253F0D87008422F3 /* MameSelectViewController.xib */,
-			);
-			path = MameSelect;
-			sourceTree = "<group>";
-		};
-		49D3AB44253F0D9F008422F3 /* ItemSelect */ = {
-			isa = PBXGroup;
-			children = (
-				49D3AB45253F0DD7008422F3 /* ItemSelectViewController.swift */,
-				49D3AB46253F0DD7008422F3 /* ItemSelectViewController.xib */,
-			);
-			path = ItemSelect;
 			sourceTree = "<group>";
 		};
 		49D9CCE8253085BB00F9C30E /* customView */ = {
@@ -737,16 +695,13 @@
 				4343CEA420537F21002CA3BC /* natto_bgm_game.wav in Resources */,
 				490C1B7325352EF70094C76F /* ToppingSelectViewController.xib in Resources */,
 				057D3EC82330666A00712E5D /* confetti.png in Resources */,
-				49D3AB3F253F0D87008422F3 /* MameSelectViewController.xib in Resources */,
 				493B411B2547013F00F26C4F /* SettingTableViewCell.xib in Resources */,
 				4933B7AF2529E3C800BFCCE8 /* ResultViewController.xib in Resources */,
 				49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */,
 				0D048FC42277FCE500852FFA /* Settings.bundle in Resources */,
-				49D3AB48253F0DD7008422F3 /* ItemSelectViewController.xib in Resources */,
 				4343CEA62053804C002CA3BC /* voice_5.wav in Resources */,
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
 				0D815D112261E42D00B6642E /* CloseButton.xib in Resources */,
-				49199F5A253F0A6D00F935D9 /* EquipmentSelectViewController.xib in Resources */,
 				43704C95205304BF00F87562 /* mame.mp3 in Resources */,
 				F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */,
 				49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */,
@@ -789,7 +744,6 @@
 				0DF70CFF223E7708007105D8 /* PullNattoModel.swift in Sources */,
 				F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */,
 				F346A9CA226A403E00A051FC /* SKShapeNode+Addition.swift in Sources */,
-				49D3AB47253F0DD7008422F3 /* ItemSelectViewController.swift in Sources */,
 				43704C912052E1D900F87562 /* PullNattoScene.swift in Sources */,
 				493B4123254704BE00F26C4F /* UITableView+Addition.swift in Sources */,
 				43D95F262052723B00FE1117 /* TitleScene.swift in Sources */,
@@ -798,7 +752,6 @@
 				49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */,
 				054E493722D2DF4F0062736D /* UIViewController+Addition.swift in Sources */,
 				054E493322D2D9C00062736D /* AppVersionCompare.swift in Sources */,
-				49D3AB3E253F0D87008422F3 /* MameSelectViewController.swift in Sources */,
 				490C1B382535251A0094C76F /* TotalEatViewController.swift in Sources */,
 				0DCD56D82348E72E008F7BAA /* LocalizeKey.swift in Sources */,
 				49EE35572556C7BC00305D38 /* UIImage+Addition.swift in Sources */,
@@ -820,7 +773,6 @@
 				0DF70D3C22426268007105D8 /* MixScene.swift in Sources */,
 				491D83952568DF84009E9975 /* UIColor+Addition.swift in Sources */,
 				0DCD56D42348E63F008F7BAA /* Swift+Addition.swift in Sources */,
-				49199F59253F0A6D00F935D9 /* EquipmentSelectViewController.swift in Sources */,
 				0DFD696A2276F2BB000DBD93 /* SKScene+Addition.swift in Sources */,
 				493B412B254704EA00F26C4F /* NSObject+Addition.swift in Sources */,
 				49D9CCE4253085B000F9C30E /* ShareButton.swift in Sources */,
