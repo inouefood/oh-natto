@@ -35,33 +35,33 @@
                                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66S-PN-HpI" customClass="DescriptionView" customModule="natto" customModuleProvider="target">
-                                    <rect key="frame" x="422" y="0.0" width="414" height="818"/>
+                                    <rect key="frame" x="414" y="0.0" width="414" height="818"/>
                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kln-Xs-KFr" customClass="DescriptionView" customModule="natto" customModuleProvider="target">
-                                    <rect key="frame" x="836" y="0.0" width="414" height="818"/>
+                                    <rect key="frame" x="828" y="0.0" width="414" height="818"/>
                                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wq8-R6-6on" customClass="DescriptionView" customModule="natto" customModuleProvider="target">
-                                    <rect key="frame" x="1250" y="0.0" width="414" height="818"/>
+                                    <rect key="frame" x="1242" y="0.0" width="414" height="818"/>
                                     <color key="backgroundColor" systemColor="systemTealColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bN-Bd-MEh">
-                                    <rect key="frame" x="1664" y="0.0" width="414" height="818"/>
+                                    <rect key="frame" x="1656" y="0.0" width="414" height="818"/>
                                     <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rW7-26-9xj">
-                                    <rect key="frame" x="2086" y="0.0" width="398" height="818"/>
+                                    <rect key="frame" x="2070" y="0.0" width="414" height="818"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemFillColor"/>
                             <constraints>
-                                <constraint firstItem="uby-Sy-JXY" firstAttribute="width" secondItem="66S-PN-HpI" secondAttribute="width" id="FJj-v8-FRa"/>
+                                <constraint firstItem="66S-PN-HpI" firstAttribute="leading" secondItem="uby-Sy-JXY" secondAttribute="trailing" id="DAB-Xa-5JH"/>
                                 <constraint firstItem="Wq8-R6-6on" firstAttribute="leading" secondItem="Kln-Xs-KFr" secondAttribute="trailing" id="GI4-XG-1T4"/>
                                 <constraint firstItem="Kln-Xs-KFr" firstAttribute="leading" secondItem="66S-PN-HpI" secondAttribute="trailing" id="P6Z-Oj-6di"/>
-                                <constraint firstItem="rW7-26-9xj" firstAttribute="leading" secondItem="8bN-Bd-MEh" secondAttribute="trailing" constant="8" symbolic="YES" id="Rd5-HG-lyM"/>
                                 <constraint firstItem="8bN-Bd-MEh" firstAttribute="leading" secondItem="Wq8-R6-6on" secondAttribute="trailing" id="XdP-UO-P9R"/>
+                                <constraint firstItem="rW7-26-9xj" firstAttribute="leading" secondItem="8bN-Bd-MEh" secondAttribute="trailing" id="d8f-Gh-nzW"/>
                                 <constraint firstAttribute="trailing" secondItem="rW7-26-9xj" secondAttribute="trailing" id="wTl-qh-Pzn"/>
                                 <constraint firstItem="uby-Sy-JXY" firstAttribute="leading" secondItem="4sd-wn-UVi" secondAttribute="leading" id="yWN-OP-hDP"/>
                             </constraints>
@@ -72,7 +72,7 @@
                         <constraint firstItem="uby-Sy-JXY" firstAttribute="top" secondItem="mdF-LY-s41" secondAttribute="top" id="3Rj-YO-AMl"/>
                         <constraint firstItem="uby-Sy-JXY" firstAttribute="width" secondItem="4J7-lg-9kb" secondAttribute="width" id="6fV-Rn-J6D"/>
                         <constraint firstItem="4sd-wn-UVi" firstAttribute="top" secondItem="1vW-R6-xQQ" secondAttribute="top" id="84o-Ah-2aJ"/>
-                        <constraint firstItem="rW7-26-9xj" firstAttribute="width" secondItem="4J7-lg-9kb" secondAttribute="width" multiplier="0.961353" id="BT7-6v-M35"/>
+                        <constraint firstItem="rW7-26-9xj" firstAttribute="width" secondItem="4J7-lg-9kb" secondAttribute="width" id="BT7-6v-M35"/>
                         <constraint firstItem="8bN-Bd-MEh" firstAttribute="width" secondItem="4J7-lg-9kb" secondAttribute="width" id="KTd-Mr-Um0"/>
                         <constraint firstAttribute="bottom" secondItem="Kln-Xs-KFr" secondAttribute="bottom" id="Ldr-LC-tnF"/>
                         <constraint firstAttribute="bottom" secondItem="8bN-Bd-MEh" secondAttribute="bottom" id="NlF-gL-TU0"/>
@@ -101,7 +101,7 @@
                     <color key="tintColor" red="0.90196078430000004" green="0.0" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                 </pageControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGx-HN-8IW" customClass="CloseButton" customModule="natto" customModuleProvider="target">
-                    <rect key="frame" x="364" y="44" width="50" height="50"/>
+                    <rect key="frame" x="356" y="52" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Bre-vc-NrB"/>
                         <constraint firstAttribute="width" constant="50" id="cM8-NO-79x"/>
@@ -116,12 +116,12 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="mdF-LY-s41" secondAttribute="top" id="4FS-q3-aFn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WGx-HN-8IW" secondAttribute="trailing" id="BvC-uN-gel"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WGx-HN-8IW" secondAttribute="trailing" constant="8" id="BvC-uN-gel"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="mdF-LY-s41" secondAttribute="leading" id="ExL-Bp-RVj"/>
                 <constraint firstItem="NJ0-lg-7Sd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UZN-Yi-sNh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mdF-LY-s41" secondAttribute="trailing" id="gI1-Jl-Vne"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mdF-LY-s41" secondAttribute="bottom" id="nXO-CK-Ifg"/>
-                <constraint firstItem="WGx-HN-8IW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sEq-1c-wIZ"/>
+                <constraint firstItem="WGx-HN-8IW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="sEq-1c-wIZ"/>
                 <constraint firstItem="NJ0-lg-7Sd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-10" id="upG-0N-bJG"/>
             </constraints>
             <point key="canvasLocation" x="434.78260869565219" y="120.53571428571428"/>
