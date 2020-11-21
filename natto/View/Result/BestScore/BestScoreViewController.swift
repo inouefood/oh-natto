@@ -48,11 +48,11 @@ class BestScoreViewController: UIViewController {
 
         let confetti = SCNParticleSystem(named: "Contiffi.scnp", inDirectory: "")!
         scene.rootNode.addParticleSystem(confetti)
-
+        let screenSize: CGSize = UIScreen.main.nativeBounds.size
         let view = SCNView(frame: CGRect(x: 0,
                                          y: 0,
-                                         width: self.view.frame.width,
-                                         height: self.view.frame.height))
+                                         width: screenSize.width,
+                                         height: screenSize.height))
         view.scene = scene
         view.backgroundColor = UIColor.clear
         view.autoenablesDefaultLighting = true
