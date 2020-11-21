@@ -16,40 +16,29 @@ class ResultViewController: UIViewController {
     
     var dismissHandler: (()->())?
     
-    @IBOutlet weak var scoreLabel: UILabel! {
+    @IBOutlet weak var tipsTitleLabel: UILabel! {
         didSet {
-            scoreLabel.text = localizeString(key: LocalizeKeys.Result.score) + String(score)
-            scoreLabel.font = UIFont(name: "Verdana-bold", size: 35)
+            tipsTitleLabel.text = localizeString(key: LocalizeKeys.Result.tipsTitle)
         }
     }
-    @IBOutlet weak var bestScoreLabel: UILabel! {
+    @IBOutlet weak var tipsLabel: UILabel! {
         didSet {
-            guard let bsetScore = UserStore.bestScore else {
-                bestScoreLabel.isHidden = true
-                return
-            }
-            bestScoreLabel.text = localizeString(key: LocalizeKeys.Result.bestScore) + bsetScore.description
-            bestScoreLabel.font = UIFont(name: "Verdana-bold", size: 25)
+            tipsLabel.text = "弥生時代にはすでに納豆はあったらしいよ"
+        }
+    }
+    @IBOutlet weak var scoreTitleLabel: UILabel! {
+        didSet {
+            scoreTitleLabel.text = localizeString(key: LocalizeKeys.Result.scoreTitle)
+        }
+    }
+    @IBOutlet weak var scoreLabel: UILabel! {
+        didSet {
+            scoreLabel.text = String(score) + localizeString(key: LocalizeKeys.Result.score)
         }
     }
     @IBOutlet weak var retryButton: UIButton! {
         didSet {
             retryButton.titleLabel?.font = UIFont(name: "Verdana-bold", size: 35)
-        }
-    }
-    
-    @IBOutlet weak var imageView: UIImageView! {
-        didSet {
-            let imageArr:[UIImage]? = [UIImage(named: "mame01")!,
-                                       UIImage(named: "mame02")!,
-                                       UIImage(named: "mame03")!,
-                                       UIImage(named: "mame02")!]
-
-            imageView.animationImages = imageArr
-            imageView.animationDuration = 0.9
-            imageView.animationRepeatCount = 0
-                    
-            imageView.startAnimating()
         }
     }
     

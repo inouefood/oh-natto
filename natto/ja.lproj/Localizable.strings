@@ -20,10 +20,10 @@
 "TITLE.BUTTON.START" = "はじめる";
 
 "RESULT.BUTTON.REPLAY" = "もういちど";
-
-"RESULT.LABEL.SCORE" = "スコア: ";
-"RESULT.LABEL.BESTSCORE" = "最高得点: ";
+"RESULT.LABEL.SCORE" = "点";
+"RESULT.LABEL.SCORETITLE" = "今回のスコア";
 "RESULT.TWITTER" = "\n\n納豆食べてパーフェクトボディ！\n";
+"RESULT.TIPSTITLE" = "豆知識";
 
 // ベストスコア画面
 "BEST.LABEL.TITLE" = "ニューベストスコア!!";

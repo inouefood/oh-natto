@@ -50,7 +50,9 @@ struct LocalizeKeys {
         case buttonRelpay = "RESULT.BUTTON.REPLAY"
         case score = "RESULT.LABEL.SCORE"
         case bestScore =  "RESULT.LABEL.BESTSCORE"
+        case scoreTitle = "RESULT.LABEL.SCORETITLE"
         case tweet = "RESULT.TWITTER"
+        case tipsTitle = "RESULT.TIPSTITLE"
         var key: String {
             return rawValue
         }
