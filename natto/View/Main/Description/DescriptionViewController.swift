@@ -10,47 +10,50 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView! {
-        didSet {
-            scrollView.delegate = self
-        }
-    }
-    
-    @IBOutlet weak var pageControl: UIPageControl!  {
-        didSet {
-            pageControl.isEnabled = false
-        }
-    }
-    @IBOutlet weak var firstPage: DescriptionView! {
-        didSet {
-            
-            firstPage.setDescription(image: UIImage(named: "description1"),
-                                     text: localizeString(key: LocalizeKeys.Description.one))
-        }
-    }
-    @IBOutlet weak var secondPage: DescriptionView!{
-        didSet {
-            secondPage.setDescription(image: UIImage(named: "description2"),
-                                      text: localizeString(key: LocalizeKeys.Description.two))
-        }
-    }
-    @IBOutlet weak var therdPage: DescriptionView!{
-        didSet {
-            therdPage.setDescription(image: UIImage(named: "description3"),
-                                     text: localizeString(key: LocalizeKeys.Description.three))
-        }
-    }
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var firstPage: DescriptionView!
+    @IBOutlet weak var secondPage: DescriptionView!
+    @IBOutlet weak var therdPage: DescriptionView!
     
     // - MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1.0)
-        pageControl.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+    
+        let horizonSizeClass = UITraitCollection(horizontalSizeClass: .regular)
+        let verticalSizeClass = UITraitCollection(verticalSizeClass: .regular)
+        
+        commonInit(isRegularRegularSize: traitCollection.containsTraits(in: horizonSizeClass)
+                    && traitCollection.containsTraits(in: verticalSizeClass))
         
     }
  
     @IBAction func dismissAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func commonInit(isRegularRegularSize: Bool){
+        self.view.backgroundColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1.0)
+        pageControl.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+        
+        scrollView.delegate = self
+        pageControl.isEnabled = false
+        
+        if isRegularRegularSize {
+            firstPage.setDescription(image: UIImage(named: "okura"),
+                                     text: localizeString(key: LocalizeKeys.Description.one))
+            secondPage.setDescription(image: UIImage(named: "okura"),
+                                      text: localizeString(key: LocalizeKeys.Description.two))
+            therdPage.setDescription(image: UIImage(named: "okura"),
+                                     text: localizeString(key: LocalizeKeys.Description.three))
+        } else {
+            firstPage.setDescription(image: UIImage(named: "description1"),
+                                     text: localizeString(key: LocalizeKeys.Description.one))
+            secondPage.setDescription(image: UIImage(named: "description2"),
+                                      text: localizeString(key: LocalizeKeys.Description.two))
+            therdPage.setDescription(image: UIImage(named: "description3"),
+                                     text: localizeString(key: LocalizeKeys.Description.three))
+        }
     }
     
 }
