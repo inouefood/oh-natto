@@ -12,9 +12,13 @@ class DescriptionViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    
+    @IBOutlet weak var zeroPage: DescriptionView!
     @IBOutlet weak var firstPage: DescriptionView!
     @IBOutlet weak var secondPage: DescriptionView!
     @IBOutlet weak var therdPage: DescriptionView!
+    @IBOutlet weak var fourthPage: DescriptionView!
+    @IBOutlet weak var fifthPage: DescriptionView!
     
     // - MARK: LifeCycle
     override func viewDidLoad() {
@@ -40,19 +44,32 @@ class DescriptionViewController: UIViewController {
         pageControl.isEnabled = false
         
         if isRegularRegularSize {
+            zeroPage.setDescription(image: UIImage(named: "okura"),
+                                    text: "この画面ではoh! natto!あそびかたを知ることができます")
             firstPage.setDescription(image: UIImage(named: "okura"),
                                      text: localizeString(key: LocalizeKeys.Description.one))
             secondPage.setDescription(image: UIImage(named: "okura"),
                                       text: localizeString(key: LocalizeKeys.Description.two))
             therdPage.setDescription(image: UIImage(named: "okura"),
                                      text: localizeString(key: LocalizeKeys.Description.three))
+            fourthPage.setDescription(image: UIImage(named: "okura"),
+                                      text: "アイテム購入の説明")
+            fifthPage.setDescription(image: UIImage(named: "okura"),
+                                     text: "アイテムをセレクト画面の説明")
+            
         } else {
+            zeroPage.setDescription(image: UIImage(named: "okura"),
+                                    text: "この画面ではoh! natto!あそびかたを知ることができます")
             firstPage.setDescription(image: UIImage(named: "description1"),
                                      text: localizeString(key: LocalizeKeys.Description.one))
             secondPage.setDescription(image: UIImage(named: "description2"),
                                       text: localizeString(key: LocalizeKeys.Description.two))
             therdPage.setDescription(image: UIImage(named: "description3"),
                                      text: localizeString(key: LocalizeKeys.Description.three))
+            fourthPage.setDescription(image: UIImage(named: "okura"),
+                                      text: "アイテム購入の説明")
+            fifthPage.setDescription(image: UIImage(named: "okura"),
+                                     text: "アイテムをセレクト画面の説明")
         }
     }
     

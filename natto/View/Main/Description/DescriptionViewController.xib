@@ -11,12 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DescriptionViewController" customModule="natto" customModuleProvider="target">
             <connections>
+                <outlet property="fifthPage" destination="rW7-26-9xj" id="Kw6-ML-reM"/>
                 <outlet property="firstPage" destination="66S-PN-HpI" id="PQ4-Xc-7WI"/>
+                <outlet property="fourthPage" destination="8bN-Bd-MEh" id="UPt-oJ-abn"/>
                 <outlet property="pageControl" destination="NJ0-lg-7Sd" id="itm-ra-HTH"/>
                 <outlet property="scrollView" destination="mdF-LY-s41" id="f1W-eD-6t1"/>
                 <outlet property="secondPage" destination="Kln-Xs-KFr" id="yRu-ml-O7m"/>
                 <outlet property="therdPage" destination="Wq8-R6-6on" id="I6R-bq-N86"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="zeroPage" destination="uby-Sy-JXY" id="p0B-fx-Mdm"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -30,7 +33,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sd-wn-UVi">
                             <rect key="frame" x="0.0" y="0.0" width="2484" height="818"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uby-Sy-JXY">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uby-Sy-JXY" customClass="DescriptionView" customModule="natto" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 </view>
@@ -46,11 +49,11 @@
                                     <rect key="frame" x="1242" y="0.0" width="414" height="818"/>
                                     <color key="backgroundColor" systemColor="systemTealColor"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bN-Bd-MEh">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bN-Bd-MEh" customClass="DescriptionView" customModule="natto" customModuleProvider="target">
                                     <rect key="frame" x="1656" y="0.0" width="414" height="818"/>
                                     <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rW7-26-9xj">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rW7-26-9xj" customClass="DescriptionView" customModule="natto" customModuleProvider="target">
                                     <rect key="frame" x="2070" y="0.0" width="414" height="818"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
