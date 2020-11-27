@@ -43,6 +43,7 @@ class ToppingSelectViewController: UIViewController {
         firstToppingImage.image = nil
         secondToppingImage.image = nil
         thirdToppingImage.image = nil
+        collectionView.reloadData()
     }
     
     private func setImage(image: UIImage?) {
@@ -91,26 +92,26 @@ extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionV
         return CGSize(width: cellSize, height: cellSize)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO 選択された際にセルのカウント情報を書き換える
-        let cell = collectionView.cellForItem(at: indexPath) as! ToppingSelectCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        let cell = collectionView.cellForItem(at: indexPath) as! ToppingSelectCollectionViewCell
         let count = Int(cell.toppingCountLabel.text!)! - 1
         if count < 0 {
             showInformation(message: localizeString(key: LocalizeKeys.ToppingSelect.alertItemLess),
                             closeButtonText: localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))
             return
         }
-        cell.toppingCountLabel.text = count.description
         
         if firstToppingImage.image == nil {
+            cell.toppingCountLabel.text = count.description
             setImage(image: toppings[indexPath.row].instance.type.image)
             ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else if thirdToppingImage.image == nil {
+            cell.toppingCountLabel.text = count.description
             setImage(image: toppings[indexPath.row].instance.type.image)
             ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else if secondToppingImage.image == nil {
+            cell.toppingCountLabel.text = count.description
             setImage(image: toppings[indexPath.row].instance.type.image)
             ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
