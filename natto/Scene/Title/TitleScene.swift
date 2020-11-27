@@ -49,9 +49,6 @@ class TitleScene: SKScene {
     }()
     
     var controlWidth: CGFloat!
-    private var selectedItems:[Topping] = []
-    
-    // MARK: - Initializer
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -62,7 +59,35 @@ class TitleScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // - MARK: LifeCycle
+    private func updateOwnedToppingItems(){
+        guard var item = UserStore.ownedItem else {
+            return
+        }
+        var selectNegi = 0
+        var selectOkura = 0
+        var selectSirasu = 0
+        
+        ToppingManager.shared.selectedItem.forEach{
+            switch $0.type {
+            case .negi:
+                selectNegi += 1
+            case .okura:
+                selectOkura += 1
+            case .sirasu:
+                selectSirasu += 1
+            }
+        }
+        item.negi -= selectNegi
+        item.okura -= selectOkura
+        item.sirasu -= selectSirasu
+        
+        UserStore.ownedItem = item
+        ToppingManager.shared.selectedItem = []
+    }
+}
+
+// MARK: - Life Cycle
+extension TitleScene {
     
     override func didMove(to view: SKView) {
         self.anchorPoint = CGPoint(x: 0, y: 0)
@@ -99,17 +124,18 @@ class TitleScene: SKScene {
             startLabel.position.x = width - controlWidth + startLabel.frame.width/2
         }
     }
-    
-    // - MARK: Event
-    
+}
+// - MARK: Event
+extension TitleScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for touches:AnyObject in touches{
             let location = touches.previousLocation(in: self)
             let touchNode = self.atPoint(location)
             if touchNode == startLabel{
+                
+                let scene = MixScene(size: self.size, topping: ToppingManager.shared.selectedItem)
                 updateOwnedToppingItems()
-                let scene = MixScene(size: self.size, topping: selectedItems)
                 self.view!.presentScene(scene)
                 
             } else if touchNode == infoButton {
@@ -136,14 +162,6 @@ class TitleScene: SKScene {
                 
             } else if touchNode == itemSelectButton {
                 let vc = ToppingSelectViewController()
-                let items = UserStore.ownedItem
-                vc.toppings = items?.createItemList(alreadySelect: ToppingManager.shared.selectedItem) ?? []
-
-                vc.decisionAction = {
-//                    self.selectedItems = $0
-//                    self.dismiss(animated: true, completion: nil)
-                }
-                
                 topViewController()?.present(vc, animated: true, completion: nil)
                 
             }else if touchNode == settingButton {
@@ -153,13 +171,13 @@ class TitleScene: SKScene {
                 let sprite: SKSpriteNode!
                 let randomCount = Int.random(in: 0...3)
                 
-                if selectedItems.isEmpty {
+                if ToppingManager.shared.selectedItem.isEmpty {
                     sprite = SKSpriteNode(imageNamed: "mame")
                 } else {
                     if randomCount != 0 {
                         sprite = SKSpriteNode(imageNamed: "mame")
                     } else {
-                        sprite = SKSpriteNode(imageNamed:selectedItems.randomElement()!.imageName)
+                        sprite = SKSpriteNode(imageNamed:ToppingManager.shared.selectedItem.randomElement()!.imageName)
                     }
                 }
                 
@@ -169,30 +187,5 @@ class TitleScene: SKScene {
                 self.addChild(sprite)
             }
         }
-    }
-    private func updateOwnedToppingItems(){
-        guard var item = UserStore.ownedItem else {
-            return
-        }
-        var selectNegi = 0
-        var selectOkura = 0
-        var selectSirasu = 0
-        
-        ToppingManager.shared.selectedItem.forEach{
-            switch $0.type {
-            case .negi:
-                selectNegi += 1
-            case .okura:
-                selectOkura += 1
-            case .sirasu:
-                selectSirasu += 1
-            }
-        }
-        item.negi -= selectNegi
-        item.okura -= selectOkura
-        item.sirasu -= selectSirasu
-        
-        UserStore.ownedItem = item
-        ToppingManager.shared.selectedItem = []
     }
 }

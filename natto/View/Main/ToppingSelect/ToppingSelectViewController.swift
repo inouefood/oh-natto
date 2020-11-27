@@ -23,11 +23,12 @@ class ToppingSelectViewController: UIViewController {
     @IBOutlet weak var firstToppingImage: UIImageView!
     @IBOutlet weak var secondToppingImage: UIImageView!
     @IBOutlet weak var thirdToppingImage: UIImageView!
-    
-    var decisionAction: (()->())?
+
     var toppings:[ToppingSelectCollectionViewCell.ViewModel] = []
     
     override func viewDidLoad() {
+        toppings = UserStore.ownedItem?.createItemList(alreadySelect: ToppingManager.shared.selectedItem) ?? []
+        
         ToppingManager.shared.selectedItem.forEach{
             setImage(image: $0.type.image)
         }
@@ -35,7 +36,7 @@ class ToppingSelectViewController: UIViewController {
     }
     
     @IBAction func decisionAction(_ sender: Any) {
-        decisionAction?()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func resetAction(_ sender: Any) {
@@ -43,6 +44,8 @@ class ToppingSelectViewController: UIViewController {
         firstToppingImage.image = nil
         secondToppingImage.image = nil
         thirdToppingImage.image = nil
+        
+        toppings = UserStore.ownedItem?.createItemList(alreadySelect: ToppingManager.shared.selectedItem) ?? []
         collectionView.reloadData()
     }
     
@@ -67,7 +70,6 @@ class ToppingSelectViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.register(UINib(nibName: "ToppingSelectCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ToppingSelectCollectionViewCell")
-        
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
