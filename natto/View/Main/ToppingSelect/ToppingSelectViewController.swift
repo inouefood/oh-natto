@@ -17,41 +17,32 @@ class ToppingManager: NSObject {
 
 class ToppingSelectViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView! {
-        didSet {
-            collectionView.delegate = self
-            collectionView.dataSource = self
-            collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-            collectionView.register(UINib(nibName: "ToppingSelectCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ToppingSelectCollectionViewCell")
-            
-            
-            let layout = UICollectionViewFlowLayout()
-            layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-            collectionView.collectionViewLayout = layout
-        }
-    }
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var decisionButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var firstToppingImage: UIImageView!
     @IBOutlet weak var secondToppingImage: UIImageView!
     @IBOutlet weak var thirdToppingImage: UIImageView!
-    @IBOutlet weak var decisionButton: UIButton! {
-        didSet {
-            decisionButton.setTitle(localizeString(key: LocalizeKeys.ToppingSelect.decision), for: .normal)
-        }
-    }
-    @IBOutlet weak var resetButton: UIButton! {
-        didSet {
-            resetButton.setTitle(localizeString(key: LocalizeKeys.ToppingSelect.reset), for: .normal)
-        }
-    }
     
     var decisionAction: (()->())?
     var toppings:[ToppingSelectCollectionViewCell.ViewModel] = []
     
     override func viewDidLoad() {
         ToppingManager.shared.selectedItem.forEach{
-            setImage(image: UIImage(named: $0.imageName))
+            setImage(image: $0.type.image)
         }
+        commonInit()
+    }
     
+    @IBAction func decisionAction(_ sender: Any) {
+        decisionAction?()
+    }
+    
+    @IBAction func resetAction(_ sender: Any) {
+        ToppingManager.shared.selectedItem = []
+        firstToppingImage.image = nil
+        secondToppingImage.image = nil
+        thirdToppingImage.image = nil
     }
     
     private func setImage(image: UIImage?) {
@@ -67,16 +58,19 @@ class ToppingSelectViewController: UIViewController {
         }
     }
     
-    @IBAction func decisionAction(_ sender: Any) {
-        decisionAction?()
-    }
-    
-    @IBAction func resetAction(_ sender: Any) {
-        firstToppingImage.image = nil
-        secondToppingImage.image = nil
-        thirdToppingImage.image = nil
+    private func commonInit(){
+        resetButton.setTitle(localizeString(key: LocalizeKeys.ToppingSelect.reset), for: .normal)
+        decisionButton.setTitle(localizeString(key: LocalizeKeys.ToppingSelect.decision), for: .normal)
         
-        ToppingManager.shared.selectedItem = []
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(UINib(nibName: "ToppingSelectCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ToppingSelectCollectionViewCell")
+        
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        collectionView.collectionViewLayout = layout
     }
 }
 
@@ -109,16 +103,15 @@ extension ToppingSelectViewController: UICollectionViewDataSource, UICollectionV
         cell.toppingCountLabel.text = count.description
         
         if firstToppingImage.image == nil {
-            
-            firstToppingImage.image = toppings[indexPath.row].image
+            setImage(image: toppings[indexPath.row].instance.type.image)
             ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else if thirdToppingImage.image == nil {
-            thirdToppingImage.image = toppings[indexPath.row].image
+            setImage(image: toppings[indexPath.row].instance.type.image)
             ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else if secondToppingImage.image == nil {
-            secondToppingImage.image = toppings[indexPath.row].image
+            setImage(image: toppings[indexPath.row].instance.type.image)
             ToppingManager.shared.selectedItem.append(toppings[indexPath.row].instance)
             
         } else {
