@@ -18,6 +18,10 @@ class NattoViewController: UIViewController {
         self.view = skView
     }
     
+    override var prefersStatusBarHidden: Bool {
+       return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
