@@ -3,9 +3,9 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,7 +27,7 @@
                             <rect key="frame" x="32" y="8" width="350" height="408"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <color key="backgroundColor" name="tutorial"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="hML-9z-YA2" secondAttribute="trailing" constant="32" id="Dfx-W4-E5X"/>
                         <constraint firstItem="hML-9z-YA2" firstAttribute="top" secondItem="7dY-58-EBA" secondAttribute="top" constant="8" id="SWC-mk-xuW"/>
@@ -44,7 +44,7 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" name="background"/>
             <constraints>
                 <constraint firstItem="sxt-Ti-ZcN" firstAttribute="top" secondItem="7dY-58-EBA" secondAttribute="bottom" constant="16" id="Qzz-pb-AQF"/>
                 <constraint firstItem="7dY-58-EBA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Zfn-C6-XYh"/>
@@ -62,8 +62,11 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="systemOrangeColor">
+        <namedColor name="background">
+            <color red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tutorial">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        </namedColor>
     </resources>
 </document>
