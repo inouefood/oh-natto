@@ -35,6 +35,7 @@ struct LocalizeKeys {
         case one = "DESCRIPTION.1"
         case two = "DESCRIPTION.2"
         case three = "DESCRIPTION.3"
+        case four = "DESCRIPTION.4"
         var key: String {
             return rawValue
         }
