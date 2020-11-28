@@ -90,6 +90,7 @@ class TitleScene: SKScene {
 extension TitleScene {
     
     override func didMove(to view: SKView) {
+        self.backgroundColor = AppColor.background.color
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -1.5)
         
