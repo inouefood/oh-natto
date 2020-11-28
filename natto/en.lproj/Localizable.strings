@@ -48,5 +48,5 @@
 
 // TotalEat画面
 "TOTALEAT.EATNATTO" = "Number of natto I have ever eaten";
-"TOTALEAT.GROUTH" = "Until the next growth% @ crush";
-"TOTALEAT.GRAIN" = "grain";
+"TOTALEAT.GROUTH" = "Until the next growth %d crush";
+"TOTALEAT.GRAIN" = "%dgrain";

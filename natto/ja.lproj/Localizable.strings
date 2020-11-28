@@ -47,6 +47,6 @@
 
 // TotalEat画面
 "TOTALEAT.EATNATTO" = "今まで食べた納豆の数";
-"TOTALEAT.GROUTH" = "つぎの成長まであと%@つぶ";
-"TOTALEAT.GRAIN" = "粒";
+"TOTALEAT.GROUTH" = "つぎの成長まであと%dつぶ";
+"TOTALEAT.GRAIN" = "%d粒";
 

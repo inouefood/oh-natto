@@ -42,19 +42,19 @@
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorialIcon" translatesAutoresizingMaskIntoConstraints="NO" id="I8z-Sy-3QA">
-                    <rect key="frame" x="16" y="257" width="382" height="382"/>
+                    <rect key="frame" x="24" y="245" width="366" height="366"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="I8z-Sy-3QA" secondAttribute="height" multiplier="1:1" id="5hX-s0-l7X"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="なっとうのせいちょうまであと100粒" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjz-0g-CGa">
-                    <rect key="frame" x="16" y="663" width="382" height="72"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="なっとうのせいちょうまであと100粒" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjz-0g-CGa">
+                    <rect key="frame" x="16" y="694" width="382" height="72"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <color key="textColor" name="white"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXk-4P-BYb">
-                    <rect key="frame" x="107" y="790" width="200" height="36"/>
+                    <rect key="frame" x="107" y="802" width="200" height="36"/>
                     <color key="backgroundColor" name="button"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="4K3-le-aAA"/>
@@ -81,18 +81,19 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yjz-0g-CGa" secondAttribute="trailing" constant="16" id="DKe-7z-kSv"/>
                 <constraint firstItem="QXk-4P-BYb" firstAttribute="centerX" secondItem="Yjz-0g-CGa" secondAttribute="centerX" id="Fkt-iV-1G0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1a8-pR-KNV" secondAttribute="trailing" constant="16" id="MiN-9C-90p"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QXk-4P-BYb" secondAttribute="bottom" constant="36" id="Qt0-i9-duQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QXk-4P-BYb" secondAttribute="bottom" constant="24" id="Qt0-i9-duQ"/>
                 <constraint firstItem="W1m-Hh-SWC" firstAttribute="leading" secondItem="RBD-Rb-QOS" secondAttribute="leading" id="RVg-c3-5cs"/>
                 <constraint firstItem="Yjz-0g-CGa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="RoF-t5-nGC"/>
-                <constraint firstItem="I8z-Sy-3QA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="eZu-J4-vp1"/>
+                <constraint firstItem="I8z-Sy-3QA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-20" id="eZu-J4-vp1"/>
                 <constraint firstItem="1a8-pR-KNV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="epz-qM-iht"/>
                 <constraint firstItem="W1m-Hh-SWC" firstAttribute="top" secondItem="RBD-Rb-QOS" secondAttribute="bottom" id="ez3-Gx-7xa"/>
                 <constraint firstItem="RBD-Rb-QOS" firstAttribute="top" secondItem="1a8-pR-KNV" secondAttribute="bottom" constant="8" id="hU4-V0-JKz"/>
-                <constraint firstItem="I8z-Sy-3QA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="kww-sR-pkQ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I8z-Sy-3QA" secondAttribute="trailing" constant="16" id="myb-cD-7Vz"/>
                 <constraint firstItem="1a8-pR-KNV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="n6l-R9-MEE"/>
+                <constraint firstItem="QXk-4P-BYb" firstAttribute="top" secondItem="Yjz-0g-CGa" secondAttribute="bottom" constant="36" id="qIr-bb-H0z"/>
+                <constraint firstItem="I8z-Sy-3QA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="uOP-6h-UQe"/>
                 <constraint firstItem="I8z-Sy-3QA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="v3n-mP-EDH"/>
-                <constraint firstItem="Yjz-0g-CGa" firstAttribute="top" secondItem="I8z-Sy-3QA" secondAttribute="bottom" constant="24" id="vvm-8G-c5V"/>
+                <constraint firstItem="Yjz-0g-CGa" firstAttribute="top" relation="greaterThanOrEqual" secondItem="I8z-Sy-3QA" secondAttribute="bottom" id="vvm-8G-c5V"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I8z-Sy-3QA" secondAttribute="trailing" constant="24" id="wXv-Q5-4N0"/>
             </constraints>
             <point key="canvasLocation" x="120" y="95"/>
         </view>
