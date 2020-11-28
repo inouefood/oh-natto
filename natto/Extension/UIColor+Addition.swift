@@ -16,41 +16,20 @@ extension UIColor {
         case white
         case tutorial
         
-        var hex: String {
+        var color: UIColor {
             switch self {
             case .background:
-                return "#323232"
+                return UIColor(named: "background")!
             case .gamePlayBackground:
-                return "#323232"
+                return UIColor(named: "gamePlayBackground")!
             case .button:
-                return "#FF9500"
+                return UIColor(named: "button")!
             case .white:
-                return "#FFFFFF"
+                return UIColor(named: "white")!
             case .tutorial:
-                return "#FF9500"
+                return UIColor(named: "tutorial")!
             }
         }
     }
-    
-    convenience init(hex: String, alpha: CGFloat) {
-        var rgbHex = hex
-        if rgbHex.prefix(1) == "#" {
-            rgbHex = rgbHex.replacingOccurrences(of: "#", with: "")
-        }
-        let v = rgbHex.map { String($0) } + Array(repeating: "0", count: max(6 - hex.count, 0))
-        let r = CGFloat(Int(v[0] + v[1], radix: 16) ?? 0)
-        let g = CGFloat(Int(v[2] + v[3], radix: 16) ?? 0)
-        let b = CGFloat(Int(v[4] + v[5], radix: 16) ?? 0)
-        self.init(red: r / 255, green: g / 255, blue: b / 255, alpha: alpha)
-    }
-
-    convenience init(hex: String) {
-        self.init(hex: hex, alpha: 1.0)
-    }
-    
-    convenience init(appColor: AppColor) {
-        self.init(hex: appColor.hex, alpha: 1.0)
-    }
-    
 }
 
