@@ -13,10 +13,13 @@
 "UPDATEALERT.BUTTON.UPDATE" = "Update";
 "UPDATEALERT.BUTTON.CLOSE" = "Close";
 
+//Tutorial
 "DESCRIPTION.TITLE" = "How to play";
+"DESCRIPTION.0" = "Nice to meet you! I'm Dr. Natto \nOh! Welcome to the world of Natto! \n Swipe right to learn how to play the game!";
 "DESCRIPTION.1" = "Mix natto as much as possible and make it sticky. By generating a lot of white nebeneva, the adsorption rate of natto will change";
 "DESCRIPTION.2" = "Lift natto in time and eat as much as possible";
 "DESCRIPTION.3" = "The score is determined by the number of natto you eat! If you get good results, post it on SNS!";
+"DESCRIPTION.4" = "Open the item selection screen from the green onion icon! \n Up to 3 toppings can be used in one play !!";
 
 "TITLE.BUTTON.START" = "START";
 
