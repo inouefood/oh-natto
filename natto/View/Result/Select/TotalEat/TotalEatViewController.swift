@@ -20,6 +20,7 @@ class TotalEatViewController: UIViewController {
             totalNattoCountLabel.font = UIFont(name: "Verdana-bold", size: 25)
         }
     }
+    @IBOutlet weak var nextGrouthLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = AppColor.background.color
