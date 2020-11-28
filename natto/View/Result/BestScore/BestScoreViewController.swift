@@ -38,7 +38,31 @@ class BestScoreViewController: UIViewController {
     }
     @IBOutlet weak var scoreLabel: UILabel!
     
-    lazy var bestScoreParticle:SCNView! = {
+    private var shareImage: UIImage?
+    private var bestScoreParticle:SCNView!
+    private let bestScore: String
+    
+    init(score: Int) {
+        bestScore = score.description
+        super.init(nibName: String(describing: BestScoreViewController.self), bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .clear
+        shareImage = screenshotView.convertToImage()
+        scoreLabel.text = bestScore
+        createParticle()
+        self.view?.addSubview(bestScoreParticle)
+    }
+    
+    private func createParticle(){
+        bestScoreParticle = nil
+        
         let scene = SCNScene()
 
         let cameraNode = SCNNode()
@@ -57,25 +81,7 @@ class BestScoreViewController: UIViewController {
         view.backgroundColor = UIColor.clear
         view.autoenablesDefaultLighting = true
         view.isUserInteractionEnabled = false
-        return view
-    }()
-    
-    private let bestScore: String
-    
-    init(score: Int) {
-        bestScore = score.description
-        super.init(nibName: String(describing: BestScoreViewController.self), bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        scoreLabel.text = bestScore
-        self.view?.addSubview(bestScoreParticle)
+        bestScoreParticle =  view
     }
     
     @IBAction func dismissAction(_ sender: Any) {
@@ -84,12 +90,20 @@ class BestScoreViewController: UIViewController {
     }
 
     @IBAction func shareAction(_ sender: Any) {
-        let image = screenshotView.convertToImage()
+        self.bestScoreParticle.removeFromSuperview()
         let text = "\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
-        let activityItems: [Any] = [image, text]
+
+        let activityItems: [Any] = [shareImage!, text]
         let activityVc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        activityVc.modalPresentationStyle = .fullScreen
-        self.present(activityVc, animated: true, completion: nil)
+        
+        DispatchQueue.global().async {
+            DispatchQueue.main.async {
+                activityVc.modalPresentationStyle = .fullScreen
+                self.present(activityVc, animated: true, completion: {
+                    self.createParticle()
+                    self.view?.addSubview(self.bestScoreParticle)
+                })
+            }
+        }
     }
-    
 }
