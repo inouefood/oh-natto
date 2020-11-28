@@ -36,7 +36,7 @@
                         <constraint firstItem="hML-9z-YA2" firstAttribute="centerX" secondItem="7dY-58-EBA" secondAttribute="centerX" id="ke7-AQ-Eiz"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="納豆をできるだけたくさん混ぜ、粘り気を出します。 白いネバネバをたくさん発生させることで納豆の吸着率が変化します。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxt-Ti-ZcN">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="納豆をできるだけたくさん混ぜ、粘り気を出します。 白いネバネバをたくさん発生させることで納豆の吸着率が変化します。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="sxt-Ti-ZcN">
                     <rect key="frame" x="16" y="464" width="382" height="292.5"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,7 +63,7 @@
     </objects>
     <resources>
         <namedColor name="background">
-            <color red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="tutorial">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -44,8 +44,8 @@ class DescriptionViewController: UIViewController {
         pageControl.isEnabled = false
         
         if isRegularRegularSize {
-            zeroPage.setDescription(image: UIImage(named: "okura"),
-                                    text: "この画面ではoh! natto!あそびかたを知ることができます")
+            zeroPage.setDescription(image: UIImage(named: "nattoTutorial-1"),
+                                    text: localizeString(key: LocalizeKeys.Description.zero))
             firstPage.setDescription(image: UIImage(named: "okura"),
                                      text: localizeString(key: LocalizeKeys.Description.one))
             secondPage.setDescription(image: UIImage(named: "okura"),
@@ -58,8 +58,8 @@ class DescriptionViewController: UIViewController {
                                      text: "アイテムをセレクト画面の説明")
             
         } else {
-            zeroPage.setDescription(image: UIImage(named: "okura"),
-                                    text: "この画面ではoh! natto!あそびかたを知ることができます")
+            zeroPage.setDescription(image: UIImage(named: "nattoTutorial-1"),
+                                    text: localizeString(key: LocalizeKeys.Description.zero))
             firstPage.setDescription(image: UIImage(named: "description1"),
                                      text: localizeString(key: LocalizeKeys.Description.one))
             secondPage.setDescription(image: UIImage(named: "description2"),
