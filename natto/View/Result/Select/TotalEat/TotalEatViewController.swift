@@ -22,7 +22,7 @@ class TotalEatViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = AppColor.background.color
         let totalNattoCount = UserStore.totalNattoCount
         totalNattoCountLabel.text = totalNattoCount.description + "粒"
     }

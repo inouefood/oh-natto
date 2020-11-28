@@ -37,7 +37,7 @@ class DescriptionViewController: UIViewController {
     }
     
     private func commonInit(isRegularRegularSize: Bool){
-        self.view.backgroundColor = UIColor(appColor: .background)
+        self.view.backgroundColor = AppColor.background.color
         pageControl.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
         
         scrollView.delegate = self

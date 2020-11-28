@@ -76,7 +76,7 @@ class PullNattoScene: SKScene{
     override func didMove(to view: SKView) {
         //原点の変更
         self.anchorPoint = CGPoint(x: 0, y: 0)
-        self.backgroundColor = SKColor.gray
+        self.backgroundColor = AppColor.gamePlayBackground.color
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -0.5)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
