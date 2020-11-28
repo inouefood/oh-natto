@@ -33,7 +33,7 @@ class ResultScene: SKScene{
     // MARK: - LifeCycle
     override func didMove(to view: SKView) {
         super.didMove(to: view)
-        
+        self.backgroundColor = AppColor.background.color
         let vc = ResultViewController(score: resultScore)
         vc.dismissHandler = {
             

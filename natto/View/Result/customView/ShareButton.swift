@@ -28,7 +28,6 @@ class ShareButton: UIButton {
 
     func setupAttribute() {
         layer.cornerRadius = frame.height / 2
-        backgroundColor = .gray
         setImage(UIImage(named: "share")?.withRenderingMode(.alwaysOriginal), for: .normal)
     }
 }
