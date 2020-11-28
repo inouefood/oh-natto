@@ -84,7 +84,8 @@ class MixScene: SKScene{
                                           repeats: true)
         //原点の変更
         self.anchorPoint = CGPoint(x: 0, y: 0)
-        self.backgroundColor = SKColor.gray
+        self.backgroundColor = AppColor.gamePlayBackground.color
+        
         
         self.addChild(ohashi)
         nattoSprite.forEach({
