@@ -44,3 +44,9 @@
 "TOPPINGSELECT.RESET" =  "リセット";
 "TOPPINGSELECT.ALERT.ITEMLESS" = "アイテムが足りません";
 "TOPPINGSELECT.ALERT.SELECTOVER" = "トッピングは3個まで使用することができます";
+
+// TotalEat画面
+"TOTALEAT.EATNATTO" = "今まで食べた納豆の数";
+"TOTALEAT.GROUTH" = "つぎの成長まであと%dつぶ";
+"TOTALEAT.GRAIN" = "%d粒";
+

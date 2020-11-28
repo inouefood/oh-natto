@@ -45,3 +45,8 @@
 "TOPPINGSELECT.RESET" =  "Reset";
 "TOPPINGSELECT.ALERT.ITEMLESS" = "Not enough items";
 "TOPPINGSELECT.ALERT.SELECTOVER" = "You can use up to 3 toppings";
+
+// TotalEat画面
+"TOTALEAT.EATNATTO" = "Number of natto I have ever eaten";
+"TOTALEAT.GROUTH" = "Until the next growth %d crush";
+"TOTALEAT.GRAIN" = "%dgrain";

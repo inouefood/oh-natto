@@ -90,4 +90,14 @@ struct LocalizeKeys {
             return rawValue
         }
     }
+    
+    enum TotalEat: String, LocalizeKeyGeneratable {
+        case eatNatto = "TOTALEAT.EATNATTO"
+        case grouth = "TOTALEAT.GROUTH"
+        case grain = "TOTALEAT.GRAIN"
+        
+        var key: String {
+            return rawValue
+        }
+    }
 }
