@@ -19,6 +19,17 @@ enum ToppingType {
     case negi
     case okura
     case sirasu
+    
+    var image: UIImage {
+        switch self {
+        case .negi:
+            return UIImage(named: "toppingNegi")!
+        case .okura:
+            return UIImage(named: "toppingOkura")!
+        case .sirasu:
+            return UIImage(named: "toppingSirasu")!
+        }
+    }
 }
 
 class Negi: Topping {
