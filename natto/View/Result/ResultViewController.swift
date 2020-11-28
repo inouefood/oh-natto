@@ -21,6 +21,7 @@ class ResultViewController: UIViewController {
             tipsTitleLabel.text = localizeString(key: LocalizeKeys.Result.tipsTitle)
         }
     }
+    @IBOutlet weak var screenShotView: UIView!
     @IBOutlet weak var tipsLabel: UILabel! {
         didSet {
             tipsLabel.text = "弥生時代にはすでに納豆はあったらしいよ"
@@ -101,6 +102,7 @@ class ResultViewController: UIViewController {
 
     @IBAction func openSelectAction(_ sender: Any) {
         let vc = SelectViewController()
+        vc.shareImage = screenShotView.convertToImage()
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: false, completion: nil)
     }

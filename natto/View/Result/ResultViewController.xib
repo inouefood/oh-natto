@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +14,7 @@
                 <outlet property="retryButton" destination="M1s-7V-g7X" id="5x8-gO-2Z0"/>
                 <outlet property="scoreLabel" destination="KYc-DA-xwh" id="BQh-1f-gEP"/>
                 <outlet property="scoreTitleLabel" destination="6b3-XL-abO" id="sAX-RQ-H4C"/>
+                <outlet property="screenShotView" destination="0pK-D6-zVh" id="qqv-Ro-eMe"/>
                 <outlet property="tipsLabel" destination="E4T-Fj-5bX" id="h7R-j7-A72"/>
                 <outlet property="tipsTitleLabel" destination="ECp-VL-Rzv" id="8XU-ZP-xHk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -116,6 +118,7 @@
                             </variation>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" name="background"/>
                     <constraints>
                         <constraint firstItem="WWW-ps-cAb" firstAttribute="top" secondItem="6be-MQ-PRf" secondAttribute="bottom" id="3K9-DZ-HGm"/>
                         <constraint firstItem="WWW-ps-cAb" firstAttribute="height" secondItem="0pK-D6-zVh" secondAttribute="height" multiplier="0.6" id="4Sf-6X-z81"/>
@@ -171,7 +174,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" name="background"/>
             <constraints>
                 <constraint firstItem="0pK-D6-zVh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="44i-ms-x0D"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ob3-gy-vbk" secondAttribute="bottom" constant="32" id="7zF-0D-lF3"/>
@@ -190,5 +193,8 @@
         <image name="infoIcon" width="600" height="600"/>
         <image name="scoreMame" width="1516" height="1080"/>
         <image name="tipsBoard" width="1920" height="931"/>
+        <namedColor name="background">
+            <color red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
