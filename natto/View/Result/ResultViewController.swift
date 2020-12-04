@@ -13,24 +13,7 @@ import AVFoundation
 class ResultViewController: UIViewController {
     var audio: AVAudioPlayer!
     private var score: Int
-    
-    private let tipsStrings: [String] = ["弥生時代にはすでに納豆はあったらしいよ",
-                                         "納豆が一般庶民の間で広く食べられるようになったのは江戸時代なんだって",
-                                         "納豆という文字が文献に最初に出てきたのは平安時代だよ",
-                                         "納豆は大きく２種類「糸引き納豆」と「塩辛納豆」があるよ",
-                                         "納豆には煮豆には無い栄養素もはいっているんだよ",
-                                         "納豆には1gあたり約10億個の納豆菌が住んでいるんだって",
-                                         "納豆1gにいる納豆菌を一列に並べると1000kmの長さになるんだよ",
-                                         "納豆菌は生命力がとても強いから煮たばかりの熱々の豆に触れても死なないんだよ",
-                                         "ネバネバには水を抱え込む効果があって砂漠を緑にすることも考えられているんだよ",
-                                         "納豆の匂いには６８種類の匂い成分があるんだって",
-                                         "納豆は４００回混ぜるととってもおいしくなるんだよ",
-                                         "納豆と卵の白身は相性が悪くて一緒に食べると美肌効果がなくなってしまうんだ",
-                                         "納豆は１月〜３月が旬の食べごろだよ",
-                                         "納豆を混ぜる専用の納豆箸みんなもってる？",
-                                         "納豆を一番食べてるのは福島県なんだって",
-                                         "インドネシアには納豆によく似たテンペって食べ物があるよ"]
-    
+
     var dismissHandler: (()->())?
     
     @IBOutlet weak var tipsTitleLabel: UILabel! {
@@ -41,7 +24,8 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var screenShotView: UIView!
     @IBOutlet weak var tipsLabel: UILabel! {
         didSet {
-            tipsLabel.text = tipsStrings[Int(arc4random_uniform(UInt32(tipsStrings.count)))]
+            let key = "TIPS." + String(arc4random_uniform(Constant.Tips.count))
+            tipsLabel.text = NSLocalizedString(key, comment: "")
         }
     }
     @IBOutlet weak var scoreTitleLabel: UILabel! {

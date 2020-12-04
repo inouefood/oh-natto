@@ -23,11 +23,30 @@
 
 "TITLE.BUTTON.START" = "START";
 
+//リザルト画面
 "RESULT.BUTTON.REPLAY" = "REPLAY";
 "RESULT.LABEL.SCORE" = " Pts";
 "RESULT.LABEL.SCORETITLE" = "SCORE";
 "RESULT.TWITTER" = "\n\nEat natto and perfect body!";
 "RESULT.TIPSTITLE" = "NATTO TIPS";
+
+//豆知識
+"TIPS.0" = "Apparently there was already natto in the Yayoi period";
+"TIPS.1" = "Natto began to be widely eaten by the general public in the Edo period";
+"TIPS.2" = "The word Natto first appeared in literature in the Heian period";
+"TIPS.3" = "There are two main types of natto: Itohiki-Natto and Shiokara-Natto";
+"TIPS.4" = "Natto contains nutrients not found in cooked beans";
+"TIPS.5" = "Natto contains about 1 billion natto bacteria per gram";
+"TIPS.6" = "If you put the bacillus natto in 1 gram of natto in a line, it would be 1000 km long!";
+"TIPS.7" = "Natto fungus is so vigorous that it won't die even if you touch hot, freshly cooked beans.";
+"TIPS.8" = "Sticky food has a water-holding effect and is thought to make the desert green";
+"TIPS.9" = "There are 68 odor components in natto";
+"TIPS.10" = "Natto becomes very tasty when mixed 400 times";
+"TIPS.11" = "Natto and the white of the egg don't go well together, and if they are eaten together, the effect on the skin is lost";
+"TIPS.12" = "Natto is in season from January to March";
+"TIPS.13" = "Do you have special chopsticks to mix natto?";
+"TIPS.14" = "Fukushima Prefecture is the biggest natto eater in Japan";
+"TIPS.15" = "In Indonesia, there is a food called Tempe, which is very similar to natto";
 
 // ベストスコア画面
 "BEST.LABEL.TITLE" = "New Best Score!!";

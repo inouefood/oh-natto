@@ -20,4 +20,7 @@ struct Constant {
         static let natto: UInt32 = 0x1 << 1
         static let topping: UInt32 = 0x1 << 1
     }
+    struct Tips {
+        static let count: UInt32 = 16
+    }
 }
