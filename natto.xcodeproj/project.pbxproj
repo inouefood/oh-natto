@@ -76,6 +76,8 @@
 		49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CD072533056C00F9C30E /* StoreViewController.xib */; };
 		49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A64251F14CC00E25A9B /* UserStore.swift */; };
 		49EE35572556C7BC00305D38 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE35562556C7BC00305D38 /* UIImage+Addition.swift */; };
+		49EF533B257BAF2C001396C8 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF5339257BAF2C001396C8 /* StoreCollectionViewCell.swift */; };
+		49EF533C257BAF2C001396C8 /* StoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EF533A257BAF2C001396C8 /* StoreCollectionViewCell.xib */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
 		F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */; };
@@ -186,6 +188,8 @@
 		49D9CD072533056C00F9C30E /* StoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
 		49EC6A64251F14CC00E25A9B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		49EE35562556C7BC00305D38 /* UIImage+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Addition.swift"; sourceTree = "<group>"; };
+		49EF5339257BAF2C001396C8 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		49EF533A257BAF2C001396C8 /* StoreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCollectionViewCell.xib; sourceTree = "<group>"; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
 		F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGMutablePath+Addition.swift"; sourceTree = "<group>"; };
@@ -530,6 +534,7 @@
 		49D9CD052533054B00F9C30E /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				49EF5338257BAF0C001396C8 /* cell */,
 				49D9CD062533056C00F9C30E /* StoreViewController.swift */,
 				49D9CD072533056C00F9C30E /* StoreViewController.xib */,
 			);
@@ -542,6 +547,15 @@
 				49EC6A64251F14CC00E25A9B /* UserStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		49EF5338257BAF0C001396C8 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				49EF5339257BAF2C001396C8 /* StoreCollectionViewCell.swift */,
+				49EF533A257BAF2C001396C8 /* StoreCollectionViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		F31970AD223FF9100045A391 /* Mix */ = {
@@ -703,6 +717,7 @@
 				43D95F302052723B00FE1117 /* LaunchScreen.storyboard in Resources */,
 				0D815D112261E42D00B6642E /* CloseButton.xib in Resources */,
 				43704C95205304BF00F87562 /* mame.mp3 in Resources */,
+				49EF533C257BAF2C001396C8 /* StoreCollectionViewCell.xib in Resources */,
 				F3C462D8205399CC005725C3 /* voice_5_pitchup.wav in Resources */,
 				49D9CCEA253085D600F9C30E /* ShareButton.xib in Resources */,
 				4343CEAD205386F3002CA3BC /* natto_bgm_score.wav in Resources */,
@@ -738,6 +753,7 @@
 			files = (
 				490C1B2D25351CC10094C76F /* SelectViewController.swift in Sources */,
 				0D815D0A22617A3C00B6642E /* DescriptionViewController.swift in Sources */,
+				49EF533B257BAF2C001396C8 /* StoreCollectionViewCell.swift in Sources */,
 				494B51D525543043009DD52C /* OwnedItem.swift in Sources */,
 				49B94C312529BA2200BF6C53 /* BestScoreViewController.swift in Sources */,
 				49D9CD082533056C00F9C30E /* StoreViewController.swift in Sources */,

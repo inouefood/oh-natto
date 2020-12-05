@@ -20,7 +20,7 @@ class SelectViewController: UIViewController {
     @IBAction func openStorePage(_ sender: Any) {
         let vc = StoreViewController()
         vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: false, completion: nil)
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func openTotalEatPage(_ sender: Any) {
