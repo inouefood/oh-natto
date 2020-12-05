@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemBuyViewController" customModule="natto" customModuleProvider="target">
             <connections>
+                <outlet property="pickerView" destination="f1u-2b-p1B" id="U63-TM-C1v"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,7 +23,86 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5P-vT-QLB">
                     <rect key="frame" x="24" y="179" width="366" height="538"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKY-jO-A1R">
+                            <rect key="frame" x="83" y="478" width="200" height="36"/>
+                            <color key="backgroundColor" name="gamePlayBackground"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="DU3-G1-cN2"/>
+                                <constraint firstAttribute="height" constant="36" id="il6-2T-CBI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <state key="normal" title="とじる">
+                                <color key="titleColor" name="white"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="dismissAction:" destination="-1" eventType="touchUpInside" id="qLb-06-akU"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nN-d3-5of">
+                            <rect key="frame" x="79" y="392" width="208" height="70"/>
+                            <subviews>
+                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1u-2b-p1B">
+                                    <rect key="frame" x="0.0" y="0.0" width="58" height="70"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="70" id="aPQ-Ft-6Tm"/>
+                                        <constraint firstAttribute="width" constant="58" id="twp-lc-GuD"/>
+                                    </constraints>
+                                </pickerView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Crz-E1-OCw">
+                                    <rect key="frame" x="58" y="0.0" width="150" height="70"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0a-9V-DdA">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="17"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="5sn-yB-A7v"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlk-O0-HOa">
+                                            <rect key="frame" x="0.0" y="17" width="150" height="36"/>
+                                            <color key="backgroundColor" name="button"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="3dD-RD-E6o"/>
+                                                <constraint firstAttribute="width" constant="150" id="fiR-bq-dHa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <state key="normal" title="かう">
+                                                <color key="titleColor" name="white"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="PurchaseAction:" destination="-1" eventType="touchUpInside" id="n1x-d5-DDU"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gqu-Px-tcn">
+                                            <rect key="frame" x="0.0" y="53" width="150" height="17"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="Z80-TG-PHb"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="5nN-d3-5of" firstAttribute="centerX" secondItem="r5P-vT-QLB" secondAttribute="centerX" id="6kV-al-XPd"/>
+                        <constraint firstItem="sKY-jO-A1R" firstAttribute="centerX" secondItem="r5P-vT-QLB" secondAttribute="centerX" id="HKr-Ci-bv9"/>
+                        <constraint firstAttribute="bottom" secondItem="sKY-jO-A1R" secondAttribute="bottom" constant="24" id="VR9-CN-UFY"/>
+                        <constraint firstItem="sKY-jO-A1R" firstAttribute="top" secondItem="5nN-d3-5of" secondAttribute="bottom" constant="16" id="Xo7-TH-i9P"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="6"/>
@@ -42,6 +123,15 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="button">
+            <color red="0.98039215686274506" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gamePlayBackground">
+            <color red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

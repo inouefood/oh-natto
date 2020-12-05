@@ -10,16 +10,25 @@ import UIKit
 
 class ItemBuyViewController: UIViewController {
 
+    @IBOutlet weak var pickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .clear
 
     }
     
+    private let mockCount = [ "1","2","3","4"]
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        showInformation(title: "購入", message: " ネギを納豆と交換しますか？", yesButtonText: "はい", closeButtonText: "やめる") {
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+    }
+    @IBAction func PurchaseAction(_ sender: Any) {
+        //TODO 正しい値が入るように修正する
+        showInformation(title: "購入", message: "xxxポイントでxxをxx個購入しますか？", yesButtonText: "はい", closeButtonText: "やめる") {
             let eatKey = "natto"
             guard let eatPoint = UserStore.eatPoint,
                   var nattoPoint = eatPoint[eatKey] else {
@@ -41,5 +50,26 @@ class ItemBuyViewController: UIViewController {
 
         }
     }
+    
+    @IBAction func dismissAction(_ sender: Any) {
+    }
+}
 
+extension ItemBuyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return mockCount.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        
+        return mockCount[row]
+    }
+    
+    
 }
