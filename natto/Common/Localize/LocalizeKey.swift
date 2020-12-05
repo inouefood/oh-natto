@@ -60,6 +60,28 @@ struct LocalizeKeys {
         }
     }
     
+    enum Tips: String, LocalizeKeyGeneratable {
+        case a = "TIPS.0"
+        case b = "TIPS.1"
+        case c = "TIPS.2"
+        case d = "TIPS.3"
+        case e = "TIPS.4"
+        case f = "TIPS.5"
+        case g = "TIPS.6"
+        case h = "TIPS.7"
+        case i = "TIPS.8"
+        case j = "TIPS.9"
+        case k = "TIPS.10"
+        case l = "TIPS.11"
+        case m = "TIPS.12"
+        case n = "TIPS.13"
+        case o = "TIPS.14"
+        case p = "TIPS.15"
+        var key: String {
+            return rawValue
+        }
+    }
+    
     enum BestScore: String, LocalizeKeyGeneratable {
         case title = "BEST.LABEL.TITLE"
         case close = "BEST.BUTTON.CLOSE"

@@ -13,7 +13,23 @@ import AVFoundation
 class ResultViewController: UIViewController {
     var audio: AVAudioPlayer!
     private var score: Int
-    
+    private let tipsList: [String] = [localizeString(key: LocalizeKeys.Tips.a),
+                                      localizeString(key: LocalizeKeys.Tips.b),
+                                      localizeString(key: LocalizeKeys.Tips.c),
+                                      localizeString(key: LocalizeKeys.Tips.d),
+                                      localizeString(key: LocalizeKeys.Tips.e),
+                                      localizeString(key: LocalizeKeys.Tips.f),
+                                      localizeString(key: LocalizeKeys.Tips.g),
+                                      localizeString(key: LocalizeKeys.Tips.h),
+                                      localizeString(key: LocalizeKeys.Tips.i),
+                                      localizeString(key: LocalizeKeys.Tips.j),
+                                      localizeString(key: LocalizeKeys.Tips.k),
+                                      localizeString(key: LocalizeKeys.Tips.l),
+                                      localizeString(key: LocalizeKeys.Tips.m),
+                                      localizeString(key: LocalizeKeys.Tips.n),
+                                      localizeString(key: LocalizeKeys.Tips.o),
+                                      localizeString(key: LocalizeKeys.Tips.p)]
+
     var dismissHandler: (()->())?
     
     @IBOutlet weak var tipsTitleLabel: UILabel! {
@@ -24,7 +40,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var screenShotView: UIView!
     @IBOutlet weak var tipsLabel: UILabel! {
         didSet {
-            tipsLabel.text = "弥生時代にはすでに納豆はあったらしいよ"
+            tipsLabel.text = tipsList.randomElement()
         }
     }
     @IBOutlet weak var scoreTitleLabel: UILabel! {
