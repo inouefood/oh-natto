@@ -9,7 +9,11 @@
 import UIKit
 
 class StoreCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            imageView.layer.borderColor = UIColor.white.cgColor
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
