@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "storeBottom.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
