@@ -92,7 +92,7 @@ class ItemBuyViewController: UIViewController {
             return
         }
         let count = nattoPoint / buyItem.price
-        for i in 0..<count {
+        for i in 0..<count+1 {
             pickerArr.append((i).description)
         }
         
