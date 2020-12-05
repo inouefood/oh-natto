@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemBuyViewController" customModule="natto" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="nzL-Ac-yhc" id="CWo-q8-qRu"/>
+                <outlet property="ownedPointLabel" destination="y7h-8M-d0K" id="SsV-6t-ApQ"/>
                 <outlet property="pickerView" destination="f1u-2b-p1B" id="U63-TM-C1v"/>
                 <outlet property="titleLabel" destination="0dA-DE-Ogr" id="q8w-bu-gaV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

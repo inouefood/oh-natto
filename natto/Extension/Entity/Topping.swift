@@ -30,6 +30,28 @@ enum ToppingType {
             return UIImage(named: "toppingSirasu")!
         }
     }
+    
+    var price: Int {
+        switch self {
+        case .negi:
+            return 30
+        case .okura:
+            return 50
+        case .sirasu:
+            return 100
+        }
+    }
+    
+    var name: String {
+        switch self {
+        case .negi:
+             return "ねぎ"
+        case .okura:
+            return "おくら"
+        case .sirasu:
+            return "しらす"
+        }
+    }
 }
 
 class Negi: Topping {

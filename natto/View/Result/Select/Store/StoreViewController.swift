@@ -34,8 +34,9 @@ class StoreViewController: UIViewController, UICollectionViewDelegateFlowLayout 
 
 extension StoreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO いろいろ渡す
+
         let vc = ItemBuyViewController()
+        vc.buyItem = toppingArr[indexPath.row]
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: false, completion: nil)
     }
