@@ -46,11 +46,11 @@ class DescriptionViewController: UIViewController {
         if isRegularRegularSize {
             zeroPage.setDescription(image: UIImage(named: "nattoTutorial-1"),
                                     text: localizeString(key: LocalizeKeys.Description.zero))
-            firstPage.setDescription(image: UIImage(named: "okura"),
+            firstPage.setDescription(image: UIImage(named: "nattoTutorial-2ipad"),
                                      text: localizeString(key: LocalizeKeys.Description.one))
-            secondPage.setDescription(image: UIImage(named: "okura"),
+            secondPage.setDescription(image: UIImage(named: "nattoTutorial-3ipad"),
                                       text: localizeString(key: LocalizeKeys.Description.two))
-            therdPage.setDescription(image: UIImage(named: "okura"),
+            therdPage.setDescription(image: UIImage(named: "nattoTutorial-4ipad"),
                                      text: localizeString(key: LocalizeKeys.Description.three))
             fourthPage.setDescription(image: UIImage(named: "okura"),
                                       text: "アイテム購入の説明")
