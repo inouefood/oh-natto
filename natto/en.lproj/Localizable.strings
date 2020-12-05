@@ -72,3 +72,10 @@
 "TOTALEAT.EATNATTO" = "Number of natto I have ever eaten";
 "TOTALEAT.GROUTH" = "Until the next growth %d crush";
 "TOTALEAT.GRAIN" = "%dgrain";
+
+// 購入画面
+"ITEMBUY.ALERT.TITLE" = "Purchase";
+"ITEMBUY.ALERT.MESSAGE" = "Do you want to buy %d pieces of %@ with %d points?";
+"ITEMBUY.ALERT.BUTTON.YES" = "Yes";
+"ITEMBUY.ALERT.BUTTON.NO" = "desist";
+"ITEMBUY.OWNEDLABEL.TEXT" = "Owned natto points%dpoint";

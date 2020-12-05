@@ -124,4 +124,15 @@ struct LocalizeKeys {
             return rawValue
         }
     }
+    
+    enum ItemBuy: String, LocalizeKeyGeneratable {
+        case alertTitle = "ITEMBUY.ALERT.TITLE"
+        case alertMessage = "ITEMBUY.ALERT.MESSAGE"
+        case alertYesButton = "ITEMBUY.ALERT.BUTTON.YES"
+        case alertNoButton = "ITEMBUY.ALERT.BUTTON.NO"
+        case ownedLabelText = "ITEMBUY.OWNEDLABEL.TEXT"
+        var key: String {
+            return rawValue
+        }
+    }
 }

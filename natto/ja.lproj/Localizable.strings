@@ -72,3 +72,9 @@
 "TOTALEAT.GROUTH" = "つぎの成長まであと%dつぶ";
 "TOTALEAT.GRAIN" = "%d粒";
 
+// 購入画面
+"ITEMBUY.ALERT.TITLE" = "購入";
+"ITEMBUY.ALERT.MESSAGE" = "%dポイントで%@を%d個購入しますか？";
+"ITEMBUY.ALERT.BUTTON.YES" = "はい";
+"ITEMBUY.ALERT.BUTTON.NO" = "やめる";
+"ITEMBUY.OWNEDLABEL.TEXT" = "保有納豆ポイント%d点";
