@@ -19,6 +19,8 @@ class TitleScene: SKScene {
         node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 10) - node.size.width,
                                 y: ((self.view!.frame.height) * 2 - 16) - node.size.height)
         
+        //TODO 一時処理
+        node.isHidden = true
         return node
     }()
     lazy var tutorialButton: SKSpriteNode = {
