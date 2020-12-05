@@ -10,10 +10,10 @@ import UIKit
 
 class ItemBuyViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .clear
 
     }
     
@@ -52,7 +52,9 @@ class ItemBuyViewController: UIViewController {
     }
     
     @IBAction func dismissAction(_ sender: Any) {
+        dismiss(animated: false, completion: nil)
     }
+    
 }
 
 extension ItemBuyViewController: UIPickerViewDelegate, UIPickerViewDataSource {

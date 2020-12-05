@@ -37,7 +37,7 @@ extension StoreViewController: UICollectionViewDelegate {
         //TODO いろいろ渡す
         let vc = ItemBuyViewController()
         vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true, completion: nil)
+        present(vc, animated: false, completion: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
