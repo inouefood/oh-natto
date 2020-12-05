@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TotalEatViewController" customModule="natto" customModuleProvider="target">
             <connections>
                 <outlet property="nextGrouthLabel" destination="Yjz-0g-CGa" id="J49-M9-vLj"/>
+                <outlet property="totalIcon" destination="I8z-Sy-3QA" id="GVo-kc-Ynl"/>
                 <outlet property="totalNattoCountLabel" destination="RBD-Rb-QOS" id="Td5-Ym-C6i"/>
                 <outlet property="totalNattoDescriptionLabel" destination="1a8-pR-KNV" id="qMR-8g-PBP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

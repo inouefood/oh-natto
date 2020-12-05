@@ -10,6 +10,7 @@ import UIKit
 
 class TotalEatViewController: UIViewController {
 
+    @IBOutlet weak var totalIcon: UIImageView!
     @IBOutlet weak var totalNattoDescriptionLabel: UILabel!
     @IBOutlet weak var totalNattoCountLabel: UILabel!
     @IBOutlet weak var nextGrouthLabel: UILabel!
@@ -37,12 +38,16 @@ class TotalEatViewController: UIViewController {
         
         //TODO 画像を入れる
         if eatNum < 1000 {
+            totalIcon.image = UIImage(named: "totalEat-one")
             nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 1000 - eatNum)
         } else if eatNum > 1000 && eatNum < 3000 {
+            totalIcon.image = UIImage(named: "totalEat-two")
             nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 3000 - eatNum)
         } else if eatNum > 3000 && eatNum < 8000 {
+            totalIcon.image = UIImage(named: "totalEat-three")
             nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 8000 - eatNum)
         } else if eatNum > 8000 {
+            totalIcon.image = UIImage(named: "totalEat-four")
             nextGrouthLabel.text = ""
         }
     }
