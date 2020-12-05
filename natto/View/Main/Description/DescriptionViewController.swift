@@ -54,22 +54,22 @@ class DescriptionViewController: UIViewController {
                                      text: localizeString(key: LocalizeKeys.Description.three))
             fourthPage.setDescription(image: UIImage(named: "okura"),
                                       text: "アイテム購入の説明")
-            fifthPage.setDescription(image: UIImage(named: "nattoTutorial-4"),
+            fifthPage.setDescription(image: UIImage(named: "nattoTutorial-6"),
                                      text: localizeString(key: LocalizeKeys.Description.four))
             
             
         } else {
             zeroPage.setDescription(image: UIImage(named: "nattoTutorial-1"),
                                     text: localizeString(key: LocalizeKeys.Description.zero))
-            firstPage.setDescription(image: UIImage(named: "description1"),
+            firstPage.setDescription(image: UIImage(named: "nattoTutorial-2"),
                                      text: localizeString(key: LocalizeKeys.Description.one))
-            secondPage.setDescription(image: UIImage(named: "description2"),
+            secondPage.setDescription(image: UIImage(named: "nattoTutorial-3"),
                                       text: localizeString(key: LocalizeKeys.Description.two))
-            therdPage.setDescription(image: UIImage(named: "description3"),
+            therdPage.setDescription(image: UIImage(named: "nattoTutorial-4"),
                                      text: localizeString(key: LocalizeKeys.Description.three))
             fourthPage.setDescription(image: UIImage(named: "okura"),
                                       text: "アイテム購入の説明")
-            fifthPage.setDescription(image: UIImage(named: "nattoTutorial-4"),
+            fifthPage.setDescription(image: UIImage(named: "nattoTutorial-6"),
                                      text: localizeString(key: LocalizeKeys.Description.four))
             
         }
