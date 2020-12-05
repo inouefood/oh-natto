@@ -42,7 +42,12 @@ class ItemBuyViewController: UIViewController {
         //TODO 正しい値が入るように修正する
         let pickerCount = self.pickerView.selectedRow(inComponent: 0)
         let totalPoint = buyItem.price * Int(pickerCount)
-        showInformation(title: "購入", message: "\(totalPoint)ポイントで\(buyItem.name)を\(pickerCount)個購入しますか？", yesButtonText: "はい", closeButtonText: "やめる") {
+        
+        showInformation(title: localizeString(key: LocalizeKeys.ItemBuy.alertTitle),
+                        message: localizeString(key: LocalizeKeys.ItemBuy.alertMessage,
+                                                totalPoint, buyItem.name, pickerCount),
+                        yesButtonText: localizeString(key: LocalizeKeys.ItemBuy.alertYesButton),
+                        closeButtonText: localizeString(key: LocalizeKeys.ItemBuy.alertNoButton)) {
             let eatKey = "natto"
             guard let eatPoint = UserStore.eatPoint,
                   let nattoPoint = eatPoint[eatKey] else {
@@ -76,7 +81,8 @@ class ItemBuyViewController: UIViewController {
               let nattoPoint = eatPoint[eatKey] else {
             return
         }
-        ownedPointLabel.text = "保有納豆ポイント\(nattoPoint)点"
+        
+        ownedPointLabel.text = localizeString(key: LocalizeKeys.ItemBuy.ownedLabelText, nattoPoint)
     }
     
     private func purchaseCount(){
@@ -87,7 +93,7 @@ class ItemBuyViewController: UIViewController {
         }
         let count = nattoPoint / buyItem.price
         for i in 0..<count {
-            pickerArr.append((i + 1).description)
+            pickerArr.append((i).description)
         }
         
     }
