@@ -78,6 +78,8 @@
 		49EE35572556C7BC00305D38 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE35562556C7BC00305D38 /* UIImage+Addition.swift */; };
 		49EF533B257BAF2C001396C8 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF5339257BAF2C001396C8 /* StoreCollectionViewCell.swift */; };
 		49EF533C257BAF2C001396C8 /* StoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EF533A257BAF2C001396C8 /* StoreCollectionViewCell.xib */; };
+		49EF5343257BB80B001396C8 /* ItemBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF5341257BB80B001396C8 /* ItemBuyViewController.swift */; };
+		49EF5344257BB80B001396C8 /* ItemBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EF5342257BB80B001396C8 /* ItemBuyViewController.xib */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
 		F346A9C8226A3E9D00A051FC /* CGMutablePath+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */; };
@@ -190,6 +192,8 @@
 		49EE35562556C7BC00305D38 /* UIImage+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Addition.swift"; sourceTree = "<group>"; };
 		49EF5339257BAF2C001396C8 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		49EF533A257BAF2C001396C8 /* StoreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCollectionViewCell.xib; sourceTree = "<group>"; };
+		49EF5341257BB80B001396C8 /* ItemBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBuyViewController.swift; sourceTree = "<group>"; };
+		49EF5342257BB80B001396C8 /* ItemBuyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemBuyViewController.xib; sourceTree = "<group>"; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
 		F346A9C7226A3E9D00A051FC /* CGMutablePath+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGMutablePath+Addition.swift"; sourceTree = "<group>"; };
@@ -534,6 +538,7 @@
 		49D9CD052533054B00F9C30E /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				49EF5340257BB7F5001396C8 /* ItemBuy */,
 				49EF5338257BAF0C001396C8 /* cell */,
 				49D9CD062533056C00F9C30E /* StoreViewController.swift */,
 				49D9CD072533056C00F9C30E /* StoreViewController.xib */,
@@ -556,6 +561,15 @@
 				49EF533A257BAF2C001396C8 /* StoreCollectionViewCell.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		49EF5340257BB7F5001396C8 /* ItemBuy */ = {
+			isa = PBXGroup;
+			children = (
+				49EF5341257BB80B001396C8 /* ItemBuyViewController.swift */,
+				49EF5342257BB80B001396C8 /* ItemBuyViewController.xib */,
+			);
+			path = ItemBuy;
 			sourceTree = "<group>";
 		};
 		F31970AD223FF9100045A391 /* Mix */ = {
@@ -724,6 +738,7 @@
 				49B94C322529BA2200BF6C53 /* BestScoreViewController.xib in Resources */,
 				0DCD56CF2348E004008F7BAA /* Localizable.strings in Resources */,
 				490C1B392535251A0094C76F /* TotalEatViewController.xib in Resources */,
+				49EF5344257BB80B001396C8 /* ItemBuyViewController.xib in Resources */,
 				0D815D0B22617A3C00B6642E /* DescriptionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,6 +796,7 @@
 				0DCE81A72253BBB1002FAE96 /* SKLabelNode+Addition.swift in Sources */,
 				490C1B7225352EF70094C76F /* ToppingSelectViewController.swift in Sources */,
 				493B41312547078600F26C4F /* AppVersionTableViewCell.swift in Sources */,
+				49EF5343257BB80B001396C8 /* ItemBuyViewController.swift in Sources */,
 				494664E02571E22B009E8165 /* AppColor.swift in Sources */,
 				0DF70CFC223E7681007105D8 /* PullNattoPresenter.swift in Sources */,
 				054E493522D2DD680062736D /* UIApplication+Addition.swift in Sources */,

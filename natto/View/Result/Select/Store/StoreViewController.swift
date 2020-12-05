@@ -34,29 +34,10 @@ class StoreViewController: UIViewController, UICollectionViewDelegateFlowLayout 
 
 extension StoreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tappされたよ")
-        
-        showInformation(title: "購入", message: " ネギを納豆と交換しますか？", yesButtonText: "はい", closeButtonText: "やめる") {
-            let eatKey = "natto"
-            guard let eatPoint = UserStore.eatPoint,
-                  var nattoPoint = eatPoint[eatKey] else {
-                return
-            }
-            nattoPoint -= 30
-            UserStore.eatPoint?.updateValue(nattoPoint, forKey: eatKey)
-
-
-            //アイテム購入
-            guard var item = UserStore.ownedItem else {
-                let item = OwnedItem(negi: 1, okura: 0, sirasu: 0)
-                UserStore.ownedItem = item
-                return
-            }
-
-            item.negi += 1
-            UserStore.ownedItem = item
-
-        }
+        //TODO いろいろ渡す
+        let vc = ItemBuyViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
