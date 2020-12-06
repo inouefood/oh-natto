@@ -79,7 +79,7 @@
                         <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="Cre-YT-xZL"/>
                     </connections>
                 </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq1-yZ-L6H">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq1-yZ-L6H">
                     <rect key="frame" x="229" y="644" width="50" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -87,6 +87,9 @@
                         <constraint firstAttribute="width" constant="50" id="mQu-Hx-jUb"/>
                     </constraints>
                     <state key="normal" title="Button" image="mametisikiIcon"/>
+                    <connections>
+                        <action selector="openLeaderBoard:" destination="-1" eventType="touchUpInside" id="l90-aP-e9L"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

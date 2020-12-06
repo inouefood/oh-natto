@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameKit
 
 class SelectViewController: UIViewController {
     var shareImage: UIImage?
@@ -23,6 +24,10 @@ class SelectViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func openLeaderBoard(_ sender: Any) {
+        authenticateLocalPlayer()
+        openLeaderBordScoreLanking()
+    }
     @IBAction func openTotalEatPage(_ sender: Any) {
         let vc = TotalEatViewController()
         vc.modalPresentationStyle = .overCurrentContext
@@ -43,5 +48,38 @@ class SelectViewController: UIViewController {
         activityVc.modalPresentationStyle = .fullScreen
         self.present(activityVc, animated: true, completion: nil)
     }
+    
+    private func authenticateLocalPlayer() {
+        let player = GKLocalPlayer.local
+        player.authenticateHandler = {(viewController, error) -> Void in
+            if viewController != nil
+            {
+                self.present(viewController!, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    private func openLeaderBordScoreLanking() {
+        let localPlayer = GKLocalPlayer()
+        localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {leaderboardIdentifier,error in
+            if error != nil {
+                print(error.debugDescription)
+            } else {
+                
+                let gcvc:GKGameCenterViewController = GKGameCenterViewController()
+                gcvc.gameCenterDelegate = self
+                gcvc.viewState = .leaderboards
+                gcvc.leaderboardIdentifier = Constant.LeaderBoard.id
+                self.present(gcvc, animated: true, completion: nil)
+            }
+        })
+    }
 
+}
+
+
+extension SelectViewController: GKGameCenterControllerDelegate {
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

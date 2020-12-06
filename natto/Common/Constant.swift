@@ -20,4 +20,9 @@ struct Constant {
         static let natto: UInt32 = 0x1 << 1
         static let topping: UInt32 = 0x1 << 1
     }
+    
+    struct LeaderBoard {
+        //TODO 後で直す
+        static let id = "TODO"
+    }
 }

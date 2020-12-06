@@ -36,7 +36,6 @@ class TotalEatViewController: UIViewController {
     private func setNextGrouthGrain(eatNum: Int){
         nextGrouthLabel.font = UIFont(name: "Verdana-bold", size: 25)
         
-        //TODO 画像を入れる
         if eatNum < 1000 {
             totalIcon.image = UIImage(named: "totalEat-one")
             nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 1000 - eatNum)
