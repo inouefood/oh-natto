@@ -42,37 +42,30 @@ class DescriptionViewController: UIViewController {
         
         scrollView.delegate = self
         pageControl.isEnabled = false
-        
+        zeroPage.setDescription(image: UIImage(named: "nattoTutorial-1"),
+                                text: localizeString(key: LocalizeKeys.Description.one))
         if isRegularRegularSize {
-            zeroPage.setDescription(image: UIImage(named: "nattoTutorial-1"),
-                                    text: localizeString(key: LocalizeKeys.Description.zero))
+            
             firstPage.setDescription(image: UIImage(named: "nattoTutorial-2ipad"),
-                                     text: localizeString(key: LocalizeKeys.Description.one))
+                                     text: localizeString(key: LocalizeKeys.Description.two))
             secondPage.setDescription(image: UIImage(named: "nattoTutorial-3ipad"),
-                                      text: localizeString(key: LocalizeKeys.Description.two))
+                                      text: localizeString(key: LocalizeKeys.Description.three))
             therdPage.setDescription(image: UIImage(named: "nattoTutorial-4ipad"),
-                                     text: localizeString(key: LocalizeKeys.Description.three))
-            fourthPage.setDescription(image: UIImage(named: "okura"),
-                                      text: "アイテム購入の説明")
-            fifthPage.setDescription(image: UIImage(named: "nattoTutorial-6"),
                                      text: localizeString(key: LocalizeKeys.Description.four))
             
-            
         } else {
-            zeroPage.setDescription(image: UIImage(named: "nattoTutorial-1"),
-                                    text: localizeString(key: LocalizeKeys.Description.zero))
             firstPage.setDescription(image: UIImage(named: "nattoTutorial-2"),
-                                     text: localizeString(key: LocalizeKeys.Description.one))
+                                     text: localizeString(key: LocalizeKeys.Description.two))
             secondPage.setDescription(image: UIImage(named: "nattoTutorial-3"),
-                                      text: localizeString(key: LocalizeKeys.Description.two))
+                                      text: localizeString(key: LocalizeKeys.Description.three))
             therdPage.setDescription(image: UIImage(named: "nattoTutorial-4"),
-                                     text: localizeString(key: LocalizeKeys.Description.three))
-            fourthPage.setDescription(image: UIImage(named: "okura"),
-                                      text: "アイテム購入の説明")
-            fifthPage.setDescription(image: UIImage(named: "nattoTutorial-6"),
                                      text: localizeString(key: LocalizeKeys.Description.four))
             
         }
+        fourthPage.setDescription(image: UIImage(named: "nattoTutorial-5"),
+                                  text: localizeString(key: LocalizeKeys.Description.five))
+        fifthPage.setDescription(image: UIImage(named: "nattoTutorial-6"),
+                                 text: localizeString(key: LocalizeKeys.Description.six))
     }
     
 }

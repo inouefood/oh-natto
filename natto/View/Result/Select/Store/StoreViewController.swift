@@ -42,7 +42,7 @@ extension StoreViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let horizontalSpace : CGFloat = 60
+        let horizontalSpace : CGFloat = 75
         let cellSize : CGFloat = self.view.bounds.height * 0.2 - horizontalSpace
         return CGSize(width: cellSize, height: cellSize)
     }

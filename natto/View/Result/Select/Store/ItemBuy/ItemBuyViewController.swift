@@ -39,7 +39,6 @@ class ItemBuyViewController: UIViewController {
         
     }
     @IBAction func PurchaseAction(_ sender: Any) {
-        //TODO 正しい値が入るように修正する
         let pickerCount = self.pickerView.selectedRow(inComponent: 0)
         let totalPoint = buyItem.price * Int(pickerCount)
         
@@ -47,7 +46,7 @@ class ItemBuyViewController: UIViewController {
                         message: localizeString(key: LocalizeKeys.ItemBuy.alertMessage,
                                                 totalPoint, buyItem.name, pickerCount),
                         yesButtonText: localizeString(key: LocalizeKeys.ItemBuy.alertYesButton),
-                        closeButtonText: localizeString(key: LocalizeKeys.ItemBuy.alertNoButton)) {
+                        closeButtonText: localizeString(key: LocalizeKeys.ItemBuy.alertNoButton)) { [self] in
             let eatKey = "natto"
             guard let eatPoint = UserStore.eatPoint,
                   let nattoPoint = eatPoint[eatKey] else {
@@ -57,15 +56,40 @@ class ItemBuyViewController: UIViewController {
             UserStore.eatPoint?.updateValue(newNattoPoint, forKey: eatKey)
 
             //アイテム購入
-            guard var item = UserStore.ownedItem else {
-                let item = OwnedItem(negi: 1, okura: 0, sirasu: 0)
+            guard let item = UserStore.ownedItem else {
+                //itemが何もない時はそのまま追加
+                var item: OwnedItem
+                switch buyItem! {
+                case .negi:
+                    item =
+                    OwnedItem(negi: pickerCount, okura: 0, sirasu: 0)
+                case .okura:
+                    item = OwnedItem(negi: 0, okura: pickerCount, sirasu: 0)
+                case .sirasu:
+                    item = OwnedItem(negi: 0, okura: 0, sirasu: pickerCount)
+                }
                 UserStore.ownedItem = item
                 return
             }
+            
+            var newItems: OwnedItem
+            switch buyItem!{
+            case .negi:
+                newItems = OwnedItem(negi: item.negi + pickerCount,
+                                     okura: item.okura,
+                                     sirasu: item.sirasu)
+            case .okura:
+                newItems = OwnedItem(negi: item.negi,
+                                     okura: item.okura + pickerCount,
+                                     sirasu: item.sirasu)
+            case .sirasu:
+                newItems = OwnedItem(negi: item.negi,
+                                     okura: item.okura,
+                                     sirasu: item.sirasu + pickerCount)
+            }
 
-            item.negi += 1
-            UserStore.ownedItem = item
-
+            UserStore.ownedItem = newItems
+            dismiss(animated: false, completion: nil)
         }
     }
     

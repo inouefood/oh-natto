@@ -42,15 +42,15 @@ extension UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
         let yes: UIAlertAction = UIAlertAction(title: yesButtonText, style: .default, handler: { _ in
-            alert.dismiss(animated: true, completion: nil)
             handler?()
+            alert.dismiss(animated: true, completion: nil)
         })
         
         let close: UIAlertAction = UIAlertAction(title: closeButtonText, style: .default, handler: { _ in
             alert.dismiss(animated: true, completion: nil)
         })
-        alert.addAction(yes)
         alert.addAction(close)
+        alert.addAction(yes)
         present(alert, animated: true, completion: nil)
     }
     
