@@ -74,6 +74,7 @@
 		49D9CCFB25320F6A00F9C30E /* Topping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CCFA25320F6A00F9C30E /* Topping.swift */; };
 		49D9CD082533056C00F9C30E /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9CD062533056C00F9C30E /* StoreViewController.swift */; };
 		49D9CD092533056C00F9C30E /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D9CD072533056C00F9C30E /* StoreViewController.xib */; };
+		49DFFF0F257C9E390052A5D7 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFFF0E257C9E390052A5D7 /* GameKit.framework */; };
 		49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A64251F14CC00E25A9B /* UserStore.swift */; };
 		49EE35572556C7BC00305D38 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE35562556C7BC00305D38 /* UIImage+Addition.swift */; };
 		49EF533B257BAF2C001396C8 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF5339257BAF2C001396C8 /* StoreCollectionViewCell.swift */; };
@@ -188,6 +189,7 @@
 		49D9CCFA25320F6A00F9C30E /* Topping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topping.swift; sourceTree = "<group>"; };
 		49D9CD062533056C00F9C30E /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		49D9CD072533056C00F9C30E /* StoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
+		49DFFF0E257C9E390052A5D7 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		49EC6A64251F14CC00E25A9B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		49EE35562556C7BC00305D38 /* UIImage+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Addition.swift"; sourceTree = "<group>"; };
 		49EF5339257BAF2C001396C8 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4941A843253A053100977604 /* Parchment in Frameworks */,
+				49DFFF0F257C9E390052A5D7 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +362,7 @@
 		4343CEA7205381DD002CA3BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49DFFF0E257C9E390052A5D7 /* GameKit.framework */,
 				0D048FD0227814D400852FFA /* FBSDKCoreKit.framework */,
 				0D048FCE2278144700852FFA /* Bolts.framework */,
 				0D048FCB22780E1100852FFA /* FacebookShare.framework */,

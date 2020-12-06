@@ -20,4 +20,8 @@ struct Constant {
         static let natto: UInt32 = 0x1 << 1
         static let topping: UInt32 = 0x1 << 1
     }
+    
+    struct LeaderBoard {
+        static let id = "natto.score.lanking"
+    }
 }

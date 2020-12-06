@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 import AVFoundation
+import GameKit
 
 class ResultViewController: UIViewController {
     var audio: AVAudioPlayer!
@@ -83,6 +84,7 @@ class ResultViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        sendLeaderboardWithID(ID: Constant.LeaderBoard.id, rate: Int64(score))
         //レビューダイアログの表示
         if UserStore.totalNattoCount > 1000 && UserStore.isNeedDisplayedReviewAlert {
             UserStore.isNeedDisplayedReviewAlert = false
@@ -110,6 +112,23 @@ class ResultViewController: UIViewController {
         audio.numberOfLoops = -1
         audio.prepareToPlay()
         audio.play()
+    }
+    
+    func sendLeaderboardWithID(ID:String, rate:Int64) -> Void {
+        let score = GKScore(leaderboardIdentifier: ID)
+        if GKLocalPlayer.local.isAuthenticated {
+            //スコアを設定
+            score.value = rate
+            print("success")
+            GKScore.report([score], withCompletionHandler: { (error) in
+                if error != nil {
+                    // エラーの場合
+                    print("error: \(String(describing: error))")
+                }
+            })
+        } else {
+            print("GameCenterにログインしていません")
+        }
     }
 
     @IBAction func retryAction(_ sender: Any) {
