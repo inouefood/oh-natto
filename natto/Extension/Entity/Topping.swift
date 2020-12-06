@@ -79,7 +79,7 @@ class Negi: Topping {
     }
     
     var point: Int {
-        return 3
+        return 5
     }
     
 }
@@ -98,7 +98,7 @@ class Okura: Topping {
     }
     
     var point: Int {
-        return 5
+        return 20
     }
 }
 
@@ -116,6 +116,6 @@ class Sirasu: Topping {
     }
     
     var point: Int {
-        return 10
+        return 30
     }
 }
