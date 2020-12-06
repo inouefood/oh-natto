@@ -94,9 +94,9 @@ class ResultViewController: UIViewController {
         guard let bestScore = UserStore.bestScore else {
             UserStore.bestScore = score
             return
-        }
-        
+        }        
         if score > bestScore {
+            UserStore.bestScore = score
             let vc = BestScoreViewController(score: score)
             vc.modalPresentationStyle = .overCurrentContext
             present(vc, animated: false, completion: nil)

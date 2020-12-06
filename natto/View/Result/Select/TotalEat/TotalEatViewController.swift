@@ -42,17 +42,15 @@ class TotalEatViewController: UIViewController {
         } else if eatNum > 1000 && eatNum < 3000 {
             totalIcon.image = UIImage(named: "totalEat-two")
             nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 3000 - eatNum)
-        } else if eatNum > 3000 && eatNum < 8000 {
+        } else if eatNum > 3000 && eatNum < 10000 {
             totalIcon.image = UIImage(named: "totalEat-three")
-            nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 8000 - eatNum)
-        } else if eatNum > 8000 {
+            nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 10000 - eatNum)
+        } else if eatNum > 10000 {
             totalIcon.image = UIImage(named: "totalEat-four")
             nextGrouthLabel.text = ""
         }
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    @IBAction func dismissAction(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }
-
 }
