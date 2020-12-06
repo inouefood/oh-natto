@@ -25,8 +25,12 @@ class SelectViewController: UIViewController {
     }
     
     @IBAction func openLeaderBoard(_ sender: Any) {
-        authenticateLocalPlayer()
-        openLeaderBordScoreLanking()
+        let player = GKLocalPlayer.local
+        if player.isAuthenticated {
+            openLeaderBordScoreLanking()
+        } else {
+            authenticateLocalPlayer()
+        }
     }
     @IBAction func openTotalEatPage(_ sender: Any) {
         let vc = TotalEatViewController()
@@ -42,7 +46,12 @@ class SelectViewController: UIViewController {
     }
     
     @IBAction func shareAction(_ sender: Any) {
-        let activityItems: [Any] = ["\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8", shareImage ?? nil]
+        var activityItems: [Any] = []
+        if let image = shareImage {
+            activityItems = ["\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8", image]
+        } else {
+            activityItems = ["\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"]
+        }
 
         let activityVc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         activityVc.modalPresentationStyle = .fullScreen
@@ -55,6 +64,8 @@ class SelectViewController: UIViewController {
             if viewController != nil
             {
                 self.present(viewController!, animated: true, completion: nil)
+            } else {
+                print("viewController is nil")
             }
         }
     }
