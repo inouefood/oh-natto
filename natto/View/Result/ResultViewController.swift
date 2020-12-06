@@ -95,6 +95,7 @@ class ResultViewController: UIViewController {
             UserStore.bestScore = score
             return
         }
+        print("bestScoreは：\(bestScore)")
         
         if score > bestScore {
             let vc = BestScoreViewController(score: score)
