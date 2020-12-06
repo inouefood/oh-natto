@@ -52,6 +52,17 @@ enum ToppingType {
             return "しらす"
         }
     }
+    
+    var keyName: String {
+        switch self {
+        case .negi:
+            return "negi"
+        case .okura:
+            return "okura"
+        case .sirasu:
+            return "sirasu"
+        }
+    }
 }
 
 class Negi: Topping {
