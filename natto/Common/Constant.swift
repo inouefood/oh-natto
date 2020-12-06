@@ -22,7 +22,6 @@ struct Constant {
     }
     
     struct LeaderBoard {
-        //TODO 後で直す
-        static let id = "TODO"
+        static let id = "natto.score.lanking"
     }
 }
