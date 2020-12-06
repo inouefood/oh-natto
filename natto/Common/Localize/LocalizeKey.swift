@@ -30,12 +30,12 @@ struct LocalizeKeys {
     }
     
     enum Description: String, LocalizeKeyGeneratable {
-        case title = "DESCRIPTION.TITLE"
-        case zero = "DESCRIPTION.0"
         case one = "DESCRIPTION.1"
         case two = "DESCRIPTION.2"
         case three = "DESCRIPTION.3"
         case four = "DESCRIPTION.4"
+        case five = "DESCRIPTION.5"
+        case six = "DESCRIPTION.6"
         var key: String {
             return rawValue
         }
