@@ -34,11 +34,11 @@ enum ToppingType {
     var price: Int {
         switch self {
         case .negi:
-            return 30
-        case .okura:
             return 50
+        case .okura:
+            return 200
         case .sirasu:
-            return 100
+            return 400
         }
     }
     

@@ -36,16 +36,16 @@ class TotalEatViewController: UIViewController {
     private func setNextGrouthGrain(eatNum: Int){
         nextGrouthLabel.font = UIFont(name: "Verdana-bold", size: 25)
         
-        if eatNum < 1000 {
+        if eatNum < 3000 {
             totalIcon.image = UIImage(named: "totalEat-one")
-            nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 1000 - eatNum)
-        } else if eatNum > 1000 && eatNum < 3000 {
-            totalIcon.image = UIImage(named: "totalEat-two")
             nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 3000 - eatNum)
-        } else if eatNum > 3000 && eatNum < 10000 {
+        } else if eatNum > 3000 && eatNum < 6000 {
+            totalIcon.image = UIImage(named: "totalEat-two")
+            nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 6000 - eatNum)
+        } else if eatNum > 6000 && eatNum < 20000 {
             totalIcon.image = UIImage(named: "totalEat-three")
-            nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 10000 - eatNum)
-        } else if eatNum > 10000 {
+            nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 20000 - eatNum)
+        } else if eatNum > 20000 {
             totalIcon.image = UIImage(named: "totalEat-four")
             nextGrouthLabel.text = ""
         }

@@ -54,6 +54,8 @@ class ItemBuyViewController: UIViewController {
             }
             let newNattoPoint = nattoPoint - totalPoint
             UserStore.eatPoint?.updateValue(newNattoPoint, forKey: eatKey)
+            
+            ownedPointLabel.text = localizeString(key: LocalizeKeys.ItemBuy.ownedLabelText, newNattoPoint)
 
             //アイテム購入
             guard let item = UserStore.ownedItem else {
@@ -89,7 +91,8 @@ class ItemBuyViewController: UIViewController {
             }
 
             UserStore.ownedItem = newItems
-            dismiss(animated: false, completion: nil)
+            purchaseCount()
+            self.pickerView.reloadAllComponents()
         }
     }
     
@@ -110,6 +113,7 @@ class ItemBuyViewController: UIViewController {
     }
     
     private func purchaseCount(){
+        pickerArr = []
         let eatKey = "natto"
         guard let eatPoint = UserStore.eatPoint,
               let nattoPoint = eatPoint[eatKey] else {
