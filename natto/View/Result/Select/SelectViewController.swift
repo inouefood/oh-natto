@@ -15,7 +15,9 @@ class SelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .clear
-        // Do any additional setup after loading the view.
+        if GKLocalPlayer.local.isAuthenticated {
+            authenticateLocalPlayer()
+        }
     }
 
     @IBAction func openStorePage(_ sender: Any) {
