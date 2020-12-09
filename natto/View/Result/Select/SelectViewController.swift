@@ -15,6 +15,10 @@ class SelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .clear
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if GKLocalPlayer.local.isAuthenticated {
             authenticateLocalPlayer()
         }
@@ -52,11 +56,24 @@ class SelectViewController: UIViewController {
         if let image = shareImage {
             activityItems = ["\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8", image]
         } else {
+            print("start")
             activityItems = ["\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"]
+            print("stop")
         }
 
         let activityVc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        activityVc.modalPresentationStyle = .fullScreen
+        let horizonSizeClass = UITraitCollection(horizontalSizeClass: .regular)
+        let verticalSizeClass = UITraitCollection(verticalSizeClass: .regular)
+        let isRegularRegularSize = traitCollection.containsTraits(in: horizonSizeClass)
+            && traitCollection.containsTraits(in: verticalSizeClass)
+        if isRegularRegularSize {
+            activityVc.popoverPresentationController?.sourceView = self.view
+            activityVc.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.size.width,
+                                                                          y: self.view.bounds.size.height,
+                                                                          width: 1.0,
+                                                                          height: 1.0)
+        }
+        
         self.present(activityVc, animated: true, completion: nil)
     }
     

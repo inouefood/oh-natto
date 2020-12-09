@@ -60,7 +60,6 @@
 		493B412B254704EA00F26C4F /* NSObject+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B412A254704EA00F26C4F /* NSObject+Addition.swift */; };
 		493B41312547078600F26C4F /* AppVersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B412F2547078600F26C4F /* AppVersionTableViewCell.swift */; };
 		493B41322547078600F26C4F /* AppVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493B41302547078600F26C4F /* AppVersionTableViewCell.xib */; };
-		4941A843253A053100977604 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 4941A842253A053100977604 /* Parchment */; };
 		494664E02571E22B009E8165 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494664DF2571E22B009E8165 /* AppColor.swift */; };
 		494B51D525543043009DD52C /* OwnedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B51D425543043009DD52C /* OwnedItem.swift */; };
 		496B97912545535000D1D6EB /* ToppingSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B978F2545535000D1D6EB /* ToppingSelectCollectionViewCell.swift */; };
@@ -223,7 +222,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4941A843253A053100977604 /* Parchment in Frameworks */,
 				49DFFF0F257C9E390052A5D7 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,7 +637,6 @@
 			);
 			name = natto;
 			packageProductDependencies = (
-				4941A842253A053100977604 /* Parchment */,
 			);
 			productName = natto;
 			productReference = 43D95F1C2052723B00FE1117 /* natto.app */;
@@ -1179,14 +1176,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		4941A842253A053100977604 /* Parchment */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4941A841253A053100977604 /* XCRemoteSwiftPackageReference "Parchment" */;
-			productName = Parchment;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43D95F142052723B00FE1117 /* Project object */;
 }
