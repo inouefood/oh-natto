@@ -47,8 +47,7 @@ private struct ItemBuyView: View {
                         quantity -= 1
                     }
                     Text(quantity.description)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 44)
+                        .frame(width: 64, height: 52)
                         .font(.system(size: 28, weight: .medium))
                         .multilineTextAlignment(.center)
                     stepperButton("＋", enabled: quantity < maxQuantity) {
@@ -93,14 +92,14 @@ private struct ItemBuyView: View {
             action()
         } label: {
             Text(label)
-                .frame(maxWidth: .infinity)
-                .frame(height: 44)
                 .font(.system(size: 28))
                 .foregroundColor(.white)
+                .frame(maxWidth: .infinity, minHeight: 52)
+                .background(enabled ? Color("button") : Color(.systemGray3))
+                .cornerRadius(4)
+                .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .background(enabled ? Color("button") : Color(.systemGray3))
-        .cornerRadius(4)
         .allowsHitTesting(enabled)
     }
 
@@ -110,14 +109,14 @@ private struct ItemBuyView: View {
             action()
         } label: {
             Text(label)
-                .frame(maxWidth: .infinity)
-                .frame(height: 44)
                 .font(.system(size: 19))
                 .foregroundColor(.white)
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .background(isDisabled ? Color(.systemGray3) : color)
+                .cornerRadius(4)
+                .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .background(isDisabled ? Color(.systemGray3) : color)
-        .cornerRadius(4)
         .allowsHitTesting(!isDisabled)
     }
 
