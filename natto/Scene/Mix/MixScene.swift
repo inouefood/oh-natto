@@ -72,18 +72,18 @@ class MixScene: SKScene{
         //衝突判定のデリゲートをselfにする
         self.physicsWorld.contactDelegate = self
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        //原点の変更
+        self.anchorPoint = CGPoint(x: 0, y: 0)
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-        
-        
-        
+
+
+
         //タイマー
         self.timer = Timer.scheduledTimer(timeInterval: 10,
                                           target: self,
                                           selector: #selector(MixScene.timerCounter),
                                           userInfo: nil,
                                           repeats: true)
-        //原点の変更
-        self.anchorPoint = CGPoint(x: 0, y: 0)
         self.backgroundColor = AppColor.gamePlayBackground.color
         
         
