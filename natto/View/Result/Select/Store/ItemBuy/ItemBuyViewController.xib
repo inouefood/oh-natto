@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="imageView" destination="nzL-Ac-yhc" id="CWo-q8-qRu"/>
                 <outlet property="ownedPointLabel" destination="y7h-8M-d0K" id="SsV-6t-ApQ"/>
-                <outlet property="pickerView" destination="f1u-2b-p1B" id="U63-TM-C1v"/>
+                <outlet property="quantityLabel" destination="qty-LB-n0w" id="qty-out-001"/>
                 <outlet property="titleLabel" destination="0dA-DE-Ogr" id="q8w-bu-gaV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -54,35 +54,20 @@
                                 <action selector="dismissAction:" destination="-1" eventType="touchUpInside" id="qLb-06-akU"/>
                             </connections>
                         </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nN-d3-5of">
-                            <rect key="frame" x="79" y="354.66666666666663" width="208" height="70"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="5nN-d3-5of">
+                            <rect key="frame" x="79" y="332" width="208" height="92"/>
                             <subviews>
-                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1u-2b-p1B">
-                                    <rect key="frame" x="0.0" y="0.0" width="58" height="70"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="70" id="aPQ-Ft-6Tm"/>
-                                        <constraint firstAttribute="width" constant="58" id="twp-lc-GuD"/>
-                                    </constraints>
-                                </pickerView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Crz-E1-OCw">
-                                    <rect key="frame" x="58" y="0.0" width="150" height="70"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="horizontal" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="stp-HZ-row">
+                                    <rect key="frame" x="0.0" y="0.0" width="208" height="44"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0a-9V-DdA">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="17"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="17" id="5sn-yB-A7v"/>
-                                            </constraints>
-                                        </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlk-O0-HOa">
-                                            <rect key="frame" x="0.0" y="17" width="150" height="36"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dec-BT-n0w">
+                                            <rect key="frame" x="0.0" y="0.0" width="64" height="44"/>
                                             <color key="backgroundColor" name="button"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="36" id="3dD-RD-E6o"/>
-                                                <constraint firstAttribute="width" constant="150" id="fiR-bq-dHa"/>
+                                                <constraint firstAttribute="height" constant="44" id="dec-h-001"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            <state key="normal" title="かう">
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <state key="normal" title="－">
                                                 <color key="titleColor" name="white"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -91,18 +76,55 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="PurchaseAction:" destination="-1" eventType="touchUpInside" id="n1x-d5-DDU"/>
+                                                <action selector="decrementAction:" destination="-1" eventType="touchUpInside" id="dec-ac-001"/>
                                             </connections>
                                         </button>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gqu-Px-tcn">
-                                            <rect key="frame" x="0.0" y="53.000000000000057" width="150" height="17"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qty-LB-n0w">
+                                            <rect key="frame" x="72" y="0.0" width="64" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inc-BT-n0w">
+                                            <rect key="frame" x="144" y="0.0" width="64" height="44"/>
+                                            <color key="backgroundColor" name="button"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="17" id="Z80-TG-PHb"/>
+                                                <constraint firstAttribute="height" constant="44" id="inc-h-001"/>
                                             </constraints>
-                                        </view>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <state key="normal" title="＋">
+                                                <color key="titleColor" name="white"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="incrementAction:" destination="-1" eventType="touchUpInside" id="inc-ac-001"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlk-O0-HOa">
+                                    <rect key="frame" x="0.0" y="56" width="208" height="36"/>
+                                    <color key="backgroundColor" name="button"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="3dD-RD-E6o"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <state key="normal" title="かう">
+                                        <color key="titleColor" name="white"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="PurchaseAction:" destination="-1" eventType="touchUpInside" id="n1x-d5-DDU"/>
+                                    </connections>
+                                </button>
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dA-DE-Ogr">

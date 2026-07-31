@@ -9,6 +9,13 @@
 import UIKit
 import GameKit
 
+class PassThroughView: UIView {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let hitView = super.hitTest(point, with: event)
+        return hitView == self ? nil : hitView
+    }
+}
+
 class SelectViewController: UIViewController {
     var shareImage: UIImage?
 
@@ -16,6 +23,7 @@ class SelectViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .clear
     }
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

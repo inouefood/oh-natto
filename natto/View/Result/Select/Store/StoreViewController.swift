@@ -23,12 +23,14 @@ class StoreViewController: UIViewController, UICollectionViewDelegateFlowLayout 
         }
     }
     
+    var dismissHandler: (() -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func dismissAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: dismissHandler)
     }
 }
 

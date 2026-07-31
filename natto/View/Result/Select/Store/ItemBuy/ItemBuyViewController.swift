@@ -7,141 +7,185 @@
 //
 
 import UIKit
+import SwiftUI
 
-class ItemBuyViewController: UIViewController {
+// MARK: - SwiftUI View
 
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var ownedPointLabel: UILabel!
-    
-    var buyItem: ToppingType!
-    var ownedPoint: Int!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+private struct ItemBuyView: View {
+    let buyItem: ToppingType
+    let onDismiss: () -> Void
 
+    @State private var quantity = 0
+    @State private var nattoPoint = 0
+    @State private var showingConfirmation = false
+
+    private var maxQuantity: Int {
+        guard buyItem.price > 0 else { return 0 }
+        return nattoPoint / buyItem.price
     }
-    
-    private var pickerArr: [String] = []
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        purchaseCount()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        commonInit()
-        
-    }
-    @IBAction func PurchaseAction(_ sender: Any) {
-        let pickerCount = self.pickerView.selectedRow(inComponent: 0)
-        let totalPoint = buyItem.price * Int(pickerCount)
-        
-        showInformation(title: localizeString(key: LocalizeKeys.ItemBuy.alertTitle),
-                        message: localizeString(key: LocalizeKeys.ItemBuy.alertMessage,
-                                                totalPoint, buyItem.name, pickerCount),
-                        yesButtonText: localizeString(key: LocalizeKeys.ItemBuy.alertYesButton),
-                        closeButtonText: localizeString(key: LocalizeKeys.ItemBuy.alertNoButton)) { [self] in
-            let eatKey = "natto"
-            guard let eatPoint = UserStore.eatPoint,
-                  let nattoPoint = eatPoint[eatKey] else {
-                return
-            }
-            let newNattoPoint = nattoPoint - totalPoint
-            UserStore.eatPoint?.updateValue(newNattoPoint, forKey: eatKey)
-            
-            ownedPointLabel.text = localizeString(key: LocalizeKeys.ItemBuy.ownedLabelText, newNattoPoint)
 
-            //アイテム購入
-            guard let item = UserStore.ownedItem else {
-                //itemが何もない時はそのまま追加
-                var item: OwnedItem
-                switch buyItem! {
-                case .negi:
-                    item =
-                    OwnedItem(negi: pickerCount, okura: 0, sirasu: 0)
-                case .okura:
-                    item = OwnedItem(negi: 0, okura: pickerCount, sirasu: 0)
-                case .sirasu:
-                    item = OwnedItem(negi: 0, okura: 0, sirasu: pickerCount)
+    var body: some View {
+        ZStack {
+            Color(white: 0.5).opacity(0.8)
+                .ignoresSafeArea()
+
+            VStack(spacing: 20) {
+                Image(uiImage: buyItem.image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 128, height: 128)
+
+                Text(buyItem.name)
+                    .font(.system(size: 17))
+
+                Text(localizeString(key: LocalizeKeys.ItemBuy.ownedLabelText, nattoPoint))
+                    .font(.system(size: 17))
+
+                // ±ステッパー
+                HStack(spacing: 8) {
+                    stepperButton("－", enabled: quantity > 0) {
+                        quantity -= 1
+                    }
+                    Text(quantity.description)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 44)
+                        .font(.system(size: 28, weight: .medium))
+                        .multilineTextAlignment(.center)
+                    stepperButton("＋", enabled: quantity < maxQuantity) {
+                        quantity += 1
+                    }
                 }
-                UserStore.ownedItem = item
-                return
-            }
-            
-            var newItems: OwnedItem
-            switch buyItem!{
-            case .negi:
-                newItems = OwnedItem(negi: item.negi + pickerCount,
-                                     okura: item.okura,
-                                     sirasu: item.sirasu)
-            case .okura:
-                newItems = OwnedItem(negi: item.negi,
-                                     okura: item.okura + pickerCount,
-                                     sirasu: item.sirasu)
-            case .sirasu:
-                newItems = OwnedItem(negi: item.negi,
-                                     okura: item.okura,
-                                     sirasu: item.sirasu + pickerCount)
-            }
 
-            UserStore.ownedItem = newItems
-            purchaseCount()
-            self.pickerView.reloadAllComponents()
+                // アクションボタン横並び
+                HStack(spacing: 12) {
+                    actionButton("とじる", color: Color("gamePlayBackground")) {
+                        onDismiss()
+                    }
+                    actionButton("かう", color: Color("button"), isDisabled: quantity == 0) {
+                        showingConfirmation = true
+                    }
+                }
+            }
+            .padding(20)
+            .background(Color(.systemBackground))
+            .cornerRadius(12)
+            .frame(maxWidth: 560)
+            .padding(.horizontal, 24)
+        }
+        .onAppear { loadPoint() }
+        .alert(
+            localizeString(key: LocalizeKeys.ItemBuy.alertTitle),
+            isPresented: $showingConfirmation
+        ) {
+            Button(localizeString(key: LocalizeKeys.ItemBuy.alertYesButton)) {
+                executePurchase()
+            }
+            Button(localizeString(key: LocalizeKeys.ItemBuy.alertNoButton), role: .cancel) {}
+        } message: {
+            Text(localizeString(key: LocalizeKeys.ItemBuy.alertMessage,
+                                buyItem.price * quantity, buyItem.name, quantity))
         }
     }
-    
-    @IBAction func dismissAction(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
+
+    @ViewBuilder
+    private func stepperButton(_ label: String, enabled: Bool, action: @escaping () -> Void) -> some View {
+        Button {
+            action()
+        } label: {
+            Text(label)
+                .frame(maxWidth: .infinity)
+                .frame(height: 44)
+                .font(.system(size: 28))
+                .foregroundColor(.white)
+        }
+        .buttonStyle(.plain)
+        .background(enabled ? Color("button") : Color(.systemGray3))
+        .cornerRadius(4)
+        .allowsHitTesting(enabled)
     }
-    
-    private func commonInit(){
-        imageView.image = buyItem.image
-        titleLabel.text = buyItem.name
+
+    @ViewBuilder
+    private func actionButton(_ label: String, color: Color, isDisabled: Bool = false, action: @escaping () -> Void) -> some View {
+        Button {
+            action()
+        } label: {
+            Text(label)
+                .frame(maxWidth: .infinity)
+                .frame(height: 44)
+                .font(.system(size: 19))
+                .foregroundColor(.white)
+        }
+        .buttonStyle(.plain)
+        .background(isDisabled ? Color(.systemGray3) : color)
+        .cornerRadius(4)
+        .allowsHitTesting(!isDisabled)
+    }
+
+    private func loadPoint() {
         let eatKey = "natto"
         guard let eatPoint = UserStore.eatPoint,
-              let nattoPoint = eatPoint[eatKey] else {
-            return
-        }
-        
-        ownedPointLabel.text = localizeString(key: LocalizeKeys.ItemBuy.ownedLabelText, nattoPoint)
+              let point = eatPoint[eatKey] else { return }
+        nattoPoint = point
     }
-    
-    private func purchaseCount(){
-        pickerArr = []
+
+    private func executePurchase() {
+        let totalPoint = buyItem.price * quantity
         let eatKey = "natto"
         guard let eatPoint = UserStore.eatPoint,
-              let nattoPoint = eatPoint[eatKey] else {
-            return
+              let currentPoint = eatPoint[eatKey] else { return }
+
+        let newNattoPoint = currentPoint - totalPoint
+        UserStore.eatPoint?.updateValue(newNattoPoint, forKey: eatKey)
+
+        let existing = UserStore.ownedItem
+        switch buyItem {
+        case .negi:
+            UserStore.ownedItem = OwnedItem(negi: (existing?.negi ?? 0) + quantity,
+                                             okura: existing?.okura ?? 0,
+                                             sirasu: existing?.sirasu ?? 0)
+        case .okura:
+            UserStore.ownedItem = OwnedItem(negi: existing?.negi ?? 0,
+                                             okura: (existing?.okura ?? 0) + quantity,
+                                             sirasu: existing?.sirasu ?? 0)
+        case .sirasu:
+            UserStore.ownedItem = OwnedItem(negi: existing?.negi ?? 0,
+                                             okura: existing?.okura ?? 0,
+                                             sirasu: (existing?.sirasu ?? 0) + quantity)
         }
-        let count = nattoPoint / buyItem.price
-        for i in 0..<count+1 {
-            pickerArr.append((i).description)
-        }
-        
+
+        nattoPoint = newNattoPoint
+        quantity = min(quantity, maxQuantity)
     }
 }
 
-extension ItemBuyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+// MARK: - UIViewController Wrapper
+
+class ItemBuyViewController: UIViewController {
+    var buyItem: ToppingType!
+
+    override func loadView() {
+        view = UIView()
+        view.backgroundColor = .clear
     }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerArr.count
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let swiftUIView = ItemBuyView(buyItem: buyItem) { [weak self] in
+            self?.dismiss(animated: false)
+        }
+
+        let hc = UIHostingController(rootView: swiftUIView)
+        hc.view.backgroundColor = .clear
+        addChild(hc)
+        view.addSubview(hc.view)
+        hc.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hc.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        hc.didMove(toParent: self)
     }
-    
-    func pickerView(_ pickerView: UIPickerView,
-                    titleForRow row: Int,
-                    forComponent component: Int) -> String? {
-        
-        return pickerArr[row]
-    }
-    
-    
 }

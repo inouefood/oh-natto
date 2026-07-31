@@ -168,7 +168,7 @@ extension MixScene: SKPhysicsContactDelegate {
         let stickyPath = CGMutablePath().make(start: ohashi.position, end: pos)
         let stickyLine = SKShapeNode(path: stickyPath,
                                      color: .white,
-                                     lineWid: 4,
+                                     lineWid: 8,
                                      alpha: 0.2,
                                      zPos: 1.0,
                                      isInteractive: false)
