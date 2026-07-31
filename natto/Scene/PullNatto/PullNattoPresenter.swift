@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-protocol PullNattoPresenter:class {
+protocol PullNattoPresenter: AnyObject {
     init(output: PullNattoPresenterOutput, model: PullNattoModelInput)
     func loadBgmAudio(resourceName: String, resourceType: String)
     func loadEffectAudio(resourceName: String, resourceType: String)
@@ -21,7 +21,7 @@ protocol PullNattoPresenter:class {
     func toppingEatCheck(height: Float, toppingY: Float, index: Int)
 }
 
-protocol PullNattoPresenterOutput:class {
+protocol PullNattoPresenterOutput: AnyObject {
     func showUpdateNatto(objPos: ObjectPosition, index: Int)
     func showEatNatto(index: Int)
     func showUpdateTopping(objPos: ObjectPosition, index: Int)

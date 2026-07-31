@@ -9,6 +9,13 @@
 import UIKit
 import GameKit
 
+class PassThroughView: UIView {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let hitView = super.hitTest(point, with: event)
+        return hitView == self ? nil : hitView
+    }
+}
+
 class SelectViewController: UIViewController {
     var shareImage: UIImage?
 
@@ -16,6 +23,7 @@ class SelectViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .clear
     }
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -62,11 +70,7 @@ class SelectViewController: UIViewController {
         }
 
         let activityVc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        let horizonSizeClass = UITraitCollection(horizontalSizeClass: .regular)
-        let verticalSizeClass = UITraitCollection(verticalSizeClass: .regular)
-        let isRegularRegularSize = traitCollection.containsTraits(in: horizonSizeClass)
-            && traitCollection.containsTraits(in: verticalSizeClass)
-        if isRegularRegularSize {
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
             activityVc.popoverPresentationController?.sourceView = self.view
             activityVc.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.size.width,
                                                                           y: self.view.bounds.size.height,
@@ -90,19 +94,11 @@ class SelectViewController: UIViewController {
     }
     
     private func openLeaderBordScoreLanking() {
-        let localPlayer = GKLocalPlayer()
-        localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {leaderboardIdentifier,error in
-            if error != nil {
-                print(error.debugDescription)
-            } else {
-                
-                let gcvc:GKGameCenterViewController = GKGameCenterViewController()
-                gcvc.gameCenterDelegate = self
-                gcvc.viewState = .leaderboards
-                gcvc.leaderboardIdentifier = Constant.LeaderBoard.id
-                self.present(gcvc, animated: true, completion: nil)
-            }
-        })
+        let gcvc = GKGameCenterViewController(leaderboardID: Constant.LeaderBoard.id,
+                                              playerScope: .global,
+                                              timeScope: .allTime)
+        gcvc.gameCenterDelegate = self
+        self.present(gcvc, animated: true, completion: nil)
     }
 
 }

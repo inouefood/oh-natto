@@ -24,11 +24,8 @@ class DescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        let horizonSizeClass = UITraitCollection(horizontalSizeClass: .regular)
-        let verticalSizeClass = UITraitCollection(verticalSizeClass: .regular)
-        
-        commonInit(isRegularRegularSize: traitCollection.containsTraits(in: horizonSizeClass)
-                    && traitCollection.containsTraits(in: verticalSizeClass))
+        commonInit(isRegularRegularSize: traitCollection.horizontalSizeClass == .regular
+                    && traitCollection.verticalSizeClass == .regular)
         
     }
  

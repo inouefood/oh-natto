@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-protocol MixPresenter: class {
+protocol MixPresenter: AnyObject {
     init(output: MixPresenterOutput, model: MixModelInput)
     func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float)
     func contactOhashiToNatto(contact: SKPhysicsContact) -> CGPoint?
@@ -21,7 +21,7 @@ protocol MixPresenter: class {
     func stopEffect2()
 }
 
-protocol MixPresenterOutput: class {
+protocol MixPresenterOutput: AnyObject {
     func showUpdateOhashi(objPos: ObjectPosition)
 }
 

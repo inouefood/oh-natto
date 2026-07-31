@@ -88,7 +88,9 @@ class ResultViewController: UIViewController {
         //レビューダイアログの表示
         if UserStore.totalNattoCount > 1000 && UserStore.isNeedDisplayedReviewAlert {
             UserStore.isNeedDisplayedReviewAlert = false
-            SKStoreReviewController.requestReview()
+            if let scene = view.window?.windowScene {
+                AppStore.requestReview(in: scene)
+            }
         }
         
         guard let bestScore = UserStore.bestScore else {
@@ -114,20 +116,16 @@ class ResultViewController: UIViewController {
         audio.play()
     }
     
-    func sendLeaderboardWithID(ID:String, rate:Int64) -> Void {
-        let score = GKScore(leaderboardIdentifier: ID)
-        if GKLocalPlayer.local.isAuthenticated {
-            //スコアを設定
-            score.value = rate
-            print("success")
-            GKScore.report([score], withCompletionHandler: { (error) in
-                if error != nil {
-                    // エラーの場合
-                    print("error: \(String(describing: error))")
-                }
-            })
-        } else {
+    func sendLeaderboardWithID(ID: String, rate: Int64) {
+        guard GKLocalPlayer.local.isAuthenticated else {
             print("GameCenterにログインしていません")
+            return
+        }
+        print("success")
+        GKLeaderboard.submitScore(Int(rate), context: 0, player: GKLocalPlayer.local, leaderboardIDs: [ID]) { error in
+            if let error = error {
+                print("error: \(error)")
+            }
         }
     }
 

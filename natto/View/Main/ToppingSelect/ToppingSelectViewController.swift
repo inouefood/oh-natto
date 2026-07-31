@@ -38,6 +38,17 @@ class ToppingSelectViewController: UIViewController {
     @IBAction func decisionAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func openShopAction(_ sender: Any) {
+        let vc = StoreViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.dismissHandler = { [weak self] in
+            guard let self else { return }
+            toppings = UserStore.ownedItem?.createItemList(alreadySelect: ToppingManager.shared.selectedItem) ?? []
+            collectionView.reloadData()
+        }
+        present(vc, animated: true, completion: nil)
+    }
     
     @IBAction func resetAction(_ sender: Any) {
         ToppingManager.shared.selectedItem = []

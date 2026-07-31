@@ -163,6 +163,7 @@ extension TitleScene {
                 
             } else if touchNode == itemSelectButton {
                 let vc = ToppingSelectViewController()
+                vc.modalPresentationStyle = .overFullScreen
                 topViewController()?.present(vc, animated: true, completion: nil)
                 
             }else if touchNode == settingButton {
