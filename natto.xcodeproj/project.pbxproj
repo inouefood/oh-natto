@@ -113,12 +113,7 @@
 		057D3EC62330666A00712E5D /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
 		057D3EC72330666A00712E5D /* Contiffi.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Contiffi.scnp; sourceTree = "<group>"; };
 		0D048FC32277FCE500852FFA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		0D048FC522780D9300852FFA /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Carthage/Build/iOS/TwitterKit.framework; sourceTree = "<group>"; };
-		0D048FC722780DC400852FFA /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
-		0D048FC922780DFA00852FFA /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = Carthage/Build/iOS/FacebookLogin.framework; sourceTree = "<group>"; };
-		0D048FCB22780E1100852FFA /* FacebookShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookShare.framework; path = Carthage/Build/iOS/FacebookShare.framework; sourceTree = "<group>"; };
-		0D048FCE2278144700852FFA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
-		0D048FD0227814D400852FFA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+
 		0D081FC32286DB5D00B74D86 /* ObjectSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSize.swift; sourceTree = "<group>"; };
 		0D815D0822617A3C00B6642E /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		0D815D0922617A3C00B6642E /* DescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionViewController.xib; sourceTree = "<group>"; };
@@ -362,12 +357,6 @@
 			isa = PBXGroup;
 			children = (
 				49DFFF0E257C9E390052A5D7 /* GameKit.framework */,
-				0D048FD0227814D400852FFA /* FBSDKCoreKit.framework */,
-				0D048FCE2278144700852FFA /* Bolts.framework */,
-				0D048FCB22780E1100852FFA /* FacebookShare.framework */,
-				0D048FC922780DFA00852FFA /* FacebookLogin.framework */,
-				0D048FC722780DC400852FFA /* FacebookCore.framework */,
-				0D048FC522780D9300852FFA /* TwitterKit.framework */,
 				4343CEA8205381DE002CA3BC /* Social.framework */,
 			);
 			name = Frameworks;
@@ -1084,10 +1073,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 19;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = natto/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.simulation-games";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
@@ -1112,10 +1097,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 19;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = natto/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.simulation-games";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
