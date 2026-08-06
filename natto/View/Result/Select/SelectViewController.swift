@@ -22,8 +22,10 @@ private struct SelectView: View {
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
+            // pass-through background (full screen including safe area)
             Color.clear
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
                 .allowsHitTesting(false)
 
             VStack(alignment: .trailing, spacing: 10) {
@@ -43,9 +45,9 @@ private struct SelectView: View {
                 }
             }
             .padding(.trailing, 40)
-            .padding(.bottom, 32)
+            .padding(.bottom, 32)  // safeArea.bottom 基準になる
         }
-        .ignoresSafeArea()
+        // ignoresSafeArea をここには付けない → ボタンが safeArea.bottom から 32pt の位置に
     }
 
     private func iconButton(_ imageName: String, size: CGFloat, action: @escaping () -> Void) -> some View {
@@ -81,16 +83,13 @@ class SelectViewController: UIViewController {
         setupSwiftUI()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if GKLocalPlayer.local.isAuthenticated {
-            authenticateLocalPlayer()
-        }
-    }
-
     private func setupSwiftUI() {
         let swiftUIView = SelectView(
-            onDismiss: { [weak self] in self?.dismiss(animated: false) },
+            onDismiss: { [weak self] in
+                self?.willMove(toParent: nil)
+                self?.view.removeFromSuperview()
+                self?.removeFromParent()
+            },
             onStorePage: { [weak self] in self?.openStorePage() },
             onLeaderBoard: { [weak self] in self?.openLeaderBoard() },
             onTotalEatPage: { [weak self] in self?.openTotalEatPage() },

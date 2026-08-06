@@ -26,9 +26,8 @@ private struct ResultScreenContent: View {
                 ZStack(alignment: .topLeading) {
                     Image("tipsBoard")
                         .resizable()
-                        .scaledToFill()
+                        .scaledToFit()
                         .frame(width: geo.size.width, height: geo.size.height * 0.4)
-                        .clipped()
 
                     VStack(alignment: .leading, spacing: 8) {
                         Text(tipsTitle)
@@ -46,14 +45,16 @@ private struct ResultScreenContent: View {
                     .padding(.trailing, 32)
                     .padding(.top, 42)
                 }
-                .frame(height: geo.size.height * 0.4)
+                .frame(width: geo.size.width, height: geo.size.height * 0.4)
 
                 ZStack {
-                    Image("scoreMame")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: geo.size.width, height: geo.size.height * 0.6)
-                        .clipped()
+                    TimelineView(.animation(minimumInterval: 1.0 / 8.0)) { context in
+                        let frame = Int(context.date.timeIntervalSinceReferenceDate * 8) % 8
+                        Image("natto_wachawacha_\(frame)")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geo.size.width, height: geo.size.height * 0.6)
+                    }
 
                     VStack(spacing: 16) {
                         Text(scoreTitle)
@@ -65,7 +66,7 @@ private struct ResultScreenContent: View {
                             .foregroundColor(.white)
                     }
                 }
-                .frame(height: geo.size.height * 0.6)
+                .frame(width: geo.size.width, height: geo.size.height * 0.6)
             }
         }
         .background(Color("background"))
@@ -237,7 +238,15 @@ class ResultViewController: UIViewController {
     @objc private func openSelectTapped() {
         let vc = SelectViewController()
         vc.shareImage = screenShotView.convertToImage()
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: false)
+        addChild(vc)
+        view.addSubview(vc.view)
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            vc.view.topAnchor.constraint(equalTo: view.topAnchor),
+            vc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            vc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            vc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        vc.didMove(toParent: self)
     }
 }
