@@ -36,10 +36,10 @@ private struct ItemBuyView: View {
                     .frame(width: 128, height: 128)
 
                 Text(buyItem.name)
-                    .font(.system(size: 17))
+                    .font(.scaled(17))
 
                 Text(localizeString(key: LocalizeKeys.ItemBuy.ownedLabelText, nattoPoint))
-                    .font(.system(size: 17))
+                    .font(.scaled(17))
 
                 // ±ステッパー
                 HStack(spacing: 8) {
@@ -48,7 +48,7 @@ private struct ItemBuyView: View {
                     }
                     Text(quantity.description)
                         .frame(width: 64, height: 52)
-                        .font(.system(size: 28, weight: .medium))
+                        .font(.scaled(28, weight: .medium))
                         .multilineTextAlignment(.center)
                     stepperButton("＋", enabled: quantity < maxQuantity) {
                         quantity += 1
@@ -92,7 +92,7 @@ private struct ItemBuyView: View {
             action()
         } label: {
             Text(label)
-                .font(.system(size: 28))
+                .font(.scaled(28))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, minHeight: 52)
                 .background(enabled ? Color("button") : Color(.systemGray3))
@@ -109,7 +109,7 @@ private struct ItemBuyView: View {
             action()
         } label: {
             Text(label)
-                .font(.system(size: 19))
+                .font(.scaled(19))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, minHeight: 44)
                 .background(isDisabled ? Color(.systemGray3) : color)

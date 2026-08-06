@@ -34,9 +34,7 @@ private struct TotalEatView: View {
         }
     }
 
-    private var verdanaBoldFont25: Font {
-        Font(UIFont(name: "Verdana-bold", size: 25) ?? UIFont.boldSystemFont(ofSize: 25))
-    }
+    private var verdanaBoldFont25: Font { .scaledCustom("Verdana-bold", size: 25) }
 
     var body: some View {
         ZStack {

@@ -35,19 +35,19 @@ private struct ResultScreenContent: View {
 
                     VStack(alignment: .leading, spacing: 8) {
                         Text(tipsTitle)
-                            .font(.system(size: 22, weight: .medium))
+                            .font(.scaled(22, weight: .medium))
                             .foregroundColor(.white)
                         Text(tipsText)
-                            .font(.system(size: 20))
+                            .font(.scaled(20))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
                             .frame(maxWidth: .infinity)
                             .minimumScaleFactor(0.75)
                             .lineLimit(3)
                     }
-                    .padding(.leading, 64)
-                    .padding(.trailing, 32)
-                    .padding(.top, 42)
+                    .padding(.leading, 64 * Font.fontScale)
+                    .padding(.trailing, 32 * Font.fontScale)
+                    .padding(.top, 42 * Font.fontScale)
                 }
                 .frame(width: geo.size.width)
                 .clipped()
@@ -64,11 +64,11 @@ private struct ResultScreenContent: View {
 
                     VStack(spacing: 16) {
                         Text(scoreTitle)
-                            .font(.system(size: 24, weight: .medium))
+                            .font(.scaled(24, weight: .medium))
                             .foregroundColor(.white)
                             .minimumScaleFactor(0.5)
                         Text(scoreText)
-                            .font(.system(size: 48, weight: .bold))
+                            .font(.scaled(48, weight: .bold))
                             .foregroundColor(.white)
                     }
                 }
@@ -286,7 +286,7 @@ class ResultViewController: UIViewController {
 
         // Retry button
         let retryButton = UIButton(type: .system)
-        retryButton.titleLabel?.font = UIFont(name: "Verdana-bold", size: 35)
+        retryButton.titleLabel?.font = UIFont(name: "Verdana-bold", size: 35 * Font.fontScale)
         retryButton.setTitle(localizeString(key: LocalizeKeys.Result.buttonRelpay), for: .normal)
         retryButton.setTitleColor(.white, for: .normal)
         retryButton.translatesAutoresizingMaskIntoConstraints = false

@@ -56,6 +56,7 @@
 		49DFFF0F257C9E390052A5D7 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFFF0E257C9E390052A5D7 /* GameKit.framework */; };
 		49EC6A65251F14CC00E25A9B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC6A64251F14CC00E25A9B /* UserStore.swift */; };
 		49EE35572556C7BC00305D38 /* UIImage+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE35562556C7BC00305D38 /* UIImage+Addition.swift */; };
+		682E5ABB01D24A6FAC3ED714 /* Font+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8AC0DE55B46CF83B8AA0B /* Font+Addition.swift */; };
 		49EF5343257BB80B001396C8 /* ItemBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF5341257BB80B001396C8 /* ItemBuyViewController.swift */; };
 		F31970AF223FF9C50045A391 /* MixPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970AE223FF9C50045A391 /* MixPresenter.swift */; };
 		F31970B1223FFA2A0045A391 /* MixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31970B0223FFA2A0045A391 /* MixModel.swift */; };
@@ -143,6 +144,7 @@
 		49DFFF0E257C9E390052A5D7 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		49EC6A64251F14CC00E25A9B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		49EE35562556C7BC00305D38 /* UIImage+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Addition.swift"; sourceTree = "<group>"; };
+		17A8AC0DE55B46CF83B8AA0B /* Font+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Addition.swift"; sourceTree = "<group>"; };
 		49EF5341257BB80B001396C8 /* ItemBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBuyViewController.swift; sourceTree = "<group>"; };
 		F31970AE223FF9C50045A391 /* MixPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixPresenter.swift; sourceTree = "<group>"; };
 		F31970B0223FFA2A0045A391 /* MixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixModel.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				0DCD56D32348E63F008F7BAA /* Swift+Addition.swift */,
 				493B412A254704EA00F26C4F /* NSObject+Addition.swift */,
 				49EE35562556C7BC00305D38 /* UIImage+Addition.swift */,
+				17A8AC0DE55B46CF83B8AA0B /* Font+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				490C1B382535251A0094C76F /* TotalEatViewController.swift in Sources */,
 				0DCD56D82348E72E008F7BAA /* LocalizeKey.swift in Sources */,
 				49EE35572556C7BC00305D38 /* UIImage+Addition.swift in Sources */,
+				682E5ABB01D24A6FAC3ED714 /* Font+Addition.swift in Sources */,
 				439948A4205315480028E85F /* ResultScene.swift in Sources */,
 				0DFEF9CB226362090061167A /* Constant.swift in Sources */,
 				43D95F202052723B00FE1117 /* AppDelegate.swift in Sources */,

@@ -30,7 +30,7 @@ private struct ToppingItemView: View {
                 .cornerRadius(8)
 
             Text(viewModel.count.description)
-                .font(.system(size: 17))
+                .font(.scaled(17))
                 .frame(width: 28, height: 28)
                 .background(Color(.systemGray))
                 .foregroundColor(.primary)
@@ -127,7 +127,7 @@ private struct ToppingSelectView: View {
 
             Button(action: onDecision) {
                 Text(localizeString(key: LocalizeKeys.ToppingSelect.decision))
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.scaled(16, weight: .bold))
                     .foregroundColor(.white)
                     .frame(width: 200, height: 36)
                     .background(Color.yellow)
@@ -138,7 +138,7 @@ private struct ToppingSelectView: View {
 
             Button(action: onReset) {
                 Text(localizeString(key: LocalizeKeys.ToppingSelect.reset))
-                    .font(.system(size: 15, weight: .semibold))
+                    .font(.scaled(15, weight: .semibold))
                     .foregroundColor(.white)
                     .frame(width: 200, height: 36)
                     .background(Color(.systemGray))

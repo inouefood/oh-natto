@@ -32,7 +32,7 @@ private struct DescriptionPageView: View {
                 Color("background")
                     .overlay(
                         Text(text)
-                            .font(.system(size: 35, weight: .semibold))
+                            .font(.scaled(35, weight: .semibold))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.leading)
                             .minimumScaleFactor(13.0 / 35.0)

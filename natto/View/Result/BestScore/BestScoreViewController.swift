@@ -25,7 +25,7 @@ private struct BestScoreView: View {
             VStack(spacing: 0) {
                 VStack(spacing: 0) {
                     Text(localizeString(key: LocalizeKeys.BestScore.title))
-                        .font(.system(size: 30, weight: .bold))
+                        .font(.scaled(30, weight: .bold))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, 8)
                         .padding(.top, 4)
@@ -37,7 +37,7 @@ private struct BestScoreView: View {
                         .padding(.top, 4)
 
                     Text(score)
-                        .font(.system(size: 32))
+                        .font(.scaled(32))
                         .frame(maxWidth: .infinity)
                         .padding(.horizontal, 16)
                         .padding(.top, 4)
@@ -47,7 +47,7 @@ private struct BestScoreView: View {
                 HStack(spacing: 8) {
                     Button(action: onDismiss) {
                         Text(localizeString(key: LocalizeKeys.BestScore.close))
-                            .font(.custom("HelveticaNeue", size: 22))
+                            .font(.scaledCustom("HelveticaNeue", size: 22))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, minHeight: 45)
                             .background(Color.orange)
@@ -57,7 +57,7 @@ private struct BestScoreView: View {
 
                     Button(action: onShare) {
                         Text(localizeString(key: LocalizeKeys.BestScore.share))
-                            .font(.custom("HelveticaNeue", size: 22))
+                            .font(.scaledCustom("HelveticaNeue", size: 22))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, minHeight: 45)
                             .background(Color.orange)
