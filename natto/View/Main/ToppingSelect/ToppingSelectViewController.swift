@@ -149,6 +149,7 @@ private struct ToppingSelectView: View {
             .padding(.bottom, 24)
         }
         .background(Color(.systemBackground))
+        .ignoresSafeArea(edges: .top)
     }
 }
 
@@ -161,6 +162,7 @@ class ToppingSelectViewController: UIViewController {
 
     override func loadView() {
         view = UIView()
+        view.backgroundColor = UIColor.systemBackground
     }
 
     override func viewDidLoad() {

@@ -17,13 +17,27 @@ private struct StoreView: View {
     let onSelectItem: (ToppingType) -> Void
 
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            VStack(spacing: 0) {
+        GeometryReader { geo in
+            let storeBottomH = geo.size.width / 3
+            let collectionH = geo.size.height * 0.2
+
+            ZStack(alignment: .bottom) {
+                Color(.systemBackground)
+
+                // storeTop: background, bottom overlaps storeBottom by 10pt
                 Image("storeTop")
                     .resizable()
                     .scaledToFit()
-                    .frame(maxWidth: .infinity)
+                    .frame(width: geo.size.width)
+                    .padding(.bottom, storeBottomH - 10)
 
+                // storeBottom: pinned to screen bottom
+                Image("storeBottom")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: geo.size.width)
+
+                // Items: overlaid on storeTop, just above storeBottom
                 HStack(spacing: 15) {
                     ForEach(toppingArr, id: \.keyName) { topping in
                         Button(action: { onSelectItem(topping) }) {
@@ -31,6 +45,7 @@ private struct StoreView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .aspectRatio(1, contentMode: .fit)
+                                .frame(maxWidth: .infinity)
                                 .cornerRadius(4)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 4)
@@ -40,19 +55,13 @@ private struct StoreView: View {
                         .buttonStyle(.plain)
                     }
                 }
-                .padding(.horizontal, 28)
-                .padding(.vertical, 15)
-                .frame(maxWidth: .infinity)
+                .frame(width: geo.size.width - 56, height: collectionH)
                 .background(Color("gamePlayBackground"))
-
-                Image("storeBottom")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity)
-
-                Spacer(minLength: 0)
+                .padding(.bottom, storeBottomH + 8)
             }
-
+        }
+        .ignoresSafeArea(edges: .bottom)
+        .overlay(alignment: .topTrailing) {
             Button(action: onDismiss) {
                 Image("close")
                     .resizable()
@@ -63,8 +72,6 @@ private struct StoreView: View {
             .padding(.top, 16)
             .padding(.trailing, 16)
         }
-        .background(Color(.systemBackground))
-        .ignoresSafeArea(edges: .bottom)
     }
 }
 
