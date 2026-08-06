@@ -107,6 +107,16 @@ private struct SettingView: View {
 
 // MARK: - UIViewController
 
+#Preview {
+    SettingView(
+        hapticEnabled: true,
+        onDismiss: {},
+        onPrivacyPolicy: {},
+        onReview: {},
+        onNotificationSettings: {}
+    )
+}
+
 class SettingViewController: UIViewController {
     override func loadView() {
         view = UIView()

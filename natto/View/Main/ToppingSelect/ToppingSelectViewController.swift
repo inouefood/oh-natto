@@ -155,6 +155,19 @@ private struct ToppingSelectView: View {
 
 // MARK: - UIViewController
 
+#Preview("トッピング選択（空）") {
+    ToppingSelectView(
+        toppings: [],
+        selectedImages: [nil, nil, nil],
+        onDecision: {},
+        onReset: {},
+        onOpenShop: {},
+        onSelectTopping: { _ in },
+        onAlertItemLess: {},
+        onAlertSelectOver: {}
+    )
+}
+
 class ToppingSelectViewController: UIViewController {
     private var toppings: [ToppingSelectCollectionViewCell.ViewModel] = []
     private var selectedImages: [UIImage?] = [nil, nil, nil]

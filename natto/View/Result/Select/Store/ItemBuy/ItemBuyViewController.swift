@@ -159,6 +159,14 @@ private struct ItemBuyView: View {
 
 // MARK: - UIViewController Wrapper
 
+#Preview("ねぎ") {
+    ItemBuyView(buyItem: .negi, onDismiss: {})
+}
+
+#Preview("おくら") {
+    ItemBuyView(buyItem: .okura, onDismiss: {})
+}
+
 class ItemBuyViewController: UIViewController {
     var buyItem: ToppingType!
 

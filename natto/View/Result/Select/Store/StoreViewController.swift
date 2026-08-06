@@ -77,6 +77,13 @@ private struct StoreView: View {
 
 // MARK: - UIViewController
 
+#Preview {
+    StoreView(
+        onDismiss: {},
+        onSelectItem: { _ in }
+    )
+}
+
 class StoreViewController: UIViewController {
     var dismissHandler: (() -> Void)?
 

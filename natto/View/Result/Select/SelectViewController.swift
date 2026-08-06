@@ -70,6 +70,18 @@ private class PassThroughView: UIView {
     }
 }
 
+#Preview {
+    SelectView(
+        onDismiss: {},
+        onStorePage: {},
+        onLeaderBoard: {},
+        onTotalEatPage: {},
+        onSettingPage: {},
+        onShare: {}
+    )
+    .background(Color.black.opacity(0.3))
+}
+
 class SelectViewController: UIViewController {
     var shareImage: UIImage?
 

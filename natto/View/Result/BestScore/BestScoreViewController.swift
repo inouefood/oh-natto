@@ -79,6 +79,14 @@ private struct BestScoreView: View {
 
 // MARK: - UIViewController
 
+#Preview {
+    BestScoreView(
+        score: "1,234",
+        onDismiss: {},
+        onShare: {}
+    )
+}
+
 class BestScoreViewController: UIViewController {
     private var bestScoreParticle: SCNView!
     private let bestScore: String

@@ -23,11 +23,15 @@ private struct ResultScreenContent: View {
     var body: some View {
         GeometryReader { geo in
             VStack(spacing: 0) {
+                // チップス: 画像のアスペクト比に合わせた自然な高さ
                 ZStack(alignment: .topLeading) {
-                    Image("tipsBoard")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geo.size.width, height: geo.size.height * 0.4)
+                    TimelineView(.periodic(from: .now, by: 1.0 / 8.0)) { context in
+                        let frame = Int(context.date.timeIntervalSinceReferenceDate * 8) % 8
+                        Image("natto_tips_\(frame)")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geo.size.width)
+                    }
 
                     VStack(alignment: .leading, spacing: 8) {
                         Text(tipsTitle)
@@ -45,15 +49,17 @@ private struct ResultScreenContent: View {
                     .padding(.trailing, 32)
                     .padding(.top, 42)
                 }
-                .frame(width: geo.size.width, height: geo.size.height * 0.4)
+                .frame(width: geo.size.width)
+                .clipped()
 
+                // スコア: 残りの高さを全て使う
                 ZStack {
-                    TimelineView(.animation(minimumInterval: 1.0 / 8.0)) { context in
+                    TimelineView(.periodic(from: .now, by: 1.0 / 8.0)) { context in
                         let frame = Int(context.date.timeIntervalSinceReferenceDate * 8) % 8
                         Image("natto_wachawacha_\(frame)")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: geo.size.width, height: geo.size.height * 0.6)
+                            .frame(width: geo.size.width)
                     }
 
                     VStack(spacing: 16) {
@@ -66,11 +72,99 @@ private struct ResultScreenContent: View {
                             .foregroundColor(.white)
                     }
                 }
-                .frame(width: geo.size.width, height: geo.size.height * 0.6)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .background(Color("background"))
     }
+}
+
+#Preview("Result全体") {
+    VStack(spacing: 0) {
+        ResultScreenContent(
+            tipsTitle: "豆知識",
+            tipsText: "弥生時代にはすでに納豆はあったらしいよ",
+            scoreTitle: "今回のスコア",
+            scoreText: "1234点"
+        )
+
+        Text("もういちど")
+            .font(Font(UIFont(name: "Verdana-bold", size: 35) ?? .boldSystemFont(ofSize: 35)))
+            .foregroundColor(.white)
+            .padding(.vertical, 12)
+            .background(Color("background"))
+
+        ResultBottomButtonsView(
+            onLeaderBoard: {},
+            onSettings: {},
+            onStore: {},
+            onTotalEat: {},
+            onShare: {}
+        )
+    }
+    .background(Color("background"))
+    .ignoresSafeArea(edges: .bottom)
+}
+
+#Preview("スコア画面コンテンツ") {
+    ResultScreenContent(
+        tipsTitle: "豆知識",
+        tipsText: "弥生時代にはすでに納豆はあったらしいよ",
+        scoreTitle: "今回のスコア",
+        scoreText: "1234点"
+    )
+}
+
+// MARK: - Bottom buttons bar
+
+private struct ResultBottomButtonsView: View {
+    let onLeaderBoard: () -> Void
+    let onSettings: () -> Void
+    let onStore: () -> Void
+    let onTotalEat: () -> Void
+    let onShare: () -> Void
+
+    var body: some View {
+        HStack(spacing: 0) {
+            Spacer()
+            iconButton("mametisikiIcon", size: 50, action: onLeaderBoard)
+            Spacer()
+            iconButton("settingIcon", size: 45, action: onSettings)
+            Spacer()
+            iconButton("shopIcon", size: 60, action: onStore)
+            Spacer()
+            iconButton("totalEatNattoIcon", size: 50, action: onTotalEat)
+            Spacer()
+            iconButton("shareIcon", size: 50, action: onShare)
+            Spacer()
+        }
+        .padding(.top, 10)
+        .padding(.bottom, 10)
+        .frame(maxWidth: .infinity)
+        .background(Color("background").ignoresSafeArea(edges: .bottom))
+    }
+
+    private func iconButton(_ name: String, size: CGFloat, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(name)
+                .resizable()
+                .scaledToFit()
+                .frame(width: size, height: size)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+#Preview("ボタンバー") {
+    ResultBottomButtonsView(
+        onLeaderBoard: {},
+        onSettings: {},
+        onStore: {},
+        onTotalEat: {},
+        onShare: {}
+    )
+    .frame(maxHeight: .infinity, alignment: .bottom)
+    .background(Color.black)
 }
 
 // MARK: - UIViewController
@@ -150,6 +244,21 @@ class ResultViewController: UIViewController {
     private func setupLayout() {
         let safeArea = view.safeAreaLayoutGuide
 
+        // Bottom buttons bar
+        let bottomButtons = ResultBottomButtonsView(
+            onLeaderBoard: { [weak self] in self?.openLeaderBoard() },
+            onSettings: { [weak self] in self?.openSettingPage() },
+            onStore: { [weak self] in self?.openStorePage() },
+            onTotalEat: { [weak self] in self?.openTotalEatPage() },
+            onShare: { [weak self] in self?.shareAction() }
+        )
+        let bottomHC = UIHostingController(rootView: bottomButtons)
+        bottomHC.view.backgroundColor = .clear
+        addChild(bottomHC)
+        view.addSubview(bottomHC.view)
+        bottomHC.view.translatesAutoresizingMaskIntoConstraints = false
+        bottomHC.didMove(toParent: self)
+
         // screenShotView
         screenShotView.backgroundColor = AppColor.background.color
         screenShotView.translatesAutoresizingMaskIntoConstraints = false
@@ -184,28 +293,20 @@ class ResultViewController: UIViewController {
         retryButton.addTarget(self, action: #selector(retryTapped), for: .touchUpInside)
         view.addSubview(retryButton)
 
-        // Info / select button
-        let infoButton = UIButton(type: .custom)
-        infoButton.setImage(UIImage(named: "infoIcon"), for: .normal)
-        infoButton.translatesAutoresizingMaskIntoConstraints = false
-        infoButton.addTarget(self, action: #selector(openSelectTapped), for: .touchUpInside)
-        view.addSubview(infoButton)
-
         NSLayoutConstraint.activate([
-            screenShotView.topAnchor.constraint(equalTo: view.topAnchor),
-            screenShotView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            screenShotView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-            screenShotView.bottomAnchor.constraint(equalTo: retryButton.topAnchor, constant: -8),
+            bottomHC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bottomHC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomHC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             retryButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
             retryButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
             retryButton.heightAnchor.constraint(equalToConstant: 36),
+            retryButton.bottomAnchor.constraint(equalTo: bottomHC.view.topAnchor, constant: -12),
 
-            infoButton.topAnchor.constraint(equalTo: retryButton.bottomAnchor, constant: 20),
-            infoButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -40),
-            infoButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -32),
-            infoButton.widthAnchor.constraint(equalToConstant: 46),
-            infoButton.heightAnchor.constraint(equalToConstant: 46),
+            screenShotView.topAnchor.constraint(equalTo: view.topAnchor),
+            screenShotView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            screenShotView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            screenShotView.bottomAnchor.constraint(equalTo: retryButton.topAnchor, constant: -8),
         ])
     }
 
@@ -235,18 +336,66 @@ class ResultViewController: UIViewController {
         dismissHandler?()
     }
 
-    @objc private func openSelectTapped() {
-        let vc = SelectViewController()
-        vc.shareImage = screenShotView.convertToImage()
-        addChild(vc)
-        view.addSubview(vc.view)
-        vc.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            vc.view.topAnchor.constraint(equalTo: view.topAnchor),
-            vc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            vc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            vc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
-        vc.didMove(toParent: self)
+    // MARK: - Navigation
+
+    private func openStorePage() {
+        let vc = StoreViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
+    }
+
+    private func openLeaderBoard() {
+        let player = GKLocalPlayer.local
+        if player.isAuthenticated {
+            openLeaderBordScoreLanking()
+        } else {
+            authenticateLocalPlayer()
+        }
+    }
+
+    private func openTotalEatPage() {
+        let vc = TotalEatViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: false)
+    }
+
+    private func openSettingPage() {
+        present(SettingViewController(), animated: true)
+    }
+
+    private func shareAction() {
+        let image = screenShotView.convertToImage()
+        let text = "\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
+        let activityVc = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            activityVc.popoverPresentationController?.sourceView = view
+            activityVc.popoverPresentationController?.sourceRect = CGRect(
+                x: view.bounds.size.width, y: view.bounds.size.height, width: 1, height: 1
+            )
+        }
+        present(activityVc, animated: true)
+    }
+
+    private func authenticateLocalPlayer() {
+        let player = GKLocalPlayer.local
+        player.authenticateHandler = { [weak self] (viewController, _) in
+            if let vc = viewController {
+                self?.present(vc, animated: true)
+            }
+        }
+    }
+
+    private func openLeaderBordScoreLanking() {
+        let gcvc = GKGameCenterViewController(leaderboardID: Constant.LeaderBoard.id,
+                                              playerScope: .global,
+                                              timeScope: .allTime)
+        gcvc.gameCenterDelegate = self
+        present(gcvc, animated: true)
+    }
+}
+
+extension ResultViewController: GKGameCenterControllerDelegate {
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        dismiss(animated: true)
     }
 }

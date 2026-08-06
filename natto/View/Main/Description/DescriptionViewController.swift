@@ -124,6 +124,18 @@ private struct DescriptionContentView: View {
 
 // MARK: - UIViewController
 
+#Preview("ページ単体") {
+    DescriptionPageView(
+        imageName: "nattoTutorial-1",
+        text: "納豆をいっぱい食べよう！",
+        backgroundColor: .yellow
+    )
+}
+
+#Preview("チュートリアル全体") {
+    DescriptionContentView(isRegularRegular: false, onDismiss: {})
+}
+
 class DescriptionViewController: UIViewController {
     override func loadView() {
         view = UIView()

@@ -90,7 +90,6 @@
 		057D3EC62330666A00712E5D /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
 		057D3EC72330666A00712E5D /* Contiffi.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Contiffi.scnp; sourceTree = "<group>"; };
 		0D048FC32277FCE500852FFA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-
 		0D081FC32286DB5D00B74D86 /* ObjectSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSize.swift; sourceTree = "<group>"; };
 		0D815D0822617A3C00B6642E /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		0DCD56C92348DEFD008F7BAA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
@@ -102,11 +101,11 @@
 		0DCE81A62253BBB1002FAE96 /* SKLabelNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Addition.swift"; sourceTree = "<group>"; };
 		0DD326B622539E8600FBE6A1 /* SKSpriteNode+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Addition.swift"; sourceTree = "<group>"; };
 		0DE54C5F225F8F2C00006ED4 /* NattoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NattoViewController.swift; sourceTree = "<group>"; };
-		0DFEF9C022623BF50061167A /* ObjectPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPosition.swift; sourceTree = "<group>"; };
 		0DF70CFB223E7681007105D8 /* PullNattoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoPresenter.swift; sourceTree = "<group>"; };
 		0DF70CFE223E7708007105D8 /* PullNattoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullNattoModel.swift; sourceTree = "<group>"; };
 		0DF70D3B22426268007105D8 /* MixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixScene.swift; sourceTree = "<group>"; };
 		0DFD69692276F2BB000DBD93 /* SKScene+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Addition.swift"; sourceTree = "<group>"; };
+		0DFEF9C022623BF50061167A /* ObjectPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPosition.swift; sourceTree = "<group>"; };
 		0DFEF9CA226362090061167A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0DFEF9E022675BF60061167A /* nattoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nattoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DFEF9E222675BF60061167A /* nattoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nattoUITests.swift; sourceTree = "<group>"; };
@@ -378,7 +377,6 @@
 			isa = PBXGroup;
 			children = (
 				4933B7AC2529E3C800BFCCE8 /* ResultViewController.swift */,
-				49D9CCE8253085BB00F9C30E /* customView */,
 				49B94C362529BA2E00BF6C53 /* BestScore */,
 				490C1B2A25351CA40094C76F /* Select */,
 			);
@@ -456,18 +454,10 @@
 			path = BestScore;
 			sourceTree = "<group>";
 		};
-		49D9CCE8253085BB00F9C30E /* customView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = customView;
-			sourceTree = "<group>";
-		};
 		49D9CD052533054B00F9C30E /* Store */ = {
 			isa = PBXGroup;
 			children = (
 				49EF5340257BB7F5001396C8 /* ItemBuy */,
-				49EF5338257BAF0C001396C8 /* cell */,
 				49D9CD062533056C00F9C30E /* StoreViewController.swift */,
 			);
 			path = Store;
@@ -479,13 +469,6 @@
 				49EC6A64251F14CC00E25A9B /* UserStore.swift */,
 			);
 			path = Store;
-			sourceTree = "<group>";
-		};
-		49EF5338257BAF0C001396C8 /* cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = cell;
 			sourceTree = "<group>";
 		};
 		49EF5340257BB7F5001396C8 /* ItemBuy */ = {

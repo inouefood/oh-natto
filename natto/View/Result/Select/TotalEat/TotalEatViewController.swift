@@ -100,6 +100,22 @@ private struct TotalEatView: View {
 
 // MARK: - UIViewController
 
+#Preview("初心者 (500粒)") {
+    TotalEatView(totalNattoCount: 500, onDismiss: {})
+}
+
+#Preview("中級者 (4000粒)") {
+    TotalEatView(totalNattoCount: 4000, onDismiss: {})
+}
+
+#Preview("上級者 (12000粒)") {
+    TotalEatView(totalNattoCount: 12000, onDismiss: {})
+}
+
+#Preview("MAX (25000粒)") {
+    TotalEatView(totalNattoCount: 25000, onDismiss: {})
+}
+
 class TotalEatViewController: UIViewController {
     override func loadView() {
         view = UIView()
