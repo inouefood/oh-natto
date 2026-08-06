@@ -30,11 +30,14 @@ private struct ToppingItemView: View {
                 .cornerRadius(8)
 
             Text(viewModel.count.description)
-                .font(.scaled(17))
-                .frame(width: 28, height: 28)
+                .font(.scaled(13))
+                .minimumScaleFactor(0.6)
+                .lineLimit(1)
+                .frame(width: 28 * Font.fontScale, height: 28 * Font.fontScale)
                 .background(Color(.systemGray))
                 .foregroundColor(.primary)
                 .clipShape(Circle())
+                .padding(4)
         }
     }
 }
