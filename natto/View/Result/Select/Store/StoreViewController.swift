@@ -7,58 +7,104 @@
 //
 
 import UIKit
+import SwiftUI
 
-class StoreViewController: UIViewController, UICollectionViewDelegateFlowLayout {
-    private let toppingArr:[ToppingType] = [.negi, .okura, .sirasu]
+// MARK: - SwiftUI View
 
-    @IBOutlet weak var collectionView: UICollectionView! {
-        didSet {
-            collectionView.delegate = self
-            collectionView.dataSource = self
-            collectionView.register(UINib(nibName: "StoreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "StoreCollectionViewCell")
-            
-            let layout = UICollectionViewFlowLayout()
-            layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-            collectionView.collectionViewLayout = layout
+private struct StoreView: View {
+    let toppingArr: [ToppingType] = [.negi, .okura, .sirasu]
+    let onDismiss: () -> Void
+    let onSelectItem: (ToppingType) -> Void
+
+    var body: some View {
+        ZStack(alignment: .topTrailing) {
+            VStack(spacing: 0) {
+                Image("storeTop")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+
+                HStack(spacing: 15) {
+                    ForEach(toppingArr, id: \.keyName) { topping in
+                        Button(action: { onSelectItem(topping) }) {
+                            Image(uiImage: topping.image)
+                                .resizable()
+                                .scaledToFit()
+                                .aspectRatio(1, contentMode: .fit)
+                                .cornerRadius(4)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .stroke(Color.white, lineWidth: 2)
+                                )
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(.horizontal, 28)
+                .padding(.vertical, 15)
+                .frame(maxWidth: .infinity)
+                .background(Color("gamePlayBackground"))
+
+                Image("storeBottom")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+
+                Spacer(minLength: 0)
+            }
+
+            Button(action: onDismiss) {
+                Image("close")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 48, height: 48)
+            }
+            .buttonStyle(.plain)
+            .padding(.top, 16)
+            .padding(.trailing, 16)
         }
+        .background(Color(.systemBackground))
+        .ignoresSafeArea(edges: .bottom)
     }
-    
+}
+
+// MARK: - UIViewController
+
+class StoreViewController: UIViewController {
     var dismissHandler: (() -> Void)?
+
+    override func loadView() {
+        view = UIView()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSwiftUI()
     }
 
-    @IBAction func dismissAction(_ sender: Any) {
-        dismiss(animated: true, completion: dismissHandler)
-    }
-}
-
-extension StoreViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        let vc = ItemBuyViewController()
-        vc.buyItem = toppingArr[indexPath.row]
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: false, completion: nil)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let horizontalSpace : CGFloat = 75
-        let cellSize : CGFloat = self.view.bounds.height * 0.2 - horizontalSpace
-        return CGSize(width: cellSize, height: cellSize)
-    }
-}
-
-extension StoreViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return toppingArr.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoreCollectionViewCell", for: indexPath) as! StoreCollectionViewCell
-        cell.imageView.image = toppingArr[indexPath.row].image
-
-        return cell
+    private func setupSwiftUI() {
+        let swiftUIView = StoreView(
+            onDismiss: { [weak self] in
+                self?.dismiss(animated: true, completion: self?.dismissHandler)
+            },
+            onSelectItem: { [weak self] topping in
+                let vc = ItemBuyViewController()
+                vc.buyItem = topping
+                vc.modalPresentationStyle = .overCurrentContext
+                self?.present(vc, animated: false)
+            }
+        )
+        let hc = UIHostingController(rootView: swiftUIView)
+        hc.view.backgroundColor = .clear
+        addChild(hc)
+        view.addSubview(hc.view)
+        hc.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hc.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        hc.didMove(toParent: self)
     }
 }

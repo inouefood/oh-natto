@@ -8,29 +8,10 @@
 
 import UIKit
 
-class ToppingSelectCollectionViewCell: UICollectionViewCell {
+class ToppingSelectCollectionViewCell {
     struct ViewModel {
         var image: UIImage
         var count: Int
         var instance: Topping
     }
-    
-    var viewModel: ViewModel? {
-        didSet {
-            guard let viewModel = viewModel else {
-                return
-            }
-            toppingCountLabel.text = viewModel.count.description
-            toppingImage.image = viewModel.image
-        }
-    }
-
-    @IBOutlet weak var toppingCountLabel: UILabel!
-    @IBOutlet weak var toppingImageBaseView: UIView!
-    @IBOutlet weak var toppingImage: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
 }

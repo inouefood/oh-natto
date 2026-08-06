@@ -7,62 +7,126 @@
 //
 
 import UIKit
+import SwiftUI
 import SceneKit
 
+// MARK: - SwiftUI View
+
+private struct BestScoreView: View {
+    let score: String
+    let onDismiss: () -> Void
+    let onShare: () -> Void
+
+    var body: some View {
+        ZStack {
+            Color.black.opacity(0.4)
+                .ignoresSafeArea()
+
+            VStack(spacing: 0) {
+                VStack(spacing: 0) {
+                    Text(localizeString(key: LocalizeKeys.BestScore.title))
+                        .font(.system(size: 30, weight: .bold))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 8)
+                        .padding(.top, 4)
+
+                    Image("bestScore")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.horizontal, 16)
+                        .padding(.top, 4)
+
+                    Text(score)
+                        .font(.system(size: 32))
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 16)
+                        .padding(.top, 4)
+                        .padding(.bottom, 8)
+                }
+
+                HStack(spacing: 8) {
+                    Button(action: onDismiss) {
+                        Text(localizeString(key: LocalizeKeys.BestScore.close))
+                            .font(.custom("HelveticaNeue", size: 22))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, minHeight: 45)
+                            .background(Color.orange)
+                            .cornerRadius(4)
+                    }
+                    .buttonStyle(.plain)
+
+                    Button(action: onShare) {
+                        Text(localizeString(key: LocalizeKeys.BestScore.share))
+                            .font(.custom("HelveticaNeue", size: 22))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, minHeight: 45)
+                            .background(Color.orange)
+                            .cornerRadius(4)
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.horizontal, 8)
+                .padding(.top, 8)
+                .padding(.bottom, 16)
+            }
+            .background(Color(.systemBackground))
+            .cornerRadius(16)
+            .padding(.horizontal, 32)
+            .frame(maxHeight: UIScreen.main.bounds.height * 0.6)
+        }
+    }
+}
+
+// MARK: - UIViewController
+
 class BestScoreViewController: UIViewController {
-    @IBOutlet weak var screenshotView: UIView!
-    @IBOutlet weak var titleLabel: UILabel! {
-        didSet {
-            titleLabel.text = localizeString(key: LocalizeKeys.BestScore.title)
-        }
-    }
-    @IBOutlet weak var closeButton: UIButton! {
-        didSet {
-            closeButton.setTitle(localizeString(key: LocalizeKeys.BestScore.close), for: .normal)
-            closeButton.layer.cornerRadius = 4
-        }
-    }
-    
-    @IBOutlet weak var shareButton: UIButton! {
-        didSet {
-            shareButton.setTitle(localizeString(key:LocalizeKeys.BestScore.share),
-                                 for: .normal)
-            shareButton.layer.cornerRadius = 4
-        }
-    }
-    
-    @IBOutlet weak var scoreBaseView: UIView! {
-        didSet {
-            scoreBaseView.layer.cornerRadius = 16
-        }
-    }
-    @IBOutlet weak var scoreLabel: UILabel!
-    
-    private var shareImage: UIImage?
-    private var bestScoreParticle:SCNView!
+    private var bestScoreParticle: SCNView!
     private let bestScore: String
-    
+
     init(score: Int) {
         bestScore = score.description
-        super.init(nibName: String(describing: BestScoreViewController.self), bundle: nil)
+        super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    override func loadView() {
+        view = UIView()
+        view.backgroundColor = .clear
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .clear
-        shareImage = screenshotView.convertToImage()
-        scoreLabel.text = bestScore
+        setupSwiftUI()
         createParticle()
-        self.view?.addSubview(bestScoreParticle)
+        view.addSubview(bestScoreParticle)
     }
-    
-    private func createParticle(){
+
+    private func setupSwiftUI() {
+        let swiftUIView = BestScoreView(
+            score: bestScore,
+            onDismiss: { [weak self] in self?.dismissAction() },
+            onShare: { [weak self] in self?.shareAction() }
+        )
+        let hc = UIHostingController(rootView: swiftUIView)
+        hc.view.backgroundColor = .clear
+        addChild(hc)
+        view.addSubview(hc.view)
+        hc.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hc.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        hc.didMove(toParent: self)
+    }
+
+    private func createParticle() {
         bestScoreParticle = nil
-        
+
         let scene = SCNScene()
 
         let cameraNode = SCNNode()
@@ -73,36 +137,33 @@ class BestScoreViewController: UIViewController {
         let confetti = SCNParticleSystem(named: "Contiffi.scnp", inDirectory: "")!
         scene.rootNode.addParticleSystem(confetti)
         let screenSize: CGSize = UIScreen.main.nativeBounds.size
-        let view = SCNView(frame: CGRect(x: 0,
-                                         y: 0,
-                                         width: screenSize.width,
-                                         height: screenSize.height))
-        view.scene = scene
-        view.backgroundColor = UIColor.clear
-        view.autoenablesDefaultLighting = true
-        view.isUserInteractionEnabled = false
-        bestScoreParticle =  view
-    }
-    
-    @IBAction func dismissAction(_ sender: Any) {
-        self.bestScoreParticle.removeFromSuperview()
-        self.dismiss(animated: false, completion: nil)
+        let scnView = SCNView(frame: CGRect(x: 0,
+                                            y: 0,
+                                            width: screenSize.width,
+                                            height: screenSize.height))
+        scnView.scene = scene
+        scnView.backgroundColor = UIColor.clear
+        scnView.autoenablesDefaultLighting = true
+        scnView.isUserInteractionEnabled = false
+        bestScoreParticle = scnView
     }
 
-    @IBAction func shareAction(_ sender: Any) {
-        self.bestScoreParticle.removeFromSuperview()
+    private func dismissAction() {
+        bestScoreParticle.removeFromSuperview()
+        dismiss(animated: false, completion: nil)
+    }
+
+    private func shareAction() {
+        bestScoreParticle.removeFromSuperview()
+        let shareImage = view.convertToImage()
         let text = "\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
-
-        let activityItems: [Any] = [shareImage!, text]
+        let activityItems: [Any] = [shareImage, text]
         let activityVc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        
-        DispatchQueue.global().async {
-            DispatchQueue.main.async {
-                activityVc.modalPresentationStyle = .fullScreen
-                self.present(activityVc, animated: true, completion: {
-                    self.createParticle()
-                    self.view?.addSubview(self.bestScoreParticle)
-                })
+        DispatchQueue.main.async {
+            activityVc.modalPresentationStyle = .fullScreen
+            self.present(activityVc, animated: true) {
+                self.createParticle()
+                self.view.addSubview(self.bestScoreParticle)
             }
         }
     }

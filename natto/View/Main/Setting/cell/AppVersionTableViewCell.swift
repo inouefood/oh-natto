@@ -8,22 +8,4 @@
 
 import UIKit
 
-class AppVersionTableViewCell: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var versionLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        guard let currentAppVersionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
-            return
-        }
-        versionLabel.text = "v" + currentAppVersionString
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-}
+class AppVersionTableViewCell: UITableViewCell {}

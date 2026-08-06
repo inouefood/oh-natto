@@ -7,50 +7,121 @@
 //
 
 import UIKit
+import SwiftUI
 
-class TotalEatViewController: UIViewController {
+// MARK: - SwiftUI View
 
-    @IBOutlet weak var totalIcon: UIImageView!
-    @IBOutlet weak var totalNattoDescriptionLabel: UILabel!
-    @IBOutlet weak var totalNattoCountLabel: UILabel!
-    @IBOutlet weak var nextGrouthLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = AppColor.background.color
-        let totalNattoCount = UserStore.totalNattoCount
-        
-        commonInit(eatNum: totalNattoCount)
-        setNextGrouthGrain(eatNum: totalNattoCount)
+private struct TotalEatView: View {
+    let totalNattoCount: Int
+    let onDismiss: () -> Void
+
+    private var iconName: String {
+        if totalNattoCount < 3000 { return "totalEat-one" }
+        else if totalNattoCount < 6000 { return "totalEat-two" }
+        else if totalNattoCount < 20000 { return "totalEat-three" }
+        else { return "totalEat-four" }
     }
-    
-    private func commonInit(eatNum: Int){
-        totalNattoCountLabel.text = localizeString(key: LocalizeKeys.TotalEat.grain, eatNum)
-        totalNattoCountLabel.font = UIFont(name: "Verdana-bold", size: 25)
-        
-        totalNattoDescriptionLabel.font = UIFont(name: "Verdana-bold", size: 25)
-        totalNattoDescriptionLabel.text = localizeString(key: LocalizeKeys.TotalEat.eatNatto)
-        
-    }
-    
-    private func setNextGrouthGrain(eatNum: Int){
-        nextGrouthLabel.font = UIFont(name: "Verdana-bold", size: 25)
-        
-        if eatNum < 3000 {
-            totalIcon.image = UIImage(named: "totalEat-one")
-            nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 3000 - eatNum)
-        } else if eatNum > 3000 && eatNum < 6000 {
-            totalIcon.image = UIImage(named: "totalEat-two")
-            nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 6000 - eatNum)
-        } else if eatNum > 6000 && eatNum < 20000 {
-            totalIcon.image = UIImage(named: "totalEat-three")
-            nextGrouthLabel.text = localizeString(key: LocalizeKeys.TotalEat.grouth, 20000 - eatNum)
-        } else if eatNum > 20000 {
-            totalIcon.image = UIImage(named: "totalEat-four")
-            nextGrouthLabel.text = ""
+
+    private var nextGrouthText: String {
+        if totalNattoCount < 3000 {
+            return localizeString(key: LocalizeKeys.TotalEat.grouth, 3000 - totalNattoCount)
+        } else if totalNattoCount < 6000 {
+            return localizeString(key: LocalizeKeys.TotalEat.grouth, 6000 - totalNattoCount)
+        } else if totalNattoCount < 20000 {
+            return localizeString(key: LocalizeKeys.TotalEat.grouth, 20000 - totalNattoCount)
+        } else {
+            return ""
         }
     }
-    @IBAction func dismissAction(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
+
+    private var verdanaBoldFont25: Font {
+        Font(UIFont(name: "Verdana-bold", size: 25) ?? UIFont.boldSystemFont(ofSize: 25))
+    }
+
+    var body: some View {
+        ZStack {
+            Color("background").ignoresSafeArea()
+
+            VStack(spacing: 0) {
+                Text(localizeString(key: LocalizeKeys.TotalEat.eatNatto))
+                    .font(verdanaBoldFont25)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 16)
+
+                HStack(spacing: 0) {
+                    Spacer()
+                    VStack(alignment: .trailing, spacing: 0) {
+                        Text(localizeString(key: LocalizeKeys.TotalEat.grain, totalNattoCount))
+                            .font(verdanaBoldFont25)
+                            .foregroundColor(.white)
+                        Rectangle()
+                            .fill(Color(red: 0.637, green: 0.944, blue: 0.5))
+                            .frame(height: 1)
+                    }
+                    .padding(.trailing, 36)
+                }
+                .padding(.top, 8)
+
+                Spacer()
+
+                Image(iconName)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.horizontal, 24)
+
+                Spacer()
+
+                if !nextGrouthText.isEmpty {
+                    Text(nextGrouthText)
+                        .font(verdanaBoldFont25)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 8)
+                }
+
+                Button(action: onDismiss) {
+                    Text(localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(.white)
+                        .frame(width: 200, height: 36)
+                        .background(Color("button"))
+                        .cornerRadius(4)
+                }
+                .buttonStyle(.plain)
+                .padding(.bottom, 24)
+            }
+        }
+    }
+}
+
+// MARK: - UIViewController
+
+class TotalEatViewController: UIViewController {
+    override func loadView() {
+        view = UIView()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let totalNattoCount = UserStore.totalNattoCount
+        let swiftUIView = TotalEatView(totalNattoCount: totalNattoCount) { [weak self] in
+            self?.dismiss(animated: false)
+        }
+        let hc = UIHostingController(rootView: swiftUIView)
+        hc.view.backgroundColor = .clear
+        addChild(hc)
+        view.addSubview(hc.view)
+        hc.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hc.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        hc.didMove(toParent: self)
     }
 }

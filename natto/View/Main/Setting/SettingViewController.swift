@@ -7,97 +7,152 @@
 //
 
 import UIKit
+import SwiftUI
 import SafariServices
 
-class SettingViewController: UIViewController {
-    let settingArr = [[localizeString(key: LocalizeKeys.Setting.cellArrVibration)],
-                      [ localizeString(key: LocalizeKeys.Setting.cellArrPrivacyPolicy), localizeString(key: LocalizeKeys.Setting.cellArrReview), localizeString(key: LocalizeKeys.Setting.cellArrPushNortification), localizeString(key: LocalizeKeys.Setting.cellArrVersion)]]
-    let sectionArr = [ localizeString(key: LocalizeKeys.Setting.sectionArrSetting), localizeString(key: LocalizeKeys.Setting.sectionArrOther)]
+// MARK: - SwiftUI View
 
-    @IBOutlet weak var tableView: UITableView! {
-        didSet {
-            tableView.delegate = self
-            tableView.dataSource = self
-            tableView.register(cellType: SettingTableViewCell.self)
-            tableView.register(cellType: AppVersionTableViewCell.self)
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+private struct SettingView: View {
+    @State private var hapticEnabled: Bool
+    let onDismiss: () -> Void
+    let onPrivacyPolicy: () -> Void
+    let onReview: () -> Void
+    let onNotificationSettings: () -> Void
+
+    init(hapticEnabled: Bool,
+         onDismiss: @escaping () -> Void,
+         onPrivacyPolicy: @escaping () -> Void,
+         onReview: @escaping () -> Void,
+         onNotificationSettings: @escaping () -> Void) {
+        _hapticEnabled = State(initialValue: hapticEnabled)
+        self.onDismiss = onDismiss
+        self.onPrivacyPolicy = onPrivacyPolicy
+        self.onReview = onReview
+        self.onNotificationSettings = onNotificationSettings
+    }
+
+    private var appVersionString: String {
+        let v = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
+        return "v" + v
+    }
+
+    var body: some View {
+        NavigationView {
+            List {
+                Section(header: Text(localizeString(key: LocalizeKeys.Setting.sectionArrSetting))) {
+                    HStack {
+                        Text(localizeString(key: LocalizeKeys.Setting.cellArrVibration))
+                        Spacer()
+                        Toggle("", isOn: $hapticEnabled)
+                            .onChange(of: hapticEnabled) { _, value in
+                                UserStore.hapticSetting = value
+                            }
+                    }
+                }
+
+                Section(header: Text(localizeString(key: LocalizeKeys.Setting.sectionArrOther))) {
+                    Button(action: onPrivacyPolicy) {
+                        HStack {
+                            Text(localizeString(key: LocalizeKeys.Setting.cellArrPrivacyPolicy))
+                                .foregroundColor(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.secondary)
+                                .font(.caption)
+                        }
+                    }
+
+                    Button(action: onReview) {
+                        HStack {
+                            Text(localizeString(key: LocalizeKeys.Setting.cellArrReview))
+                                .foregroundColor(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.secondary)
+                                .font(.caption)
+                        }
+                    }
+
+                    Button(action: onNotificationSettings) {
+                        HStack {
+                            Text(localizeString(key: LocalizeKeys.Setting.cellArrPushNortification))
+                                .foregroundColor(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.secondary)
+                                .font(.caption)
+                        }
+                    }
+
+                    HStack {
+                        Text(localizeString(key: LocalizeKeys.Setting.cellArrVersion))
+                        Spacer()
+                        Text(appVersionString)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+            .listStyle(.grouped)
+            .navigationBarItems(trailing:
+                Button(action: onDismiss) {
+                    Image("close")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 36, height: 36)
+                }
+            )
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.tableFooterView = UIView()
-    }
-    
-    @IBAction func closeAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-
 }
 
-extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingArr[section].count
+// MARK: - UIViewController
+
+class SettingViewController: UIViewController {
+    override func loadView() {
+        view = UIView()
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionArr.count
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupSwiftUI()
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionArr[section]
+
+    private func setupSwiftUI() {
+        let swiftUIView = SettingView(
+            hapticEnabled: UserStore.hapticSetting,
+            onDismiss: { [weak self] in self?.dismiss(animated: true) },
+            onPrivacyPolicy: { [weak self] in self?.openPrivacyPolicy() },
+            onReview: { [weak self] in self?.openAppStoreReview() },
+            onNotificationSettings: { [weak self] in self?.openNotificationSettings() }
+        )
+        let hc = UIHostingController(rootView: swiftUIView)
+        hc.view.backgroundColor = .clear
+        addChild(hc)
+        view.addSubview(hc.view)
+        hc.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hc.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        hc.didMove(toParent: self)
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 && indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(with: SettingTableViewCell.self, for: indexPath)
-            cell.label.text = settingArr[indexPath.section][indexPath.row]
-            cell.selectionStyle = .none
-            cell.switchButton.isOn = UserStore.hapticSetting
-            cell.switchHandler = { toggle in
-                UserStore.hapticSetting = toggle
-            }
-            return cell
-            
-        } else if indexPath.row == 0 && indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            cell.textLabel?.text = settingArr[indexPath.section][indexPath.row]
-            cell.accessoryType = .disclosureIndicator
-            return cell
-            
-        } else if indexPath.row == 1 && indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            cell.textLabel?.text = settingArr[indexPath.section][indexPath.row]
-            cell.accessoryType = .disclosureIndicator
-            return cell
-            
-        } else if indexPath.row == 2 && indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            cell.textLabel?.text = settingArr[indexPath.section][indexPath.row]
-            cell.accessoryType = .disclosureIndicator
-            return cell
-            
-        } else {
-            let cell = tableView.dequeueReusableCell(with: AppVersionTableViewCell.self, for: indexPath)
-            cell.titleLabel.text = settingArr[indexPath.section][indexPath.row]
-            cell.selectionStyle = .none
-            return cell
-            
+
+    private func openPrivacyPolicy() {
+        let safariVC = SFSafariViewController(url: URL(string: "https://inouefood.github.io/inouefood/privacypolicy.html")!)
+        present(safariVC, animated: true)
+    }
+
+    private func openAppStoreReview() {
+        if let url = URL(string: "itms-apps://itunes.apple.com/app/id1457049172?action=write-review") {
+            UIApplication.shared.open(url, options: [:])
         }
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 && indexPath.section == 1 {
-            let safariViewController = SFSafariViewController(url: URL(string: "https://inouefood.github.io/inouefood/privacypolicy.html")!)
-            present(safariViewController, animated: true, completion: nil)
-            
-        } else if indexPath.row == 1 && indexPath.section == 1 {
-            //実機じゃないと遷移できないので注意
-            if let url = URL(string: "itms-apps://itunes.apple.com/app/id1457049172?action=write-review") {
-               UIApplication.shared.open(url, options: [:])
-            } 
-        } else if indexPath.row == 2 && indexPath.section == 1 {
-            if let url = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+
+    private func openNotificationSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-    
 }

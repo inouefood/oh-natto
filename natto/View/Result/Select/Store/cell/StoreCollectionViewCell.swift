@@ -8,16 +8,4 @@
 
 import UIKit
 
-class StoreCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView! {
-        didSet {
-            imageView.layer.borderColor = UIColor.white.cgColor
-        }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-}
+class StoreCollectionViewCell: UICollectionViewCell {}
