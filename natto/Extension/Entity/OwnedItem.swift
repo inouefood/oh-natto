@@ -34,18 +34,18 @@ struct OwnedItem: Codable{
         }
         
         if negi != 0 {
-            toppings.append(ToppingCellViewModel(image: UIImage(named: "negi")!,
+            toppings.append(ToppingCellViewModel(image: UIImage(named: "negi") ?? UIImage(),
                                                  count: negi - alreadySelectNegiCount,
                                                  instance: Negi()))
         }
         if okura != 0 {
-            toppings.append(ToppingCellViewModel(image: UIImage(named: "okura")!,
+            toppings.append(ToppingCellViewModel(image: UIImage(named: "okura") ?? UIImage(),
                                                  count: okura - alreadySelectOkuraCount,
                                                  instance: Okura()))
         }
-        
+
         if sirasu != 0 {
-            toppings.append(ToppingCellViewModel(image: UIImage(named: "sirasu")!,
+            toppings.append(ToppingCellViewModel(image: UIImage(named: "sirasu") ?? UIImage(),
                                                  count: sirasu - alreadySelectSirasuCount,
                                                  instance: Sirasu()))
         }

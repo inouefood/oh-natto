@@ -15,7 +15,7 @@ import GameKit
 // MARK: - UIViewController
 
 class ResultViewController: UIViewController {
-    var audio: AVAudioPlayer!
+    var audio: AVAudioPlayer?
     private let score: Int
     private let tipsList: [String] = [
         localizeString(key: LocalizeKeys.Tips.a),
@@ -156,13 +156,12 @@ class ResultViewController: UIViewController {
     }
 
     private func loadAudio(resourceName: String, resourceType: String) {
-        let path = Bundle.main.path(forResource: resourceName, ofType: resourceType)
-        let url = URL(fileURLWithPath: path!)
-        do { try audio = AVAudioPlayer(contentsOf: url) }
-        catch { fatalError() }
-        audio.numberOfLoops = -1
-        audio.prepareToPlay()
-        audio.play()
+        guard let path = Bundle.main.path(forResource: resourceName, ofType: resourceType),
+              let player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: path)) else { return }
+        audio = player
+        audio?.numberOfLoops = -1
+        audio?.prepareToPlay()
+        audio?.play()
     }
 
     func sendLeaderboardWithID(ID: String, rate: Int64) {

@@ -36,11 +36,11 @@ class NattoViewController: UIViewController {
             }
         }
 
-        let skView = self.view as! SKView
+        guard let skView = self.view as? SKView else { return }
         skView.ignoresSiblingOrder = true
         let size = CGSize(width: skView.bounds.size.width*2, height: skView.bounds.size.height*2)
         let scene = TitleScene(size: size)
-        
+
         skView.presentScene(scene)
         
         

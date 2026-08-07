@@ -133,7 +133,7 @@ class MixScene: SKScene{
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let pos = touches.first!.location(in: self)
+        guard let pos = touches.first?.location(in: self) else { return }
         presenter.updateOhashiPosition(touchPosX: Float(pos.x),
                                        touchPosY: Float(pos.y),
                                        ohashiRadius: Float(width/20))
@@ -153,9 +153,8 @@ class MixScene: SKScene{
 extension MixScene: SKPhysicsContactDelegate {
     //衝突した時に呼ばれる関数
     func didBegin(_ contact: SKPhysicsContact) {
-        let pos: CGPoint? = presenter.contactOhashiToNatto(contact: contact)
-        guard pos != nil else { return }
-        addStickyLine(pos: pos!)
+        guard let pos = presenter.contactOhashiToNatto(contact: contact) else { return }
+        addStickyLine(pos: pos)
         stickyLevel += 1
     }
     

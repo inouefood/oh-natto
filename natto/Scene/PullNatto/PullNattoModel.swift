@@ -21,8 +21,8 @@ protocol PullNattoModelInput {
 
 class PullNattoModel: PullNattoModelInput {
     
-    private var bgm: AVAudioPlayer!
-    private var effect: AVAudioPlayer!
+    private var bgm: AVAudioPlayer?
+    private var effect: AVAudioPlayer?
     private var isPlaying: Bool = false
     
     func updateNattoPosition(ohashiPos: ObjectPosition, ohashiSize: ObjectSize, nattoPos: ObjectPosition, sticky: Float) -> (objPos: ObjectPosition, distance: Float)  {
@@ -50,31 +50,28 @@ class PullNattoModel: PullNattoModelInput {
     }
     
     func loadBgmAudio(resourceName: String, resourceType: String) {
-        let path = Bundle.main.path(forResource: resourceName, ofType: resourceType)
-        let url = URL(fileURLWithPath: path!)
-        do { try  bgm = AVAudioPlayer(contentsOf: url) }
-        catch{ fatalError() }
-        bgm.numberOfLoops = -1
-        bgm.prepareToPlay()
-        
+        guard let path = Bundle.main.path(forResource: resourceName, ofType: resourceType),
+              let player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: path)) else { return }
+        bgm = player
+        bgm?.numberOfLoops = -1
+        bgm?.prepareToPlay()
     }
-    
+
     func loadEffectAudio(resourceName: String, resourceType: String) {
-        let path = Bundle.main.path(forResource: resourceName, ofType: resourceType)
-        let url = URL(fileURLWithPath: path!)
-        do { try  effect = AVAudioPlayer(contentsOf: url) }
-        catch{ fatalError() }
+        guard let path = Bundle.main.path(forResource: resourceName, ofType: resourceType),
+              let player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: path)) else { return }
+        effect = player
         effect?.numberOfLoops = -1
         effect?.prepareToPlay()
     }
-    
+
     func playBgm() {
-        bgm.play()
+        bgm?.play()
     }
-    
+
     func playEffect() {
         if !isPlaying {
-            effect.play()
+            effect?.play()
             isPlaying = true
         }
     }

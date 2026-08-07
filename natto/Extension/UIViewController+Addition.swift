@@ -13,8 +13,8 @@ extension UIViewController {
     func showAppStoreInformation(url:String, title: String = "", message: String,openText: String, closeText: String, handler: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let open: UIAlertAction = UIAlertAction(title: openText, style: .default, handler: { _ in
-            let url = URL(string: url)!
-            
+            guard let url = URL(string: url) else { return }
+
             // URLを開けるかをチェックする
             if UIApplication.shared.canOpenURL(url) {
                 // URLを開く

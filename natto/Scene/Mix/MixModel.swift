@@ -22,8 +22,8 @@ protocol MixModelInput {
 }
 
 class MixModel: MixModelInput {
-    private var effect1: AVAudioPlayer!
-    private var effect2: AVAudioPlayer!
+    private var effect1: AVAudioPlayer?
+    private var effect2: AVAudioPlayer?
     
     func updateOhashiPosition(touchPosX: Float, touchPosY: Float, ohashiRadius: Float) -> ObjectPosition {
         return ObjectPosition(x: touchPosX, y: touchPosY - ohashiRadius)
@@ -47,36 +47,34 @@ class MixModel: MixModelInput {
     }
 
     func loadEffectAudio1(resourceName: String, resourceType: String) {
-        let path = Bundle.main.path(forResource: resourceName, ofType: resourceType)
-        let url = URL(fileURLWithPath: path!)
-        do { try  effect1 = AVAudioPlayer(contentsOf: url) }
-        catch{ fatalError() }
+        guard let path = Bundle.main.path(forResource: resourceName, ofType: resourceType),
+              let player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: path)) else { return }
+        effect1 = player
         effect1?.numberOfLoops = -1
         effect1?.prepareToPlay()
     }
-    
+
     func loadEffectAudio2(resourceName: String, resourceType: String) {
-        let path = Bundle.main.path(forResource: resourceName, ofType: resourceType)
-        let url = URL(fileURLWithPath: path!)
-        do { try  effect2 = AVAudioPlayer(contentsOf: url) }
-        catch{ fatalError() }
+        guard let path = Bundle.main.path(forResource: resourceName, ofType: resourceType),
+              let player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: path)) else { return }
+        effect2 = player
         effect2?.numberOfLoops = -1
         effect2?.prepareToPlay()
     }
-    
+
     func playEffect1() {
-        effect1.play()
+        effect1?.play()
     }
-    
+
     func playEffect2() {
-        effect2.play()
+        effect2?.play()
     }
-    
+
     func stopEffect1() {
-        effect1.stop()
+        effect1?.stop()
     }
-    
+
     func stopEffect2() {
-        effect2.stop()
+        effect2?.stop()
     }
 }

@@ -12,7 +12,7 @@ import SwiftUI
 // MARK: - UIViewController
 
 class ItemBuyViewController: UIViewController {
-    var buyItem: ToppingType!
+    var buyItem: ToppingType?
 
     override func loadView() {
         view = UIView()
@@ -22,6 +22,10 @@ class ItemBuyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard let buyItem else {
+            dismiss(animated: false)
+            return
+        }
         let swiftUIView = ItemBuyScreen(buyItem: buyItem) { [weak self] in
             self?.dismiss(animated: false)
         }

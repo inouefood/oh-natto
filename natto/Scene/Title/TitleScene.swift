@@ -16,34 +16,33 @@ class TitleScene: SKScene {
     lazy var infoButton: SKSpriteNode = {
         let node = SKSpriteNode(imageNamed: "infoIcon")
         node.size = CGSize(width: 100, height: 100)
-        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 10) - node.size.width,
-                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height)
-        
+        node.position = CGPoint(x: self.frame.width - 10 - node.size.width,
+                                y: self.frame.height - 16 - node.size.height)
         return node
     }()
     lazy var tutorialButton: SKSpriteNode = {
         let node = SKSpriteNode(imageNamed: "tutorialIcon")
         node.size = CGSize(width: 70, height: 70)
-        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 10) - node.size.width - 30,
-                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 150)
+        node.position = CGPoint(x: self.frame.width - 10 - node.size.width - 30,
+                                y: self.frame.height - 16 - node.size.height - 150)
         node.isHidden = true
         return node
     }()
-    
+
     lazy var itemSelectButton: SKSpriteNode = {
         let node = SKSpriteNode(imageNamed: "equipmentIcon")
         node.size = CGSize(width: 70, height: 70)
-        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 10) - node.size.width - 30,
-                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 250)
+        node.position = CGPoint(x: self.frame.width - 10 - node.size.width - 30,
+                                y: self.frame.height - 16 - node.size.height - 250)
         node.isHidden = true
         return node
     }()
-    
+
     lazy var settingButton: SKSpriteNode = {
         let node = SKSpriteNode(imageNamed: "settingIcon")
         node.size = CGSize(width: 70, height: 70)
-        node.position = CGPoint(x: ((self.view!.frame.width) * 2 - 10) - node.size.width - 30,
-                                y: ((self.view!.frame.height) * 2 - 16) - node.size.height - 350)
+        node.position = CGPoint(x: self.frame.width - 10 - node.size.width - 30,
+                                y: self.frame.height - 16 - node.size.height - 350)
         node.isHidden = true
         return node
     }()
@@ -179,7 +178,7 @@ extension TitleScene {
                     if randomCount != 0 {
                         sprite = SKSpriteNode(imageNamed: "mame")
                     } else {
-                        sprite = SKSpriteNode(imageNamed:ToppingManager.shared.selectedItem.randomElement()!.imageName)
+                        sprite = SKSpriteNode(imageNamed: ToppingManager.shared.selectedItem.randomElement()?.imageName ?? "mame")
                     }
                 }
                 

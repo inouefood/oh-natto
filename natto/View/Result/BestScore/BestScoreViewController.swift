@@ -13,7 +13,7 @@ import SceneKit
 // MARK: - UIViewController
 
 class BestScoreViewController: UIViewController {
-    private var bestScoreParticle: SCNView!
+    private var bestScoreParticle: SCNView?
     private let bestScore: String
 
     init(score: Int) {
@@ -34,7 +34,9 @@ class BestScoreViewController: UIViewController {
         super.viewDidLoad()
         setupSwiftUI()
         createParticle()
-        view.addSubview(bestScoreParticle)
+        if let particle = bestScoreParticle {
+            view.addSubview(particle)
+        }
     }
 
     private func setupSwiftUI() {
@@ -67,7 +69,7 @@ class BestScoreViewController: UIViewController {
         cameraNode.position = SCNVector3(x: 0, y: -6, z: 10)
         scene.rootNode.addChildNode(cameraNode)
 
-        let confetti = SCNParticleSystem(named: "Contiffi.scnp", inDirectory: "")!
+        guard let confetti = SCNParticleSystem(named: "Contiffi.scnp", inDirectory: "") else { return }
         scene.rootNode.addParticleSystem(confetti)
         let screenSize: CGSize = UIScreen.main.nativeBounds.size
         let scnView = SCNView(frame: CGRect(x: 0,
@@ -82,12 +84,12 @@ class BestScoreViewController: UIViewController {
     }
 
     private func dismissAction() {
-        bestScoreParticle.removeFromSuperview()
+        bestScoreParticle?.removeFromSuperview()
         dismiss(animated: false, completion: nil)
     }
 
     private func shareAction() {
-        bestScoreParticle.removeFromSuperview()
+        bestScoreParticle?.removeFromSuperview()
         let shareImage = view.convertToImage()
         let text = "\(localizeString(key: LocalizeKeys.Result.tweet)) https://itunes.apple.com/us/app/oh-natto/id1457049172?mt=8"
         let activityItems: [Any] = [shareImage, text]
@@ -96,7 +98,9 @@ class BestScoreViewController: UIViewController {
             activityVc.modalPresentationStyle = .fullScreen
             self.present(activityVc, animated: true) {
                 self.createParticle()
-                self.view.addSubview(self.bestScoreParticle)
+                if let particle = self.bestScoreParticle {
+                    self.view.addSubview(particle)
+                }
             }
         }
     }
