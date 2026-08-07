@@ -1,0 +1,72 @@
+/* Localizable.strings — es */
+"NOTIFICATION.TITLE" = "¡Hoy es el Día del Natto!";
+"NOTIFOCATION.MESSAGE" = "¿Te gustaría mezclar natto con oh! natto?";
+"UPDATEALERT.MESSAGE" = "Hay una actualización disponible";
+"UPDATEALERT.BUTTON.UPDATE" = "Actualizar";
+"UPDATEALERT.BUTTON.CLOSE" = "Cerrar";
+"DESCRIPTION.1" = "¡Encantado! Soy el Profesor Natto
+¡Bienvenido al mundo de Oh! Natto!
+¡Desliza hacia la derecha para aprender a jugar!";
+"DESCRIPTION.2" = "Mezcla el natto lo más posible para hacerlo pegajoso. Al generar mucho mucílago blanco, cambiará la tasa de absorción del natto";
+"DESCRIPTION.3" = "Levanta el natto a tiempo y come todo lo que puedas";
+"DESCRIPTION.4" = "¡La puntuación se determina por el número de natto que comas! ¡Comparte tus resultados en redes sociales!";
+"DESCRIPTION.5" = "¡Puedes comprar toppings en la tienda con puntos natto!
+¡Apunta a un puntaje más alto usando toppings!!";
+"DESCRIPTION.6" = "¡Abre la pantalla de selección de artículos con el ícono de cebolleta!
+¡Puedes usar hasta 3 toppings por partida!!";
+"TITLE.BUTTON.START" = "INICIO";
+"RESULT.BUTTON.REPLAY" = "REPETIR";
+"RESULT.LABEL.SCORE" = " Pts";
+"RESULT.LABEL.SCORETITLE" = "PUNTUACIÓN";
+"RESULT.TWITTER" = "
+
+¡Come natto y consigue un cuerpo perfecto!
+";
+"RESULT.TIPSTITLE" = "¿SABÍAS QUE...?";
+"TIPS.0" = "¡Al parecer el natto ya existía en el período Yayoi!";
+"TIPS.1" = "El natto se popularizó entre la gente común en el período Edo";
+"TIPS.2" = "La palabra natto apareció por primera vez en documentos del período Heian";
+"TIPS.3" = "Hay dos tipos principales de natto: «Itohiki-Natto» y «Shiokara-Natto»";
+"TIPS.4" = "¡El natto contiene nutrientes que los frijoles cocidos no tienen!";
+"TIPS.5" = "¡El natto contiene aproximadamente mil millones de bacterias por gramo!";
+"TIPS.6" = "¡Si pusieras en fila las bacterias de un gramo de natto, medirían 1000 km!";
+"TIPS.7" = "Las bacterias del natto son tan resistentes que sobreviven al contacto con frijoles recién hervidos";
+"TIPS.8" = "El mucílago retiene agua y se estudia como posible solución para verdear desiertos";
+"TIPS.9" = "¡El olor del natto contiene 68 tipos de componentes!";
+"TIPS.10" = "¡El natto se vuelve delicioso si lo mezclas 400 veces!";
+"TIPS.11" = "El natto y la clara de huevo no combinan — comerlos juntos elimina el efecto embellecedor";
+"TIPS.12" = "El natto está en su mejor momento entre enero y marzo";
+"TIPS.13" = "¿Tienes palillos especiales para mezclar natto?";
+"TIPS.14" = "La prefectura de Fukushima es la mayor consumidora de natto en Japón";
+"TIPS.15" = "En Indonesia existe un alimento llamado Tempeh, muy similar al natto";
+"TIPS.16" = "La nattokinasa, componente del mucílago del natto, puede disolver coágulos sanguíneos";
+"TIPS.17" = "El natto es rico en vitamina K2, que ayuda a fortalecer los huesos";
+"TIPS.18" = "La prefectura de Ibaraki es la mayor productora de natto en Japón";
+"TIPS.19" = "¡Se ha demostrado que las bacterias del natto pueden sobrevivir incluso en el espacio!";
+"TIPS.20" = "¡De hecho puedes congelar el natto y seguirá estando delicioso al descongelarlo!";
+"TIPS.21" = "¡Un paquete de natto contiene aproximadamente entre 50 y 60 granos!";
+"TIPS.22" = "¡Al calentarlo, los hilos se estiran con más facilidad!";
+"TIPS.23" = "¡El natto tiene sorprendentemente pocas calorías y es ideal para hacer dieta!";
+"TIPS.24" = "¡En Mito hay un santuario dedicado al natto!";
+"BEST.LABEL.TITLE" = "¡Nuevo Récord!!";
+"BEST.BUTTON.CLOSE" = "Cerrar";
+"BEST.BUTTON.SHARE" = "Compartir";
+"SETTING.CELLARR.VIBRATION" = "Vibración";
+"SETTING.CELLARR.PRIVACYPOLICY" = "Política de privacidad";
+"SETTING.CELLARR.REVIEW" = "Reseña";
+"SETTING.CELLARR.PUSHNORTIFICATION" = "Notificaciones push";
+"SETTING.CELLARR.VERSION" = "Versión";
+"SETTING.SECTIONARR.SETTING" = "Ajustes";
+"SETTING.SECTIONARR.OTHER" = "Otros";
+"TOPPINGSELECT.DECISION" = "Confirmar";
+"TOPPINGSELECT.RESET" = "Reiniciar";
+"TOPPINGSELECT.ALERT.ITEMLESS" = "No hay suficientes artículos";
+"TOPPINGSELECT.ALERT.SELECTOVER" = "Puedes usar hasta 3 toppings";
+"TOTALEAT.EATNATTO" = "Total de natto comidos";
+"TOTALEAT.GROUTH" = "Faltan %d granos para la próxima evolución";
+"TOTALEAT.GRAIN" = "%d granos";
+"ITEMBUY.ALERT.TITLE" = "Comprar";
+"ITEMBUY.ALERT.MESSAGE" = "¿Gastar %d puntos para comprar %@ (%d unidades)?";
+"ITEMBUY.ALERT.BUTTON.YES" = "Sí";
+"ITEMBUY.ALERT.BUTTON.NO" = "No";
+"ITEMBUY.OWNEDLABEL.TEXT" = "Puntos natto disponibles: %d";

@@ -1,0 +1,72 @@
+/* Localizable.strings — vi */
+"NOTIFICATION.TITLE" = "Hôm nay là Ngày Natto!";
+"NOTIFOCATION.MESSAGE" = "Bạn có muốn trộn natto với oh! natto không?";
+"UPDATEALERT.MESSAGE" = "Đã có phiên bản cập nhật mới";
+"UPDATEALERT.BUTTON.UPDATE" = "Cập nhật";
+"UPDATEALERT.BUTTON.CLOSE" = "Đóng";
+"DESCRIPTION.1" = "Xin chào! Tôi là Giáo sư Natto
+Chào mừng đến với thế giới Oh! Natto!
+Vuốt sang phải để học cách chơi!";
+"DESCRIPTION.2" = "Trộn natto càng nhiều càng tốt để tạo độ nhớt. Càng tạo nhiều chất nhầy trắng thì tỷ lệ hấp thụ của natto càng thay đổi";
+"DESCRIPTION.3" = "Nhấc natto đúng lúc và ăn nhiều nhất có thể";
+"DESCRIPTION.4" = "Điểm số được quyết định bởi số lượng natto ăn được! Chia sẻ kết quả lên mạng xã hội nhé!";
+"DESCRIPTION.5" = "Bạn có thể mua topping tại cửa hàng bằng điểm natto!
+Hãy dùng topping để nhắm đến điểm số cao hơn!!";
+"DESCRIPTION.6" = "Mở màn hình chọn vật phẩm bằng biểu tượng hành lá!
+Mỗi lần chơi có thể dùng tối đa 3 topping!!";
+"TITLE.BUTTON.START" = "BẮT ĐẦU";
+"RESULT.BUTTON.REPLAY" = "CHƠI LẠI";
+"RESULT.LABEL.SCORE" = " Điểm";
+"RESULT.LABEL.SCORETITLE" = "ĐIỂM SỐ";
+"RESULT.TWITTER" = "
+
+Ăn natto và có thân hình hoàn hảo!
+";
+"RESULT.TIPSTITLE" = "BẠN CÓ BIẾT?";
+"TIPS.0" = "Nghe nói natto đã tồn tại từ thời Yayoi rồi đấy!";
+"TIPS.1" = "Natto trở nên phổ biến trong dân chúng từ thời Edo";
+"TIPS.2" = "Từ natto xuất hiện lần đầu trong văn bản vào thời Heian";
+"TIPS.3" = "Natto có hai loại chính: «Itohiki-Natto» và «Shiokara-Natto»";
+"TIPS.4" = "Natto chứa các chất dinh dưỡng mà đậu luộc thông thường không có!";
+"TIPS.5" = "Nghe nói natto chứa khoảng 1 tỷ vi khuẩn mỗi gam!";
+"TIPS.6" = "Nếu xếp thẳng hàng vi khuẩn trong 1 gam natto, sẽ dài tới 1000 km!";
+"TIPS.7" = "Vi khuẩn natto có sức sống mạnh mẽ đến mức không chết dù tiếp xúc với đậu mới luộc còn nóng";
+"TIPS.8" = "Chất nhớt có tác dụng giữ nước và người ta đang nghiên cứu dùng nó để xanh hóa sa mạc";
+"TIPS.9" = "Nghe nói mùi của natto có tới 68 loại thành phần hương!";
+"TIPS.10" = "Trộn natto 400 lần sẽ rất ngon đấy!";
+"TIPS.11" = "Natto và lòng trắng trứng không hợp nhau — ăn cùng sẽ mất tác dụng làm đẹp da";
+"TIPS.12" = "Natto ngon nhất vào mùa từ tháng 1 đến tháng 3";
+"TIPS.13" = "Bạn có đũa chuyên dụng để trộn natto không?";
+"TIPS.14" = "Tỉnh Fukushima là nơi tiêu thụ natto nhiều nhất tại Nhật Bản";
+"TIPS.15" = "Ở Indonesia có một món ăn gọi là Tempeh, rất giống natto";
+"TIPS.16" = "Nattokinase, thành phần trong chất nhớt của natto, có khả năng làm tan cục máu đông!";
+"TIPS.17" = "Natto giàu vitamin K2 giúp tăng cường xương chắc khỏe";
+"TIPS.18" = "Tỉnh Ibaraki là nơi sản xuất natto nhiều nhất tại Nhật Bản";
+"TIPS.19" = "Đã được chứng minh rằng vi khuẩn natto có thể sống ngay cả trong vũ trụ!";
+"TIPS.20" = "Thật ra natto có thể bảo quản trong ngăn đông, rã đông vẫn ngon như thường!";
+"TIPS.21" = "Một gói natto có khoảng 50 đến 60 hạt đậu!";
+"TIPS.22" = "Làm nóng natto thì kéo sợi dễ hơn nhiều!";
+"TIPS.23" = "Thật bất ngờ khi natto có lượng calo thấp, rất tốt để giảm cân!";
+"TIPS.24" = "Ở Mito có một ngôi đền thờ natto đấy!";
+"BEST.LABEL.TITLE" = "Kỷ lục mới!!";
+"BEST.BUTTON.CLOSE" = "Đóng";
+"BEST.BUTTON.SHARE" = "Chia sẻ";
+"SETTING.CELLARR.VIBRATION" = "Rung";
+"SETTING.CELLARR.PRIVACYPOLICY" = "Chính sách bảo mật";
+"SETTING.CELLARR.REVIEW" = "Đánh giá";
+"SETTING.CELLARR.PUSHNORTIFICATION" = "Thông báo đẩy";
+"SETTING.CELLARR.VERSION" = "Phiên bản";
+"SETTING.SECTIONARR.SETTING" = "Cài đặt";
+"SETTING.SECTIONARR.OTHER" = "Khác";
+"TOPPINGSELECT.DECISION" = "Xác nhận";
+"TOPPINGSELECT.RESET" = "Đặt lại";
+"TOPPINGSELECT.ALERT.ITEMLESS" = "Không đủ vật phẩm";
+"TOPPINGSELECT.ALERT.SELECTOVER" = "Bạn có thể dùng tối đa 3 topping";
+"TOTALEAT.EATNATTO" = "Tổng số natto đã ăn";
+"TOTALEAT.GROUTH" = "Còn %d hạt nữa đến lần tiến hóa tiếp";
+"TOTALEAT.GRAIN" = "%d hạt";
+"ITEMBUY.ALERT.TITLE" = "Mua";
+"ITEMBUY.ALERT.MESSAGE" = "Dùng %d điểm để mua %@ (%d cái)?";
+"ITEMBUY.ALERT.BUTTON.YES" = "Có";
+"ITEMBUY.ALERT.BUTTON.NO" = "Không";
+"ITEMBUY.OWNEDLABEL.TEXT" = "Điểm natto hiện có: %d điểm";

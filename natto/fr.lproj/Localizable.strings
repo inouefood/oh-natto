@@ -1,0 +1,72 @@
+/* Localizable.strings — fr */
+"NOTIFICATION.TITLE" = "Aujourd'hui, c'est la journée du natto !";
+"NOTIFOCATION.MESSAGE" = "Voulez-vous mélanger du natto avec oh! natto ?";
+"UPDATEALERT.MESSAGE" = "Une mise à jour est disponible";
+"UPDATEALERT.BUTTON.UPDATE" = "Mettre à jour";
+"UPDATEALERT.BUTTON.CLOSE" = "Fermer";
+"DESCRIPTION.1" = "Enchanté ! Je suis le Professeur Natto
+Bienvenue dans le monde de Oh! Natto!
+Glissez vers la droite pour apprendre à jouer !";
+"DESCRIPTION.2" = "Mélangez le natto au maximum pour le rendre collant. En produisant beaucoup de mucosités blanches, le taux d'absorption du natto changera";
+"DESCRIPTION.3" = "Soulevez le natto dans les temps et mangez-en le plus possible";
+"DESCRIPTION.4" = "Le score est déterminé par le nombre de natto mangés ! Partagez vos bons résultats sur les réseaux sociaux !";
+"DESCRIPTION.5" = "Achetez des garnitures dans la boutique avec des points natto !
+Visez un score encore plus élevé avec des garnitures !!";
+"DESCRIPTION.6" = "Ouvrez l'écran de sélection d'objets avec l'icône de la ciboulette !
+Vous pouvez utiliser jusqu'à 3 garnitures par partie !!";
+"TITLE.BUTTON.START" = "DÉBUT";
+"RESULT.BUTTON.REPLAY" = "REJOUER";
+"RESULT.LABEL.SCORE" = " Pts";
+"RESULT.LABEL.SCORETITLE" = "SCORE";
+"RESULT.TWITTER" = "
+
+Mangez du natto et obtenez un corps parfait !
+";
+"RESULT.TIPSTITLE" = "LE SAVIEZ-VOUS ?";
+"TIPS.0" = "Il paraît que le natto existait déjà à la période Yayoi !";
+"TIPS.1" = "C'est à la période Edo que le natto s'est répandu parmi la population générale";
+"TIPS.2" = "Le mot natto est apparu pour la première fois dans des documents à la période Heian";
+"TIPS.3" = "Il existe deux grands types de natto : le « Itohiki-Natto » et le « Shiokara-Natto »";
+"TIPS.4" = "Le natto contient des nutriments absents des haricots cuits ordinaires";
+"TIPS.5" = "Le natto contient environ un milliard de bactéries natto par gramme !";
+"TIPS.6" = "Si l'on alignait les bactéries natto d'un seul gramme, elles s'étendraient sur 1000 km !";
+"TIPS.7" = "Les bactéries natto sont si résistantes qu'elles survivent même au contact de haricots tout juste bouillis";
+"TIPS.8" = "Le mucus a un effet de rétention d'eau et pourrait un jour rendre des déserts verdoyants";
+"TIPS.9" = "L'odeur du natto contient 68 composants différents !";
+"TIPS.10" = "Le natto devient délicieux si on le mélange 400 fois !";
+"TIPS.11" = "Le natto et le blanc d'œuf ne font pas bon ménage — les manger ensemble annule l'effet beauté";
+"TIPS.12" = "Le natto est de saison de janvier à mars";
+"TIPS.13" = "Avez-vous des baguettes spéciales pour mélanger votre natto ?";
+"TIPS.14" = "La préfecture de Fukushima est la plus grande consommatrice de natto au Japon";
+"TIPS.15" = "En Indonésie, il existe un aliment appelé Tempeh, très similaire au natto";
+"TIPS.16" = "La nattokinase, composante collante du natto, peut dissoudre les caillots sanguins";
+"TIPS.17" = "Le natto est riche en vitamine K2, ce qui aide à renforcer les os";
+"TIPS.18" = "La préfecture d'Ibaraki est la plus grande productrice de natto au Japon";
+"TIPS.19" = "Il a été prouvé que les bactéries natto peuvent survivre même dans l'espace";
+"TIPS.20" = "On peut en fait congeler le natto, et il reste délicieux une fois décongelé";
+"TIPS.21" = "Un paquet de natto contient environ 50 à 60 graines";
+"TIPS.22" = "Le chauffer le rend plus facile à étirer";
+"TIPS.23" = "Le natto est étonnamment peu calorique et convient parfaitement à un régime";
+"TIPS.24" = "Il y a un sanctuaire dédié au natto à Mito !";
+"BEST.LABEL.TITLE" = "Nouveau Record !!";
+"BEST.BUTTON.CLOSE" = "Fermer";
+"BEST.BUTTON.SHARE" = "Partager";
+"SETTING.CELLARR.VIBRATION" = "Vibration";
+"SETTING.CELLARR.PRIVACYPOLICY" = "Politique de confidentialité";
+"SETTING.CELLARR.REVIEW" = "Avis";
+"SETTING.CELLARR.PUSHNORTIFICATION" = "Notifications push";
+"SETTING.CELLARR.VERSION" = "Version";
+"SETTING.SECTIONARR.SETTING" = "Paramètres";
+"SETTING.SECTIONARR.OTHER" = "Autre";
+"TOPPINGSELECT.DECISION" = "Valider";
+"TOPPINGSELECT.RESET" = "Réinitialiser";
+"TOPPINGSELECT.ALERT.ITEMLESS" = "Pas assez d'objets";
+"TOPPINGSELECT.ALERT.SELECTOVER" = "Vous pouvez utiliser jusqu'à 3 garnitures";
+"TOTALEAT.EATNATTO" = "Total de natto mangés";
+"TOTALEAT.GROUTH" = "Encore %d grains avant la prochaine évolution";
+"TOTALEAT.GRAIN" = "%d grains";
+"ITEMBUY.ALERT.TITLE" = "Achat";
+"ITEMBUY.ALERT.MESSAGE" = "Dépenser %d points pour acheter %@ (%d pièces) ?";
+"ITEMBUY.ALERT.BUTTON.YES" = "Oui";
+"ITEMBUY.ALERT.BUTTON.NO" = "Non";
+"ITEMBUY.OWNEDLABEL.TEXT" = "Points natto disponibles : %d";

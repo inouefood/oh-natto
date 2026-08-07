@@ -1,0 +1,72 @@
+/* Localizable.strings — de */
+"NOTIFICATION.TITLE" = "Heute ist Natto-Tag!";
+"NOTIFOCATION.MESSAGE" = "Möchtest du Natto mit oh! natto! mischen?";
+"UPDATEALERT.MESSAGE" = "Ein Update auf die neueste Version ist verfügbar";
+"UPDATEALERT.BUTTON.UPDATE" = "Aktualisieren";
+"UPDATEALERT.BUTTON.CLOSE" = "Schließen";
+"DESCRIPTION.1" = "Schön, dich kennenzulernen! Ich bin Professor Natto
+Willkommen in der Welt von Oh! Natto!
+Wische nach rechts, um das Spielprinzip zu lernen!";
+"DESCRIPTION.2" = "Rühre das Natto so oft wie möglich, um es klebrig zu machen. Durch viel weißen Schleim verändert sich die Absorptionsrate des Nattos";
+"DESCRIPTION.3" = "Hebe das Natto rechtzeitig an und iss so viel wie möglich";
+"DESCRIPTION.4" = "Der Score wird durch die Anzahl der gegessenen Natto bestimmt! Teile dein Ergebnis in den sozialen Medien!";
+"DESCRIPTION.5" = "Kaufe Toppings im Store mit Natto-Punkten!
+Strebe mit Toppings nach einem noch höheren Score!!";
+"DESCRIPTION.6" = "Öffne den Artikel-Auswahlbildschirm mit dem Lauch-Symbol!
+Pro Spieldurchgang können bis zu 3 Toppings verwendet werden!!";
+"TITLE.BUTTON.START" = "START";
+"RESULT.BUTTON.REPLAY" = "NOCHMAL";
+"RESULT.LABEL.SCORE" = " Pkt.";
+"RESULT.LABEL.SCORETITLE" = "PUNKTE";
+"RESULT.TWITTER" = "
+
+Natto essen für den perfekten Körper!
+";
+"RESULT.TIPSTITLE" = "NATTO-WISSEN";
+"TIPS.0" = "Es heißt, dass es Natto bereits in der Yayoi-Zeit gab!";
+"TIPS.1" = "In der Edo-Zeit verbreitete sich Natto unter der einfachen Bevölkerung";
+"TIPS.2" = "Das Wort Natto tauchte erstmals in der Heian-Zeit in Schriften auf";
+"TIPS.3" = "Natto gibt es in zwei Hauptarten: „Itohiki-Natto\" und „Shiokara-Natto\"";
+"TIPS.4" = "Natto enthält Nährstoffe, die in gekochten Bohnen nicht vorkommen";
+"TIPS.5" = "Natto enthält etwa eine Milliarde Natto-Bakterien pro Gramm!";
+"TIPS.6" = "Wenn man die Natto-Bakterien in einem Gramm aufreihen würde, kämen 1000 km zusammen!";
+"TIPS.7" = "Natto-Bakterien sind so lebenstüchtig, dass sie selbst beim Kontakt mit frisch gekochten Bohnen nicht sterben";
+"TIPS.8" = "Der Schleim kann Wasser binden und gilt als mögliche Lösung zur Begrünung von Wüsten";
+"TIPS.9" = "Der Geruch von Natto enthält 68 verschiedene Duftkomponenten!";
+"TIPS.10" = "Natto schmeckt am besten, wenn man es 400 Mal rührt!";
+"TIPS.11" = "Natto und Eiweiß vertragen sich nicht — zusammen gegessen geht der Hautpflegeeffekt verloren";
+"TIPS.12" = "Die Hauptsaison für Natto ist Januar bis März";
+"TIPS.13" = "Hast du spezielle Stäbchen zum Rühren von Natto?";
+"TIPS.14" = "Die Präfektur Fukushima isst am meisten Natto in Japan";
+"TIPS.15" = "In Indonesien gibt es ein Lebensmittel namens Tempeh, das Natto sehr ähnelt";
+"TIPS.16" = "Nattokinase, ein Wirkstoff im Schleim des Nattos, kann Blutgerinnsel auflösen";
+"TIPS.17" = "Natto ist reich an Vitamin K2, das die Knochen stärkt";
+"TIPS.18" = "Die Präfektur Ibaraki produziert am meisten Natto in Japan";
+"TIPS.19" = "Es wurde bewiesen, dass Natto-Bakterien sogar im Weltraum überleben können";
+"TIPS.20" = "Natto kann eingefroren werden — es schmeckt auch nach dem Auftauen noch gut!";
+"TIPS.21" = "In einer Packung Natto befinden sich etwa 50 bis 60 Bohnen";
+"TIPS.22" = "Wenn man Natto erwärmt, lässt es sich leichter ziehen";
+"TIPS.23" = "Natto hat überraschend wenig Kalorien und eignet sich gut zum Abnehmen";
+"TIPS.24" = "In Mito gibt es einen Natto-Schrein!";
+"BEST.LABEL.TITLE" = "Neuer Rekord!!";
+"BEST.BUTTON.CLOSE" = "Schließen";
+"BEST.BUTTON.SHARE" = "Teilen";
+"SETTING.CELLARR.VIBRATION" = "Vibration";
+"SETTING.CELLARR.PRIVACYPOLICY" = "Datenschutz";
+"SETTING.CELLARR.REVIEW" = "Bewertung";
+"SETTING.CELLARR.PUSHNORTIFICATION" = "Push-Benachrichtigungen";
+"SETTING.CELLARR.VERSION" = "Version";
+"SETTING.SECTIONARR.SETTING" = "Einstellungen";
+"SETTING.SECTIONARR.OTHER" = "Sonstiges";
+"TOPPINGSELECT.DECISION" = "Bestätigen";
+"TOPPINGSELECT.RESET" = "Zurücksetzen";
+"TOPPINGSELECT.ALERT.ITEMLESS" = "Nicht genug Gegenstände";
+"TOPPINGSELECT.ALERT.SELECTOVER" = "Es können bis zu 3 Toppings verwendet werden";
+"TOTALEAT.EATNATTO" = "Bisher gegessene Natto";
+"TOTALEAT.GROUTH" = "Noch %d Körner bis zur nächsten Entwicklung";
+"TOTALEAT.GRAIN" = "%d Körner";
+"ITEMBUY.ALERT.TITLE" = "Kaufen";
+"ITEMBUY.ALERT.MESSAGE" = "%d Punkte für %@ (%d Stück) ausgeben?";
+"ITEMBUY.ALERT.BUTTON.YES" = "Ja";
+"ITEMBUY.ALERT.BUTTON.NO" = "Nein";
+"ITEMBUY.OWNEDLABEL.TEXT" = "Verfügbare Natto-Punkte: %d";

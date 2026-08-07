@@ -1,0 +1,72 @@
+/* Localizable.strings — zh-Hant */
+"NOTIFICATION.TITLE" = "今天是納豆日";
+"NOTIFOCATION.MESSAGE" = "來用 oh! natto! 攪拌納豆吧？";
+"UPDATEALERT.MESSAGE" = "可以更新至最新版本";
+"UPDATEALERT.BUTTON.UPDATE" = "更新";
+"UPDATEALERT.BUTTON.CLOSE" = "關閉";
+"DESCRIPTION.1" = "初次見面！我是納豆博士
+歡迎來到 Oh! Natto! 的世界
+向右滑動可以學習遊戲玩法！";
+"DESCRIPTION.2" = "盡可能多地攪拌納豆，使其產生黏性。產生大量白色黏液，可以改變納豆的吸附率";
+"DESCRIPTION.3" = "在規定時間內舉起納豆，盡可能多地吃";
+"DESCRIPTION.4" = "得分由你吃的納豆數量決定！取得好成績就發到社群媒體上吧！";
+"DESCRIPTION.5" = "可以用納豆積分從商店購買配料！
+使用配料來挑戰更高分數吧！！";
+"DESCRIPTION.6" = "點擊蔥圖示可以打開道具選擇介面！
+每次遊戲最多可以使用3個配料！！";
+"TITLE.BUTTON.START" = "開始";
+"RESULT.BUTTON.REPLAY" = "再來一次";
+"RESULT.LABEL.SCORE" = "分";
+"RESULT.LABEL.SCORETITLE" = "本次得分";
+"RESULT.TWITTER" = "
+
+吃納豆，打造完美體型！
+";
+"RESULT.TIPSTITLE" = "納豆小知識";
+"TIPS.0" = "據說彌生時代就已經有納豆了哦";
+"TIPS.1" = "納豆在江戶時代開始在普通老百姓中廣泛流傳";
+"TIPS.2" = "納豆這個詞最早出現在平安時代的文獻中";
+"TIPS.3" = "納豆主要分兩種：「絲引納豆」和「鹽辛納豆」";
+"TIPS.4" = "納豆含有煮豆所沒有的營養成分哦";
+"TIPS.5" = "據說納豆每克含有約10億個納豆菌";
+"TIPS.6" = "1克納豆中的納豆菌如果排成一列，長度可達1000公里哦";
+"TIPS.7" = "納豆菌的生命力非常頑強，即使接觸剛煮好的熱豆子也不會死哦";
+"TIPS.8" = "黏性成分有保水效果，據說還能讓沙漠變綠洲哦";
+"TIPS.9" = "據說納豆的氣味中含有68種氣味成分";
+"TIPS.10" = "納豆攪拌400次會變得超級美味哦";
+"TIPS.11" = "納豆和蛋清不合，一起吃的話美肌效果就消失了";
+"TIPS.12" = "納豆的旺季是1月到3月哦";
+"TIPS.13" = "你有專門用來攪拌納豆的納豆筷子嗎？";
+"TIPS.14" = "據說吃納豆最多的縣是福島縣";
+"TIPS.15" = "印度尼西亞有一種叫天貝的食物，和納豆非常相似哦";
+"TIPS.16" = "黏性成分納豆激酶有溶解血栓的作用哦";
+"TIPS.17" = "據說納豆富含維生素K2，能幫助強健骨骼";
+"TIPS.18" = "據說納豆產量最多的縣是茨城縣";
+"TIPS.19" = "納豆菌在太空中也能存活，這一點已經得到證實哦";
+"TIPS.20" = "其實可以放冷凍庫保存哦，解凍後也很好吃";
+"TIPS.21" = "納豆一袋裡大概裝有50到60粒豆子哦";
+"TIPS.22" = "加熱後更容易拉絲哦";
+"TIPS.23" = "意外地，納豆卡路里很低，也適合減肥哦";
+"TIPS.24" = "水戶有納豆神社哦";
+"BEST.LABEL.TITLE" = "新紀錄！！";
+"BEST.BUTTON.CLOSE" = "關閉";
+"BEST.BUTTON.SHARE" = "分享";
+"SETTING.CELLARR.VIBRATION" = "裝置震動";
+"SETTING.CELLARR.PRIVACYPOLICY" = "隱私政策";
+"SETTING.CELLARR.REVIEW" = "評價";
+"SETTING.CELLARR.PUSHNORTIFICATION" = "推播通知";
+"SETTING.CELLARR.VERSION" = "版本";
+"SETTING.SECTIONARR.SETTING" = "設定";
+"SETTING.SECTIONARR.OTHER" = "其他";
+"TOPPINGSELECT.DECISION" = "確定";
+"TOPPINGSELECT.RESET" = "重置";
+"TOPPINGSELECT.ALERT.ITEMLESS" = "道具不足";
+"TOPPINGSELECT.ALERT.SELECTOVER" = "最多可以使用3個配料";
+"TOTALEAT.EATNATTO" = "迄今為止吃過的納豆數";
+"TOTALEAT.GROUTH" = "距下次成長還需%d粒";
+"TOTALEAT.GRAIN" = "%d粒";
+"ITEMBUY.ALERT.TITLE" = "購買";
+"ITEMBUY.ALERT.MESSAGE" = "要用%d積分購買%@（%d個）嗎？";
+"ITEMBUY.ALERT.BUTTON.YES" = "是";
+"ITEMBUY.ALERT.BUTTON.NO" = "取消";
+"ITEMBUY.OWNEDLABEL.TEXT" = "持有納豆積分%d點";

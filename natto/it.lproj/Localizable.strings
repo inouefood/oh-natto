@@ -1,0 +1,72 @@
+/* Localizable.strings — it */
+"NOTIFICATION.TITLE" = "Oggi è il Giorno del Natto!";
+"NOTIFOCATION.MESSAGE" = "Vuoi mescolare il natto con oh! natto?";
+"UPDATEALERT.MESSAGE" = "È disponibile un aggiornamento";
+"UPDATEALERT.BUTTON.UPDATE" = "Aggiorna";
+"UPDATEALERT.BUTTON.CLOSE" = "Chiudi";
+"DESCRIPTION.1" = "Piacere! Sono il Professor Natto
+Benvenuto nel mondo di Oh! Natto!
+Scorri a destra per imparare a giocare!";
+"DESCRIPTION.2" = "Mescola il natto il più possibile per renderlo appiccicoso. Producendo molto muco bianco, il tasso di assorbimento del natto cambierà";
+"DESCRIPTION.3" = "Solleva il natto in tempo e mangia tutto quello che puoi";
+"DESCRIPTION.4" = "Il punteggio è determinato dal numero di natto mangiati! Condividi i tuoi risultati sui social!";
+"DESCRIPTION.5" = "Puoi acquistare topping nel negozio con punti natto!
+Punta a un punteggio ancora più alto usando i topping!!";
+"DESCRIPTION.6" = "Apri la schermata di selezione degli oggetti con l'icona del cipollotto!
+Puoi usare fino a 3 topping per partita!!";
+"TITLE.BUTTON.START" = "INIZIO";
+"RESULT.BUTTON.REPLAY" = "RIGIOCA";
+"RESULT.LABEL.SCORE" = " Pts";
+"RESULT.LABEL.SCORETITLE" = "PUNTEGGIO";
+"RESULT.TWITTER" = "
+
+Mangia natto e ottieni il corpo perfetto!
+";
+"RESULT.TIPSTITLE" = "LO SAPEVI?";
+"TIPS.0" = "Sembra che il natto esistesse già nel periodo Yayoi!";
+"TIPS.1" = "Il natto si è diffuso tra la gente comune nel periodo Edo";
+"TIPS.2" = "La parola natto è apparsa per la prima volta in documenti nel periodo Heian";
+"TIPS.3" = "Esistono due tipi principali di natto: «Itohiki-Natto» e «Shiokara-Natto»";
+"TIPS.4" = "Il natto contiene nutrienti assenti nei fagioli cotti ordinari!";
+"TIPS.5" = "Il natto contiene circa un miliardo di batteri per grammo!";
+"TIPS.6" = "Se si allineassero i batteri di un grammo di natto, raggiungerebbero 1000 km!";
+"TIPS.7" = "I batteri del natto sono così vitali da non morire nemmeno a contatto con fagioli appena bolliti";
+"TIPS.8" = "Il muco ha un effetto di ritenzione idrica e si pensa possa trasformare i deserti in zone verdi";
+"TIPS.9" = "L'odore del natto contiene 68 tipi di componenti aromatici!";
+"TIPS.10" = "Il natto diventa buonissimo se lo mescoli 400 volte!";
+"TIPS.11" = "Natto e albume d'uovo non vanno d'accordo — mangiarli insieme elimina l'effetto bellezza";
+"TIPS.12" = "Il natto è di stagione da gennaio a marzo";
+"TIPS.13" = "Hai le bacchette speciali per mescolare il natto?";
+"TIPS.14" = "La prefettura di Fukushima è la maggior consumatrice di natto in Giappone";
+"TIPS.15" = "In Indonesia esiste un alimento chiamato Tempeh, molto simile al natto";
+"TIPS.16" = "La nattokinasi, componente del muco del natto, può sciogliere i coaguli di sangue";
+"TIPS.17" = "Il natto è ricco di vitamina K2, che aiuta a rafforzare le ossa";
+"TIPS.18" = "La prefettura di Ibaraki è la maggior produttrice di natto in Giappone";
+"TIPS.19" = "È stato dimostrato che i batteri del natto sopravvivono persino nello spazio!";
+"TIPS.20" = "Il natto si può congelare e rimane buono anche dopo lo scongelamento!";
+"TIPS.21" = "Una confezione di natto contiene circa 50-60 fagioli!";
+"TIPS.22" = "Riscaldandolo, i fili si stirano più facilmente!";
+"TIPS.23" = "Il natto ha sorprendentemente poche calorie ed è ottimo per la dieta!";
+"TIPS.24" = "A Mito c'è un santuario dedicato al natto!";
+"BEST.LABEL.TITLE" = "Nuovo Record!!";
+"BEST.BUTTON.CLOSE" = "Chiudi";
+"BEST.BUTTON.SHARE" = "Condividi";
+"SETTING.CELLARR.VIBRATION" = "Vibrazione";
+"SETTING.CELLARR.PRIVACYPOLICY" = "Informativa sulla privacy";
+"SETTING.CELLARR.REVIEW" = "Recensione";
+"SETTING.CELLARR.PUSHNORTIFICATION" = "Notifiche push";
+"SETTING.CELLARR.VERSION" = "Versione";
+"SETTING.SECTIONARR.SETTING" = "Impostazioni";
+"SETTING.SECTIONARR.OTHER" = "Altro";
+"TOPPINGSELECT.DECISION" = "Conferma";
+"TOPPINGSELECT.RESET" = "Reimposta";
+"TOPPINGSELECT.ALERT.ITEMLESS" = "Oggetti insufficienti";
+"TOPPINGSELECT.ALERT.SELECTOVER" = "Puoi usare fino a 3 topping";
+"TOTALEAT.EATNATTO" = "Natto mangiati in totale";
+"TOTALEAT.GROUTH" = "Ancora %d chicchi alla prossima evoluzione";
+"TOTALEAT.GRAIN" = "%d chicchi";
+"ITEMBUY.ALERT.TITLE" = "Acquisto";
+"ITEMBUY.ALERT.MESSAGE" = "Spendere %d punti per acquistare %@ (%d pezzi)?";
+"ITEMBUY.ALERT.BUTTON.YES" = "Sì";
+"ITEMBUY.ALERT.BUTTON.NO" = "No";
+"ITEMBUY.OWNEDLABEL.TEXT" = "Punti natto disponibili: %d";

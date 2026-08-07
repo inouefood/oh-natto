@@ -1,0 +1,72 @@
+/* Localizable.strings — ko */
+"NOTIFICATION.TITLE" = "오늘은 낫토의 날입니다";
+"NOTIFOCATION.MESSAGE" = "oh! natto!로 낫토를 섞어볼까요？";
+"UPDATEALERT.MESSAGE" = "최신 버전으로 업데이트할 수 있습니다";
+"UPDATEALERT.BUTTON.UPDATE" = "업데이트";
+"UPDATEALERT.BUTTON.CLOSE" = "닫기";
+"DESCRIPTION.1" = "처음 뵙겠습니다！저는 낫토 박사입니다
+Oh! Natto!의 세계에 오신 것을 환영합니다
+오른쪽으로 스와이프하면 게임 방법을 배울 수 있어요！";
+"DESCRIPTION.2" = "낫토를 최대한 많이 섞어서 끈기를 냅니다. 흰색 끈적임을 많이 만들수록 낫토의 흡착률이 변합니다";
+"DESCRIPTION.3" = "제한 시간 내에 낫토를 들어 최대한 많이 먹습니다";
+"DESCRIPTION.4" = "먹은 낫토의 수로 점수가 결정됩니다！좋은 결과가 나오면 SNS에 올려봐요！";
+"DESCRIPTION.5" = "낫토 포인트로 스토어 화면에서 토핑을 구매할 수 있어요！
+토핑을 사용해서 더 높은 점수를 노려봐요！！";
+"DESCRIPTION.6" = "파 아이콘을 눌러 아이템 선택 화면을 열 수 있어요！
+한 번의 플레이에서 최대 3개의 토핑을 사용할 수 있어요！！";
+"TITLE.BUTTON.START" = "시작";
+"RESULT.BUTTON.REPLAY" = "다시 하기";
+"RESULT.LABEL.SCORE" = "점";
+"RESULT.LABEL.SCORETITLE" = "이번 점수";
+"RESULT.TWITTER" = "
+
+낫토 먹고 퍼펙트 바디！
+";
+"RESULT.TIPSTITLE" = "낫토 상식";
+"TIPS.0" = "야요이 시대에는 이미 낫토가 있었다고 해요";
+"TIPS.1" = "낫토가 일반 서민들 사이에서 널리 먹히게 된 건 에도 시대래요";
+"TIPS.2" = "낫토라는 글자가 문헌에 처음 등장한 건 헤이안 시대예요";
+"TIPS.3" = "낫토는 크게 두 종류，「이토히키 낫토」와 「시오카라 낫토」가 있어요";
+"TIPS.4" = "낫토에는 삶은 콩에는 없는 영양소도 들어 있대요";
+"TIPS.5" = "낫토에는 1g당 약 10억 개의 낫토균이 산다고 해요";
+"TIPS.6" = "1g 낫토 속 낫토균을 한 줄로 늘어놓으면 1000km가 된대요";
+"TIPS.7" = "낫토균은 생명력이 매우 강해서 막 삶은 뜨거운 콩에 닿아도 죽지 않아요";
+"TIPS.8" = "끈적임에는 수분을 머금는 효과가 있어서 사막을 녹지로 만들 수도 있다고 해요";
+"TIPS.9" = "낫토 냄새에는 68종류의 냄새 성분이 있대요";
+"TIPS.10" = "낫토는 400번 섞으면 아주 맛있어진대요";
+"TIPS.11" = "낫토와 달걀 흰자는 궁합이 안 좋아서 함께 먹으면 미용 효과가 없어진대요";
+"TIPS.12" = "낫토는 1월~3월이 제철이에요";
+"TIPS.13" = "낫토 전용 낫토 젓가락 다들 갖고 있나요？";
+"TIPS.14" = "낫토를 가장 많이 먹는 곳은 후쿠시마현이래요";
+"TIPS.15" = "인도네시아에는 낫토와 매우 비슷한 템페라는 음식이 있어요";
+"TIPS.16" = "끈적임 성분인 나토키나아제에는 혈전을 녹이는 작용이 있대요";
+"TIPS.17" = "낫토에는 비타민K2가 풍부해서 뼈를 튼튼하게 해준대요";
+"TIPS.18" = "낫토 생산량이 가장 많은 곳은 이바라키현이래요";
+"TIPS.19" = "낫토균은 우주에서도 살 수 있다는 것이 증명됐어요";
+"TIPS.20" = "사실 냉동 보관도 가능해요，해동해도 맛있대요";
+"TIPS.21" = "낫토 한 팩에는 약 50~60알의 콩이 들어 있대요";
+"TIPS.22" = "데우면 실이 잘 늘어난대요";
+"TIPS.23" = "의외로 칼로리가 낮아서 다이어트에도 좋다고 해요";
+"TIPS.24" = "미토에는 낫토 신사가 있어요";
+"BEST.LABEL.TITLE" = "신기록！！";
+"BEST.BUTTON.CLOSE" = "닫기";
+"BEST.BUTTON.SHARE" = "공유";
+"SETTING.CELLARR.VIBRATION" = "진동";
+"SETTING.CELLARR.PRIVACYPOLICY" = "개인정보 처리방침";
+"SETTING.CELLARR.REVIEW" = "리뷰";
+"SETTING.CELLARR.PUSHNORTIFICATION" = "푸시 알림";
+"SETTING.CELLARR.VERSION" = "버전";
+"SETTING.SECTIONARR.SETTING" = "설정";
+"SETTING.SECTIONARR.OTHER" = "기타";
+"TOPPINGSELECT.DECISION" = "결정";
+"TOPPINGSELECT.RESET" = "초기화";
+"TOPPINGSELECT.ALERT.ITEMLESS" = "아이템이 부족합니다";
+"TOPPINGSELECT.ALERT.SELECTOVER" = "토핑은 3개까지 사용할 수 있습니다";
+"TOTALEAT.EATNATTO" = "지금까지 먹은 낫토 수";
+"TOTALEAT.GROUTH" = "다음 성장까지 %d알 남았어요";
+"TOTALEAT.GRAIN" = "%d알";
+"ITEMBUY.ALERT.TITLE" = "구매";
+"ITEMBUY.ALERT.MESSAGE" = "%d포인트로 %@을(를) %d개 구매할까요？";
+"ITEMBUY.ALERT.BUTTON.YES" = "예";
+"ITEMBUY.ALERT.BUTTON.NO" = "취소";
+"ITEMBUY.OWNEDLABEL.TEXT" = "보유 낫토 포인트 %d점";
