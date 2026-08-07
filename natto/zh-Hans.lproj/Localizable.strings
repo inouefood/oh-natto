@@ -1,0 +1,72 @@
+/* Localizable.strings — zh-Hans */
+"NOTIFICATION.TITLE" = "今天是纳豆日";
+"NOTIFOCATION.MESSAGE" = "来用 oh! natto! 搅拌纳豆吧？";
+"UPDATEALERT.MESSAGE" = "可以更新到最新版本";
+"UPDATEALERT.BUTTON.UPDATE" = "更新";
+"UPDATEALERT.BUTTON.CLOSE" = "关闭";
+"DESCRIPTION.1" = "初次见面！我是纳豆博士
+欢迎来到 Oh! Natto! 的世界
+向右滑动可以学习游戏玩法！";
+"DESCRIPTION.2" = "尽可能多地搅拌纳豆，使其产生黏性。产生大量白色黏液，可以改变纳豆的吸附率";
+"DESCRIPTION.3" = "在规定时间内举起纳豆，尽可能多地吃";
+"DESCRIPTION.4" = "得分由你吃的纳豆数量决定！取得好成绩就发到社交媒体上吧！";
+"DESCRIPTION.5" = "可以用纳豆积分从商店购买配料！
+使用配料来挑战更高分数吧！！";
+"DESCRIPTION.6" = "点击葱图标可以打开道具选择界面！
+每次游戏最多可以使用3个配料！！";
+"TITLE.BUTTON.START" = "开始";
+"RESULT.BUTTON.REPLAY" = "再来一次";
+"RESULT.LABEL.SCORE" = "分";
+"RESULT.LABEL.SCORETITLE" = "本次得分";
+"RESULT.TWITTER" = "
+
+吃纳豆，打造完美身材！
+";
+"RESULT.TIPSTITLE" = "纳豆小知识";
+"TIPS.0" = "据说弥生时代就已经有纳豆了哦";
+"TIPS.1" = "纳豆在江户时代开始在普通老百姓中广泛流传";
+"TIPS.2" = "纳豆这个词最早出现在平安时代的文献中";
+"TIPS.3" = "纳豆主要分两种：「丝引纳豆」和「盐辛纳豆」";
+"TIPS.4" = "纳豆含有煮豆所没有的营养成分哦";
+"TIPS.5" = "据说纳豆每克含有约10亿个纳豆菌";
+"TIPS.6" = "1克纳豆中的纳豆菌如果排成一列，长度可达1000公里哦";
+"TIPS.7" = "纳豆菌的生命力非常顽强，即使接触刚煮好的热豆子也不会死哦";
+"TIPS.8" = "黏性成分有保水效果，据说还能让沙漠变绿洲哦";
+"TIPS.9" = "据说纳豆的气味中含有68种气味成分";
+"TIPS.10" = "纳豆搅拌400次会变得超级美味哦";
+"TIPS.11" = "纳豆和蛋清不合，一起吃的话美肌效果就消失了";
+"TIPS.12" = "纳豆的旺季是1月到3月哦";
+"TIPS.13" = "你有专门用来搅拌纳豆的纳豆筷子吗？";
+"TIPS.14" = "据说吃纳豆最多的县是福岛县";
+"TIPS.15" = "印度尼西亚有一种叫天贝的食物，和纳豆非常相似哦";
+"TIPS.16" = "黏性成分纳豆激酶有溶解血栓的作用哦";
+"TIPS.17" = "据说纳豆富含维生素K2，能帮助强健骨骼";
+"TIPS.18" = "据说纳豆产量最多的县是茨城县";
+"TIPS.19" = "纳豆菌在太空中也能存活，这一点已经得到证实哦";
+"TIPS.20" = "其实可以放冷冻库保存哦，解凍后也很好吃";
+"TIPS.21" = "纳豆一袋里大概装有50到60粒豆子哦";
+"TIPS.22" = "加热后更容易拉丝哦";
+"TIPS.23" = "意外地，纳豆卡路里很低，也适合减肥哦";
+"TIPS.24" = "水户有纳豆神社哦";
+"BEST.LABEL.TITLE" = "新纪录！！";
+"BEST.BUTTON.CLOSE" = "关闭";
+"BEST.BUTTON.SHARE" = "分享";
+"SETTING.CELLARR.VIBRATION" = "设备震动";
+"SETTING.CELLARR.PRIVACYPOLICY" = "隐私政策";
+"SETTING.CELLARR.REVIEW" = "评价";
+"SETTING.CELLARR.PUSHNORTIFICATION" = "推送通知";
+"SETTING.CELLARR.VERSION" = "版本";
+"SETTING.SECTIONARR.SETTING" = "设置";
+"SETTING.SECTIONARR.OTHER" = "其他";
+"TOPPINGSELECT.DECISION" = "确定";
+"TOPPINGSELECT.RESET" = "重置";
+"TOPPINGSELECT.ALERT.ITEMLESS" = "道具不足";
+"TOPPINGSELECT.ALERT.SELECTOVER" = "最多可以使用3个配料";
+"TOTALEAT.EATNATTO" = "迄今为止吃过的纳豆数";
+"TOTALEAT.GROUTH" = "距下次成长还需%d粒";
+"TOTALEAT.GRAIN" = "%d粒";
+"ITEMBUY.ALERT.TITLE" = "购买";
+"ITEMBUY.ALERT.MESSAGE" = "要用%d积分购买%@（%d个）吗？";
+"ITEMBUY.ALERT.BUTTON.YES" = "是";
+"ITEMBUY.ALERT.BUTTON.NO" = "取消";
+"ITEMBUY.OWNEDLABEL.TEXT" = "持有纳豆积分%d点";

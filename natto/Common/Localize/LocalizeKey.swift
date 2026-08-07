@@ -77,6 +77,15 @@ struct LocalizeKeys {
         case n = "TIPS.13"
         case o = "TIPS.14"
         case p = "TIPS.15"
+        case q = "TIPS.16"
+        case r = "TIPS.17"
+        case s = "TIPS.18"
+        case t = "TIPS.19"
+        case u = "TIPS.20"
+        case v = "TIPS.21"
+        case w = "TIPS.22"
+        case x = "TIPS.23"
+        case y = "TIPS.24"
         var key: String {
             return rawValue
         }

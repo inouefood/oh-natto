@@ -36,12 +36,12 @@ class PullNattoScene: SKScene{
     
     lazy var ohashi = SKSpriteNode(image: "pullOhashi",
                                    pos: CGPoint(x: self.frame.midX, y: self.frame.midY),
-                                   viewBounds: (self.view?.bounds)!,
+                                   viewBounds: self.view?.bounds ?? CGRect(origin: .zero, size: self.size),
                                    frame: self.frame,
                                    zPos: 1.25)
-    
+
     lazy var mouth = SKSpriteNode(image: "pakupaku",
-                                  viewBounds: (self.view?.bounds)!,
+                                  viewBounds: self.view?.bounds ?? CGRect(origin: .zero, size: self.size),
                                   frame: self.frame,
                                   zPos: 1.0)
     

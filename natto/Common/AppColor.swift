@@ -18,15 +18,15 @@ enum AppColor {
     var color: UIColor {
         switch self {
         case .background:
-            return UIColor(named: "background")!
+            return UIColor(named: "background") ?? .black
         case .gamePlayBackground:
-            return UIColor(named: "gamePlayBackground")!
+            return UIColor(named: "gamePlayBackground") ?? .darkGray
         case .button:
-            return UIColor(named: "button")!
+            return UIColor(named: "button") ?? .orange
         case .white:
-            return UIColor(named: "white")!
+            return UIColor(named: "white") ?? .white
         case .tutorial:
-            return UIColor(named: "tutorial")!
+            return UIColor(named: "tutorial") ?? .gray
         }
     }
 }

@@ -1,0 +1,72 @@
+/* Localizable.strings — id */
+"NOTIFICATION.TITLE" = "Hari ini adalah Hari Natto!";
+"NOTIFOCATION.MESSAGE" = "Mau mengaduk natto dengan oh! natto?";
+"UPDATEALERT.MESSAGE" = "Pembaruan ke versi terbaru tersedia";
+"UPDATEALERT.BUTTON.UPDATE" = "Perbarui";
+"UPDATEALERT.BUTTON.CLOSE" = "Tutup";
+"DESCRIPTION.1" = "Salam kenal! Saya Profesor Natto
+Selamat datang di dunia Oh! Natto!
+Geser ke kanan untuk mempelajari cara bermain!";
+"DESCRIPTION.2" = "Aduk natto sebanyak mungkin agar lengket. Semakin banyak lendir putih yang dihasilkan, semakin tinggi tingkat penyerapan natto";
+"DESCRIPTION.3" = "Angkat natto tepat waktu dan makan sebanyak mungkin";
+"DESCRIPTION.4" = "Skor ditentukan oleh jumlah natto yang dimakan! Bagikan hasilmu di media sosial!";
+"DESCRIPTION.5" = "Beli topping di toko dengan poin natto!
+Bidik skor lebih tinggi dengan menggunakan topping!!";
+"DESCRIPTION.6" = "Buka layar pemilihan item dari ikon daun bawang!
+Kamu bisa menggunakan hingga 3 topping per sesi bermain!!";
+"TITLE.BUTTON.START" = "MULAI";
+"RESULT.BUTTON.REPLAY" = "MAIN LAGI";
+"RESULT.LABEL.SCORE" = " Poin";
+"RESULT.LABEL.SCORETITLE" = "SKOR";
+"RESULT.TWITTER" = "
+
+Makan natto untuk tubuh sempurna!
+";
+"RESULT.TIPSTITLE" = "TAHUKAH KAMU?";
+"TIPS.0" = "Ternyata natto sudah ada sejak zaman Yayoi, loh!";
+"TIPS.1" = "Natto mulai populer di kalangan masyarakat umum pada zaman Edo";
+"TIPS.2" = "Kata natto pertama kali muncul dalam dokumen pada zaman Heian";
+"TIPS.3" = "Ada dua jenis utama natto: «Itohiki-Natto» dan «Shiokara-Natto»";
+"TIPS.4" = "Natto mengandung nutrisi yang tidak ada di kacang rebus biasa, loh!";
+"TIPS.5" = "Natto mengandung sekitar satu miliar bakteri per gram, loh!";
+"TIPS.6" = "Kalau bakteri dalam satu gram natto dijejer, panjangnya bisa 1000 km!";
+"TIPS.7" = "Bakteri natto sangat kuat sehingga tidak mati meski menyentuh kacang yang baru direbus";
+"TIPS.8" = "Lendir natto punya efek menyerap air, dan bahkan dianggap bisa menghijaukan gurun";
+"TIPS.9" = "Bau natto mengandung 68 jenis komponen aroma, loh!";
+"TIPS.10" = "Natto jadi super enak kalau diaduk 400 kali!";
+"TIPS.11" = "Natto dan putih telur tidak cocok — dimakan bersamaan menghilangkan efek kecantikannya";
+"TIPS.12" = "Musim terbaik natto adalah Januari hingga Maret";
+"TIPS.13" = "Apakah kamu punya sumpit khusus untuk mengaduk natto?";
+"TIPS.14" = "Prefektur Fukushima adalah konsumen natto terbesar di Jepang";
+"TIPS.15" = "Di Indonesia ada makanan bernama Tempe yang sangat mirip dengan natto!";
+"TIPS.16" = "Nattokinase, komponen dalam lendir natto, bisa melarutkan gumpalan darah, loh!";
+"TIPS.17" = "Natto kaya vitamin K2 yang membantu memperkuat tulang";
+"TIPS.18" = "Prefektur Ibaraki adalah produsen natto terbesar di Jepang";
+"TIPS.19" = "Sudah terbukti bahwa bakteri natto bisa hidup bahkan di luar angkasa!";
+"TIPS.20" = "Natto bisa disimpan di freezer dan tetap enak setelah dicairkan, loh!";
+"TIPS.21" = "Satu bungkus natto berisi sekitar 50 hingga 60 biji!";
+"TIPS.22" = "Dipanaskan, natto jadi lebih mudah ditarik-tarik!";
+"TIPS.23" = "Ternyata natto rendah kalori dan cocok untuk diet!";
+"TIPS.24" = "Di Mito ada kuil yang didedikasikan untuk natto, loh!";
+"BEST.LABEL.TITLE" = "Rekor Baru!!";
+"BEST.BUTTON.CLOSE" = "Tutup";
+"BEST.BUTTON.SHARE" = "Bagikan";
+"SETTING.CELLARR.VIBRATION" = "Getar";
+"SETTING.CELLARR.PRIVACYPOLICY" = "Kebijakan privasi";
+"SETTING.CELLARR.REVIEW" = "Ulasan";
+"SETTING.CELLARR.PUSHNORTIFICATION" = "Notifikasi push";
+"SETTING.CELLARR.VERSION" = "Versi";
+"SETTING.SECTIONARR.SETTING" = "Pengaturan";
+"SETTING.SECTIONARR.OTHER" = "Lainnya";
+"TOPPINGSELECT.DECISION" = "Konfirmasi";
+"TOPPINGSELECT.RESET" = "Reset";
+"TOPPINGSELECT.ALERT.ITEMLESS" = "Item tidak cukup";
+"TOPPINGSELECT.ALERT.SELECTOVER" = "Kamu bisa menggunakan hingga 3 topping";
+"TOTALEAT.EATNATTO" = "Total natto yang sudah dimakan";
+"TOTALEAT.GROUTH" = "%d butir lagi hingga pertumbuhan berikutnya";
+"TOTALEAT.GRAIN" = "%d butir";
+"ITEMBUY.ALERT.TITLE" = "Beli";
+"ITEMBUY.ALERT.MESSAGE" = "Gunakan %d poin untuk membeli %@ sebanyak %d buah?";
+"ITEMBUY.ALERT.BUTTON.YES" = "Ya";
+"ITEMBUY.ALERT.BUTTON.NO" = "Tidak";
+"ITEMBUY.OWNEDLABEL.TEXT" = "Poin natto yang dimiliki: %d";
