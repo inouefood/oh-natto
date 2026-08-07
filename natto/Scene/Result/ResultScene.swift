@@ -37,7 +37,7 @@ class ResultScene: SKScene{
         let vc = ResultViewController(score: resultScore)
         vc.dismissHandler = {
             
-            vc.audio.stop()
+            vc.audio?.stop()
             vc.dismiss(animated: false, completion: nil)
             let scene = TitleScene(size: self.size)
             view.presentScene(scene)

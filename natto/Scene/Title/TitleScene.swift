@@ -103,25 +103,43 @@ extension TitleScene {
         }
         
         startLabel.fontColor = .white
-        startLabel.physicsBody = SKPhysicsBody(circleOfRadius: startLabel.frame.maxX)
+        startLabel.fontSize = 100 * (self.frame.width / 390)
+        let maxLabelWidth = self.frame.width * 0.7
+        if startLabel.frame.width > maxLabelWidth {
+            startLabel.fontSize *= maxLabelWidth / startLabel.frame.width
+        }
         startLabel.physicsBody = SKPhysicsBody().make(circleOfRadius: startLabel.frame.maxX, category: 0x1 << 0, contact: 0x1 << 2, isGravity: false)
+        startLabel.physicsBody?.restitution = 0.9
+        startLabel.physicsBody?.linearDamping = 0.05
+        startLabel.physicsBody?.mass = 0.05
         startLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY/3)
         
         self.addChild(startLabel, infoButton, tutorialButton, itemSelectButton, settingButton)
     }
     
     override func update(_ currentTime: TimeInterval) {
-        if startLabel.position.y < height/30 + startLabel.frame.height/2{
-            startLabel.position.y = height/30 + startLabel.frame.height/2
+        let halfW = startLabel.frame.width / 2
+        let halfH = startLabel.frame.height / 2
+        let minX = controlWidth + halfW
+        let maxX = width - controlWidth - halfW
+        let minY = height / 30 + halfH
+        let maxY = height - halfH
+
+        if startLabel.position.x < minX {
+            startLabel.position.x = minX
+            startLabel.physicsBody?.velocity.dx = abs(startLabel.physicsBody?.velocity.dx ?? 0)
         }
-        if startLabel.position.y > height - startLabel.frame.height/2{
-            startLabel.position.y = height - startLabel.frame.height/2
+        if startLabel.position.x > maxX {
+            startLabel.position.x = maxX
+            startLabel.physicsBody?.velocity.dx = -abs(startLabel.physicsBody?.velocity.dx ?? 0)
         }
-        if startLabel.position.x < controlWidth + startLabel.frame.width/2 {
-            startLabel.position.x = controlWidth + startLabel.frame.width/2
+        if startLabel.position.y < minY {
+            startLabel.position.y = minY
+            startLabel.physicsBody?.velocity.dy = abs(startLabel.physicsBody?.velocity.dy ?? 0)
         }
-        if startLabel.position.x > width - controlWidth  + startLabel.frame.width/2 {
-            startLabel.position.x = width - controlWidth + startLabel.frame.width/2
+        if startLabel.position.y > maxY {
+            startLabel.position.y = maxY
+            startLabel.physicsBody?.velocity.dy = -abs(startLabel.physicsBody?.velocity.dy ?? 0)
         }
     }
 }
