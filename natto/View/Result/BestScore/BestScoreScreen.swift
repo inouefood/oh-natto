@@ -26,11 +26,14 @@ struct BestScoreScreen: View {
                         .padding(.horizontal, 8)
                         .padding(.top, 4)
 
-                    Image("bestScore")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(.horizontal, 16)
-                        .padding(.top, 4)
+                    TimelineView(.periodic(from: .now, by: 1.0 / 8.0)) { context in
+                        let frame = Int(context.date.timeIntervalSinceReferenceDate * 8) % 8
+                        Image("natto_bestscore_\(frame)")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.horizontal, 16)
+                            .padding(.top, 4)
+                    }
 
                     Text(score)
                         .font(.scaled(32))
