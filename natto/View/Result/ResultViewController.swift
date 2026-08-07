@@ -34,6 +34,15 @@ class ResultViewController: UIViewController {
         localizeString(key: LocalizeKeys.Tips.n),
         localizeString(key: LocalizeKeys.Tips.o),
         localizeString(key: LocalizeKeys.Tips.p),
+        localizeString(key: LocalizeKeys.Tips.q),
+        localizeString(key: LocalizeKeys.Tips.r),
+        localizeString(key: LocalizeKeys.Tips.s),
+        localizeString(key: LocalizeKeys.Tips.t),
+        localizeString(key: LocalizeKeys.Tips.u),
+        localizeString(key: LocalizeKeys.Tips.v),
+        localizeString(key: LocalizeKeys.Tips.w),
+        localizeString(key: LocalizeKeys.Tips.x),
+        localizeString(key: LocalizeKeys.Tips.y),
     ]
 
     var dismissHandler: (() -> ())?
