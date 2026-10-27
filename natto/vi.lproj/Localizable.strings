@@ -70,3 +70,6 @@ Mỗi lần chơi có thể dùng tối đa 3 topping!!";
 "ITEMBUY.ALERT.BUTTON.YES" = "Có";
 "ITEMBUY.ALERT.BUTTON.NO" = "Không";
 "ITEMBUY.OWNEDLABEL.TEXT" = "Điểm natto hiện có: %d điểm";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "Không thể đăng nhập Game Center. Vui lòng đăng nhập từ Game Center trong ứng dụng Cài đặt.";

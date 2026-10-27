@@ -70,3 +70,6 @@ Makan natto untuk tubuh sempurna!
 "ITEMBUY.ALERT.BUTTON.YES" = "Ya";
 "ITEMBUY.ALERT.BUTTON.NO" = "Tidak";
 "ITEMBUY.OWNEDLABEL.TEXT" = "Poin natto yang dimiliki: %d";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "Tidak dapat masuk ke Game Center. Silakan masuk melalui Game Center di app Pengaturan.";

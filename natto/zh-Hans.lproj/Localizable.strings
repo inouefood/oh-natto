@@ -70,3 +70,6 @@
 "ITEMBUY.ALERT.BUTTON.YES" = "是";
 "ITEMBUY.ALERT.BUTTON.NO" = "取消";
 "ITEMBUY.OWNEDLABEL.TEXT" = "持有纳豆积分%d点";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "无法登录 Game Center。请在“设置”App 的 Game Center 中登录。";

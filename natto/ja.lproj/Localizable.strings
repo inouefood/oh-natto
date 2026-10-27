@@ -87,3 +87,6 @@
 "ITEMBUY.ALERT.BUTTON.YES" = "はい";
 "ITEMBUY.ALERT.BUTTON.NO" = "やめる";
 "ITEMBUY.OWNEDLABEL.TEXT" = "保有納豆ポイント%d点";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "Game Centerにサインインできませんでした。設定アプリの「Game Center」からサインインしてください。";

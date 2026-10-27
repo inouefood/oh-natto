@@ -134,6 +134,13 @@ struct LocalizeKeys {
         }
     }
     
+    enum GameCenter: String, LocalizeKeyGeneratable {
+        case loginMessage = "GAMECENTER.ALERT.LOGIN"
+        var key: String {
+            return rawValue
+        }
+    }
+
     enum ItemBuy: String, LocalizeKeyGeneratable {
         case alertTitle = "ITEMBUY.ALERT.TITLE"
         case alertMessage = "ITEMBUY.ALERT.MESSAGE"

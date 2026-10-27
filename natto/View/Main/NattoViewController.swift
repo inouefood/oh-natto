@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import GameKit
 
 class NattoViewController: UIViewController {
     
@@ -33,6 +34,13 @@ class NattoViewController: UIViewController {
                 self.showAppStoreInformation(url: "https://apps.apple.com/jp/app/oh-natto/id1457049172", title: "App Store", message: localizeString(key: LocalizeKeys.UpdateLeast.message), openText: localizeString(key: LocalizeKeys.UpdateLeast.buttonUpdate), closeText: localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))
             case .error:
                 print("エラー")
+            }
+        }
+
+        // 起動時にGame Centerへ認証しておき、ランキングボタンをすぐ使えるようにする
+        GKLocalPlayer.local.authenticateHandler = { viewController, _ in
+            if let vc = viewController {
+                UIApplication.topViewController()?.present(vc, animated: true)
             }
         }
 

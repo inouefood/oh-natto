@@ -70,3 +70,6 @@
 "ITEMBUY.ALERT.BUTTON.YES" = "Да";
 "ITEMBUY.ALERT.BUTTON.NO" = "Нет";
 "ITEMBUY.OWNEDLABEL.TEXT" = "Очков натто: %d";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "Не удалось войти в Game Center. Войдите через раздел Game Center в приложении «Настройки».";

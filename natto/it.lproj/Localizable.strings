@@ -70,3 +70,6 @@ Mangia natto e ottieni il corpo perfetto!
 "ITEMBUY.ALERT.BUTTON.YES" = "Sì";
 "ITEMBUY.ALERT.BUTTON.NO" = "No";
 "ITEMBUY.OWNEDLABEL.TEXT" = "Punti natto disponibili: %d";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "Impossibile accedere a Game Center. Accedi da Game Center nell’app Impostazioni.";

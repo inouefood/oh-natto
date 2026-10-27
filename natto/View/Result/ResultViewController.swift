@@ -202,7 +202,9 @@ class ResultViewController: UIViewController {
         if player.isAuthenticated {
             openLeaderBordScoreLanking()
         } else {
-            authenticateLocalPlayer()
+            // 認証は起動時に行っている。authenticateHandlerは再設定しても呼ばれないことがあるため、ここでは案内のみ出す
+            showInformation(message: localizeString(key: LocalizeKeys.GameCenter.loginMessage),
+                            closeButtonText: localizeString(key: LocalizeKeys.UpdateLeast.buttonClose))
         }
     }
 
@@ -227,15 +229,6 @@ class ResultViewController: UIViewController {
             )
         }
         present(activityVc, animated: true)
-    }
-
-    private func authenticateLocalPlayer() {
-        let player = GKLocalPlayer.local
-        player.authenticateHandler = { [weak self] (viewController, _) in
-            if let vc = viewController {
-                self?.present(vc, animated: true)
-            }
-        }
     }
 
     private func openLeaderBordScoreLanking() {

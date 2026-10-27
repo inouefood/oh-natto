@@ -70,3 +70,6 @@
 "ITEMBUY.ALERT.BUTTON.YES" = "ใช่";
 "ITEMBUY.ALERT.BUTTON.NO" = "ไม่";
 "ITEMBUY.OWNEDLABEL.TEXT" = "คะแนนนัตโตะที่มี: %d คะแนน";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "ไม่สามารถลงชื่อเข้า Game Center ได้ โปรดลงชื่อเข้าจาก Game Center ในแอปการตั้งค่า";
