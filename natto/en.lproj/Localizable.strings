@@ -88,3 +88,6 @@
 "ITEMBUY.ALERT.BUTTON.YES" = "Yes";
 "ITEMBUY.ALERT.BUTTON.NO" = "desist";
 "ITEMBUY.OWNEDLABEL.TEXT" = "Owned natto points%dpoint";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "Could not sign in to Game Center. Please sign in from Game Center in the Settings app.";

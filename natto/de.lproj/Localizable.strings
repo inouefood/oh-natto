@@ -70,3 +70,6 @@ Natto essen für den perfekten Körper!
 "ITEMBUY.ALERT.BUTTON.YES" = "Ja";
 "ITEMBUY.ALERT.BUTTON.NO" = "Nein";
 "ITEMBUY.OWNEDLABEL.TEXT" = "Verfügbare Natto-Punkte: %d";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "Anmeldung bei Game Center nicht möglich. Bitte melde dich in der Einstellungen-App unter „Game Center“ an.";

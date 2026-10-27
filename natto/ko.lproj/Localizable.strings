@@ -70,3 +70,6 @@ Oh! Natto!의 세계에 오신 것을 환영합니다
 "ITEMBUY.ALERT.BUTTON.YES" = "예";
 "ITEMBUY.ALERT.BUTTON.NO" = "취소";
 "ITEMBUY.OWNEDLABEL.TEXT" = "보유 낫토 포인트 %d점";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "Game Center에 로그인할 수 없습니다. 설정 앱의 Game Center에서 로그인해 주세요.";

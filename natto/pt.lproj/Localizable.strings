@@ -70,3 +70,6 @@ Coma natto e conquiste o corpo perfeito!
 "ITEMBUY.ALERT.BUTTON.YES" = "Sim";
 "ITEMBUY.ALERT.BUTTON.NO" = "Não";
 "ITEMBUY.OWNEDLABEL.TEXT" = "Pontos natto disponíveis: %d";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "Não foi possível iniciar sessão no Game Center. Inicie sessão em Game Center no app Ajustes.";

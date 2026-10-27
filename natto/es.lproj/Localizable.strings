@@ -70,3 +70,6 @@
 "ITEMBUY.ALERT.BUTTON.YES" = "Sí";
 "ITEMBUY.ALERT.BUTTON.NO" = "No";
 "ITEMBUY.OWNEDLABEL.TEXT" = "Puntos natto disponibles: %d";
+
+// Game Center
+"GAMECENTER.ALERT.LOGIN" = "No se pudo iniciar sesión en Game Center. Inicia sesión desde Game Center en la app Ajustes.";
